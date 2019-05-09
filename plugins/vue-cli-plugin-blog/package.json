@@ -1,0 +1,15 @@
+{
+  "name": "vue-cli-plugin-blog",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Rahul Kadyan <rahulkdn@gmail.com> (https://znck.me)",
+  "license": "MIT",
+  "dependencies": {
+    "globby": "^9.2.0"
+  }
+}

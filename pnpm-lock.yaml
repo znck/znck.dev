@@ -2,7 +2,9 @@ dependencies:
   core-js: 2.6.5
   register-service-worker: 1.6.2
   vue: 2.6.10
+  vue-cli-plugin-blog: 'link:plugins/vue-cli-plugin-blog'
   vue-router: 3.0.6
+  vue-router-layout: 0.1.4
   vuex: 3.1.1
 devDependencies:
   '@vue/cli-plugin-babel': 3.7.0
@@ -21,6 +23,8 @@ devDependencies:
   lint-staged: 8.1.6
   sass: 1.20.1
   sass-loader: 7.1.0
+  vue-auto-routing: 0.3.0
+  vue-cli-plugin-auto-routing: 0.2.1
   vue-template-compiler: 2.6.10
 lockfileVersion: 5
 packages:
@@ -8310,6 +8314,13 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
+  /prettier/1.14.3:
+    dev: true
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-qZDVnCrnpsRJJq5nSsiHCE3BYMED2OtsI+cmzIzF1QIfqm5ALf8tEJcO27zV1gKNKRPdhjO0dNWnrzssDQ1tFg==
   /prettier/1.16.3:
     dev: true
     engines:
@@ -10324,6 +10335,16 @@ packages:
     dev: true
     resolution:
       integrity: sha1-XX6kW7755Kb/ZflUOOCofDV9WnM=
+  /vue-auto-routing/0.3.0:
+    dependencies:
+      vue-route-generator: 0.3.3
+    dev: true
+    resolution:
+      integrity: sha512-jYRGNq07tr0kmyZXgC/LvzIF1hza06+Dg3KRlsMuU6fsoq29f4zRVLnI8t+AbvfEGBIRfjT6kjQTHI3NbZT8cg==
+  /vue-cli-plugin-auto-routing/0.2.1:
+    dev: true
+    resolution:
+      integrity: sha512-iV91GY9tmjNKGwy5HbQe5NwGfSFW9ElYED7xtBWq/Dv5Ug6gMsQAzsqFnR5vkKsVAwpcKVYoeapnrA2wOiSBLw==
   /vue-eslint-parser/2.0.3_eslint@4.19.1:
     dependencies:
       debug: 3.2.6
@@ -10394,6 +10415,19 @@ packages:
       webpack: ^4.1.0 || ^5.0.0-0
     resolution:
       integrity: sha512-x+NZ4RIthQOxcFclEcs8sXGEWqnZHodL2J9Vq+hUz+TDZzBaDIh1j3d9M2IUlTjtrHTZy4uMuRdTi8BGws7jLA==
+  /vue-route-generator/0.3.3:
+    dependencies:
+      fast-glob: 2.2.6
+      prettier: 1.14.3
+    dev: true
+    peerDependencies:
+      vue-template-compiler: ^2.0.0
+    resolution:
+      integrity: sha512-pdB4KsEp62/C4LT/KfkvlngLJndfgmh8tAPMO1EErks/EGOB2crtzQ6jdqQ0CO1Ni8kovfOpNQdMFcAQ4xrTAg==
+  /vue-router-layout/0.1.4:
+    dev: false
+    resolution:
+      integrity: sha512-FLDdzWF6nAoJyHTdSEgyCvHiuiS8DkUfb1/vXDsQV7kJkgihrXZbi4ZhTsoo+xDNLDGVFKx1EBTPDEd43unMDg==
   /vue-router/3.0.6:
     dev: false
     resolution:
@@ -11016,6 +11050,10 @@ specifiers:
   sass: ^1.18.0
   sass-loader: ^7.1.0
   vue: ^2.6.10
+  vue-auto-routing: ^0.3.0
+  vue-cli-plugin-auto-routing: ^0.2.1
+  vue-cli-plugin-blog: 'link:plugins/vue-cli-plugin-blog'
   vue-router: ^3.0.3
+  vue-router-layout: ^0.1.2
   vue-template-compiler: ^2.5.21
   vuex: ^3.0.1
