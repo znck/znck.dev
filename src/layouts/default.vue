@@ -1,6 +1,12 @@
 <template>
-  <div>
+  <div class="layout">
     <router-view/>
-    <p>This is a default layout</p>
   </div>
 </template>
+
+<style>
+.layout {
+  width: 800px;
+  margin:0 auto;
+}
+</style>

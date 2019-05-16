@@ -1,0 +1,12 @@
+$breakpoints: (
+  'page': 800px,
+
+  'desktop': '#page',
+);
+
+@mixin adjust-vertical-harmony($top, $base: 8px) {
+  $top: min($top, $base);
+
+  padding-top: $top;
+  padding-bottom: $base - $top;
+}

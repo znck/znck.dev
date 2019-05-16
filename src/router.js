@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import routes from 'vue-auto-routing'
 import { createRouterLayout } from 'vue-router-layout'
 
+import blogRoutes from './blog/routes'
+
 Vue.use(Router)
 
 const RouterLayout = createRouterLayout(layout => {
@@ -10,11 +12,12 @@ const RouterLayout = createRouterLayout(layout => {
 })
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
       component: RouterLayout,
-      children: routes,
+      children: [...routes, ...blogRoutes],
     },
   ],
 })

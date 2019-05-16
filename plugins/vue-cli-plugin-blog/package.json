@@ -10,6 +10,12 @@
   "author": "Rahul Kadyan <rahulkdn@gmail.com> (https://znck.me)",
   "license": "MIT",
   "dependencies": {
-    "globby": "^9.2.0"
+    "front-matter": "^3.0.2",
+    "globby": "^9.2.0",
+    "loader-utils": "^1.2.3",
+    "markdown-it": "^8.4.2",
+    "markdown-it-attrs": "^2.3.4",
+    "markdown-it-highlightjs": "^3.0.0",
+    "prettier": "^1.17.0"
   }
 }

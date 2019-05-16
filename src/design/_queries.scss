@@ -1,0 +1,17 @@
+@mixin dark-mode() {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin light-mode() {
+  @media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+    @content;
+  }
+}
+
+@mixin high-density-display() {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}

@@ -1,0 +1,66 @@
+==================================================================
+https://keybase.io/znck
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://znck.me
+  * I am znck (https://keybase.io/znck) on keybase.
+  * I have a public key with fingerprint 4960 41D2 4381 8206 D62C  C2DF 21AF 5D4A 08BA 995B
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101438ad2339d11fded2304035b176897ea2821c66392c8093046aa635f9f173a710a",
+            "fingerprint": "496041d243818206d62cc2df21af5d4a08ba995b",
+            "host": "keybase.io",
+            "key_id": "21af5d4a08ba995b",
+            "kid": "0101438ad2339d11fded2304035b176897ea2821c66392c8093046aa635f9f173a710a",
+            "uid": "1733149fdcb22d259a38390dac775219",
+            "username": "znck"
+        },
+        "service": {
+            "hostname": "znck.me",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1493952723,
+    "expire_in": 157680000,
+    "prev": "23f81b6cdd0513e1d0b275a527e1c11cea79433fa45161f985d3968bd2d3cdc7",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtUltIVEEY3i23zIgiyigM6lQStsmZmXObzaSiKEIqMSrxss45M0cP5jnb7sna
+ZKWiq/YgPViRZUE9BNmFbuJDYYbRBYPAtEh6KFYtEqGiwLLmSEEPPTYv88//f983
+3//zN0wZ70v1z79asj617VSR/8mg7iucPNBTI+gOjQuhGqGSjV1sO2UxN1xpUSEk
+iEAEEtIIhQhhCoBJGQ9FSUSyDlRFwyojUIPAUBSEoaGJmBcVQhQkm9gEKiIqEIkQ
+FEzLLmfRSNSyXS4rYUWUAIVcGmhQVKgCDQNSEwJiylQioqYTjGWdEyucmMfg5nQS
+Y9mWw3P8ER6z9w/8f/a9c0yOJxCQsEkNHUIKZUyQhrBIiaGqMgTYA8ZY1CZVjKP3
+2EalkAgKPFNtGcwbqtfFX9VsHgWFSNRxHcPZzpMVrhuJhTySG494qF1MD//mh3XL
+pnx8nFHNojHLsYUQ4EjDtTxB7gthGaoQBQW2O2JFWdjyEDJvU+TH+4dVe8NCpgZ0
+xaBUlAFiYCMVdajKhHMZMAAwGFGxhJBJJBkowMSaTBFWNJ1CigxqqILX0g7bEUIq
+90nKuWbMKreJuzPKhETaUX9Gis+f6psQGOctli9t0rQ/29ZfMHFUmz3lK/qelz9y
+MmtRU+f9dnnb+01Zue71zBzYOvXQ5u6aFROspB4ceJx/oXDLUEbp0DMcL4mnPBzx
+d4zMq+9qfrA0vS5n5t1Zjw6cW56sz3uR74vbKXtvvr2jwGV90/d/WKkmi3rX3O56
+96o0eiZwK/dnenr3l2sVcxbWPtdOBC4uGJ575HzR/L5EWVtrzcEj68RI47bXrzN/
+lNWuaXAvfErXOt53DKUt6R2tE2cMVnV+K4nnBq/0NCdZSe2GRqu9+FLm1NLsluk5
+xSGhvin8dtzplYsD91YdW97y1FpdkPXx+JvwaOXZKm04cHne1n1rP7+80bewKRlO
+9PgT/Rsv9h92pF8=
+=/m/7
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/znck
+
+==================================================================

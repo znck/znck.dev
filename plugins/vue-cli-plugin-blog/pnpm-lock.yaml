@@ -1,5 +1,11 @@
 dependencies:
+  front-matter: 3.0.2
   globby: 9.2.0
+  loader-utils: 1.2.3
+  markdown-it: 8.4.2
+  markdown-it-attrs: 2.3.4
+  markdown-it-highlightjs: 3.0.0
+  prettier: 1.17.0
 lockfileVersion: 5
 packages:
   /@mrmlnc/readdir-enhanced/2.2.1:
@@ -37,6 +43,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Jrb/x3HT4PTJp6a4avhmJCDEVrPdqLfl3e8GGMbpkGGdwAV5UGlIs4vVEfsHHfylZVOKZWpOqmqFH8CbfOZ6kg==
+  /argparse/1.0.10:
+    dependencies:
+      sprintf-js: 1.0.3
+    dev: false
+    resolution:
+      integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
   /arr-diff/4.0.0:
     dev: false
     engines:
@@ -106,6 +118,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-5T6P4xPgpp0YDFvSWwEZ4NoE3aM4QBQXDzmVbraCkFj8zHM+mba8SyqB5DbZWyR7mYHo6Y7BdQo3MoA4m0TeQg==
+  /big.js/5.2.2:
+    dev: false
+    resolution:
+      integrity: sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
   /brace-expansion/1.1.11:
     dependencies:
       balanced-match: 1.0.0
@@ -229,6 +245,23 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-f9LBi5QWzIW3I6e//uxZoLBlUt9kcp66qo0sSCxL6YZKc75R1c4MFCoe/LaZiBGmgujvQdxc5Bn3QhfyvK5Hsw==
+  /emojis-list/2.1.0:
+    dev: false
+    engines:
+      node: '>= 0.10'
+    resolution:
+      integrity: sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
+  /entities/1.1.2:
+    dev: false
+    resolution:
+      integrity: sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==
+  /esprima/4.0.1:
+    dev: false
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
   /expand-brackets/2.1.4:
     dependencies:
       debug: 2.6.9
@@ -313,6 +346,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-QpD60n8T6Jvn8zeZxrxaCr//DRk=
+  /front-matter/3.0.2:
+    dependencies:
+      js-yaml: 3.13.1
+    dev: false
+    resolution:
+      integrity: sha512-iBGZaWyzqgsrPGsqrXZP6N4hp5FzSKDi18nfAoYpgz3qK5sAwFv/ojmn3VS60SOgLvq6CtojNqy0y6ZNz05IzQ==
   /fs.realpath/1.0.0:
     dev: false
     resolution:
@@ -395,6 +434,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-lbC2P+whRmGab+V/51Yo1aOe/k8=
+  /highlight.js/9.15.6:
+    dev: false
+    resolution:
+      integrity: sha512-zozTAWM1D6sozHo8kqhfYgsac+B+q0PmsjXeyDrYIHHcBN0zTVT66+s2GW1GZv7DbyaROdLXKdabwS/WqPyIdQ==
   /ignore/4.0.6:
     dev: false
     engines:
@@ -544,6 +587,21 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
+  /js-yaml/3.13.1:
+    dependencies:
+      argparse: 1.0.10
+      esprima: 4.0.1
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
+  /json5/1.0.1:
+    dependencies:
+      minimist: 1.2.0
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==
   /kind-of/3.2.2:
     dependencies:
       is-buffer: 1.1.6
@@ -572,6 +630,26 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
+  /linkify-it/2.1.0:
+    dependencies:
+      uc.micro: 1.0.6
+    dev: false
+    resolution:
+      integrity: sha512-4REs8/062kV2DSHxNfq5183zrqXMl7WP0WzABH9IeJI+NLm429FgE1PDecltYfnOoFDFlZGh2T8PfZn0r+GTRg==
+  /loader-utils/1.2.3:
+    dependencies:
+      big.js: 5.2.2
+      emojis-list: 2.1.0
+      json5: 1.0.1
+    dev: false
+    engines:
+      node: '>=4.0.0'
+    resolution:
+      integrity: sha512-fkpz8ejdnEMG3s37wGL07iSBDg99O9D5yflE9RGNH3hRdx9SOwYfnGYdZOUIZitN8E+E2vkq3MUMYMvPYl5ZZA==
+  /lodash.flow/3.5.0:
+    dev: false
+    resolution:
+      integrity: sha1-h79AKSuM+D5OjOGjrkIJ4gBxZ1o=
   /map-cache/0.2.2:
     dev: false
     engines:
@@ -586,6 +664,36 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
+  /markdown-it-attrs/2.3.4:
+    dev: false
+    engines:
+      node: '>=6'
+    peerDependencies:
+      markdown-it: ^8.4.2
+    resolution:
+      integrity: sha512-DwGzugbveSUfRiUuxIC7svr8i+x3e3/eUJ7U7GRduNa2SO5Qyd2rZtjx6j0c3uS2xCIddZFcydEVlbg6C3s2vA==
+  /markdown-it-highlightjs/3.0.0:
+    dependencies:
+      highlight.js: 9.15.6
+      lodash.flow: 3.5.0
+    dev: false
+    resolution:
+      integrity: sha1-7T3WGcormOa/IRLRY79EQEM0AhA=
+  /markdown-it/8.4.2:
+    dependencies:
+      argparse: 1.0.10
+      entities: 1.1.2
+      linkify-it: 2.1.0
+      mdurl: 1.0.1
+      uc.micro: 1.0.6
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-GcRz3AWTqSUphY3vsUqQSFMbgR38a4Lh3GWlHRh/7MRwz8mcu9n2IO7HOh+bXHrR9kOPDl5RNCaEsrneb+xhHQ==
+  /mdurl/1.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
   /merge2/1.2.3:
     dev: false
     engines:
@@ -618,6 +726,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
+  /minimist/1.2.0:
+    dev: false
+    resolution:
+      integrity: sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
   /mixin-deep/1.3.1:
     dependencies:
       for-in: 1.0.2
@@ -723,6 +835,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=
+  /prettier/1.17.0:
+    dev: false
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-sXe5lSt2WQlCbydGETgfm1YBShgOX4HxQkFPvbxkcwgDvGDeqVau8h+12+lmSVlP3rHPz0oavfddSZg/q+Szjw==
   /regex-not/1.0.2:
     dependencies:
       extend-shallow: 3.0.2
@@ -849,6 +968,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-NzNVhJDYpwceVVii8/Hu6DKfD2G+NrQHlS/V/qgv763EYudVwEcMQNxd2lh+0VrUByXN/oJkl5grOhYWvQUYiw==
+  /sprintf-js/1.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
   /static-extend/0.1.2:
     dependencies:
       define-property: 0.2.5
@@ -886,6 +1009,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-FWtleNAtZ/Ki2qtqej2CXTOayOH9bHDQF+Q48VpWyDXjbYxA4Yz8iDB31zXOBUlOHHKidDbqGVrTUvQMPmBGBw==
+  /uc.micro/1.0.6:
+    dev: false
+    resolution:
+      integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==
   /union-value/1.0.0:
     dependencies:
       arr-union: 3.1.0
@@ -921,4 +1048,10 @@ packages:
     resolution:
       integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 specifiers:
+  front-matter: ^3.0.2
   globby: ^9.2.0
+  loader-utils: ^1.2.3
+  markdown-it: ^8.4.2
+  markdown-it-attrs: ^2.3.4
+  markdown-it-highlightjs: ^3.0.0
+  prettier: ^1.17.0
