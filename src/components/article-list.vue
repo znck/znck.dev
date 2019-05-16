@@ -58,5 +58,9 @@ export default {
   margin-top: -1.5rem;
   color: text-color('accent');
   @include font('ui');
+
+  @include dark-mode() {
+    color: text-color('today');
+  }
 }
 </style>

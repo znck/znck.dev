@@ -4,7 +4,7 @@ $colors: (
   'background-today': hsl(var(--hue-of-the-day, 0deg), 100%, 3%),
   'background-overlay': rgba(0, 0, 0, 0.4),
   
-  'contrast-today': hsla(calc(180deg - var(--hue-of-the-day, 0deg)), 100%, 50%, 0.87),
+  'contrast-today': hsla(calc(180deg + var(--hue-of-the-day, 0deg)), 100%, 60%, 0.87),
   'contrast-accent': rgba(235, 87, 87, 0.87),
   'contrast-light': rgba(255, 255, 255, 0.97),
   'contrast-dark': rgba(0, 0, 0, 0.7),

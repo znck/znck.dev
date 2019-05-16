@@ -82,6 +82,10 @@ export default {
   @include font('h3');
   color: text-color('accent');
   margin: 0;
+
+  @include dark-mode() {
+    color: text-color('today');
+  }
 }
 
 .title {
