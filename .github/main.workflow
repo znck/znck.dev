@@ -17,7 +17,7 @@ action "Install dependencies" {
 action "Build" {
   uses = "znck/pnpm@master"
   needs = ["Install dependencies"]
-  args = "build"
+  args = "run build"
 }
 
 action "maxheld83/ghpages" {
