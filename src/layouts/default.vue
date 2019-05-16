@@ -4,9 +4,14 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
+@import '@design';
+
 .layout {
-  width: 800px;
-  margin:0 auto;
+  margin: 0 auto;
+
+  @include above('desktop') {
+    width: 800px;
+  }
 }
 </style>

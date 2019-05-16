@@ -4,7 +4,7 @@ const fs = require('fs')
 const routes = []
 
 if (fs.existsSync('src/blog/routes.txt')) {
-  routes.push(...fs.readFileSync('src/blog/routes.txt', 'utf8').split('\n'))
+  // routes.push(...fs.readFileSync('src/blog/routes.txt', 'utf8').split('\n'))
 }
 
 /** @type {import('@vue/cli-service').ProjectOptions} */
@@ -14,6 +14,12 @@ module.exports = {
   chainWebpack(config) {
     config.resolve.alias.set('@design', path.resolve(__dirname, 'src/design/_index.scss'))
     config.resolve.extensions.add('.scss')
+    config.plugin('html').tap(([options]) => {
+      options.minify.removeAttributeQuotes = false
+      options.filename = 'index.html'
+
+      return [options]
+    })
   },
 
   pwa: {
@@ -36,6 +42,7 @@ module.exports = {
       useRenderEvent: false,
       headless: true,
       onlyProduction: true,
+      indexPath: 'index.html',
     },
   },
 }
