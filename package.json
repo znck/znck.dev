@@ -5,8 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "postbuild": "cp dist/index.html dist/200.html",
     "lint": "vue-cli-service lint",
+    "gh-pages": "vue-cli-service gh-pages",
+    "postbuild": "cp dist/index.html dist/200.html",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
@@ -44,6 +45,7 @@
     "sass-loader": "^7.1.0",
     "vue-auto-routing": "^0.3.0",
     "vue-cli-plugin-auto-routing": "^0.2.1",
+    "vue-cli-plugin-gh-pages": "^0.4.0",
     "vue-cli-plugin-prerender-spa": "^1.1.5",
     "vue-template-compiler": "^2.5.21"
   },

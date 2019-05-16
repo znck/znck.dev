@@ -31,6 +31,7 @@ devDependencies:
   sass-loader: 7.1.0
   vue-auto-routing: 0.3.0
   vue-cli-plugin-auto-routing: 0.2.1
+  vue-cli-plugin-gh-pages: 0.4.0
   vue-cli-plugin-prerender-spa: 1.1.5
   vue-template-compiler: 2.6.10
 lockfileVersion: 5
@@ -3577,6 +3578,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-BsXLz5sqX8OHcsh7CqBMztyXARmGQ3LWPtGjJi6DiJHq5C/qvi9P3OqgswKSDftbu8+IoI/QDTAm2fFnQ9SZSQ==
+  /email-addresses/3.0.3:
+    dev: true
+    resolution:
+      integrity: sha512-kUlSC06PVvvjlMRpNIl3kR1NRXLEe86VQ7N0bQeaCZb2g+InShCeHQp/JvyYNTugMnRN2NvJhHlc3q12MWbbpg==
   /emoji-regex/7.0.3:
     dev: true
     resolution:
@@ -4374,6 +4379,31 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-wcS5vuPglyXdsQa3XB4wH+LxiyY=
+  /filename-reserved-regex/1.0.0:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-5hz4BfDeHJhFZ9A4bcXfUO5a9+Q=
+  /filenamify-url/1.0.0:
+    dependencies:
+      filenamify: 1.2.1
+      humanize-url: 1.0.1
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-syvYExnvWGO3MHi+1Q9GpPeXX1A=
+  /filenamify/1.2.1:
+    dependencies:
+      filename-reserved-regex: 1.0.0
+      strip-outer: 1.0.1
+      trim-repeated: 1.0.0
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-qfL/0RxQO+0wABUCknI3jx8TZaU=
   /fileset/2.0.3:
     dependencies:
       glob: 7.1.4
@@ -4728,6 +4758,22 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Xv+OPmhNVprkyysSgmBOi6YhSfo=
+  /gh-pages/2.0.1:
+    dependencies:
+      async: 2.6.2
+      commander: 2.20.0
+      email-addresses: 3.0.3
+      filenamify-url: 1.0.0
+      fs-extra: 7.0.1
+      globby: 6.1.0
+      graceful-fs: 4.1.15
+      rimraf: 2.6.3
+    dev: true
+    engines:
+      node: '>=6'
+    hasBin: true
+    resolution:
+      integrity: sha512-uFlk3bukljeiWKQ2XvPfjcSi/ou7IfoDf2p+Fj672saLAr8bnOdFVqI/JSgrSgInKpCg5BksxEwGUl++dbg8Dg==
   /glob-base/0.3.0:
     dependencies:
       glob-parent: 2.0.0
@@ -5183,6 +5229,15 @@ packages:
       node: '>= 4.5.0'
     resolution:
       integrity: sha512-HPCTS1LW51bcyMYbxUIOO4HEOlQ1/1qRaFWcyxvwaqUS9TY88aoEuHUY33kuAh1YhVVaDQhLZsnPd+XNARWZlQ==
+  /humanize-url/1.0.1:
+    dependencies:
+      normalize-url: 1.9.1
+      strip-url-auth: 1.0.1
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-9KuZ4NKIF0yk4eUEB8VfuuRk7/8=
   /iconv-lite/0.4.23:
     dependencies:
       safer-buffer: 2.1.2
@@ -5592,6 +5647,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-lp1J4bszKfa7fwkIm+JleLLd1Go=
+  /is-git-url/1.0.0:
+    dev: true
+    engines:
+      node: '>=0.8'
+    resolution:
+      integrity: sha1-U/aEzRQyhbUsMkS05vKCU1J69ms=
   /is-glob/2.0.1:
     dependencies:
       is-extglob: 1.0.0
@@ -6718,6 +6779,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-vsECT4WxvZbL6kBbI8FK1kQ6b4E=
+  /lodash.isfunction/3.0.9:
+    dev: true
+    resolution:
+      integrity: sha512-AirXNj15uRIMMPihnkInB4i3NHeb4iBtNg9WRWuK2o31S+ePwwNmDPaTL3o7dTJ+VXNZim7rFs4rxN4YU1oUJw==
   /lodash.kebabcase/4.1.1:
     dev: true
     resolution:
@@ -7361,6 +7426,17 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=
+  /normalize-url/1.9.1:
+    dependencies:
+      object-assign: 4.1.1
+      prepend-http: 1.0.4
+      query-string: 4.3.4
+      sort-keys: 1.1.2
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-LMDWazHqIwNkWENuNiDYWVTGbDw=
   /normalize-url/2.0.1:
     dependencies:
       prepend-http: 2.0.0
@@ -8362,6 +8438,12 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
+  /prepend-http/1.0.4:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
   /prepend-http/2.0.0:
     dev: true
     engines:
@@ -8591,6 +8673,15 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
+  /query-string/4.3.4:
+    dependencies:
+      object-assign: 4.1.1
+      strict-uri-encode: 1.1.0
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-u7aTucqRXCMlFbIosaArYJBD2+s=
   /query-string/5.1.1:
     dependencies:
       decode-uri-component: 0.2.0
@@ -9451,6 +9542,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-V48klKZl8T6MzatbLlzzRNhMepEys9Y4oGFpypBFFn1gLI/QQ9HtLLyWJNbPlwGLelOVOEijUbTTJeLLI59jLw==
+  /sort-keys/1.1.2:
+    dependencies:
+      is-plain-obj: 1.1.0
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-RBttTTRnmPG05J6JIK37oOVD+a0=
   /sort-keys/2.0.0:
     dependencies:
       is-plain-obj: 1.1.0
@@ -9826,6 +9925,20 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-PFMZQukIwml8DsNEhYwobHygpgo=
+  /strip-outer/1.0.1:
+    dependencies:
+      escape-string-regexp: 1.0.5
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-k55yxKHwaXnpYGsOzg4Vl8+tDrWylxDEpknGjhTiZB8dFRU5rTo9CAzeycivxV3s+zlTKwrs6WxMxR95n26kwg==
+  /strip-url-auth/1.0.1:
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-IrD6OkE4WzO+PzMVUbu4N/oM164=
   /stylehacks/4.0.3:
     dependencies:
       browserslist: 4.6.0
@@ -10150,6 +10263,14 @@ packages:
     dev: true
     resolution:
       integrity: sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=
+  /trim-repeated/1.0.0:
+    dependencies:
+      escape-string-regexp: 1.0.5
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-42RqLqTokTEr9+rObPsFOAvAHCE=
   /trim-right/1.0.1:
     dev: true
     engines:
@@ -10452,6 +10573,16 @@ packages:
     dev: true
     resolution:
       integrity: sha512-iV91GY9tmjNKGwy5HbQe5NwGfSFW9ElYED7xtBWq/Dv5Ug6gMsQAzsqFnR5vkKsVAwpcKVYoeapnrA2wOiSBLw==
+  /vue-cli-plugin-gh-pages/0.4.0:
+    dependencies:
+      '@vue/cli-shared-utils': 3.7.0
+      email-addresses: 3.0.3
+      gh-pages: 2.0.1
+      is-git-url: 1.0.0
+      lodash.isfunction: 3.0.9
+    dev: true
+    resolution:
+      integrity: sha512-MkndY376r8aPzZqsxy28vfqFCowm3JDwTAJOLUwAMS1I5GA3JUPfVo+epd6DYyJBYqh54P7NF43VAoDtgoxjcw==
   /vue-cli-plugin-prerender-spa/1.1.5:
     dependencies:
       prerender-spa-plugin: 3.4.0
@@ -11185,6 +11316,7 @@ specifiers:
   vue-auto-routing: ^0.3.0
   vue-cli-plugin-auto-routing: ^0.2.1
   vue-cli-plugin-blog: 'link:plugins/vue-cli-plugin-blog'
+  vue-cli-plugin-gh-pages: ^0.4.0
   vue-cli-plugin-prerender-spa: ^1.1.5
   vue-ga: ^1.1.0
   vue-head: ^2.1.1
