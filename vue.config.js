@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 
-const routes = ['/']
+const routes = []
 
 if (fs.existsSync('src/blog/routes.txt')) {
   routes.push(...fs.readFileSync('src/blog/routes.txt', 'utf8').split('\n'))
