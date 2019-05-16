@@ -9,19 +9,19 @@ action "Is master branch?" {
 }
 
 action "Install dependencies" {
-  uses = "znck/pnpm"
+  uses = "znck/pnpm@master"
   needs = ["Is master branch?"]
   args = "install --frozen-lockfile"
 }
 
 action "Build" {
-  uses = "znck/pnpm"
+  uses = "znck/pnpm@master"
   needs = ["Install dependencies"]
   args = "build"
 }
 
 action "maxheld83/ghpages" {
-  uses = "maxheld83/ghpages"
+  uses = "maxheld83/ghpages@v0.2.1"
   needs = ["Build"]
   env = {
     BUILD_DIR = "dist"
