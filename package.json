@@ -7,7 +7,7 @@
     "build": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint",
     "gh-pages": "vue-cli-service gh-pages",
-    "postbuild": "cp dist/index.html dist/200.html",
+    "postbuild": "cp dist/app.html dist/200.html",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },

@@ -1,10 +1,15 @@
 const path = require('path')
 const fs = require('fs')
 
-const routes = []
+const routes = ['/']
 
 if (fs.existsSync('src/blog/routes.txt')) {
-  // routes.push(...fs.readFileSync('src/blog/routes.txt', 'utf8').split('\n'))
+  routes.push(
+    ...fs
+      .readFileSync('src/blog/routes.txt', 'utf8')
+      .split('\n')
+      .map(url => url + '/')
+  )
 }
 
 /** @type {import('@vue/cli-service').ProjectOptions} */
@@ -16,7 +21,6 @@ module.exports = {
     config.resolve.extensions.add('.scss')
     config.plugin('html').tap(([options]) => {
       if (options.minify) options.minify.removeAttributeQuotes = false
-      options.filename = 'index.html'
 
       return [options]
     })
@@ -42,7 +46,6 @@ module.exports = {
       useRenderEvent: false,
       headless: true,
       onlyProduction: true,
-      indexPath: 'index.html',
     },
   },
 }

@@ -31,19 +31,9 @@ Vue.mixin({
       frontmatter.value = this.$options.frontmatter
     }
   },
-  destroyed() {
-    if (this.$options.frontmatter) {
-      frontmatter.value = {}
-    }
-  },
   activated() {
     if (this.$options.frontmatter) {
       frontmatter.value = this.$options.frontmatter
-    }
-  },
-  deactivated() {
-    if (this.$options.frontmatter) {
-      frontmatter.value = {}
     }
   },
   computed: {
