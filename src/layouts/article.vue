@@ -60,18 +60,16 @@ export default {
         rel: 'stylesheet',
         type: 'text/css',
         href:
-          'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-dark.min.css',
-        media: '(prefers-color-scheme: dark)',
-        id: 'highlight-dark',
+          'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-light.min.css',
+        id: 'highlight-light',
       },
       {
         rel: 'stylesheet',
         type: 'text/css',
         href:
-          'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-light.min.css',
-        media:
-          '(prefers-color-scheme: light), (prefers-color-scheme: no-preference)',
-        id: 'highlight-light',
+          'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-dark.min.css',
+        media: '(prefers-color-scheme: dark)',
+        id: 'highlight-dark',
       },
     ],
   },
