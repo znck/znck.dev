@@ -1,11 +1,15 @@
 /* TEAM */      
 Your title: Rahul Kadyan.
-Site: http://znck.me
-Twitter: @rahulkadyan7.   
+Site: http://znck.dev
+Twitter: @znck0   
 Location: Bangalore, India.
 
-/* SITE */
-Last update: 2017/01/11 
+
+							
+/* THANKS */	
+Name: Suwardhan Ahirrao (@suwardhan)
+
+/* SITE */ 
 Standards: HTML5, CSS3
-Components: Bootstrap
-Software: Sereno (http://sereno.in)
+Components: Vue
+Software: Vue CLI
