@@ -49,29 +49,54 @@
 import ResizeObserver from 'resize-observer-polyfill'
 
 export default {
-  head: {
-    title() {
-      return {
-        inner: this.$currentPageMeta.title,
-      }
-    },
-    link: [
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href:
-          'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-light.min.css',
-        id: 'highlight-light',
+  head() {
+    let { title, cover, excerpt: description } = this.$currentPageMeta
+
+    description = (description || '').replace(/<\/?p>/g, '')
+
+    return {
+      title: {
+        inner: title,
       },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href:
-          'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-dark.min.css',
-        media: '(prefers-color-scheme: dark)',
-        id: 'highlight-dark',
-      },
-    ],
+      link: [
+        {
+          rel: 'stylesheet',
+          type: 'text/css',
+          href:
+            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-light.min.css',
+          id: 'highlight-light',
+        },
+        {
+          rel: 'stylesheet',
+          type: 'text/css',
+          href:
+            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-dark.min.css',
+          media: '(prefers-color-scheme: dark)',
+          id: 'highlight-dark',
+        },
+      ],
+      meta: [
+        { name: 'description', content: description },
+        { name: 'twitter:card', value: 'summary_large_image' },
+        { name: 'twitter:title', content: title },
+        {
+          name: 'twitter:image',
+          content: cover && `https://znck.dev${cover}`,
+        },
+        { property: 'og:title', content: title },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:site_name', content: 'Rahul Kadyan | znck' },
+        {
+          property: 'og:url',
+          content: `https://znck.dev${this.$route.fullPath}`,
+        },
+        {
+          property: 'og:image',
+          content: cover && `https://znck.dev${cover}`,
+        },
+        { property: 'og:description', content: description },
+      ],
+    }
   },
   data() {
     return {
@@ -304,6 +329,10 @@ export default {
     + .sep {
       border-color: transparent;
     }
+
+    @media print {
+      margin-top: 0;
+    }
   }
 }
 
@@ -320,6 +349,10 @@ export default {
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.4);
+
+  @media print {
+    background-color: transparent;
+  }
 }
 
 .title {
@@ -367,5 +400,9 @@ export default {
 
 .content {
   margin-top: 2.5rem;
+}
+
+iframe {
+  max-width: 100%;
 }
 </style>

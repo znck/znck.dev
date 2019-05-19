@@ -15,6 +15,7 @@
     "loader-utils": "^1.2.3",
     "markdown-it": "^8.4.2",
     "markdown-it-attrs": "^2.3.4",
+    "markdown-it-external-links": "^0.0.6",
     "markdown-it-highlightjs": "^3.0.0",
     "prettier": "^1.17.0"
   }

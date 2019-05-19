@@ -3,6 +3,24 @@ import ArticleList from '@/components/article-list'
 
 export default {
   components: { ArticleList },
+  head: {
+    meta: [
+      { property: 'og:type', content: 'profile' },
+      { property: 'og:title', content: "znck's blog" },
+      { property: 'og:url', content: 'https://znck.dev/' },
+      { property: 'og:image', content: 'https://znck.dev/social-image.png' },
+      { property: 'profile:first_name', content: 'Rahul' },
+      { property: 'profile:last_name', content: 'Kadyan' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '@znck0' },
+      { name: 'twitter:title', content: "znck's blog" },
+      {
+        name: 'twitter:description',
+        content: 'I write about JavaScript, Vue, and Design.',
+      },
+      { name: 'twitter:image', content: 'https://znck.dev/social-image.png' },
+    ],
+  },
 }
 </script>
 
