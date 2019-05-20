@@ -184,6 +184,7 @@ export default {
       width: 100%;
       height: 1%;
       object-fit: contain;
+      overflow: hidden;
     }
 
     figcaption {
