@@ -96,7 +96,7 @@ export default [
     meta: {
       title: 'Running an awesome conference',
       excerpt:
-        '<p>I love attending conferences. For inspiring talks and like-minded people, for making new friends and meeting old friends, or for learning new things, conferences have been influential in my journey as a developer.  I like many conferences, but I want to be in every vue conference. If you been to a vue Conference, then you know that there’s something different about it. The environment is so welcoming and friendly. Sad! I have to travel across the world to be in one. I longed to see a vue conference in India, my home, for a long time now.</p>\n',
+        '<p>I love attending conferences. For inspiring talks, for making new friends and meeting old friends, or for learning new things, conferences have been influential in my journey as a developer.  I like many conferences, but I want to be in every vue conference. If you been to a vue Conference, then you know that there’s something different about it. The environment is so welcoming and friendly. Sad! I have to travel across the world to be in one. I have longed to see a vue conference in India, my home, for a long time now.</p>\n',
       published: '2019-05-20T00:00:00.000Z',
     },
   },

@@ -8,11 +8,13 @@ cover: ./cover.jpg
 
 # Running an awesome conference
 
-I love attending conferences. For inspiring talks and like-minded people, for making new friends and meeting old friends, or for learning new things, conferences have been influential in my journey as a developer.  I like many conferences, but I want to be in every vue conference. If you been to a vue Conference, then you know that there’s something different about it. The environment is so welcoming and friendly. Sad! I have to travel across the world to be in one. I longed to see a vue conference in India, my home, for a long time now.
+I love attending conferences. For inspiring talks, for making new friends and meeting old friends, or for learning new things, conferences have been influential in my journey as a developer.  I like many conferences, but I want to be in every vue conference. If you been to a vue Conference, then you know that there’s something different about it. The environment is so welcoming and friendly. Sad! I have to travel across the world to be in one. I have longed to see a vue conference in India, my home, for a long time now.
 
 <!-- more -->
 
-I was done waiting! _Let’s start a vue conference_, I asked Swapnil. He was in. We were ready. But we didn’t have the slightest clue how to? So. we started looking at other conferences. ReactFoo, JSFoo, VueConf, Connect.Tech and VueFes. These conferences are enormous. A lot goes in running them, and that scared me. It was not doable for me, for Swapnil, for a team of two who has been struggling to keep the vue meetup running. The dream would have ended there if Sid wasn’t there.
+I decided, I was done waiting! _Let’s start a vue conference_, I urged Swapnil. He was in. We were ready. But we didn’t have the slightest clue how to. So, we started looking at other conferences. ReactFoo, JSFoo, VueConf, Connect.Tech and VueFes. These conferences are enormous. A lot goes into running them, and that scared me. It was not doable for me, for Swapnil, for a team of two who has been struggling to keep the vue meetup running.
+
+The dream would have ended there if Sid wasn’t there.
 
 One evening, Sid dropped something in my Twitter inbox:
 
@@ -32,7 +34,7 @@ That random CFP has been very phenomenal for me. Who knew one random message, on
 >
 > [https://tinyconf.in](https://tinyconf.in) (not announced yet)
 
-It was a different kind of CFP — “here’s a topic, you’re speaking on it.” Being on the first day of a week-long vacation, I was a little reluctant to do it. But if you know me, you know that I love taking vue to react conferences. I was in.
+It was a different kind of CFP — “here’s a topic, you’re speaking on it.” If you know me, you know that I love taking vue to react conferences. I was in.
 
 [TinyConf](https://tinyconf.in) was excellent, I had a great time. I got a valuable lesson out of it: conferences can be small.
 
@@ -40,7 +42,7 @@ A small conference! A hope! A possibility!
 
 <!-- Planning -->
 
-The dream is back on! We decided to have a small conference, 30 people. Next, we needed speakers, a catchy name, and a venue. Everything we’re already doing for the meetups but this time for the conference.
+The dream was back on! We decided to have a small conference, 30 people. Next, we needed speakers, a catchy name, and a venue. Everything we’re already doing for meetups but this time for the conference.
 
 We started with the name to get the domain. Don’t we all like to buy a domain the moment idea strikes!
 
@@ -70,15 +72,15 @@ Maybe! It can be a meetup theme, though.
 
 +1
 
-Nothing against AwesomeConf. Even if I had something, it would have been impossible to convince Swapnil otherwise. That guy is crazy for awesome lists.
+Nothing against AwesomeConf. Even if I had something, it would have been impossible to convince Swapnil otherwise. That guy is crazy for awesome lists!
 
-Got a name! Lucky us, google came up with .dev TLD around then. But we have to wait for the public release. And hope nobody buys awesomeconf.dev during pre-release days. The days were hard, and the nights were long. Finally, we got it - [awesomeconf.dev](https://awesomeconf.dev)
+Got a name! Lucky us, google came up with .dev TLD around then. But we had to wait for the public release. And hope nobody awesomeconf.dev during pre-release days. The days were hard, and the nights were long. Finally, we got it - [awesomeconf.dev](https://awesomeconf.dev)
 
 <div style="display: flex; align-items: center; justify-content: center;">
  <iframe border=0 frameborder=0 height=216 width=360 src="https://twitframe.com/show?url=https://twitter.com/VueBLR/status/1101209663834533888"></iframe>
 </div>
 
-Next immediate step, build a website. We needed a theme, an identity for the conference. A theme which represents the parts we enjoy most: conversations. For us, the introvert developers, the things you work on intrigue to know more about you and your work. Also, if you’re a speaker, it’s easier to start a conversation as people already know what you're working on.  We decided, let's make everyone speak!
+Next immediate step, build a website. We needed a theme, an identity for the conference. A theme which represents the part we enjoy most: conversations. If you’re a speaker, it’s easier to start a conversation as people already know what you're working on.  We decided, let's make everyone speak!
 
 And we got a unique conference:
 
@@ -94,7 +96,7 @@ Swapnil immediately put out a website and CFP for the AwesomeConf.
  <iframe border=0 frameborder=0 height=680 width=360 src="https://twitframe.com/show?url=https://twitter.com/VueBLR/status/1102617517292322816"></iframe>
 </div>
 
-Next step was to find a venue. We had the regular meetup venue as a backup. We wanted better, something like a hotel conference room! So, we started looking for sponsors.
+Next step was to find a venue. We had the regular meetup venue as a backup. But we wanted better, something like a hotel conference room! So, we started looking for sponsors.
 
 What do we have for sponsors?
 
@@ -105,7 +107,7 @@ What do we have for sponsors?
 
 It was unconventional, far from regular conferences. We reached out to a few companies. Swapnil could lock-in a deal with [Meesho](https://meesho.com), and we got a fantastic hotel venue.
 
-We’re targeting to have 30 people and had all arrangements. But, we didn’t realize it’s impossible to have 30 sessions. In fact, we could not accommodate more than 15 talks.
+We were targeting to have 30 people and had all arrangements. But, we didn’t realize it would be impossible to have 30 sessions. In fact, we could not accommodate more than 15 talks.
 
 We decided to go with 15 talks. For other 15 available seats, we decided to allow +1 with every speaker.
 
@@ -115,7 +117,7 @@ We decided to go with 15 talks. For other 15 available seats, we decided to allo
 >
 > If you plan to bring +1 to the conference, please confirm by replying to this thread.
 
-A day before the conference. We double checked the venue, perfected the schedule, everything was perfect. Well, except the one most important thing:
+A day before the conference. We double checked the venue, perfected the schedule. Everything was perfect. Well, except the one most important thing:
 
 <div style="display: flex; align-items: center; justify-content: center;">
  <iframe border=0 frameborder=0 height=264 width=360 src="https://twitframe.com/show?url=https://twitter.com/znck0/status/1124453377792864257"></iframe>
@@ -127,7 +129,7 @@ I self-appointed myself, the master of ceremonies. A good MC must throw in bad p
 
 ![AwesomeConf: No one shall be a passive attendee](./ac-standee.jpg){large}
 
-The conference day, we were excited, terrified, nervous, and every other thing. All attendees were there on time, which rarely happened in our meetup. But there’s always someone who’s stuck in Bangalore traffic, but this one was our first speaker. It’s a different story, you should read [the article](https://dev.to/gokatz/first-time-speaker-fts-with-few-tips-45po) by Gokul.
+The conference day, we were excited, terrified, nervous, and every other thing. All attendees were there on time, which had rarely happened in our meetups. But there’s always someone who’s stuck in Bangalore traffic, but this one was our first speaker. It’s a different story, you should read [the article](https://dev.to/gokatz/first-time-speaker-fts-with-few-tips-45po) by Gokul.
 
 _**Enjoy the Vue**_ - Swapnil completed his welcome address and the conference begins. We had 5 sessions of 3 talks each, filled with breaks for discussions and a great lunch. Some people enjoyed talks, others enjoyed conversations but most enjoyed the lunch.
 
