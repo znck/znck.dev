@@ -15,7 +15,7 @@ So one more pull requests got rejected for having a comment. "Good code is self-
 
 What is good code? My code runs fast, is it "good code"? My code requires low memory, is it "good code"? It is difficult to tell, "what is good code?" without stating, "why do we write code?".
 
-In my opinion, we write code to tell other people what do we want a computer to do. We write for people. The preface of the book "Structure and Interpretation of Computer Programs," by Abelson, Sussman, and Sussman, captures the intent appropriately:
+In my opinion, we write code to tell other people what do we want a computer to do. We write for people. The preface of the book [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-7.html), by Abelson, Sussman, and Sussman, captures the intent appropriately:
 
 > Programs must be written for people to read, and only incidentally for machines to execute.
 
@@ -23,7 +23,7 @@ Code is for people to read. In an ideal world, with a perfect language, a code i
 
 Every once in a while, we have to complicate parts of some code to make the product better. Machines are happy with this complicated code, so are our customers. However, humans (a.k.a. developers) are troubled. Every time, a developer visits this piece of complicated code, she wonders why did we do this?
 
-Indeed the "why" is missing from any code. As I said, "we write code to tell other people what do we want a computer to do." Yes! "what"; The code says "what" (or more precisely "how"). We need something to share the "why," and comments fill that gap. The comments are part of any language syntax to convey, why this way? Alternatively, any other information the code cannot capture.
+Indeed the "why" is missing from any code. As I said before, we write code to tell other people what do we want a computer to do. Yes! "what"; The code says "what" (or more precisely "how"). We need something to share the "why" behind the code, and comments fill that gap. The comments are part of any language syntax to convey, why this way? Alternatively, any other information the code cannot capture.
 
 ## Comments tell Why
 
@@ -299,6 +299,6 @@ I hate dead-code comments; they are easy to add but difficult to remove. You alw
 
 Please remove dead-code comments from vue, send a pull request to vue.
 
-## Comment! Comments! Comment
+## Comment! Comment! Comment
 
-Comments are compelling tools in programming languages. Use them to complement your code, answer questions which are unanswered by the code. Do not use comments to create more questions.
+Comments are compelling tools in programming languages; Use them to complement your code, to answer questions which are unanswered by the code. Do not use comments to create more questions.
