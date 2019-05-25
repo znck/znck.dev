@@ -3,6 +3,7 @@ published: 2019-05-27
 tags:
   - programming
   - coding style
+cover: ./cover.jpg
 ---
 
 # Comments in Code
