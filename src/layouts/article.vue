@@ -42,6 +42,21 @@
     <div :class="$style.content">
       <router-view />
     </div>
+
+    <hr :class="$style.sep" />
+
+    <footer :class="$style.footer">
+      <p>
+        Like this article?
+        <a :href="tweetIt" target="_blank" rel="noopener noreferrer"
+          >share on twitter</a
+        >. If have any questions or suggestions, write me a
+        <a :href="mailTo" target="_blank" rel="noopener noreferrer">mail</a> or
+        or a
+        <a :href="DMIt" target="_blank" rel="noopener noreferrer">twitter DM</a
+        >.
+      </p>
+    </footer>
   </article>
 </template>
 
@@ -121,6 +136,29 @@ export default {
     delete this.observer
   },
   computed: {
+    mailTo() {
+      const title = encodeURIComponent(this.$currentPageMeta.title)
+
+      return `mailto:rahulkdn+blog@gmail.com?subject=${title}`
+    },
+    tweetIt() {
+      const title = encodeURIComponent(
+        `Checkout @znck0's take on "${
+          this.$currentPageMeta.title
+        }". https://znck.dev${this.$route.fullPath}`
+      )
+
+      return `http://twitter.com/intent/tweet?text=${title}`
+    },
+    DMIt() {
+      const title = encodeURIComponent(
+        `Checkout @znck0's take on "${
+          this.$currentPageMeta.title
+        }". https://znck.dev${this.$route.fullPath}`
+      )
+
+      return `https://twitter.com/messages/compose?recipient_id=102900547&text=${title}`
+    },
     published() {
       const date = new Date(this.$currentPageMeta.published)
 
@@ -217,6 +255,10 @@ export default {
     }
   }
 
+  iframe {
+    max-width: 100%;
+  }
+
   figure[data-type='code'] {
     margin: 1rem 0;
     display: flex;
@@ -250,6 +292,11 @@ export default {
     border: none;
     margin: 0;
     margin-bottom: -6px;
+  }
+
+
+  p code {
+    color: text-color('accent');
   }
 
   pre > code {
@@ -403,7 +450,7 @@ export default {
   margin-top: 2.5rem;
 }
 
-iframe {
-  max-width: 100%;
+.footer {
+  opacity: 0.5;
 }
 </style>

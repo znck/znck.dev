@@ -74,7 +74,7 @@ Maybe! It can be a meetup theme, though.
 
 Nothing against AwesomeConf. Even if I had something, it would have been impossible to convince Swapnil otherwise. That guy is crazy for awesome lists!
 
-Got a name! Lucky us, google came up with .dev TLD around then. But we had to wait for the public release. And hope nobody awesomeconf.dev during pre-release days. The days were hard, and the nights were long. Finally, we got it - [awesomeconf.dev](https://awesomeconf.dev)
+Got a name! Lucky us, google came up with .dev TLD around then. But we had to wait for the public release and hope nobody gets awesomeconf.dev during pre-release days. The days were hard, and the nights were long. Finally, we got it - [awesomeconf.dev](https://awesomeconf.dev)
 
 <div style="display: flex; align-items: center; justify-content: center;">
  <iframe border=0 frameborder=0 height=216 width=360 src="https://twitframe.com/show?url=https://twitter.com/VueBLR/status/1101209663834533888"></iframe>

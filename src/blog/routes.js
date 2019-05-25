@@ -100,4 +100,19 @@ export default [
       published: '2019-05-20T00:00:00.000Z',
     },
   },
+
+  {
+    name: '@blog/2019-comments-in-code',
+    path: 'blog/2019-comments-in-code',
+    component: () =>
+      import('@/blog/articles/2019-comments-in-code/readme.md')
+        .then(m => m.default)
+        .then(component => ({ ...component, layout: 'article' })),
+    meta: {
+      title: 'Comments in Code',
+      excerpt:
+        '<p>So one more pull requests got rejected for having a comment. &quot;Good code is self-documenting.&quot;, said the reviewer.</p>\n',
+      published: '2019-05-27T00:00:00.000Z',
+    },
+  },
 ]

@@ -5,3 +5,4 @@
 /blog/2018-type-vue
 /blog/2018-type-vuex
 /blog/2019-awesomeconf
+/blog/2019-comments-in-code
