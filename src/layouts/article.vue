@@ -51,7 +51,7 @@
         <a :href="tweetIt" target="_blank" rel="noopener noreferrer"
           >share on twitter</a
         >. If you have any questions or suggestions, write me a
-        <a :href="mailTo" target="_blank" rel="noopener noreferrer">mail</a> or
+        <a :href="mailTo" target="_blank" rel="noopener noreferrer">mail</a>
         or a
         <a :href="DMIt" target="_blank" rel="noopener noreferrer">twitter DM</a
         >.
