@@ -50,7 +50,7 @@
         Like this article?
         <a :href="tweetIt" target="_blank" rel="noopener noreferrer"
           >share on twitter</a
-        >. If have any questions or suggestions, write me a
+        >. If you have any questions or suggestions, write me a
         <a :href="mailTo" target="_blank" rel="noopener noreferrer">mail</a> or
         or a
         <a :href="DMIt" target="_blank" rel="noopener noreferrer">twitter DM</a
@@ -65,9 +65,11 @@ import ResizeObserver from 'resize-observer-polyfill'
 
 export default {
   head() {
-    let { title, cover, excerpt: description } = this.$currentPageMeta
+    let { title, cover, image, excerpt: description } = this.$currentPageMeta
+    const base = process.env.VUE_APP_BASE_URL
 
     description = (description || '').replace(/<\/?p>/g, '')
+    if (!cover) cover = image
 
     return {
       title: {
@@ -96,18 +98,18 @@ export default {
         { name: 'twitter:title', content: title },
         {
           name: 'twitter:image',
-          content: cover && `https://znck.dev${cover}`,
+          content: cover && `${base}${cover}`,
         },
         { property: 'og:title', content: title },
         { property: 'og:type', content: 'article' },
         { property: 'og:site_name', content: 'Rahul Kadyan | znck' },
         {
           property: 'og:url',
-          content: `https://znck.dev${this.$route.fullPath}`,
+          content: `${base}${this.$route.fullPath}`,
         },
         {
           property: 'og:image',
-          content: cover && `https://znck.dev${cover}`,
+          content: cover && `${base}${cover}`,
         },
         { property: 'og:description', content: description },
       ],
@@ -143,18 +145,18 @@ export default {
     },
     tweetIt() {
       const title = encodeURIComponent(
-        `Checkout @znck0's take on "${
-          this.$currentPageMeta.title
-        }". https://znck.dev${this.$route.fullPath}`
+        `Checkout @znck0's take on "${this.$currentPageMeta.title}". ${
+          process.env.VUE_APP_BASE_URL
+        }${this.$route.fullPath}`
       )
 
       return `http://twitter.com/intent/tweet?text=${title}`
     },
     DMIt() {
       const title = encodeURIComponent(
-        `Checkout @znck0's take on "${
-          this.$currentPageMeta.title
-        }". https://znck.dev${this.$route.fullPath}`
+        `Checkout @znck0's take on "${this.$currentPageMeta.title}". ${
+          process.env.VUE_APP_BASE_URL
+        }${this.$route.fullPath}`
       )
 
       return `https://twitter.com/messages/compose?recipient_id=102900547&text=${title}`
@@ -293,7 +295,6 @@ export default {
     margin: 0;
     margin-bottom: -6px;
   }
-
 
   p code {
     color: text-color('accent');

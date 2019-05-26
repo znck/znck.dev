@@ -15,6 +15,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 WebFontLoader.load({
+  classes: false,
+  events: false,
   google: {
     families: Object.entries(tokens)
       .filter(([key]) => key.startsWith('fontFace'))

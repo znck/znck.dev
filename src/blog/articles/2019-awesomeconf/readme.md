@@ -174,8 +174,8 @@ Thanks a lot for being part of the AwesomeConf.
 
 Thanks [Sid](https://twitter.com/@siddharthkp) for inspiring us and introducing to the idea of [a tiny conference](https://sid.studio/post/tinyconf).
 Thanks [Zainab](https://twitter.com/@zainabbawa) for helping and mentoring us.
-Thanks [Suwardhan](https://instagram.com/suwardhan.design) for all the graphics and design work.
 Thanks [Meesho](https://twitter.com/@MeeshoApp) for supporting us.
+Thanks [Suwardhan](https://instagram.com/suwardhan.design).
 
 [Swap](https://twitter.com/@SwapAgarwal) & [Znck](https://twitter.com/@znck0) would be back soon with next iteration of AwesomeConf.
 

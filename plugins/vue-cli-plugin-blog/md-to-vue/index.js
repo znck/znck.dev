@@ -81,6 +81,10 @@ const parse = (module.exports.parse = function(source, { options, extend } = {})
  * @param {Record<string, any>} attributes
  */
 function addFileImports(attributes) {
+  if (typeof attributes.image === 'string' && isLocalFile(attributes.image)) {
+    attributes.image = new File(attributes.image)
+  }
+
   if (typeof attributes.cover === 'string' && isLocalFile(attributes.cover)) {
     attributes.cover = new File(attributes.cover)
   } else if (

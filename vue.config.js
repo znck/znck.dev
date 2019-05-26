@@ -12,9 +12,13 @@ if (fs.existsSync('src/blog/routes.txt')) {
   )
 }
 
+process.env.VUE_APP_BASE_URL = process.env.BASE_URL || 'https://znck.dev'
+
 /** @type {import('@vue/cli-service').ProjectOptions} */
 module.exports = {
   lintOnSave: false,
+
+  integrity: true,
 
   chainWebpack(config) {
     config.resolve.alias.set('@design', path.resolve(__dirname, 'src/design/_index.scss'))

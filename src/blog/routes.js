@@ -111,8 +111,8 @@ export default [
     meta: {
       title: 'Comments in Code',
       excerpt:
-        '<p>So one more pull requests got rejected for having a comment. &quot;Good code is self-documenting.&quot;, said the reviewer.</p>\n',
-      published: '2019-05-27T00:00:00.000Z',
+        '<p>So one more pull request got rejected for having a comment; &quot;Good code is self-documenting.&quot;, said the reviewer.</p>\n',
+      published: '2019-05-26T00:00:00.000Z',
     },
   },
 ]
