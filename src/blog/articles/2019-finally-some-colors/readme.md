@@ -4,6 +4,7 @@ tags:
   - design
   - color
   - eli5
+image: ./dark.png
 ---
 
 # Finally some colors in my life
@@ -32,7 +33,7 @@ I see the number 128 as a hundred, a twenty, and an eight. We can break it furth
 
 $$1 xx 100 + 2 xx 10 + 8 xx 1 = 128$$
 
-We now hundred is ten times ten.
+We know hundred is ten times ten.
 
 $$1 xx (10 xx (10 xx 1)) + 2 xx (10 xx 1) + 8 xx 1 = 128$$
 
@@ -68,7 +69,7 @@ This number is relatively more comfortable to use as I can reply to my designer 
 
 Why do we need three eighties for one color?
 
-Yay! I can talk about Color Theory. I feel that I am a designer now.
+Yay! I can talk about Color Theory. I feel like a designer now.
 
 Screens use lights to display colors. However, we don't need lights in all colors. A small set of colored lights can be mixed to create various colors. One such set is lights of red, green and blue color. So the three eighties in the hex code of grey are amounts of red, green, and blue colors, and it is also the reason that hex code is also called RGB code.
 
@@ -82,7 +83,7 @@ Fortunately, there is a way: a color notation called HSL, which stands for hue, 
 
 - Hue is the color.  
 - Saturation is the amount of color.  
-- Lightness is the intensity of light.  
+- Lightness is the amount of light.  
 
 Imagine if we paint a rainbow on a circular disc such that every radial line is in a different color, gradually changing from red to yellow, yellow to green, green to cyan, cyan to blue, and blue to red. On such a circle, the angle between any radial line with the red radial can be used to choose a color. We have red at 0deg, yellow at 60deg, green at 120deg, cyan at 180deg, blue at 240deg, again red at 360deg, and every other angle in between these would give a color which is a mixture of the two. Now, I know what could be the hue of the color I want.
 
@@ -98,31 +99,29 @@ Let's pick the grey color:
 - We don't want any color, so we set it to 0%
 - The correct lightness value would be around 50%, in between black and white.
 
-Hence, the grey color in HSL would be `hsl(0deg, 0%, 50.25%)` which is equivalint to `#808080`.
-
-So, grey is not a color. However, now I know how to make colors. I am adding colors to my blog.
+Hence, the grey color in HSL would be `hsl(0deg, 0%, 50.25%)` which is equivalint to `#808080`. Now I know how to make colors. I am adding colors to my blog.
 
 ## The dark theme
 
-I have been redesigning my blog for a while. With some help from Suwardhan, I finally got the new design out.
+I have been redesigning my blog for a while. With some help from [Suwardhan](https://suwardhan.com), I finally got the new design out.
 
-![Screenshot: Dark Theme on znck.dev](./dark.png)
+![Screenshot: Default Theme on znck.dev](./default.png)
 
 It looks clean and smooth, and I love it.
 
-However, the brightness hurt my eyes. I am more of a dark mode person. I have to build a dark theme for me, precisely the opportunity I have been looking to throw in lots of colors.
+However, the brightness hurt my eyes. I am more of a dark mode person. I have to build a dark theme for me, and it is, precisely the opportunity I have been looking to throw in lots of colors.
 
 In the default theme, I have a light yellowish background, black text, and bright orange highlights. So, I need three colors for the dark mode too: a text color, a background color, and a highlight color.
 
-I choose white for text to get maximum contrast as the background would be dark. For background, I need some color with very low lightness. I pick: `hsl(0deg, 100%, 3%)`. I notice that text contrast remains the same, no matter what is the hue which allows me to throw in lots of colors. I wonder, if somehow I can pass a random hue value to the background color, I can get as many colors I want.
+I choose white for text to get maximum contrast as the background would be dark. For background, I need some color with very low lightness. I pick: `hsl(0deg, 100%, 3%)`. I notice that text contrast remains the same, no matter what is the hue, which allows me to throw in lots of colors. I wonder, if somehow I can pass a random hue value to the background color, I can get as many colors as I want.
 
 ## The color of the day
 
-"Wonder! every day there's a new color.", I talk to myself. I want it, I want it, I want it. How do I get a new hue every day? Can I use date? I think I can. There are 365 days in a year, and 360 degrees of hues, I can use the day number as the value of the hue. I call it the hue of the day.
+"Wonder! every day there's a new color.", I want it, I want it, I want it. How do I get a new hue every day? Can I use date? I think I can. There are 365 days in a year, and 360 degrees of hues (hue is circular so 361deg is equal to 1deg), I can use the day number as the value of the hue. I call it the hue of the day.
 
-So, the background becomes <span title="The --hue-of-the-day is a CSS custom property. Google MDN CSS Custom Properties to know more.">`hsl(var(--hue-of-the-day), 100%, 3%)`</span>. I need one more color for highlights. I choose to use the contrasting hue of the day. It is amazing how easy it is to get contrasting color in HSL, subtract the hue value from 180deg.
+So, the background becomes <span title="The --hue-of-the-day is a CSS custom property. Google MDN CSS Custom Properties to know more.">`hsl(var(--hue-of-the-day), 100%, 3%)`</span>. I need one more color for highlights. I choose to use the contrasting hue of the day. It is amazing how easy it is to get contrasting color in HSL, subtract the hue value from 180deg. So, I have white for text, `hsl(var(--hue-of-the-day), 100%, 3%)` for background, and <span title="The calc is a CSS builtin function. Google MDN CSS calc to know more.">`hsl(calc(180deg - var(--hue-of-the-day)), 100%, 60%)`</span> for highlights.
 
-So, I have white for text, `hsl(var(--hue-of-the-day), 100%, 3%)` for background, and <span title="The calc is a CSS builtin function. Google MDN CSS calc to know more.">`hsl(calc(180deg - var(--hue-of-the-day)), 100%, 60%)`</span> for highlights.
+![Screenshot: Dark Theme on znck.dev](./dark.png)
 
 I use the following JavaScript snippet to set the hue of the day:
 
@@ -140,4 +139,6 @@ function hue() {
 document.body.style['--hue-of-the-day'] = hue()
 ```
 
-That's all folks, I get a dark mode full of colors. Now, I got 723 colors: 360 backgrounds and 360 text colors of the dark theme, the background color of the light theme, the text color of the light theme, and "I got a red shirt!".
+That's all folks.
+
+I have a dark mode full of colors. Now, I got 723 colors: 360 backgrounds and 360 text colors of the dark theme, the background color of the light theme, the text color of the light theme, and "I got a red shirt!".

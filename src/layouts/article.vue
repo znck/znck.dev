@@ -211,6 +211,10 @@ export default {
     @include font('p.article');
   }
 
+  p {
+    overflow-x: auto;
+  }
+
   figure[data-type='image'] {
     margin: 1rem 0;
     display: flex;
