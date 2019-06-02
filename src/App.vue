@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-    <router-link to="/" class="home-btn font-ui" exact-active-class="hidden">
-      Home
-    </router-link>
+    <router-link to="/" class="home-btn font-ui" exact-active-class="hidden">Home</router-link>
 
-    <router-view />
+    <router-view/>
   </div>
 </template>
 

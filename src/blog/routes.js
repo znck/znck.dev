@@ -115,4 +115,19 @@ export default [
       published: '2019-05-26T00:00:00.000Z',
     },
   },
+
+  {
+    name: '@blog/2019-finally-some-colors',
+    path: 'blog/2019-finally-some-colors',
+    component: () =>
+      import('@/blog/articles/2019-finally-some-colors/readme.md')
+        .then(m => m.default)
+        .then(component => ({ ...component, layout: 'article' })),
+    meta: {
+      title: 'Finally some colors in my life',
+      excerpt:
+        '<p>&quot;I got a red shirt!&quot;, I scream, every time my friends jab that my wardrobe is grey and dull. They always call me out, &quot;Get some colors, dude!&quot;.</p>\n',
+      published: '2019-06-03T00:00:00.000Z',
+    },
+  },
 ]

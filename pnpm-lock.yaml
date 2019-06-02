@@ -80,6 +80,7 @@ importers:
       markdown-it-attrs: 2.4.0_markdown-it@8.4.2
       markdown-it-external-links: 0.0.6
       markdown-it-highlightjs: 3.0.0
+      markdown-it-math: 4.1.1
       prettier: 1.17.1
     specifiers:
       front-matter: ^3.0.2
@@ -89,6 +90,7 @@ importers:
       markdown-it-attrs: ^2.3.4
       markdown-it-external-links: ^0.0.6
       markdown-it-highlightjs: ^3.0.0
+      markdown-it-math: ^4.1.1
       prettier: ^1.17.0
 lockfileVersion: 5
 packages:
@@ -1653,6 +1655,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=
+  /ascii2mathml/0.6.2:
+    dependencies:
+      minimist: 1.2.0
+    dev: false
+    hasBin: true
+    optional: true
+    resolution:
+      integrity: sha512-tkPONh2Y7ZpuGQw6AiRnExX/CSYf5C2T/rF+UMJq5n0Us7+QjL8VY5ZE16xo9wcXhdqPkl/F7lzEzU9HX0YKng==
   /asn1.js/4.10.1:
     dependencies:
       bn.js: 4.11.8
@@ -6963,6 +6973,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-7T3WGcormOa/IRLRY79EQEM0AhA=
+  /markdown-it-math/4.1.1:
+    dev: false
+    optionalDependencies:
+      ascii2mathml: 0.6.2
+    resolution:
+      integrity: sha512-LQ0hREgMgN4tNcy2PGyw1XypjmKJjc+ZzATMuDIVD/Bagr5SGL198uHleVdiFDrNdXpqVmL4N1KD1GYyftMakQ==
   /markdown-it/8.4.2:
     dependencies:
       argparse: 1.0.10

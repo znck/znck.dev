@@ -25,6 +25,7 @@ module.exports =
         externalRel: 'noopener noreferrer',
         ...links,
       })
+      .use(require('markdown-it-math'))
 
     return md
   }
