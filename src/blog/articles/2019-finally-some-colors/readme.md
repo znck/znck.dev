@@ -55,7 +55,7 @@ $$8  xx  10^0   +   2  xx  10^1   +   1  xx  10^2   =   128$$
 
 Phew!
 
-However, we got one little problem computers do not understand decimal numbers. They use base2 number system (also called binary number system) which means only two digits: 0 and 1. The decimal number 28 is 1000 0000 in the binary number system.
+However, we got one little problem computers do not understand decimal numbers. They use base2 number system (also called binary number system) which means only two digits: 0 and 1. The decimal number 128 is 1000 0000 in the binary number system.
 
 Similar to decimal number above, we can write 1000 0000 in power notation:
 
