@@ -125,25 +125,27 @@ a {
 }
 
 .home-btn {
-  display: none;
+  @include font('ui');
+  letter-spacing: 0.1ch;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  position: absolute;
+  padding: 0 0.5rem;
+  border-radius: radius('small');
+  top: 1rem;
+  right: 1rem;
+  margin: -1px 0 0 -1px;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  background-color: background-color('overlay');
+  color: text-color('light');
 
   @include above('page') {
-    @include font('ui');
-    letter-spacing: 0.1ch;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-flex;
     position: fixed;
-    padding: 0 0.5rem;
-    border-radius: radius('small');
-    top: 1rem;
+    right: unset;
     left: 1rem;
-    margin: -1px 0 0 -1px;
-    height: 1.5rem;
-    align-items: center;
-    justify-content: center;
-    background-color: background-color('overlay');
-    color: text-color('light');
   }
 
   .icon-home {
