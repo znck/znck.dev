@@ -26,7 +26,6 @@ importers:
       babel-jest: 23.6.0_babel-core@7.0.0-bridge.0
       eslint: 5.16.0
       eslint-plugin-vue: 5.2.3_eslint@5.16.0
-      is-ci: 2.0.0
       lint-staged: 8.2.1
       prerender-spa-plugin: 3.4.0
       sass: 1.22.12
@@ -51,7 +50,6 @@ importers:
       core-js: ^2.6.5
       eslint: ^5.16.0
       eslint-plugin-vue: ^5.0.0
-      is-ci: ^2.0.0
       lint-staged: ^8.1.5
       prerender-spa-plugin: ^3.2.1
       register-service-worker: ^1.6.2
@@ -2556,10 +2554,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-vsGdkwSCDpWmP80ncATX7iea5DWQemg1UgCW5J8tqjU3lYw4FBYuj89J0CTVomA7BEfvSZd84GmHko+MxFQU2A==
-  /ci-info/2.0.0:
-    dev: true
-    resolution:
-      integrity: sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==
   /cipher-base/1.0.4:
     dependencies:
       inherits: 2.0.4
@@ -5642,13 +5636,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-s6tfsaQaQi3JNciBH6shVqEDvhGut0SUXr31ag8Pd8BBbVVlcGfWhpPmEOoM6RJ5TFhbypvf5yyRw/VXW1IiWg==
-  /is-ci/2.0.0:
-    dependencies:
-      ci-info: 2.0.0
-    dev: true
-    hasBin: true
-    resolution:
-      integrity: sha512-YfJT7rkpQB0updsdHLGWrvhBJfcfzNNawYDNIyQXJz0IViGf75O8EBPKSdvw2rF+LGCsX4FZ8tcr3b19LcZq4w==
   /is-color-stop/1.1.0:
     dependencies:
       css-color-names: 0.0.4
