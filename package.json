@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "prebuild": "[[ $CI = true ]] && npx pnpm@3 install -r --store=node_modules/.pnpm-store || echo skiping pnpm install",
+    "install:pnpm": "npx pnpm@3 install -r --store=node_modules/.pnpm-store",
+    "prebuild": "npx is-ci && npm run install:pnpm || echo 'skipping pnpm install'",
     "build": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint",
     "predeploy": "npm run build",
