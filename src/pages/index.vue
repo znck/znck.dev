@@ -70,8 +70,8 @@ export default {
           rel="noopener noreferrer"
           >vue ecosystem</a
         >
-        and yeah...
-        <strong>Core Team Member</strong>!
+        and also a
+        <strong>core team member</strong>.
       </p>
 
       <p>
