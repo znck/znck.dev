@@ -7,3 +7,4 @@
 /blog/2019-awesomeconf
 /blog/2019-comments-in-code
 /blog/2019-finally-some-colors
+/blog/2019-simple-hard-things

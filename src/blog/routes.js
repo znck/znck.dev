@@ -130,4 +130,18 @@ export default [
       published: '2019-06-03T00:00:00.000Z',
     },
   },
+
+  {
+    name: '@blog/2019-simple-hard-things',
+    path: 'blog/2019-simple-hard-things',
+    component: () =>
+      import('@/blog/articles/2019-simple-hard-things/readme.md')
+        .then(m => m.default)
+        .then(component => ({ ...component, layout: 'article' })),
+    meta: {
+      title: 'Simple Hard Things',
+      excerpt: '<p>Simple things are easy; everyone says so. However, in reality, it may not be so.</p>\n',
+      published: '2019-06-10T00:00:00.000Z',
+    },
+  },
 ]
