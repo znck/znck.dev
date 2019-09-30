@@ -79,7 +79,8 @@ importers:
       markdown-it-external-links: 0.0.6
       markdown-it-highlightjs: 3.0.0
       markdown-it-math: 4.1.1
-      prettier: 1.17.1
+      prettier: 1.18.2
+      rss: 1.2.2
     specifiers:
       front-matter: ^3.0.2
       globby: ^9.2.0
@@ -90,6 +91,7 @@ importers:
       markdown-it-highlightjs: ^3.0.0
       markdown-it-math: ^4.1.1
       prettier: ^1.17.0
+      rss: ^1.2.2
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.5.5:
@@ -943,15 +945,15 @@ packages:
     dependencies:
       '@types/events': 3.0.0
       '@types/minimatch': 3.0.3
-      '@types/node': 12.7.5
+      '@types/node': 12.7.8
     resolution:
       integrity: sha512-1Bh06cbWJUHMC97acuD6UMG29nMt0Aqz1vF3guLfG+kHHJhy3AyohZFFxYk2f7Q1SQIrNwvncxAE0N/9s70F2w==
   /@types/minimatch/3.0.3:
     resolution:
       integrity: sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
-  /@types/node/12.7.5:
+  /@types/node/12.7.8:
     resolution:
-      integrity: sha512-9fq4jZVhPNW8r+UYKnxF1e2HkDWOWKM5bC2/7c9wPV835I0aOrVbS/Hw/pWPk2uKrNXQqg9Z959Kz+IYDd5p3w==
+      integrity: sha512-FMdVn84tJJdV+xe+53sYiZS4R5yn1mAIxfj+DVoNiQjTYz1+OYmjwEZr1ev9nU0axXwda0QDbYl06QHanRVH3A==
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -5114,13 +5116,8 @@ packages:
     resolution:
       integrity: sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
   /highlight.js/9.15.10:
-    dev: true
     resolution:
       integrity: sha512-RoV7OkQm0T3os3Dd2VHLNMoaoDVx77Wygln3n9l5YV172XonWG6rgQD3XnF/BuFFZw9A0TJgmMSO8FEWQgvcXw==
-  /highlight.js/9.15.8:
-    dev: false
-    resolution:
-      integrity: sha512-RrapkKQWwE+wKdF73VsOa2RQdIoO3mxwJ4P8mhbI6KYJUraUHRKM5w5zQQKXNk0xNL4UVRdulV9SBJcmzJNzVA==
   /hmac-drbg/1.0.1:
     dependencies:
       hash.js: 1.1.7
@@ -6643,12 +6640,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
-  /linkify-it/2.1.0:
+  /linkify-it/2.2.0:
     dependencies:
       uc.micro: 1.0.6
     dev: false
     resolution:
-      integrity: sha512-4REs8/062kV2DSHxNfq5183zrqXMl7WP0WzABH9IeJI+NLm429FgE1PDecltYfnOoFDFlZGh2T8PfZn0r+GTRg==
+      integrity: sha512-GnAl/knGn+i1U/wjBz3akz2stz+HrHLsxMwHQGofCDfPvlf+gDKN58UtfmUquTY4/MXeE2x7k19KQmeoZi94Iw==
   /lint-staged/8.2.1:
     dependencies:
       chalk: 2.4.2
@@ -7014,7 +7011,7 @@ packages:
       integrity: sha1-lQMlj85MgQEOoV/nF2nWOhNG2AE=
   /markdown-it-highlightjs/3.0.0:
     dependencies:
-      highlight.js: 9.15.8
+      highlight.js: 9.15.10
       lodash.flow: 3.5.0
     dev: false
     resolution:
@@ -7029,7 +7026,7 @@ packages:
     dependencies:
       argparse: 1.0.10
       entities: 1.1.2
-      linkify-it: 2.1.0
+      linkify-it: 2.2.0
       mdurl: 1.0.1
       uc.micro: 1.0.6
     dev: false
@@ -7181,6 +7178,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-115fLhvZVqWwHPbClyntxEVfVDfl9DLLTuJvq3g2O/Oxi8AiNouAHvDSzHS0viUJc+V5vm3eq91Xwqn9dp4jRA==
+  /mime-db/1.25.0:
+    dev: false
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha1-wY29fHOl2/b0SgJNwNFloeexw5I=
   /mime-db/1.40.0:
     dev: true
     engines:
@@ -7193,6 +7196,14 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-B5gxBI+2K431XW8C2rcc/lhppbuji67nf9v39eH8pkWoZDxnAL0PxdpH32KYRScniF8qDHBDlI+ipgg5WrCUYw==
+  /mime-types/2.1.13:
+    dependencies:
+      mime-db: 1.25.0
+    dev: false
+    engines:
+      node: '>= 0.6'
+    resolution:
+      integrity: sha1-4HqqnGxrmnyjASxpADrSWjnpKog=
   /mime-types/2.1.24:
     dependencies:
       mime-db: 1.40.0
@@ -8650,15 +8661,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-kn/GU6SMRYPxUakNXhpP0EedT/KmaPzr0H5lIsDogrykbaxOpOfAFfk5XA7DZrJyMAv1wlMV3CPcZruGXVVUZw==
-  /prettier/1.17.1:
-    dev: false
-    engines:
-      node: '>=4'
-    hasBin: true
-    resolution:
-      integrity: sha512-TzGRNvuUSmPgwivDqkZ9tM/qTGW9hqDKWOE9YHiyQdixlKbv7kvEqsmDPrcHJTKwthU774TQwZXVtaQ/mMsvjg==
   /prettier/1.18.2:
-    dev: true
     engines:
       node: '>=4'
     hasBin: true
@@ -9340,6 +9343,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ii4iagi25WusVoiC4B4lq7pbXfAp3D9v5CwfkY33vffw2+pkDjY1D8GaN7spsxvCSx8dkPqOZCEZyfxcmJG2IA==
+  /rss/1.2.2:
+    dependencies:
+      mime-types: 2.1.13
+      xml: 1.0.1
+    dev: false
+    resolution:
+      integrity: sha1-UKFpiHYTgTOnT5oF0r3I240nqSE=
   /rsvp/3.6.2:
     dev: true
     engines:
@@ -11214,6 +11224,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-A5CUptxDsvxKJEU3yO6DuWBSJz/qizqzJKOMIfUJHETbBw/sFaDxgd6fxm1ewUaM0jZ444Fc5vC5ROYurg/4Pw==
+  /xml/1.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=
   /xtend/4.0.2:
     dev: true
     engines:

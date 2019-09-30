@@ -3,10 +3,12 @@ const path = require('path')
 const globby = require('globby')
 const prettier = require('prettier')
 const { parse } = require('../md-to-vue')
+const generateRSS = require('./feed-rss')
 
 /**
  * @typedef BlogPluginOptions
  *
+ * @property {string} baseUrl - Website baseUrl.
  * @property {string} articlesDir - Path to load articles from.
  * @property {string} collectionsDir - Path to load collections from.
  */
@@ -35,23 +37,29 @@ module.exports = class BlogPlugin {
   apply(compiler) {
     const to = 'src/blog/routes.js'
     const generate = () => {
-      const { articlesDir, collectionsDir } = this.options
+      const { articlesDir, collectionsDir, baseUrl = 'https://znck.dev' } = this.options
       const articles = globby.sync(`${articlesDir}/**/*.md`)
       const collections = globby.sync(`${collectionsDir}/**/*.md`)
+      const articlesMeta = articles.map(article => ({
+        ...this._findArticleMeta(path.resolve(process.cwd(), article)),
+        id: article,
+        name: `@blog/${article.substr(articlesDir.length + 1).replace(/(?:\/readme)?\.md$/i, '')}`,
+        url: `${baseUrl}/blog/${article.substr(articlesDir.length + 1).replace(/(?:\/readme)?\.md$/i, '')}`,
+      }))
       const code = prettier.format(
         'export default [' +
-          articles
+          articlesMeta
             .map(
-              article =>
+              ({ id, name, url, ...article }) =>
                 ` 
                 {
-                  name: '@blog/${article.substr(articlesDir.length + 1).replace(/(?:\/readme)?\.md$/i, '')}',
-                  path: 'blog/${article.substr(articlesDir.length + 1).replace(/(?:\/readme)?\.md$/i, '')}',
-                  component: () => import('${article.replace(
+                  name: '@blog/${name}',
+                  path: 'blog/${url}',
+                  component: () => import('${id.replace(
                     /^src/,
                     '@'
                   )}').then(m => m.default).then(component => ({ ...component, layout: 'article' })),
-                  meta: ${JSON.stringify(this._findArticleMeta(path.resolve(process.cwd(), article)))}
+                  meta: ${JSON.stringify(article)}
                 },
               `
             )
@@ -69,6 +77,23 @@ module.exports = class BlogPlugin {
             .join('\n') +
           ']',
         { parser: 'babel', ...getPrettierConfig() }
+      )
+
+      fs.writeFileSync(
+        'public/rss.xml',
+        generateRSS(
+          {
+            title: `znck's blog`,
+            copyright: '© 2018 - current | Rahul Kadyan',
+            description: 'I write about JavaScript, Vue, Design and anything.',
+            feed_url: 'https://znck.dev/rss.xml',
+            image_url: 'https://znck.dev/social-image.png',
+            language: 'en',
+            managingEditor: 'Rahul Kadyan',
+            site_url: 'https://znck.dev',
+          },
+          articlesMeta
+        )
       )
 
       if (fs.existsSync(to) && fs.readFileSync(to, 'utf8').trim() === code.trim()) {
@@ -97,6 +122,7 @@ module.exports = class BlogPlugin {
         title: attributes.title,
         excerpt: attributes.excerpt || `<p>${attributes.description}</p>`,
         published: attributes.published,
+        tags: attributes.tags || [],
       }
     } catch (error) {
       return error

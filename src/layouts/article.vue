@@ -1,12 +1,19 @@
 <template>
-  <article :class="$style.layout" :style="{ '--article-cover-inset': height + 'px' }">
+  <article
+    :class="$style.layout"
+    :style="{ '--article-cover-inset': height + 'px' }"
+  >
     <div v-if="$currentPageMeta.cover" :class="$style.cover">
-      <img :src="cover.src" :style="cover.style" :class="$style.coverImg">
-      <div :class="$style.overlay"/>
+      <img :src="cover.src" :style="cover.style" :class="$style.coverImg" />
+      <div :class="$style.overlay" />
     </div>
 
     <header :class="$style.header" ref="header">
-      <ul v-if="$currentPageMeta.tags" class="font-alternate" :class="$style.tags">
+      <ul
+        v-if="$currentPageMeta.tags"
+        class="font-alternate"
+        :class="$style.tags"
+      >
         <li v-for="tag in $currentPageMeta.tags" :key="tag">#{{ tag }}</li>
       </ul>
 
@@ -30,31 +37,24 @@
       </p>
     </header>
 
-    <hr :class="$style.sep">
+    <hr :class="$style.sep" />
 
     <div :class="$style.content">
-      <router-view/>
+      <router-view />
     </div>
 
-    <hr :class="$style.sep">
+    <hr :class="$style.sep" />
 
     <footer :class="$style.footer">
       <p>
         Like this article?
-        <a
-          :href="tweetIt"
-          target="_blank"
-          rel="noopener noreferrer"
-        >share on twitter</a>. <br/>
-        
-        If you have any questions or suggestions, write me a
-        <a
-          :href="mailTo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >mail</a>
+        <a :href="tweetIt" target="_blank" rel="noopener noreferrer"
+          >share on twitter</a
+        >. <br />If you have any questions or suggestions, write me a
+        <a :href="mailTo" target="_blank" rel="noopener noreferrer">mail</a>
         or a
-        <a :href="DMIt" target="_blank" rel="noopener noreferrer">twitter DM</a>.
+        <a :href="DMIt" target="_blank" rel="noopener noreferrer">twitter DM</a
+        >.
       </p>
     </footer>
   </article>
@@ -145,18 +145,14 @@ export default {
     },
     tweetIt() {
       const title = encodeURIComponent(
-        `Checkout @znck0's take on "${this.$currentPageMeta.title}". ${
-          process.env.VUE_APP_BASE_URL
-        }${this.$route.fullPath}`
+        `Checkout @znck0's take on "${this.$currentPageMeta.title}". ${process.env.VUE_APP_BASE_URL}${this.$route.fullPath}`
       )
 
       return `http://twitter.com/intent/tweet?text=${title}`
     },
     DMIt() {
       const title = encodeURIComponent(
-        `Checkout @znck0's take on "${this.$currentPageMeta.title}". ${
-          process.env.VUE_APP_BASE_URL
-        }${this.$route.fullPath}`
+        `Got a question/suggestion on "${this.$currentPageMeta.title}". ${process.env.VUE_APP_BASE_URL}${this.$route.fullPath}`
       )
 
       return `https://twitter.com/messages/compose?recipient_id=102900547&text=${title}`
