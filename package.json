@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "install:pnpm": "npx pnpm@3 install -r --store=node_modules/.pnpm-store",
-    "prebuild": "npx is-ci && npm run install:pnpm || echo 'skipping pnpm install'",
+    "prebuild": "npm run install:pnpm || echo 'skipping pnpm install'",
     "build": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint",
     "predeploy": "npm run build",
