@@ -44,7 +44,7 @@ module.exports = class BlogPlugin {
         ...this._findArticleMeta(path.resolve(process.cwd(), article)),
         id: article,
         name: `@blog/${article.substr(articlesDir.length + 1).replace(/(?:\/readme)?\.md$/i, '')}`,
-        url: `${baseUrl}/blog/${article.substr(articlesDir.length + 1).replace(/(?:\/readme)?\.md$/i, '')}`,
+        url: `/blog/${article.substr(articlesDir.length + 1).replace(/(?:\/readme)?\.md$/i, '')}`,
       }))
       const code = prettier.format(
         'export default [' +
