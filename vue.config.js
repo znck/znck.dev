@@ -12,7 +12,7 @@ if (fs.existsSync('src/blog/routes.txt')) {
   )
 }
 
-process.env.VUE_APP_BASE_URL = process.env.BASE_URL || 'https://znck.dev'
+process.env.VUE_APP_BASE_URL = process.env.BASE_URL || ''
 
 /** @type {import('@vue/cli-service').ProjectOptions} */
 module.exports = {
