@@ -10,6 +10,7 @@ import './registerServiceWorker'
 
 import tokens from '@design'
 
+
 if (process.env.NODE_ENV === 'production') {
   ga(router, 'UA-38503997-1')
 }
@@ -24,6 +25,7 @@ WebFontLoader.load({
   },
 })
 
+Vue.config.devtools = true
 Vue.config.productionTip = false
 Vue.use(VueHead)
 const frontmatter = Vue.observable({ value: {} })

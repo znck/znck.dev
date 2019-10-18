@@ -8,11 +8,6 @@
     "prebuild": "npm run install:pnpm || echo 'skipping pnpm install'",
     "build": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint",
-    "predeploy": "npm run build",
-    "deploy": "vue-cli-service gh-pages",
-    "prenetlify": "BASE_URL=https://point-break.netlify.com npm run build",
-    "netlify": "netlify deploy --prod",
-    "postbuild": "cp dist/app.html dist/200.html",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
