@@ -53,8 +53,8 @@ module.exports = class BlogPlugin {
               ({ id, name, url, ...article }) =>
                 ` 
                 {
-                  name: '@blog/${name}',
-                  path: 'blog/${url}',
+                  name: '${name}',
+                  path: '${url}',
                   component: () => import('${id.replace(
                     /^src/,
                     '@'

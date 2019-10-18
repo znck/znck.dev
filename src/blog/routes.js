@@ -1,7 +1,7 @@
 export default [
   {
-    name: '@blog/@blog/2017-accessible-components',
-    path: 'blog/https://znck.dev/blog/2017-accessible-components',
+    name: '@blog/2017-accessible-components',
+    path: 'https://znck.dev/blog/2017-accessible-components',
     component: () =>
       import('@/blog/articles/2017-accessible-components/readme.md')
         .then(m => m.default)
@@ -16,8 +16,8 @@ export default [
   },
 
   {
-    name: '@blog/@blog/2017-fiddle-with-vue',
-    path: 'blog/https://znck.dev/blog/2017-fiddle-with-vue',
+    name: '@blog/2017-fiddle-with-vue',
+    path: 'https://znck.dev/blog/2017-fiddle-with-vue',
     component: () =>
       import('@/blog/articles/2017-fiddle-with-vue/readme.md')
         .then(m => m.default)
@@ -32,8 +32,8 @@ export default [
   },
 
   {
-    name: '@blog/@blog/2017-first-day',
-    path: 'blog/https://znck.dev/blog/2017-first-day',
+    name: '@blog/2017-first-day',
+    path: 'https://znck.dev/blog/2017-first-day',
     component: () =>
       import('@/blog/articles/2017-first-day/readme.md')
         .then(m => m.default)
@@ -47,8 +47,8 @@ export default [
   },
 
   {
-    name: '@blog/@blog/2017-provide-inject',
-    path: 'blog/https://znck.dev/blog/2017-provide-inject',
+    name: '@blog/2017-provide-inject',
+    path: 'https://znck.dev/blog/2017-provide-inject',
     component: () =>
       import('@/blog/articles/2017-provide-inject/readme.md')
         .then(m => m.default)
@@ -63,8 +63,8 @@ export default [
   },
 
   {
-    name: '@blog/@blog/2018-type-vue',
-    path: 'blog/https://znck.dev/blog/2018-type-vue',
+    name: '@blog/2018-type-vue',
+    path: 'https://znck.dev/blog/2018-type-vue',
     component: () =>
       import('@/blog/articles/2018-type-vue/readme.md')
         .then(m => m.default)
@@ -78,8 +78,8 @@ export default [
   },
 
   {
-    name: '@blog/@blog/2018-type-vuex',
-    path: 'blog/https://znck.dev/blog/2018-type-vuex',
+    name: '@blog/2018-type-vuex',
+    path: 'https://znck.dev/blog/2018-type-vuex',
     component: () =>
       import('@/blog/articles/2018-type-vuex/readme.md')
         .then(m => m.default)
@@ -93,8 +93,8 @@ export default [
   },
 
   {
-    name: '@blog/@blog/2019-awesomeconf',
-    path: 'blog/https://znck.dev/blog/2019-awesomeconf',
+    name: '@blog/2019-awesomeconf',
+    path: 'https://znck.dev/blog/2019-awesomeconf',
     component: () =>
       import('@/blog/articles/2019-awesomeconf/readme.md')
         .then(m => m.default)
@@ -109,8 +109,8 @@ export default [
   },
 
   {
-    name: '@blog/@blog/2019-comments-in-code',
-    path: 'blog/https://znck.dev/blog/2019-comments-in-code',
+    name: '@blog/2019-comments-in-code',
+    path: 'https://znck.dev/blog/2019-comments-in-code',
     component: () =>
       import('@/blog/articles/2019-comments-in-code/readme.md')
         .then(m => m.default)
@@ -125,8 +125,8 @@ export default [
   },
 
   {
-    name: '@blog/@blog/2019-finally-some-colors',
-    path: 'blog/https://znck.dev/blog/2019-finally-some-colors',
+    name: '@blog/2019-finally-some-colors',
+    path: 'https://znck.dev/blog/2019-finally-some-colors',
     component: () =>
       import('@/blog/articles/2019-finally-some-colors/readme.md')
         .then(m => m.default)
@@ -141,8 +141,8 @@ export default [
   },
 
   {
-    name: '@blog/@blog/2019-simple-hard-things',
-    path: 'blog/https://znck.dev/blog/2019-simple-hard-things',
+    name: '@blog/2019-simple-hard-things',
+    path: 'https://znck.dev/blog/2019-simple-hard-things',
     component: () =>
       import('@/blog/articles/2019-simple-hard-things/readme.md')
         .then(m => m.default)
