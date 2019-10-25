@@ -30,26 +30,12 @@ export default {
       <div class="hey font-alternate">Hey!</div>
 
       <h1 class="title">
-        I am Rahul Kadyan.
+        I am
+        <a href="https://znck.me" target="_blank">Rahul Kadyan</a>.
       </h1>
 
       <p>
-        I am building
-        <i>design language system</i> at
-        <a href="https://myntra.com" target="_blank" rel="noopener noreferrer"
-          >Myntra</a
-        >. Prior that, I was making way for
-        <a
-          href="http://kotlinlang.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          >kotlin</a
-        >
-        into Myntra's stack.
-      </p>
-
-      <p>
-        Running
+        I am running
         <a
           href="https://awesomeconf.dev"
           target="_blank"
@@ -63,20 +49,18 @@ export default {
           rel="noopener noreferrer"
           >a vue meetup</a
         >
-        in Bangalore. Also, I contribute to
+        in Bangalore. And I contribute to the
         <a
           href="https://github.com/znck"
           target="_blank"
           rel="noopener noreferrer"
           >vue ecosystem</a
         >
-        and also a
+        as a
         <strong>core team member</strong>.
       </p>
 
-      <p>
-        I speak at conferences, and meetups. Here is something for you to read:
-      </p>
+      <p>Here is something for you to read:</p>
     </header>
 
     <hr class="sep" />
