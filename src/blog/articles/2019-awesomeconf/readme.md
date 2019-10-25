@@ -8,7 +8,7 @@ cover: ./cover.jpg
 
 # Running an awesome conference
 
-I love attending conferences. For inspiring talks, for making new friends and meeting old friends, or for learning new things, conferences have been influential in my journey as a developer.  I like many conferences, but I want to be in every vue conference. If you been to a vue Conference, then you know that there’s something different about it. The environment is so welcoming and friendly. Sad! I have to travel across the world to be in one. I have longed to see a vue conference in India, my home, for a long time now.
+I love attending conferences. For inspiring talks, for making new friends and meeting old friends, or for learning new things, conferences have been influential in my journey as a developer. I like many conferences, but I want to be in every vue conference. If you been to a vue Conference, then you know that there’s something different about it. The environment is so welcoming and friendly. Sad! I have to travel across the world to be in one. I have longed to see a vue conference in India, my home, for a long time now.
 
 <!-- more -->
 
@@ -76,11 +76,13 @@ Nothing against AwesomeConf. Even if I had something, it would have been impossi
 
 Got a name! Lucky us, google came up with .dev TLD around then. But we had to wait for the public release and hope nobody gets awesomeconf.dev during pre-release days. The days were hard, and the nights were long. Finally, we got it - [awesomeconf.dev](https://awesomeconf.dev)
 
-<div style="display: flex; align-items: center; justify-content: center;">
- <iframe border=0 frameborder=0 height=216 width=360 src="https://twitframe.com/show?url=https://twitter.com/VueBLR/status/1101209663834533888"></iframe>
-</div>
+<Tweet id="1101209663834533888">
 
-Next immediate step, build a website. We needed a theme, an identity for the conference. A theme which represents the part we enjoy most: conversations. If you’re a speaker, it’s easier to start a conversation as people already know what you're working on.  We decided, let's make everyone speak!
+Something exciting is brewing! 🤫</p>&mdash; Vue Bangalore (@VueBLR)
+
+</Tweet>
+
+Next immediate step, build a website. We needed a theme, an identity for the conference. A theme which represents the part we enjoy most: conversations. If you’re a speaker, it’s easier to start a conversation as people already know what you're working on. We decided, let's make everyone speak!
 
 And we got a unique conference:
 
@@ -92,9 +94,17 @@ And we got a unique conference:
 
 Swapnil immediately put out a website and CFP for the AwesomeConf.
 
-<div style="display: flex; align-items: center; justify-content: center;">
- <iframe border=0 frameborder=0 height=680 width=360 src="https://twitframe.com/show?url=https://twitter.com/VueBLR/status/1102617517292322816"></iframe>
-</div>
+<Tweet id="1102617517292322816">
+
+The wait is over! Announcing an Awesome Vue.js Conference... 🎉
+
+- The best of Vue.js devs at one place. 😎
+- No one shall be a passive attendee, i.e. every participant has to speak. 🤓
+- Talks can range anywhere from 5 to 20 minutes. 💪
+
+May 4, Bangalore
+
+</Tweet>
 
 Next step was to find a venue. We had the regular meetup venue as a backup. But we wanted better, something like a hotel conference room! So, we started looking for sponsors.
 
@@ -119,9 +129,13 @@ We decided to go with 15 talks. For other 15 available seats, we decided to allo
 
 A day before the conference. We double checked the venue, perfected the schedule. Everything was perfect. Well, except the one most important thing:
 
-<div style="display: flex; align-items: center; justify-content: center;">
- <iframe border=0 frameborder=0 height=264 width=360 src="https://twitframe.com/show?url=https://twitter.com/znck0/status/1124453377792864257"></iframe>
-</div>
+<Tweet id="1124453377792864257">
+
+All set for [@AnAwesomeConf](https://twitter.com/AnAwesomeConf)!
+
+Just one thing left! 🤪 DM me your best [@vuejs](https://twitter.com/vuejs) puns [#AnAwesomeConf](https://twitter.com/hashtag/AnAwesomeConf) [#Vue](https://twitter.com/hashtag/Vue) [#VueBLR](https://twitter.com/hashtag/VueBLR) &mdash; Rahul Kadyan (@znck0)
+
+</Tweet>
 
 I self-appointed myself, the master of ceremonies. A good MC must throw in bad puns. Chris and Ben shared their most prized collection of vue puns. Now, I was ready. I was hosting a conference. I was a **conference organizer**.
 
@@ -145,11 +159,13 @@ _**Enjoy the Vue**_ - Swapnil completed his welcome address and the conference b
 
 I wanted to host a vue conference where every attendee is actively involved, and we did it. I am pleased with AwesomeConf, and so are the attendees. Also, no one was hurt by my bad jokes and puns, so that's a plus.
 
-<div style="display: flex; align-items: center; justify-content: center;">
- <iframe border=0 frameborder=0 height=480 width=360 src="https://twitframe.com/show?url=https://twitter.com/SwapAgarwal/status/1124556436711849985"></iframe>
-</div>
+<Tweet id="1124556436711849985">
 
+When someone asks you to explain your joke. [@znck0](https://twitter.com/znck0) [#AnAwesomeConf](https://twitter.com/hashtag/AnAwesomeConf) ![Rahul explaining a joke at AwesomeConf](https://t.co/higeRbCglc) &mdash; Swapnil Agarwal (@SwapAgarwal)
+
+</Tweet>
 <!-- What didn't work? -->
+
 ## What didn't work?
 
 **The projector**. We had some issues with the projector throughout the day. Working with projectors is terrible. Daisy chaining dongles to get the correct port. Checking loose connections. Changing laptops after every talk. It was too much work. We should have tested it a day before. Also, a multi-input projector would have been much better.

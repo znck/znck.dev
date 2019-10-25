@@ -30,7 +30,7 @@ Elements with ARIA roles must use a vaild, non-abstract ARIA role.
 
 <figure data-type="code">
 
-```html
+```vue
 <template>
   <button class="button" role="datepicker">
     <slot />

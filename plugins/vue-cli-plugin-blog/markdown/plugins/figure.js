@@ -1,9 +1,6 @@
 // forked from: https://github.com/arve0/markdown-it-implicit-figures/blob/master/index.js
 
-module.exports = function implicitFiguresPlugin(
-  md,
-  options
-) {
+module.exports = function implicitFiguresPlugin(md, options) {
   options = { dataType: true, figcaption: true, copyAttrs: /^(?!alt|src).+/, ...options }
   function implicitFigures(state) {
     // do not process first and last token

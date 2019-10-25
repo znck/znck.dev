@@ -16,9 +16,11 @@ Have you ever met someone who likes complicated things? Well, I haven't! I'm pre
 
 I want to share a simple hard thing, but before that tell me, "do you like the design of this blog?". I know at least one person likes it as Egoist says, "Your blog looks clean."
 
-<div style="display: flex; align-items: center; justify-content: center;" role="presentation">
- <iframe border=0 frameborder=0 height=480 width=360 src="https://twitframe.com/show?url=https://twitter.com/_egoistlily/status/1132564698677690368" aria-hidden="true" />
-</div>
+<Tweet id="1132564698677690368">
+
+Your blog looks clean, mind me making it a [@saber_land](https://twitter.com/saber_land) theme? 😬 &mdash; EGÖlST ([@_egoistlily](https://twitter.com/_egoistlily))
+
+</Tweet>
 
 Clean or say it looks simple.
 

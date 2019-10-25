@@ -309,14 +309,6 @@ export default {
     color: text-color('accent');
   }
 
-  pre > code {
-    display: block;
-    font-family: font-family('code');
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    @include font('code');
-  }
-
   blockquote {
     margin: 2rem 0;
     padding-left: 1.75rem;

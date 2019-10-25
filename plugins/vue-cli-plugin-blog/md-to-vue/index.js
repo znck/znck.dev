@@ -2,60 +2,51 @@ const createMD = require('../markdown')
 const front = require('front-matter')
 const cache = {}
 
-/**
- * @type {import('markdown-it')}
- */
-let md
-
 module.exports =
   /**
-   *
-   * @param {string} source
+   * @param {string} rawSource
    * @param {{ options?: import('../markdown').Options & import('markdown-it').Options, extend?(md: import('markdown-it')): void }} [config]
    */
-  function(source, config) {
-    if (source in cache) return cache[source]
+  function MarkdownToVue(rawSource, config) {
+    if (rawSource in cache) return cache[rawSource]
 
-    const { env, code, attributes } = parse(source, config)
+    const { hoists, source } = hoist(rawSource)
+    const { code, attributes } = parse(source, config)
 
     const component = `<template>
-<div style="display: contents">
-  ${code.replace(/v-pre=""/g, 'v-pre')}
-</div>
+<main id="main-content">${code.replace(/v-pre=""/g, 'v-pre')}</main>
 </template>
 
-${env.hoistedTags ? env.hoistedTags.join('\n\n') : ''}
+${hoists.join('\n\n')}
 
 <frontmatter>
-  ${stringify(
-    attributes,
-    (key, value) => {
-      if (value instanceof File) {
-        return value.toString()
-      }
+${stringify(
+  attributes,
+  (key, value) => {
+    if (value instanceof File) {
+      return value.toString()
+    }
 
-      return value
-    },
-    2
-  )}
+    return value
+  },
+  2
+)}
 </frontmatter>
 `
-    cache[source] = component
+    cache[rawSource] = component
 
     return component
   }
 
-const parse = (module.exports.parse = function(source, { options, extend } = {}) {
-  if (!md) {
-    md = createMD({
-      ...options,
-      hoist: {
-        tags: options && options.hoist && options.hoist.tags ? ['frontmatter', ...options.hoist.tags] : ['frontmatter'],
-      },
-    })
+const parse = function(source, { options, extend } = {}) {
+  const md = createMD({
+    ...options,
+    hoist: {
+      tags: options && options.hoist && options.hoist.tags ? ['frontmatter', ...options.hoist.tags] : ['frontmatter'],
+    },
+  })
 
-    if (extend) extend(md)
-  }
+  if (extend) extend(md)
 
   const env = {}
   const { body, attributes } = front(source)
@@ -67,20 +58,22 @@ const parse = (module.exports.parse = function(source, { options, extend } = {})
   const parts = code.split('<!-- more -->')
   if (parts.length > 1) attributes.excerpt = parts[0]
 
-  addFileImports(attributes)
+  addFileImportsToFrontMatter(attributes)
 
   return {
     env,
     attributes,
     code,
   }
-})
+}
+
+module.exports.parse = parse
 
 /**
  *
  * @param {Record<string, any>} attributes
  */
-function addFileImports(attributes) {
+function addFileImportsToFrontMatter(attributes) {
   if (typeof attributes.image === 'string' && isLocalFile(attributes.image)) {
     attributes.image = new File(attributes.image)
   }
@@ -117,4 +110,46 @@ function stringify(target, replacer, space) {
   const code = JSON.stringify(target, replacer, space)
 
   return code.replace(/"(require\('.*?'\))"/gi, (_, code) => code)
+}
+
+function hoist(source, tagRE = /^(style|script)/) {
+  let index = 0
+
+  const hoists = []
+  let isCodeBlock = false
+
+  while (index < source.length) {
+    if (source[index] === '`' && source.substr(index).startsWith('```')) {
+      index += 2
+      isCodeBlock = !isCodeBlock
+    } else if (!isCodeBlock && source[index] === '<') {
+      const match = tagRE.exec(source.substr(index + 1))
+
+      if (match) {
+        const start = index
+        const endTag = `</${match[0]}>`
+        let i = index + 1
+
+        while (i < source.length) {
+          if (source[i] === '<' && source[i + 1] === '/' && source.substr(i).startsWith(endTag)) break
+          ++i
+        }
+
+        if (i >= source.length) {
+          throw new Error('Expect ' + endTag + '. Not found')
+        }
+
+        hoists.push(source.substr(start, i - start + endTag.length))
+
+        source = source.substr(0, index) + source.substr(i + endTag.length)
+      }
+    }
+
+    ++index
+  }
+
+  return {
+    source,
+    hoists,
+  }
 }

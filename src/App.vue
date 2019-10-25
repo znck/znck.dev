@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <router-link to="/" class="home-btn font-ui" exact-active-class="hidden">Home</router-link>
+    <router-link to="/" class="home-btn font-ui" exact-active-class="hidden"
+      >Home</router-link
+    >
 
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -156,5 +158,54 @@ a {
 
 .hidden {
   display: none !important;
+}
+
+/*
+        Improved screen reader only CSS class: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
+*/
+.sr-only,
+.sr-only-no-focus {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important; /* 2 */
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important; /* 3 */
+}
+
+.sr-only:focus,
+.sr-only:active {
+  clip: auto !important;
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
+  height: auto !important;
+  margin: auto !important;
+  overflow: visible !important;
+  width: auto !important;
+  white-space: normal !important;
+  background: white;
+  z-index: 999999;
+}
+
+h2,
+h3 {
+  position: relative;
+}
+.heading-permalink {
+  position: absolute;
+  left: -1em;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-decoration: none;
+}
+
+h2:hover .heading-permalink,
+h3:hover .heading-permalink {
+  opacity: 1;
 }
 </style>

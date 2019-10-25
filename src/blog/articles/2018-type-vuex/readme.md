@@ -42,9 +42,11 @@ As you can see above, we get intellisense to let us know that commit and dispatc
 
 We won’t be introducing new dependencies to a project only to get the types right, as most people are using just Vuex. However, [vuex-class](//github.com/ktsn/vuex-class), [vuex-typescript](//github.com/istrib/vuex-typescript) and [vuex-module-decorators](//github.com/championswimmer/vuex-module-decorators) are worth mentioning third-party packages assisting Vuex stores.
 
-<div style="display: flex; align-items: center; justify-content: center;">
-  <iframe border=0 frameborder=0 height=416 width=360 src="https://twitframe.com/show?url=https://twitter.com/znck0/status/1062919689515368448"></iframe>
-</div>
+<Tweet id="1062919689515368448">
+
+All the TypeScript + Vue users out there, what do you use to write Vuex modules and why?</p>&mdash; Rahul Kadyan (@znck0)
+
+</Tweet>
 
 The next version of Vuex would be built with an API which plays well with TypeScript.
 

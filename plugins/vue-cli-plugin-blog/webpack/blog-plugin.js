@@ -37,7 +37,7 @@ module.exports = class BlogPlugin {
   apply(compiler) {
     const to = 'src/blog/routes.js'
     const generate = () => {
-      const { articlesDir, collectionsDir, baseUrl = 'https://znck.dev' } = this.options
+      const { articlesDir, collectionsDir } = this.options
       const articles = globby.sync(`${articlesDir}/**/*.md`)
       const collections = globby.sync(`${collectionsDir}/**/*.md`)
       const articlesMeta = articles.map(article => ({
@@ -79,6 +79,11 @@ module.exports = class BlogPlugin {
         { parser: 'babel', ...getPrettierConfig() }
       )
 
+      if (fs.existsSync(to) && fs.readFileSync(to, 'utf8').trim() === code.trim()) {
+        return
+      }
+
+      fs.writeFileSync(to, code)
       fs.writeFileSync(
         'public/rss.xml',
         generateRSS(
@@ -95,12 +100,6 @@ module.exports = class BlogPlugin {
           articlesMeta
         )
       )
-
-      if (fs.existsSync(to) && fs.readFileSync(to, 'utf8').trim() === code.trim()) {
-        return
-      }
-
-      fs.writeFileSync(to, code)
       fs.writeFileSync(
         'src/blog/routes.txt',
         articles

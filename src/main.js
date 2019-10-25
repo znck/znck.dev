@@ -3,13 +3,15 @@ import Vue from 'vue'
 import VueHead from 'vue-head'
 import ga from 'vue-ga'
 
+import FencedCode from './components/fenced-code.vue'
+import OutboundLink from './components/outbound-link.vue'
+import Tweet from './components/tweet.vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
 
 import tokens from '@design'
-
 
 if (process.env.NODE_ENV === 'production') {
   ga(router, 'UA-38503997-1')
@@ -27,6 +29,9 @@ WebFontLoader.load({
 
 Vue.config.devtools = true
 Vue.config.productionTip = false
+Vue.component('FencedCode', FencedCode)
+Vue.component('OutboundLink', OutboundLink)
+Vue.component('Tweet', Tweet)
 Vue.use(VueHead)
 const frontmatter = Vue.observable({ value: {} })
 Vue.mixin({
