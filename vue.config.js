@@ -20,6 +20,8 @@ module.exports = {
 
   integrity: true,
 
+  
+
   chainWebpack(config) {
     config.resolve.alias.set('@design', path.resolve(__dirname, 'src/design/_index.scss'))
     config.resolve.extensions.add('.scss')

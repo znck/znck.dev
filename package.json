@@ -4,8 +4,6 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "install:pnpm": "npx pnpm@3 install -r --store=node_modules/.pnpm-store",
-    "prebuild": "npm run install:pnpm || echo 'skipping pnpm install'",
     "build": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
@@ -17,7 +15,6 @@
     "register-service-worker": "^1.6.2",
     "resize-observer-polyfill": "^1.5.1",
     "vue": "^2.6.10",
-    "vue-cli-plugin-blog": "link:plugins/vue-cli-plugin-blog",
     "vue-ga": "^1.1.0",
     "vue-head": "^2.1.1",
     "vue-router": "^3.0.3",
@@ -57,5 +54,8 @@
       "vue-cli-service lint",
       "git add"
     ]
+  },
+  "vuePlugins": {
+    "service": ["plugins/vue-cli-plugin-blog/index.js"]
   }
 }
