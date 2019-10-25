@@ -56,6 +56,8 @@
     ]
   },
   "vuePlugins": {
-    "service": ["plugins/vue-cli-plugin-blog/index.js"]
+    "service": [
+      "plugins/vue-cli-plugin-blog/index.js"
+    ]
   }
 }
