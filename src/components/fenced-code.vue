@@ -69,11 +69,11 @@ export default {
 @import '@design';
 
 @include light-mode() {
-  @import '../../plugins/vue-cli-plugin-blog/node_modules/prismjs/themes/prism.css';
+  @import '../../node_modules/prismjs/themes/prism.css';
 }
 
 @include dark-mode() {
-  @import '../../plugins/vue-cli-plugin-blog/node_modules/prismjs/themes/prism-dark.css';
+  @import '../../node_modules/prismjs/themes/prism-dark.css';
 }
 
 .fenced-code {
