@@ -7,10 +7,10 @@
     "build": "vue-cli-service build --modern",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit",
-    "postinstall": "cd plugins/vue-cli-plugin-blog && npm install"
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@znck/vue-cli-plugin-blog": "0.0.0",
     "accoutrement": "^2.1.1",
     "core-js": "^2.6.5",
     "register-service-worker": "^1.6.2",
@@ -54,11 +54,6 @@
     "*.{js,vue}": [
       "vue-cli-service lint",
       "git add"
-    ]
-  },
-  "vuePlugins": {
-    "service": [
-      "plugins/vue-cli-plugin-blog/index.js"
     ]
   }
 }
