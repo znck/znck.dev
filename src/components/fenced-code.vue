@@ -65,7 +65,7 @@ export default {
     </div>
     <div
       class="highlight-lines"
-      v-if="highlights && highlights.length"
+      v-if="parsedHighlights && parsedHighlights.length"
       aria-hidden="true"
       role="presentation"
       v-once
