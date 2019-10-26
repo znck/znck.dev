@@ -5,6 +5,7 @@ const wrapperRE = /^<pre .*?><code>/
 
 const escapeHtml = html =>
   String(html)
+    .replace(/&/g, '&amp;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;')
     .replace(/:/g, '&#x3A;')
@@ -40,14 +41,11 @@ module.exports = md => {
     const rawCode = code.replace(wrapperRE, '')
     const LOC = rawCode.split('\n').length
     const lang = JSON.stringify(token.info || 'text')
-    const highlights = JSON.stringify(token.lineNumbers)
+    const highlights = JSON.stringify(token.lineNumbers || [])
 
     return `
-<FencedCode :loc="${LOC}" :highlights="${highlights}" lang=${lang}>
-  <template v-slot:default>${code}</template>
-  <template v-slot:raw>
-    <pre v-pre class="language-${token.info}"><code>${escapeHtml(source)}</code></pre>
-  </template>
-</FencedCode>`
+<fenced-code :loc="${LOC}" highlights="${highlights}" lang=${lang} code=${JSON.stringify(escapeHtml(code))}>
+<pre class="language-${token.info}"><code>${escapeHtml(source)}</code></pre>
+</fenced-code>`
   }
 }

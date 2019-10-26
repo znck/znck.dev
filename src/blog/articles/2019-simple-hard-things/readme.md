@@ -32,7 +32,7 @@ However, the implementation of this simple idea is quite hard. I started with th
 
 <figure data-type="code">
 
-```xml
+```svg
 <svg width="100%" height="100%"
   xmlns="http://www.w3.org/2000/svg">
   <defs>

@@ -23,11 +23,19 @@ module.exports = {
   chainWebpack(config) {
     config.resolve.alias.set('@design', path.resolve(__dirname, 'src/design/_index.scss'))
     config.resolve.extensions.add('.scss')
-    config.plugin('html').tap(([options]) => {
-      if (options.minify) options.minify.removeAttributeQuotes = false
+    if (config.plugins.has('html')) {
+      config.plugin('html').tap(([options = {}]) => {
+        if (options && options.minify) options.minify.removeAttributeQuotes = false
 
-      return [options]
-    })
+        return [options]
+      })
+
+      // config.plugin('provide').use(require('webpack').ProvidePlugin, [
+      //   {
+      //     Vue: 'vue',
+      //   },
+      // ])
+    }
   },
 
   pwa: {
@@ -40,16 +48,6 @@ module.exports = {
       favicon16: 'icon-48.png',
       appleTouchIcon: 'icon-152.png',
       msTileImage: 'icon-144.png',
-    },
-  },
-
-  pluginOptions: {
-    prerenderSpa: {
-      registry: undefined,
-      renderRoutes: routes,
-      useRenderEvent: false,
-      headless: true,
-      onlyProduction: true,
     },
   },
 }

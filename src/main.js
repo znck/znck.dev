@@ -1,15 +1,16 @@
 import WebFontLoader from 'webfontloader'
 import Vue from 'vue'
-import VueHead from 'vue-head'
+import VueHead from './plugins/vue-head'
 import ga from 'vue-ga'
 
-import FencedCode from './components/fenced-code.vue'
 import OutboundLink from './components/outbound-link.vue'
 import Tweet from './components/tweet.vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
+
+import './components/fenced-code'
 
 import tokens from '@design'
 
@@ -29,7 +30,6 @@ WebFontLoader.load({
 
 Vue.config.devtools = true
 Vue.config.productionTip = false
-Vue.component('FencedCode', FencedCode)
 Vue.component('OutboundLink', OutboundLink)
 Vue.component('Tweet', Tweet)
 Vue.use(VueHead)

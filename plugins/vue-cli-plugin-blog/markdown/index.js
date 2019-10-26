@@ -50,11 +50,6 @@ module.exports =
       .end()
 
     config
-      .plugin('attrs')
-      .use(require('markdown-it-attrs'))
-      .end()
-
-    config
       .plugin('router-link')
       .use(RouterLink, [
         Object.assign(
@@ -114,6 +109,11 @@ module.exports =
           includeLevel: [2, 3],
         },
       ])
+      .end()
+
+    config
+      .plugin('attrs')
+      .use(require('markdown-it-attrs'))
       .end()
 
     return config.toMd(require('markdown-it'))

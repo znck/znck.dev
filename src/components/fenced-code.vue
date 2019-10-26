@@ -6,19 +6,38 @@ export default {
       required: true,
     },
     highlights: {
-      type: Array,
+      type: [Array, String],
     },
     lang: {
       type: String,
       default: 'text',
     },
+    code: {
+      type: String,
+    },
   },
   computed: {
+    rawCode() {
+      return this.code.replace(/\\n/g, '\n')
+    },
+    parsedHighlights() {
+      if (this.highlights) {
+        if (Array.isArray(this.highlights)) return this.highlights
+
+        try {
+          return JSON.parse(this.highlights)
+        } catch {
+          // noop
+        }
+      }
+
+      return undefined
+    },
     isHighlighted() {
       const lines = {}
 
-      if (this.highlights) {
-        this.highlights.forEach(([start, end]) => {
+      if (this.parsedHighlights) {
+        this.parsedHighlights.forEach(([start, end]) => {
           if (end) {
             for (let i = start; i <= end; ++i) {
               lines[i] = true
@@ -39,13 +58,10 @@ export default {
   <div class="fenced-code">
     <div class="fenced-code-language" :id="`code-snippet${_uid}`">
       {{ lang.toUpperCase() }}
-      <span class="sr-only sr-only-no-focus">&nbsp; code snippet</span>
+      <span class="sr-only-no-focus">&nbsp; code snippet</span>
     </div>
-    <div
-      class="sr-only sr-only-no-focus"
-      :aria-describedby="`code-snippet${_uid}`"
-    >
-      <slot name="raw" />
+    <div class="sr-only-no-focus" :aria-describedby="`code-snippet${_uid}`">
+      <slot />
     </div>
     <div
       class="highlight-lines"
@@ -62,9 +78,7 @@ export default {
         &nbsp;
       </div>
     </div>
-    <div aria-hidden="true">
-      <slot />
-    </div>
+    <div aria-hidden="true" v-html="rawCode" />
     <div
       class="line-numbers-wrapper"
       v-once
@@ -78,15 +92,15 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped>
-@import '@design';
+<style lang="scss">
+@import '../design/_index.scss';
 
 @include light-mode() {
-  @import '../../node_modules/prismjs/themes/prism.css';
+  @import '../../node_modules/prismjs/themes/prism';
 }
 
 @include dark-mode() {
-  @import '../../node_modules/prismjs/themes/prism-dark.css';
+  @import '../../node_modules/prismjs/themes/prism-dark';
 }
 
 .fenced-code {
@@ -140,7 +154,7 @@ export default {
     right: 0.35em;
     font-size: 0.75em;
     color: var(--code-color);
-    content: attr(data-lang);
+    font-family: font-family('code');
   }
 
   &:after {
@@ -159,34 +173,42 @@ export default {
 
 .highlight-lines {
   user-select: none;
-  padding-top: 1.3vw;
+  margin-top: 1rem;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  line-height: 1.42;
+  right: 0;
+  padding-left: calc(2rem + 1px);
+  z-index: 4;
+  @include font('code');
+
+  --highlight-overlay: rgba(255, 255, 255, 0.75);
+  @include dark-mode() {
+    --highlight-overlay: rgba(0, 0, 0, 0.75);
+  }
 
   > div {
     background-color: var(--highlight-overlay);
-  }
 
-  > :not(.highlighted) {
-    --highlight-overlay: #{background-color('overlay')};
+    &:before {
+      content: ' ';
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      background-color: var(--highlight-overlay);
+    }
   }
 
   .highlighted {
     position: relative;
-  }
+    background-color: transparent;
 
-  > div:before {
-    content: ' ';
-    position: absolute;
-    z-index: 3;
-    left: 0;
-    height: 1.41em;
-    display: block;
-    width: 3.5vw;
-    background-color: var(--highlight-overlay);
+    &:before {
+      display: none;
+    }
   }
 }
 
@@ -207,5 +229,24 @@ export default {
     z-index: 4;
     font-size: 0.75rem;
   }
+}
+
+.sr-only-no-focus {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important; /* 2 */
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important; /* 3 */
+}
+
+code {
+  font-family: font-family('code');
+  line-height: 1; // Remove 1px added in paragraph height.
 }
 </style>
