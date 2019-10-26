@@ -36,14 +36,22 @@ export default {
 </script>
 
 <template>
-  <div class="fenced-code" :data-lang="lang">
-    <div class="sr-only sr-only-no-focus">
+  <div class="fenced-code">
+    <div class="fenced-code-language" :id="`code-snippet${_uid}`">
+      {{ lang.toUpperCase() }}
+      <span class="sr-only sr-only-no-focus">&nbsp; code snippet</span>
+    </div>
+    <div
+      class="sr-only sr-only-no-focus"
+      :aria-describedby="`code-snippet${_uid}`"
+    >
       <slot name="raw" />
     </div>
     <div
       class="highlight-lines"
       v-if="highlights && highlights.length"
       aria-hidden="true"
+      role="presentation"
       v-once
     >
       <div
@@ -57,7 +65,12 @@ export default {
     <div aria-hidden="true">
       <slot />
     </div>
-    <div class="line-numbers-wrapper" v-once aria-hidden="true">
+    <div
+      class="line-numbers-wrapper"
+      v-once
+      aria-hidden="true"
+      role="presentation"
+    >
       <div class="line-number" v-for="line in loc - 1" :key="line">
         {{ line }}
       </div>
@@ -100,7 +113,7 @@ export default {
     overflow: auto;
     margin: 1rem 0 1rem 2.5rem;
     padding-left: 0;
-    padding-right: 0;
+    padding-right: 0.5rem;
     box-shadow: none;
     text-shadow: 0 1px white;
 
@@ -120,7 +133,7 @@ export default {
     --code-line-number: #{text-color('light')};
   }
 
-  &:before {
+  .fenced-code-language {
     position: absolute;
     z-index: 3;
     top: -0.25em;

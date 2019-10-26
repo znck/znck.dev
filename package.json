@@ -10,7 +10,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "@znck/vue-cli-plugin-blog": "0.0.0",
+    "@znck/vue-cli-plugin-blog": "0.0.1",
     "accoutrement": "^2.1.1",
     "core-js": "^2.6.5",
     "register-service-worker": "^1.6.2",

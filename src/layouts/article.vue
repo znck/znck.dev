@@ -1,10 +1,15 @@
 <template>
-  <article
+  <div
     :class="$style.layout"
     :style="{ '--article-cover-inset': height + 'px' }"
   >
     <div v-if="$currentPageMeta.cover" :class="$style.cover">
-      <img :src="cover.src" :style="cover.style" :class="$style.coverImg" />
+      <img
+        :src="cover.src"
+        :style="cover.style"
+        :class="$style.coverImg"
+        :alt="cover.alt"
+      />
       <div :class="$style.overlay" />
     </div>
 
@@ -19,10 +24,11 @@
 
       <h1 :class="$style.title">{{ $currentPageMeta.title }}</h1>
 
-      <p :class="$style.meta" class="font-heading dateline">
-        <span class="author">
+      <aside :class="$style.meta" class="font-heading dateline">
+        <span>
           by
-          <strong>Rahul Kadyan</strong> |
+          <strong class="author">Rahul Kadyan</strong>
+          <span aria-hidden="true">|</span>
         </span>
 
         <span class="published">
@@ -31,19 +37,23 @@
         </span>
 
         <span v-if="updated" class="updated">
-          &middot; updated on
+          <span aria-hidden="true">&middot;</span> updated on
           <strong>{{ updated }}</strong>
         </span>
-      </p>
+      </aside>
     </header>
 
-    <hr :class="$style.sep" />
+    <hr :class="$style.sep" aria-hidden="true" />
 
-    <div :class="$style.content">
+    <main
+      :class="$style.content"
+      :aria-label="$currentPageMeta.title"
+      role="main"
+    >
       <router-view />
-    </div>
+    </main>
 
-    <hr :class="$style.sep" />
+    <hr :class="$style.sep" aria-hidden="true" />
 
     <footer :class="$style.footer">
       <p>
@@ -57,7 +67,7 @@
         >.
       </p>
     </footer>
-  </article>
+  </div>
 </template>
 
 <script>
@@ -186,9 +196,12 @@ export default {
 
       const src = typeof cover === 'string' ? cover : cover.src
       const position = typeof cover === 'object' ? cover.position : null
+      const alt =
+        typeof cover === 'string' ? this.$currentPageMeta.title : cover.alt
 
       return {
         src,
+        alt,
         style: {
           'object-position': position,
         },

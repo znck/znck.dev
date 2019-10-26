@@ -89,6 +89,7 @@ module.exports =
                   ['href', opts.permalinkHref(slug, state)],
                   ['aria-labelledby', slug],
                   ['tabindex', '-1'],
+                  ['aria-hidden', 'true'],
                 ],
               }),
               Object.assign(new state.Token('html_block', '', 0), { content: opts.permalinkSymbol }),
