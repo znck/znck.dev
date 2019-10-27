@@ -43,7 +43,7 @@
     "rollup": "^1.25.2",
     "rollup-plugin-alias": "^2.2.0",
     "rollup-plugin-postcss": "^2.0.3",
-    "rollup-plugin-vue": "^5.1.0",
+    "rollup-plugin-vue": "^5.1.2",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "vue-auto-routing": "^0.3.0",

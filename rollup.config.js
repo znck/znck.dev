@@ -7,19 +7,15 @@ export default {
   input: 'src/components/fenced-code.wc.js',
   output: {
     format: 'esm',
+    sourcemap: false,
     file: 'src/components/fenced-code.js',
   },
   plugins: [
     alias({
       entries: { '@design': path.resolve(__dirname, 'src/design/_index.scss') },
     }),
-    vue({ isWebComponent: true, styleInjectorShadow: '~vue-runtime-helpers/dist/inject-style/shadow.mjs' }),
+    vue({ isWebComponent: true, template: { isProduction: true } }),
     scss({ inject: false }),
   ],
-  external: [
-    'vue',
-    '@vue/web-component-wrapper',
-    'vue-runtime-helpers/dist/normalize-component.mjs',
-    'vue-runtime-helpers/dist/inject-style/shadow.mjs',
-  ],
+  external: ['vue', '@vue/web-component-wrapper', 'vue-runtime-helpers'],
 }
