@@ -62,7 +62,7 @@ vue build -t wc -n my-component my-component-wrapper.js
 
 The exported web component works like a charm, but the code outputted is obscure.
 
-<figure data-type="code" role="presentation">
+<figure data-type="code">
 
 <<< ./my-component.cli.js
 
@@ -112,7 +112,7 @@ And you can use this web component directly in HTML.
     <meta charset="utf-8" />
     <title>my-component demo</title>
     <script src="https://unpkg.com/vue"></script>
-    <script src="./my-component.js"></script>
+    <script src="./my-component.umd.js"></script>
   </head>
 
   <body>
