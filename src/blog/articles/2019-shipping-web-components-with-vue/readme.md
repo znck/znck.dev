@@ -123,3 +123,5 @@ And you can use this web component directly in HTML.
 
 <figcaption>Example code to consume the above exported web component</figcaption>
 </figure>
+
+> __NOTE:__ The web component exported by Vue CLI or RollupPluginVue would required Vue as a dependency. And if you are planning to use the above built web component in a React or Angular application, you have to ship Vue runtime too.
