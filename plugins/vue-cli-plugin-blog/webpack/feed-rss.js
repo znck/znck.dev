@@ -17,7 +17,7 @@ module.exports = function generateRSSFeed(options, items) {
       title: item.title,
       description: item.excerpt,
       url: item.url,
-      date: new Date(item.published).toISOString(),
+      date: new Date(item.published).toUTCString(),
       categories: item.tags,
     })
   })
