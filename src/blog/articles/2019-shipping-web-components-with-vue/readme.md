@@ -106,7 +106,7 @@ And you can use this web component directly in HTML.
 
 <figure data-type="code">
 
-```html [5-6,10]
+```html
 <html>
   <head>
     <meta charset="utf-8" />
