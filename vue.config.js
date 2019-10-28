@@ -29,25 +29,19 @@ module.exports = {
 
         return [options]
       })
-
-      // config.plugin('provide').use(require('webpack').ProvidePlugin, [
-      //   {
-      //     Vue: 'vue',
-      //   },
-      // ])
     }
   },
 
   pwa: {
     name: 'znck',
-    themeColor: '#eb5757',
+    themeColor: '#000',
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'black',
     iconPaths: {
-      favicon32: 'icon-96.png',
-      favicon16: 'icon-48.png',
-      appleTouchIcon: 'icon-152.png',
-      msTileImage: 'icon-144.png',
+      favicon32: 'favicon.png',
+      favicon16: 'favicon.png',
+      appleTouchIcon: 'favicon.png',
+      msTileImage: 'favicon.png',
     },
   },
 }
