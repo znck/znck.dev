@@ -46,7 +46,7 @@ module.exports = md => {
     const highlights = JSON.stringify(token.lineNumbers || [])
 
     return `
-<fenced-code :loc="${LOC}" highlights="${highlights}" lang=${lang} code=${JSON.stringify(escapeHtml(code))}>
+<fenced-code :loc="${LOC}" highlights="${highlights}" language=${lang} code=${JSON.stringify(escapeHtml(code))}>
 <pre class="language-${token.info}" v-pre><code>${escapeHtml(source)}</code></pre>
 </fenced-code>`
   }

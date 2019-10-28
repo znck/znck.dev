@@ -8,7 +8,7 @@ export default {
     highlights: {
       type: [Array, String],
     },
-    lang: {
+    language: {
       type: String,
       default: 'text',
     },
@@ -57,7 +57,7 @@ export default {
 <template>
   <div class="fenced-code">
     <div class="fenced-code-language" :id="`code-snippet${_uid}`">
-      {{ lang.toUpperCase() }}
+      {{ language.toUpperCase() }}
       <span class="sr-only-no-focus">&nbsp; code snippet</span>
     </div>
     <div class="sr-only-no-focus" :aria-describedby="`code-snippet${_uid}`">
