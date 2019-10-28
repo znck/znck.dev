@@ -71,7 +71,8 @@ export default [
         .then(component => ({ ...component, layout: 'article' })),
     meta: {
       title: 'Type Vue without TypeScript',
-      excerpt: '<p>A practical guide for type checking vue components written in JS and getting things done.</p>\n',
+      excerpt:
+        '<p>A practical guide for type checking vue components written in JS and getting things done.</p>\n',
       published: '2018-11-11T00:00:00.000Z',
       tags: ['vue', 'typescript', 'dx'],
     },
@@ -86,7 +87,8 @@ export default [
         .then(component => ({ ...component, layout: 'article' })),
     meta: {
       title: 'Type Vuex without TypeScript',
-      excerpt: '<p>A practical guide for type checking vuex modules written in JS and getting things done.</p>',
+      excerpt:
+        '<p>A practical guide for type checking vuex modules written in JS and getting things done.</p>',
       published: '2018-11-20T00:00:00.000Z',
       tags: ['vue', 'typescript', 'dx'],
     },
@@ -141,6 +143,22 @@ export default [
   },
 
   {
+    name: '@blog/2019-shipping-web-components-with-vue',
+    path: '/blog/2019-shipping-web-components-with-vue',
+    component: () =>
+      import('@/blog/articles/2019-shipping-web-components-with-vue/readme.md')
+        .then(m => m.default)
+        .then(component => ({ ...component, layout: 'article' })),
+    meta: {
+      title: 'Shipping Web Components with Vue',
+      excerpt:
+        '<p>I have been watching the web component spec. However, all the projects I have worked on were either using Vue or React, and these frameworks are more than capable of building complex applications. I never felt like using web components, but that changed yesterday.</p>\n',
+      published: '2019-10-28T00:00:00.000Z',
+      tags: ['vue', 'web-components', 'rollup-plugin-vue'],
+    },
+  },
+
+  {
     name: '@blog/2019-simple-hard-things',
     path: '/blog/2019-simple-hard-things',
     component: () =>
@@ -149,7 +167,8 @@ export default [
         .then(component => ({ ...component, layout: 'article' })),
     meta: {
       title: 'Simple Hard Things',
-      excerpt: '<p>Simple things are easy; everyone says so. However, in reality, it may not be so.</p>\n',
+      excerpt:
+        '<p>Simple things are easy; everyone says so. However, in reality, it may not be so.</p>\n',
       published: '2019-06-10T00:00:00.000Z',
       tags: ['design', 'general'],
     },

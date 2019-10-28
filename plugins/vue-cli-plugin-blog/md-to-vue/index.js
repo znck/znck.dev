@@ -38,7 +38,7 @@ ${stringify(
     return component
   }
 
-const parse = function(source, { options, extend } = {}) {
+const parse = function(source, options) {
   const md = createMD({
     ...options,
     hoist: {
@@ -46,7 +46,7 @@ const parse = function(source, { options, extend } = {}) {
     },
   })
 
-  if (extend) extend(md)
+  if (options.extend) options.extend(md)
 
   const env = {}
   const { body, attributes } = front(source)

@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 
 module.exports = function snippet(md, options = {}) {
   const root = options.root || process.cwd()
@@ -24,10 +25,14 @@ module.exports = function snippet(md, options = {}) {
 
     const start = pos + 3
     const end = state.skipSpacesBack(max, pos)
-    const rawPath = state.src
-      .slice(start, end)
-      .trim()
-      .replace(/^@/, root)
+    const rawPath = path.resolve(
+      root,
+      state.src
+        .slice(start, end)
+        .trim()
+        .replace(/^@/, '.')
+    )
+
     const filename = rawPath.split(/[{\s]/).shift()
     const content = fs.existsSync(filename) ? fs.readFileSync(filename).toString() : 'Not found: ' + filename
     const meta = rawPath.replace(filename, '')

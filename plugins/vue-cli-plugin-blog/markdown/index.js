@@ -21,7 +21,7 @@ module.exports =
    * Create md to vue convertor.
    * @param {import('markdown-it').Options & Options} options
    */
-  function MDV({ externalLinks = [] } = {}) {
+  function MDV({ externalLinks = [], root } = {}) {
     const config = new Config()
 
     config.options
@@ -31,7 +31,7 @@ module.exports =
 
     config
       .plugin('snippet')
-      .use(Snippet)
+      .use(Snippet, [{ root }])
       .end()
 
     config

@@ -28,7 +28,7 @@
         <span>
           by
           <strong class="author">Rahul Kadyan</strong>
-          <span aria-hidden="true">|</span>
+          <span aria-hidden="true">&nbsp;|</span>
         </span>
 
         <span class="published">

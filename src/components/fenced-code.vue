@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     rawCode() {
-      return this.code.replace(/\\n/g, '\n')
+      return this.code.replace(/\\n/g, '\n').replace(/\\t/g, '\t')
     },
     parsedHighlights() {
       if (this.highlights) {

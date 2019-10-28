@@ -1,6 +1,6 @@
 // Modified from https://github.com/egoist/markdown-it-highlight-lines
 
-const RE = /{([\d,-]+)}/
+const RE = /\[([\d,-]+)\]/
 const wrapperRE = /^<pre .*?><code>/
 
 const escapeHtml = html =>
@@ -9,6 +9,8 @@ const escapeHtml = html =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;')
     .replace(/:/g, '&#x3A;')
+    .replace(/{/g, '&#x7B;')
+    .replace(/}/g, '&#x7D;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
 
@@ -45,7 +47,7 @@ module.exports = md => {
 
     return `
 <fenced-code :loc="${LOC}" highlights="${highlights}" lang=${lang} code=${JSON.stringify(escapeHtml(code))}>
-<pre class="language-${token.info}"><code>${escapeHtml(source)}</code></pre>
+<pre class="language-${token.info}" v-pre><code>${escapeHtml(source)}</code></pre>
 </fenced-code>`
   }
 }

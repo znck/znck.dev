@@ -115,7 +115,7 @@ module.exports = class BlogPlugin {
   _findArticleMeta(filename) {
     try {
       const contents = fs.readFileSync(filename, 'utf8')
-      const { attributes } = parse(contents)
+      const { attributes } = parse(contents, { root: path.dirname(filename) })
 
       return {
         title: attributes.title,
