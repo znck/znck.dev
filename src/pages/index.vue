@@ -26,7 +26,7 @@ export default {
 
 <template>
   <div class="home">
-    <header class="header">
+    <header class="header" aria-label="About Me">
       <div class="hey font-alternate">Hey!</div>
 
       <h1 class="title">
@@ -63,9 +63,11 @@ export default {
       <p>Here is something for you to read:</p>
     </header>
 
-    <hr class="sep" />
+    <hr class="sep" aria-hidden="true" />
 
-    <ArticleList :latest="5" />
+    <main id="main-content" aria-label="My articles">
+      <ArticleList :latest="5" />
+    </main>
   </div>
 </template>
 

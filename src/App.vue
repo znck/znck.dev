@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <a href="#main-content" class="sr-only">Skip to main content</a>
     <router-link to="/" class="home-btn font-ui" exact-active-class="hidden"
       >Home</router-link
     >

@@ -21,14 +21,27 @@ export default {
 
 <template>
   <ul :class="$style.articles">
-    <li v-for="article in articles" :key="article.name" :class="$style.article">
-      <h3 :class="$style.title">{{ article.meta.title }}</h3>
+    <li
+      v-for="(article, index) in articles"
+      :key="article.name"
+      :class="$style.article"
+    >
+      <article>
+        <h2 :id="`article-${index}-heading`" :class="$style.title">
+          {{ article.meta.title }}
+        </h2>
 
-      <div class="summary" v-html="article.meta.excerpt" />
+        <div class="summary" v-html="article.meta.excerpt" />
 
-      <footer :class="$style.footer">
-        <router-link :to="{ name: article.name }">read more</router-link>
-      </footer>
+        <div :class="$style.footer">
+          <router-link :to="{ name: article.name }">
+            read more
+            <span class="sr-only-no-focus"
+              >about "{{ article.meta.title }}"</span
+            >
+          </router-link>
+        </div>
+      </article>
     </li>
   </ul>
 </template>
