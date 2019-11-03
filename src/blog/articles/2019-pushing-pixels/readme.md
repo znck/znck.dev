@@ -10,6 +10,8 @@ tags:
 
 We – frontend engineers – are in the business of rendering experiences on the users' screens. We have way too many ways of doing so, and the choice can be overwhelming.
 
+<!-- more -->
+
 As we start a new project, the first choice we encounter is picking a framework. "Should I use Vue or Angular or React or go vanilla?" – We do this over and over again. A google search – "X vs. Y" and we land on dozens of biases. I am not here to answer this question today. I would pick Vue any day as there is no reason not to do so.
 
 Then the second immediate decision we have to make, how do we render the application – Client-Side Rendering or Server-Side-Rendering or a mix of both. However, this choice relatively a lot simpler than the frameworks. There are definite strengths and weaknesses of each that support specific use cases.
