@@ -8,13 +8,13 @@ tags:
 
 # Accessible Components: Test Driven Approach
 
-The web is undoubtedly most important resource today. Modern websites are built in small building blocks; **components**. Practices from test-driven software development have employed to automate correctness of these building blocks.
+The web is undoubtedly the most vital resource today. Modern websites are built-in small building blocks; **components**. Practices from test-driven software development have employed to automate the correctness of these building blocks.
 
 <!-- more -->
 
-Being the most important source of information, internet should be accessible to all. It is important to provide equal access and opportunity to people with disabilities.
+The internet should be accessible to all. It is essential to provide equal access and opportunity to people with disabilities.
 
-You can find many tools to check accessibility on web pages. But, in my opinion, when you’re testing web pages in a modern application, you’re are very late. Accessibility testing should be employed at the lowest level; you should create accessible components.
+You can find many tools to check accessibility on web pages. But, in my opinion, when you’re testing web pages in a modern application, you’re very late. Accessibility testing should be employed at the lowest level; you should create accessible components.
 
 ## Unit Testing Accessibility
 
@@ -26,7 +26,7 @@ Let’s simple component which renders following HTML:
 
 The `<button>` element has an invalid role value. We’ll validate generated HTML with [a11y](https://github.com/addyosmani/a11y) utility. ARIA [AX_ARIA_01](https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_01) rule would fail with the following message:
 
-Elements with ARIA roles must use a vaild, non-abstract ARIA role.
+Elements with ARIA roles must use a valid, non-abstract ARIA role.
 
 <figure data-type="code">
 
@@ -100,4 +100,4 @@ it('should be accessible', async t => {
 
 </figure>
 
-Above is a very simple example to check static HTML for accessibility. Next, I would be exploring techniques to test accessibility for all four types of disabilities — visual, auditory, motor and cognitive. [The a11y project](http://a11yproject.com/) has curated a list of rules as [web accessibility checklist](http://a11yproject.com/checklist), an automated tool to run these rules would be next step in my accessibility exploration.
+The above example demonstrates static checks HTML for accessibility. Next, I would be exploring techniques to test accessibility for all four types of disabilities — visual, auditory, motor, and cognitive. [The a11y project](http://a11yproject.com/) has curated a list of rules as [web accessibility checklist](http://a11yproject.com/checklist), an automated tool to run these rules would be next step in my accessibility exploration.
