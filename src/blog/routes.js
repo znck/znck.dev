@@ -9,7 +9,7 @@ export default [
     meta: {
       title: 'Accessible Components: Test Driven Approach',
       excerpt:
-        '<p>The web is undoubtedly most important resource today. Modern websites are built in small building blocks; <strong>components</strong>. Practices from test-driven software development have employed to automate correctness of these building blocks.</p>\n',
+        '<p>The web is undoubtedly the most vital resource today. Modern websites are built-in small building blocks; <strong>components</strong>. Practices from test-driven software development have employed to automate the correctness of these building blocks.</p>\n',
       published: '2017-11-29T00:00:00.000Z',
       tags: ['vue', 'accessibility', 'testing'],
     },
@@ -139,6 +139,22 @@ export default [
         '<p>&quot;I got a red shirt!&quot;, I scream, every time my friends jab that my wardrobe is grey and dull. They always call me out, &quot;Get some colors, dude!&quot;.</p>\n',
       published: '2019-06-03T00:00:00.000Z',
       tags: ['design', 'color', 'eli5'],
+    },
+  },
+
+  {
+    name: '@blog/2019-grammarly-in-code',
+    path: '/blog/2019-grammarly-in-code',
+    component: () =>
+      import('@/blog/articles/2019-grammarly-in-code/readme.md')
+        .then(m => m.default)
+        .then(component => ({ ...component, layout: 'article' })),
+    meta: {
+      title: 'Grammarly in Code',
+      excerpt:
+        '<p>There\'s no simpler writing tool than markdown. There\'s no elegant editor than <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">code<OutboundLink/></a>. There\'s no better writing environment than markdown in <span title="VS Code">code</span>. It\'s perfect, but whenever I write, I find myself copy-pasting back and forth between Grammarly editor and VS Code editor. Grammarly makes my writing much better, but it also forces me to use their editor. Don\'t take me wrong I don\'t hate their editor, in fact, I kind of like it — bright, clean, spacious. But it\'s not sufficient for me as my articles generally have images, code snippets, figures, and sometimes markup. And the lack of markdown syntax highlight is absolutely a deal-breaker. If Grammarly worked in VS Code editor, wouldn\'t that be perfect?</p>\n',
+      published: '2019-11-09T00:00:00.000Z',
+      tags: ['diy', 'vscode', 'extension'],
     },
   },
 

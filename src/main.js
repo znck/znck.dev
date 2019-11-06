@@ -5,6 +5,7 @@ import ga from 'vue-ga'
 
 import OutboundLink from './components/outbound-link.vue'
 import Tweet from './components/tweet.vue'
+import CaptionedImg from './components/captioned-img.vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -31,6 +32,7 @@ WebFontLoader.load({
 Vue.config.devtools = true
 Vue.config.productionTip = false
 Vue.component('OutboundLink', OutboundLink)
+Vue.component('CaptionedImg', CaptionedImg)
 Vue.component('Tweet', Tweet)
 Vue.use(VueHead)
 const frontmatter = Vue.observable({ value: {} })

@@ -41,21 +41,13 @@ module.exports = function implicitFiguresPlugin(md, options) {
       // Next token is paragraph close.
       // Lets replace the paragraph tokens with figure tokens.
       const figure = state.tokens[i - 1]
-      figure.type = 'figure_open'
-      figure.tag = 'figure'
-      state.tokens[i + 1].type = 'figure_close'
-      state.tokens[i + 1].tag = 'figure'
+      figure.type = 'captioned-img_open'
+      figure.tag = 'captioned-img'
+      state.tokens[i + 1].type = 'captioned-img_close'
+      state.tokens[i + 1].tag = 'captioned-img'
 
       // for linked images, image is one off
       const image = token.children.length === 1 ? token.children[0] : token.children[1]
-
-      if (options.figcaption == true) {
-        if (image.children && image.children.length) {
-          token.children.push(new state.Token('figcaption_open', 'figcaption', 1))
-          token.children.splice(token.children.length, 0, ...image.children)
-          token.children.push(new state.Token('figcaption_close', 'figcaption', -1))
-        }
-      }
 
       figure.attrs = []
 
@@ -64,9 +56,7 @@ module.exports = function implicitFiguresPlugin(md, options) {
         figure.attrs = image.attrs.filter(([k]) => k.match(f))
       }
 
-      if (options.dataType == true) {
-        figure.attrs.push(['data-type', 'image'])
-      }
+      figure.attrs.push(['alt', image.children[0] ? image.children[0].content : ''])
     }
   }
   md.core.ruler.before('linkify', 'implicit_figures', implicitFigures)
