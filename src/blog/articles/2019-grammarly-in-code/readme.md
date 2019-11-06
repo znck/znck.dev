@@ -34,7 +34,7 @@ VS Code has [yeoman](https://yeoman.io) generator, so all I needed to get starte
 
 ![Screenshot of Yeoman Visual Studio Code Generator running in iTerm2 zsh shell](./screenshot-yeoman.png)
 
-I picked the very first option: "New Extension (TypeScript)" and I got a nice starting point. Next, I needed to create a small language server to analyze text content with Grammarly API and post grammar diagnostics. And Code's [Language Server Extension Guide](https://code.visualstudio.com/api/language-extensions/language-server-extension-guide) proved to be an excellent resource, and I got the extension working in very few lines of code.
+I picked the very first option: "New Extension (TypeScript)", and I got a good starting point. Next, I needed to create a small language server to analyze text content with Grammarly API and post grammar diagnostics. And Code's [Language Server Extension Guide](https://code.visualstudio.com/api/language-extensions/language-server-extension-guide) proved to be an excellent resource, and I got the extension working in very few lines of code.
 
 ```ts
 import { createConnection, TextDocuments } from 'vscode-languageserver'
