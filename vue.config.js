@@ -30,6 +30,14 @@ module.exports = {
         return [options]
       })
     }
+
+    if (process.env.NODE_ENV === 'production') {
+      config.module
+        .rule('images')
+        .use('image-loader')
+        .after('url-loader')
+        .loader('image-webpack-loader')
+    }
   },
 
   pwa: {

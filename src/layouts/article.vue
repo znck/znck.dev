@@ -220,6 +220,14 @@ export default {
     @include font('p.article');
   }
 
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
   p {
     overflow-x: auto;
   }
@@ -230,52 +238,6 @@ export default {
       font-size: inherit;
       line-height: inherit;
       padding: 0;
-    }
-  }
-
-  figure[data-type='image'] {
-    margin: 1rem 0;
-    display: flex;
-    flex-direction: column;
-
-    > *:first-child {
-      flex: 1;
-    }
-
-    img {
-      width: 100%;
-      height: 1%;
-      object-fit: contain;
-      overflow: hidden;
-    }
-
-    figcaption {
-      text-align: center;
-      @include font('ui');
-      font-family: font-family('ui');
-      margin-top: 1rem;
-    }
-
-    height: 14rem;
-
-    &[small] {
-      height: 10rem;
-    }
-
-    &[large] {
-      height: 20rem;
-    }
-
-    @include above('desktop') {
-      height: 30rem;
-
-      &[small] {
-        height: 20rem;
-      }
-
-      &[large] {
-        height: 36rem;
-      }
     }
   }
 

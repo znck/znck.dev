@@ -10,7 +10,6 @@ export default {
     },
     language: {
       type: String,
-      default: 'text',
     },
     code: {
       type: String,

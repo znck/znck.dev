@@ -4,6 +4,7 @@ import routes from 'vue-auto-routing'
 import { createRouterLayout } from 'vue-router-layout'
 
 import blogRoutes from './blog/routes'
+import IndexPage from '@/pages/index.vue'
 
 Vue.use(Router)
 
@@ -17,7 +18,17 @@ export default new Router({
     {
       path: '/',
       component: RouterLayout,
-      children: [...routes, ...blogRoutes],
+      children: [
+        ...routes,
+        ...blogRoutes,
+        {
+          path: '*',
+          component: {
+            ...IndexPage,
+            layout: 'default',
+          },
+        },
+      ],
     },
   ],
 })

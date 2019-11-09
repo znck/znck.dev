@@ -12,7 +12,7 @@ I have been watching the web component spec. However, all the projects I have wo
 
 <!-- more -->
 
-I was reading an article, and as usual, the reader mode on safari was turned on. There was an embedded tweet in the article, and it preserved the twitter styling even in the reading mode. It was surprising to me as I couldn't make the code snippets on my blog to preserve syntax highlights. I wondered what trickery was going behind the embedded — surprisingly, the magic was just a web component.
+I was reading an article, and as usual, the reader mode on safari was turned on. There was an embedded tweet in the article, and it preserved the twitter styling even in the reading mode. It was surprising to me as I couldn't make the code snippets on my blog to maintain syntax highlights. I wondered what trickery was going behind the embedded — surprisingly, the magic was just a web component.
 
 I decided to write a web component for code snippets on my blog.
 
@@ -80,7 +80,7 @@ We would use the same example component and export web component using rollup.
 <figcaption>Rollup config to build Vue component as web component</figcaption>
 </figure>
 
-And we get much readable output source for the exported web component.
+And we get a much readable output source for the exported web component.
 
 <figure data-type="code">
 
@@ -89,11 +89,11 @@ And we get much readable output source for the exported web component.
 <figcaption>Web component export of the example component using rollup-plugin-vue</figcaption>
 </figure>
 
-The web component exported by above rollup config is an ES module and it would require webpack bundle in the application. However, we can also export browser compatible web component source with rollup.
+The web component exported by the above Rollup config is an ES module, and you have to bundle it in your application. However, we can also ship browser compatible web components using Rollup.
 
 ### Web Component export as UMD package
 
-The <abbr title="Universal Module Definition">UMD</abbr> output format is directly executable in the browser and we have to make small tweaks to above rollup config to generate a UMD build.
+The <abbr title="Universal Module Definition">UMD</abbr> output format is directly executable in the browser, and we have to make small tweaks to above Rollup config to generate a UMD build.
 
 <figure data-type="code">
 
@@ -124,7 +124,7 @@ And you can use this web component directly in HTML.
 <figcaption>Example code to consume the above exported web component</figcaption>
 </figure>
 
-> __NOTE:__
+> **NOTE:**
 >
-> The web components exported by Vue CLI or RollupPluginVue would require Vue as a dependency. 
-> If you are planning to use the above built web component in a React or Angular application, you have to ship Vue runtime too.
+> The web components exported by Vue CLI or RollupPluginVue would require Vue as a dependency.
+> If you are planning to use the above-built web component in a React or Angular application, you have to ship Vue runtime too.

@@ -7,5 +7,6 @@
 /blog/2019-awesomeconf
 /blog/2019-comments-in-code
 /blog/2019-finally-some-colors
+/blog/2019-grammarly-in-code
 /blog/2019-shipping-web-components-with-vue
 /blog/2019-simple-hard-things
