@@ -220,6 +220,14 @@ export default {
     @include font('p.article');
   }
 
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
   p {
     overflow-x: auto;
   }
