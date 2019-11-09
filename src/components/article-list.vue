@@ -27,6 +27,15 @@ export default {
       :class="$style.article"
     >
       <article>
+        <p style="margin-bottom: -1.5rem; margin-top: 0; padding-left: 0.25rem">
+          {{
+            new Date(article.meta.published).toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+            })
+          }}
+        </p>
         <h2 :id="`article-${index}-heading`" :class="$style.title">
           {{ article.meta.title }}
         </h2>

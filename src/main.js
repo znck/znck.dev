@@ -18,14 +18,16 @@ import tokens from '@design'
 if (process.env.NODE_ENV === 'production') {
   ga(router, 'UA-38503997-1')
 }
-
 WebFontLoader.load({
   classes: false,
   events: false,
   google: {
-    families: Object.entries(tokens)
-      .filter(([key]) => key.startsWith('fontFace'))
-      .map(([, value]) => JSON.parse(value)),
+    families: [
+      Object.entries(tokens)
+        .filter(([key]) => key.startsWith('fontFace'))
+        .map(([, value]) => JSON.parse(value).replace(/\s/g, '+'))
+        .join('|') + '&display=swap',
+    ],
   },
 })
 

@@ -33,7 +33,6 @@ export default {
       }
 
       return code
-      // return this.code.replace(/(?<!\\)\\n/g, '\n').replace(/(?<!\\)\\t/g, '\t')
     },
     parsedHighlights() {
       if (this.highlights) {
@@ -129,6 +128,10 @@ export default {
   border: 1px solid var(--code-border);
   margin-top: -1px;
   margin-bottom: calc(2rem - 1px);
+
+  @media print {
+    break-inside: avoid-page;
+  }
 
   pre {
     @include font('code');
