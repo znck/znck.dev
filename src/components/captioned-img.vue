@@ -29,12 +29,6 @@ export default {
       const { clientHeight: height } = this.$refs.wrapper
       const eHeight = Math.ceil(height / 8) * 8
       this.gridAdjust = eHeight - height
-
-      console.log({
-        eHeight,
-        height,
-        diff: eHeight - height,
-      })
     },
   },
 }

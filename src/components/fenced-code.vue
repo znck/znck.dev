@@ -17,7 +17,23 @@ export default {
   },
   computed: {
     rawCode() {
-      return this.code.replace(/\\n/g, '\n').replace(/\\t/g, '\t')
+      /** @type {string} */
+      let code = this.code
+
+      for (let i = 0; i < code.length; ++i) {
+        if (code.charAt(i) === '\\') {
+          const next = code.substring(i)
+          if (next.startsWith('\\\\')) {
+            code = code.substring(0, i) + '\\' + next.substring(2)
+            i += 1
+          } else if (next.startsWith('\\n')) {
+            code = code.substring(0, i) + '<br />' + next.substring(2)
+          }
+        }
+      }
+
+      return code
+      // return this.code.replace(/(?<!\\)\\n/g, '\n').replace(/(?<!\\)\\t/g, '\t')
     },
     parsedHighlights() {
       if (this.highlights) {

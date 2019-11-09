@@ -431,4 +431,14 @@ export default {
   opacity: 0.5;
   margin-top: 1.5rem;
 }
+
+@media print {
+  a::after {
+    content: attr('href');
+  }
+
+  .footer {
+    display: none;
+  }
+}
 </style>

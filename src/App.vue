@@ -157,6 +157,12 @@ a {
   }
 }
 
+@media print {
+  .home-btn {
+    display: none;
+  }
+}
+
 .hidden {
   display: none !important;
 }

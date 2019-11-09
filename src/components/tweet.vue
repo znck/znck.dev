@@ -55,7 +55,7 @@ export default {
 
 <template>
   <div
-    style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem"
+    style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; max-width: 100%"
     :style="{ minHeight: minHeight + 'px' }"
   >
     <blockquote class="sr-only sr-only-no-focus">
