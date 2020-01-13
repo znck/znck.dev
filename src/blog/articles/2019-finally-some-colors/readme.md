@@ -81,9 +81,9 @@ Colored lights mix additively or subtractively to give a resultant color. In our
 
 Fortunately, there is a way: a color notation called HSL, which stands for hue, saturation, and lightness. Scary, huh! It seemed very complicated to me and chose to stick to color pickers until I saw [Miriam's talk at VueConf US 2019](https://youtu.be/VsG5l5e44ZY). She simplified HSL for me:
 
-- Hue is the color.  
-- Saturation is the amount of color.  
-- Lightness is the amount of light.  
+- Hue is the color.
+- Saturation is the amount of color.
+- Lightness is the amount of light.
 
 Imagine if we paint a rainbow on a circular disc such that every radial line is in a different color, gradually changing from red to yellow, yellow to green, green to cyan, cyan to blue, and blue to red. On such a circle, the angle between any radial line with the red radial can be used to choose a color. We have red at 0deg, yellow at 60deg, green at 120deg, cyan at 180deg, blue at 240deg, again red at 360deg, and every other angle in between these would give a color which is a mixture of the two. Now, I know what could be the hue of the color I want.
 
@@ -99,7 +99,7 @@ Let's pick the grey color:
 - We don't want any color, so we set it to 0%
 - The correct lightness value would be around 50%, in between black and white.
 
-Hence, the grey color in HSL would be `hsl(0deg, 0%, 50.25%)` which is equivalint to `#808080`. Now I know how to make colors. I am adding colors to my blog.
+Hence, the grey color in HSL would be `hsl(0deg, 0%, 50.25%)` which is equivalent to `#808080`. Now I know how to make colors. I am adding colors to my blog.
 
 ## The dark theme
 
