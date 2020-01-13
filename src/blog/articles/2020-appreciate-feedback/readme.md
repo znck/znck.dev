@@ -188,8 +188,8 @@ useful:
 >
 > Thanks.
 >
-> --
-> Rahul Kadyan
+> --  
+> Rahul Kadyan  
 > [https://znck.me](https://znck.me)
 
 ## Feedback is gift
