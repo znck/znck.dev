@@ -91,7 +91,7 @@ missed something, why do you think it could run into performance issues?"
 We all want to be better, we aspire to and yet we never ask. Feedback is the
 fuel for personal development and you need to ask for it, for you to grow, to be better.
 
-I have learnt something about using feedback as a fuel for personal development,
+I have learned something about using feedback as a fuel for personal development,
 partly from my experiences and partly from "The Making of a Manager" by Julie
 Zhou. I call it FDD, F stands for both—fuckup and feedback, both are necessary
 for one's growth. One makes mistakes to be better but needs feedback to learn
@@ -99,12 +99,108 @@ from them.
 
 ### Ask for feedback
 
+You won't get anything unless you ask—promotion, relationship, and even feedback,
+so ask, ask and ask.
+
+Who do you ask? Ask your manager, ask your peers, ask your friends, ask your
+partner, ask your parents, ask that person who listened you talk, ask that
+person who read your article, ask that maintainer who reviewed your pull request,
+ask that that person who depends on your work or your work depends on, ask
+everyone who you can, there is not a thing like too much feedback, ask as
+much you can.
+
+What do you ask? Ask what you want to be better at, ask something that you can
+quantify, ask something that demands honesty, ask something that opens up a
+dialogue. For example, I am learning to write, I want to be better at it, so
+I would ask "Does the content feel engaging?", "I want to share my learnings
+but I don't want to appear authoritative, do you feel the content welcoming and
+honest?" "Is the flow of the good? Do you feel disconnected or losing thought
+while reading?", "Do you see any words or phrases that doesn't sound well in
+your culture?", "What did you like most? And what did you not like?", "What do
+you feel is working great and want to see more?", I mean ask question that
+advance you towards your definition of better.
+
 ### Appreciate feedback
+
+Thank them who give you feedback, appreciate their efforts. Giving feedback is
+not easy so let them know you are grateful and it is helping you. Thank them
+even if they can't give you feedback, they are not bound to and they can always
+ignore. They give you feedback or not but they should know that you respect
+their time, you're thankful and their feedback means a lot to you.
 
 ### Act on feedback
 
+All feedback is worthless, a waste of time, if you don't act on it. I give
+you some feedback but I see you doing actions against it, like you haven't
+even heard what I said. I would feel like I am wasting my time and eventually
+I would stop engaging, you would too. Don't let the wellwishers die off, they
+want you to better, they want you to grow, they shouldn't feel irrelevant or
+unheard.
+
 ### Report back
+
+When you act on some feedback and find that it is actually making you better,
+don't miss the chance to report back, they went out of the line to help, you
+owe it to them, you report them your improvements. I would love to hear if
+something I suggested is working for you, it's feedback on feedback, it would
+help me to be better help for someone else.
+
+What if it didn't work for you? nothing changes, you still report, I know it's
+hard to share failures but failures need to be heard, failures make us better.
+We hear way less about failures even though they are more common, everyone fails
+at something or sometimes. If my suggestions does not work well for you, I expect
+to hear back, I don't want to set other people on wrong path, I want to hear I
+failed, I want to learn, don't take away my failures.
+
+What if you already know it won't work because you've tried or heard about it?
+You still report back, if someone is courageous enough to give you feedback, they
+surely can handle feedback or I'll assume they can. Do not hide failures and do
+share succusses, we need to hear them all.
 
 ### Ask again
 
+The feedback worked for you, and it worked for me. We are our better selves, now
+what? Now we repeat, the best thing about "better" is that there is always a
+"better" better than "better". So, keep asking for feedback.
+
+Following is a recent email, I sent for seeking feedback, I hope you find it
+useful:
+
+> Hey ~~Xxxx~~,
+>
+> We have been working together for three weeks now. I value your feedback
+> and I'd like to be a more effective team member. Would you be willing to
+> answer the questions below? Please be as honest as you can because that's what
+> will help me the most—I promise nothing you say will offend me. Feedback is a
+> gift, and I'm grateful for your taking the time.
+>
+> I spent my first week to understand the project and it's source code and for
+> last two weeks I have been working on InputDate component. How do you think
+> I'm doing on that? Any suggestions on how I can do better here?
+>
+> Initially I estimated to complete the InputDate component in two weeks but
+> while working on it, I found it builds upon other components like button,
+> dropdown, popper, select box etc which warranted building those base
+> components first. What do you think I could have done better here?
+>
+> What am I doing well that you'd like to see me do more of? What should I stop
+> doing? Any other suggestions?
+>
+> Thanks.
+>
+> --
+> Rahul Kadyan
+> [https://znck.me](https://znck.me)
+
 ## Feedback is gift
+
+I appreciate your time, I hope you enjoyed this and would love to hear some
+feedback from you. So, write me if you could.
+
+I would leave you with a quote from **The Making of a Manager**:
+
+> "Feedback is a gift." It costs time and effort to share, but when we have it,
+> we're better off. So let's give it generously.
+
+I recommend reading [The Making of a Manager](https://amzn.to/2MGVAx7) or at
+least the fourth chapter—The Art of Feedback.
