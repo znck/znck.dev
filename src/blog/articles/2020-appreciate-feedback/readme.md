@@ -17,7 +17,9 @@ more with them but still we). I used to hate those and often treated them waste
 of time. When I look back today, I hated because I couldn't write about people
 and their work. I couldn't write because it's very difficult to recall what they
 did this year and how could I remember their work when I was having hard time
-remembering mine. What did I do this year? I have been working on this component past few weeks. And oh! I shipped that feature before that. And... and... what the hell did I do? And you're asking me feedback on your work?
+remembering mine. What did I do this year? I have been working on this component
+past few weeks. And oh! I shipped that feature before that. And... and...
+what the hell did I do? And you're asking me feedback on your work?
 
 I used to face the same empty wall when I had to ask for feedback. We were
 living in now with no recollection of past, very little recollection. This wasn't
@@ -61,7 +63,8 @@ If someone points out your mistakes or failure, it's natural that you would
 get in a defensive position. We try to divert, come up with excuses—"I wanted
 to write test cases but you know deadline was so harsh, I could barely complete
 the task itself.", guess what the task is still incomplete and whatever you
-say to in defense of a negative feedback, it's always what it is—a defense, an excuse, a diversion.
+say to in defense of a negative feedback, it's always what it is—a defense,
+an excuse, a diversion.
 
 Acceptance, or a question is a good response. Question, in fact, is the best
 response—"I feel that's true, I think I have underestimated the task, how could
@@ -80,7 +83,8 @@ end and where does our work start. An objective comment on a piece of code
 can become an attack on my code suddenly. My code, my precious. Keeping oneself
 detached from work is a superpower and no one is born with it, neither can one
 be bit by a radioactive spider to gain it. You have to practice, practice in
-face of every criticism, every negative feedback that listen, listen, listen and ask. She is talking about this code and not me, there could be some merit in her
+face of every criticism, every negative feedback that listen, listen, listen
+and ask. She is talking about this code and not me, there could be some merit in her
 suggestion, I should stay open to ideas.
 
 "I thought due to these constraints, we have a reasonable upper bound, maybe I
