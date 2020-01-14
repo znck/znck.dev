@@ -108,7 +108,7 @@ so ask, ask and ask.
 Who do you ask? Ask your manager, ask your peers, ask your friends, ask your
 partner, ask your parents, ask that person who listened you talk, ask that
 person who read your article, ask that maintainer who reviewed your pull request,
-ask that that person who depends on your work or your work depends on, ask
+ask that person who depends on your work or your work depends on, ask
 everyone who you can, there is not a thing like too much feedback, ask as
 much you can.
 
@@ -157,7 +157,7 @@ failed, I want to learn, don't take away my failures.
 What if you already know it won't work because you've tried or heard about it?
 You still report back, if someone is courageous enough to give you feedback, they
 surely can handle feedback, or I'll assume they can. Do not hide failures and do
-share succusses, we need to hear them all.
+share successes, we need to hear them all.
 
 ### Ask again
 
