@@ -10,3 +10,5 @@
 /blog/2019-grammarly-in-code
 /blog/2019-shipping-web-components-with-vue
 /blog/2019-simple-hard-things
+/blog/2020-appreciate-feedback
+/blog/2020-on-building-an-input-component

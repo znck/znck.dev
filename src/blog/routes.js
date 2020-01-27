@@ -189,4 +189,36 @@ export default [
       tags: ['design', 'general'],
     },
   },
+
+  {
+    name: '@blog/2020-appreciate-feedback',
+    path: '/blog/2020-appreciate-feedback',
+    component: () =>
+      import('@/blog/articles/2020-appreciate-feedback/readme.md')
+        .then(m => m.default)
+        .then(component => ({ ...component, layout: 'article' })),
+    meta: {
+      title: 'Negative feedback comes from a good place',
+      excerpt:
+        "<p>It's not easy to say negative things to people. In fact, it takes a lot of courage to point out the shortcoming. If someone does that for me, honest and brutal, I keep them close. Brutal and honest friends are dearest to me.</p>\n",
+      published: '2020-01-14T00:00:00.000Z',
+      tags: [],
+    },
+  },
+
+  {
+    name: '@blog/2020-on-building-an-input-component',
+    path: '/blog/2020-on-building-an-input-component',
+    component: () =>
+      import('@/blog/articles/2020-on-building-an-input-component/readme.md')
+        .then(m => m.default)
+        .then(component => ({ ...component, layout: 'article' })),
+    meta: {
+      title: 'On building an input component',
+      excerpt:
+        "<p>I have been associated with the vuejs community for some years, but I didn't get to use vuejs much. I mean, I used it in my side-projects, talk and workshop demos, for this blog website, and some other simple webpages. Recently, I started working for a company whose main project is written in vuejs. The first task I got to do was building a date picker.</p>\n<p>This application had something already in place, an amalgam of 3rd party libraries and local style overrides. All the hacks and style overrides, still, it couldn't meet the UX needs. I am sure the users weren't very cheery about it.</p>\n",
+      published: '2020-02-01T00:00:00.000Z',
+      tags: ['vue', 'components'],
+    },
+  },
 ]
