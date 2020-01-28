@@ -153,7 +153,7 @@ And the editor always waited for the response for the `start` action:
 <figcaption>Ack from Grammarly server for the start message</figcaption>
 </figure>
 
-After receiving the acknowledgment for the `start` action, the editor sends another message with `submit_ot` action. The `submit_ot` action
+After receiving the acknowledgement for the `start` action, the editor sends another message with `submit_ot` action. The `submit_ot` action
 sends the contents of the document as payload.
 
 <figure data-type="code">
@@ -179,7 +179,7 @@ sends the contents of the document as payload.
 <figcaption>Initial message sent to Grammarly server for grammar anaylsis</figcaption>
 </figure>
 
-In response to the `submit_ot` action, the server sends a series of `alert` actions. Each `alert` action represents some issue in the document. The `alert` actions are followed by a `finished` action which signifies end of diagnostics list.
+In response to the `submit_ot` action, the server sends a series of `alert` actions. Each `alert` action represents some issue in the document. The `alert` actions are followed by a `finished` action which signifies the end of diagnostics list.
 
 In [Stewart McGown implementation of Grammarly API](https://github.com/stewartmcgown/grammarly-api), the `finished` message is used as the end of the transaction, and all `alert` messages received so far are returned as resolved promise form the `analyze` method. I feel it's sufficient for immutable text, but I don't have immutable text, my text changes with every keypress. So, I started editing in Grammarly editor and monitored the socket connection.
 
@@ -288,7 +288,7 @@ But, for Grammarly, we have to transform these range replacement events to opera
 1. Insert non-empty text in a non-empty range
 
    <figure data-type="code">
-   
+
    ```ts
    const event = {
      range: {
@@ -321,4 +321,4 @@ I followed the [VS Code Publishing Extension Guide](https://code.visualstudio.co
 > Markdown. Code. Grammarly.  
 > Now, hear me ~~roar~~ write.
 
-The [Grammarly extension is open source](https://github.com/znck/grammarly), and you can contribute or file issues if you face any problems.
+The [Grammarly extension is open-source](https://github.com/znck/grammarly), and you can contribute or file issues if you face any problems.
