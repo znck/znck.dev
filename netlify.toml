@@ -2,3 +2,15 @@
     from = "/*"
     to = "/index.html"
     status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Optitons = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = "default-src 'self'"
+    X-Content-Security-Policy = "default-src 'self'"
+    X-WebKit-CSP = "default-src 'self'"
+    Feature-Policy = "fullscreen 'self'"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "origin-when-cross-origin"
