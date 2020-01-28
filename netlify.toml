@@ -13,4 +13,4 @@
     X-WebKit-CSP = "default-src 'self'"
     Feature-Policy = "fullscreen 'self'"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "origin"
+    Referrer-Policy = "strict-origin-when-cross-origin"
