@@ -16,7 +16,6 @@
     "register-service-worker": "^1.6.2",
     "resize-observer-polyfill": "^1.5.1",
     "vue": "^2.6.10",
-    "vue-ga": "^1.1.0",
     "vue-head": "^2.1.1",
     "vue-router": "^3.0.3",
     "vue-router-layout": "^0.1.2",

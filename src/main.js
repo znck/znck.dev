@@ -1,7 +1,6 @@
 import WebFontLoader from 'webfontloader'
 import Vue from 'vue'
 import VueHead from './plugins/vue-head'
-import ga from 'vue-ga'
 
 import OutboundLink from './components/outbound-link.vue'
 import Tweet from './components/tweet.vue'
@@ -15,9 +14,6 @@ import './components/fenced-code'
 
 import tokens from '@design'
 
-if (process.env.NODE_ENV === 'production') {
-  ga(router, 'UA-38503997-1')
-}
 WebFontLoader.load({
   classes: false,
   events: false,
