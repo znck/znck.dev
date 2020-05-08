@@ -189,4 +189,20 @@ export default [
       tags: ['design', 'general'],
     },
   },
+
+  {
+    name: '@blog/2020-appreciate-feedback',
+    path: '/blog/2020-appreciate-feedback',
+    component: () =>
+      import('@/blog/articles/2020-appreciate-feedback/readme.md')
+        .then(m => m.default)
+        .then(component => ({ ...component, layout: 'article' })),
+    meta: {
+      title: 'Negative feedback comes from a good place',
+      excerpt:
+        "<p>It's not easy to say negative things to people. In fact, it takes a lot of courage to point out the shortcoming. If someone does that for me, honest and brutal, I keep them close. Brutal and honest friends are dearest to me.</p>\n",
+      published: '2020-01-14T00:00:00.000Z',
+      tags: [],
+    },
+  },
 ]
