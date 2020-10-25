@@ -44,8 +44,8 @@ In some sense, types make APIs self-documenting. Apart from this, code editors/I
 
 <figure data-type="image" small>
   <div stack column>
-    <img src="//cdn-images-1.medium.com/max/2000/1*6YOgNAKgooKirWp0ssrKBQ.png" alt="Screenshot: Intellisense/Type-based suggestion" />
-    <img src="//cdn-images-1.medium.com/max/2288/1*yzyYVRkm_49DLVGnQoFReQ.png" alt="Screenshot: Type mismatch error" />
+    <img src="./assets/1.png" alt="Screenshot: Intellisense/Type-based suggestion" />
+    <img src="./assets/2.png" alt="Screenshot: Type mismatch error" />
   </div>
   <figcaption>Intellisense/Type-based suggestion (top) — Type mismatch error (bottom)</figcaption>
 </figure>
@@ -124,8 +124,8 @@ With TypeScript, you get type based intellisense which boosts developer producti
 
 <figure data-type="image" large>
   <div stack row wide>
-    <img src="//cdn-images-1.medium.com/max/2000/1*B8sBq-sbvoVpAxc8rGyfRg.png" alt="VS Code type inference in Vue components written in JavaScript">
-    <img src="//cdn-images-1.medium.com/max/2000/1*oQ8VX7IpBJJSyIghTFmLMw.png" alt="VS Code type inference in Vue components written in TypeScript">
+    <img src="./assets/3.png" alt="VS Code type inference in Vue components written in JavaScript">
+    <img src="./assets/4.png" alt="VS Code type inference in Vue components written in TypeScript">
   </div>
 
   <figcaption>VS Code type inference in Vue components written in JavaScript(left) and TypeScript(right)</figcaption>
@@ -155,8 +155,8 @@ In JavaScript files, VS Code infers types for static values to provide intellise
 
 <figure data-type="image" large>
   <div stack column>
-    <img src="//cdn-images-1.medium.com/max/2032/1*ZU2_ks9VEjE2tlXOXqvC4g.png" alt="VS Code type inference on object properties">
-    <img src="//cdn-images-1.medium.com/max/2000/1*LYCLdgUn6Lpbaum46Udz-A.png" alt="return value from function">
+    <img src="./assets/6.png" alt="VS Code type inference on object properties">
+    <img src="./assets/7.png" alt="return value from function">
   </div>
 
   <figcaption>VS Code type inference on object properties (top) and return value from function (bottom)</figcaption>
@@ -164,21 +164,21 @@ In JavaScript files, VS Code infers types for static values to provide intellise
 
 VS Code has [automatic type acquisition](https://code.visualstudio.com/docs/languages/javascript#_automatic-type-acquisition) which uses npm package’s bundled types or community types from [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) to provide intellisense, including method signature and parameter info. Also, using Vue’s type information and [Vetur plugin](https://marketplace.visualstudio.com/items?itemName=octref.vetur), it can provide rich completions and type information in .vue files too.
 
-![Autocomplete Suggestions](https://cdn-images-1.medium.com/max/2860/1*xmS2QCLzZOOgGYYA0yNYqA.png)
+![Autocomplete Suggestions](./assets/8.png)
 
-![Type Inference](https://cdn-images-1.medium.com/max/2000/1*XR9jiqkDDE1xGRG24d9djw.png)
+![Type Inference](./assets/9.png)
 
 However, static type inference for array literals and dynamic values is not possible, for such cases, VS Code can use [JSDoc](http://usejsdoc.org) annotations to collect type information. In the following snippet, type of this.items is detected as an array of type any, as it’s known statically that this.items is an array, but there is no information about values in the array. We can use a@type annotation for adding type information to this.items, @type allows adding type information, similar to any typed language (or TypeScript).
 
-![VS Code type inference in Vue components written in JavaScript](https://cdn-images-1.medium.com/max/2000/1*U9tfB6m3drWY0gJiiHjrVg.png)
+![VS Code type inference in Vue components written in JavaScript](./assets/10.png)
 
-![VS Code type inference in Vue components written in JavaScript with JSDoc annotation](https://cdn-images-1.medium.com/max/2000/1*6LcyKqSSm5R8WSMVJHkoIw.png)
+![VS Code type inference in Vue components written in JavaScript with JSDoc annotation](./assets/11.png)
 
 VS Code type inference from JSDoc comments is as reasonable as TypeScript. See the following code snippets written in JavaScript and TypeScript.
 
-![VS Code type inference in Vue components written in JavaScript](https://cdn-images-1.medium.com/max/2000/1*GWaM5Trrh3YR23D2iJDOQg.png)
+![VS Code type inference in Vue components written in JavaScript](./assets/12.png)
 
-![VS Code type inference in Vue components written in Typescript](https://cdn-images-1.medium.com/max/2000/1*sNhG-lwGgU8tjAfdG5QuXQ.png)
+![VS Code type inference in Vue components written in Typescript](./assets/13.png)
 
 ## Using JSDoc to add type information to Vue components
 
@@ -190,8 +190,8 @@ We have to provide @type annotations for properties which are impossible infer s
 
 <figure data-type="image">
   <div stack row wide>
-    <img src="//cdn-images-1.medium.com/max/2000/1*H9Rb69WrRipcDC4bhlmfBg.png" alt="Vue component definition">
-    <img src="//cdn-images-1.medium.com/max/2000/1*Kbgh1HGBSaIAsDe31PXJYQ.png" alt="Inferred type data object">
+    <img src="./assets/14.png" alt="Vue component definition">
+    <img src="./assets/15.png" alt="Inferred type data object">
   </div>
 
   <figcaption>Vue component definition (left) and inferred type data object (right)</figcaption>
@@ -201,8 +201,8 @@ In the above snippet, items and currentItem have incomplete type information, so
 
 <figure data-type="image">
   <div stack row wide>
-    <img src="//cdn-images-1.medium.com/max/2000/1*D1lM9kT8gZ1lPO8pT3bW6g.png" alt="Vue component definition">
-    <img src="//cdn-images-1.medium.com/max/2000/1*5G5ZQf0ba2dRFoFU5Qcuag.png" alt="inferred type data object">
+    <img src="./assets/16.png" alt="Vue component definition">
+    <img src="./assets/17.png" alt="inferred type data object">
   </div>
 
   <figcaption>Vue component definition (left) and inferred type data object (right)</figcaption>
@@ -212,8 +212,8 @@ Type definitions for items and currentItem are quite similar. If we were writing
 
 <figure data-type="image">
   <div stack row>
-    <img src="//cdn-images-1.medium.com/max/2000/1*vR5tRzbTEcROiJSA-mVVQQ.png" alt="JSDoc typedef example">
-    <img src="//cdn-images-1.medium.com/max/2000/1*IySaWOMdmd32-radhmESqQ.png" alt="inferred type in VS Code">
+    <img src="./assets/18.png" alt="JSDoc typedef example">
+    <img src="./assets/19.png" alt="inferred type in VS Code">
   </div>
 
   <figcaption>JSDoc typedef example (left) and inferred type in VS Code (right)</figcaption>
@@ -225,45 +225,45 @@ Autocomplete suggestions and type information for data are available on this con
 
 For primitive props, VS Code can infer type information automatically.
 
-![Vue component options with props as object map of types](https://cdn-images-1.medium.com/max/3036/1*_tUZ2aPTdSXEeSUXlkyqSw.png){small}
+![Vue component options with props as object map of types](./assets/20.png){small}
 
-![Vue component options with props as validator options having type key](https://cdn-images-1.medium.com/max/3036/1*uNLa2xftCkjE2uAM43pGtQ.png){small}
+![Vue component options with props as validator options having type key](./assets/21.png){small}
 
 However, if you have Object or Array as the type, then auto-inferred type information is useless. In such cases, we have to provide type information with a @type annotation.
 
-![Vue component options with props as object map of types having complex types](https://cdn-images-1.medium.com/max/3088/1*yIiD42VwK3yDjN0UZlZl_Q.png){small}
+![Vue component options with props as object map of types having complex types](./assets/22.png){small}
 
 It even works with the validator options syntax for props.
 
-![Vue component options with props as validator options having type key having complex types](https://cdn-images-1.medium.com/max/3088/1*PoCAZr99jP44VY1TUCSFDg.png){small}
+![Vue component options with props as validator options having type key having complex types](./assets/23.png){small}
 
 When defining prop names as an array, it's a little complex to provide type information. It is discouraged to use names array for props definition.
 
-![Discouraged syntax for prop definition in Vue component options](https://cdn-images-1.medium.com/max/3088/1*sRCHlsbVeM4oDB6w0UJ4gw.png){small}
+![Discouraged syntax for prop definition in Vue component options](./assets/24.png){small}
 
 ## 3. Computed
 
 For computed properties, automatic return type inference does not work as expected but it does provide computed property names in suggestions.
 
-![Vue component’s computed property in VS Code suggestions](https://cdn-images-1.medium.com/max/2144/1*8JPFQUL9C9VeGS-BxaHHiA.png)
+![Vue component’s computed property in VS Code suggestions](./assets/25.png)
 
 So with a @returns annotation, we can provide type information for the returned value as well.
 
-![Vue component’s computed property with type information inferred from JSDoc in VS Code suggestions](https://cdn-images-1.medium.com/max/3036/1*oKOtC7OH_kMQBQCWcmRaKw.png){small}
+![Vue component’s computed property with type information inferred from JSDoc in VS Code suggestions](./assets/26.png){small}
 
 ## 4. Methods
 
 Method names are available in VS Code suggestions on this context, but they lack type information.
 
-![Vue component’s method name autocomplete suggestion in VS Code](https://cdn-images-1.medium.com/max/3088/1*Os8ktq0lGa18yFvtyWvzEw.png){small}
+![Vue component’s method name autocomplete suggestion in VS Code](./assets/27.png){small}
 
 Here, we see the add method accepts one parameter text and returns a number, the auto inferred information is already beneficial, and if we can provide type information for the text parameter, we get the complete experience of a typed language. Moreover, we can add types to parameters using the `@param` annotation.
 
-![Vue component’s method name autocomplete suggestion in VS Code with complete type information](https://cdn-images-1.medium.com/max/3088/1*lVRO_W5mpkbtMf4NrJSJPw.png){small}
+![Vue component’s method name autocomplete suggestion in VS Code with complete type information](./assets/28.png){small}
 
 We can even provide a small description of the method if it’s not clear from its name.
 
-![Vue component’s method name autocomplete suggestion in VS Code with complete type information and custom description](https://cdn-images-1.medium.com/max/3088/1*tYkeav3nsLSXwpKazSZHTg.png){small}
+![Vue component’s method name autocomplete suggestion in VS Code with complete type information and custom description](./assets/29.png){small}
 
 VS Code supports even more JSDoc annotations; you can find the complete list of supported annotations on the [VS Code wiki page](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript).
 
@@ -271,7 +271,7 @@ VS Code supports even more JSDoc annotations; you can find the complete list of 
 
 Yes, it’s possible, add `// @ts-check` at the start of the script in .vue file.
 
-![Strict type check errors in JavaScript](https://cdn-images-1.medium.com/max/3088/1*WTKeJ-dhT6bko9a5cO4pCg.png)
+![Strict type check errors in JavaScript](./assets/30.png)
 
 If you want to enable strict type checks in the whole project, then you should add a jsconfig.json file to the project root.
 
@@ -285,4 +285,4 @@ If you want to enable strict type checks in the whole project, then you should a
 
 You can find more options at the [jsconfig.json reference](https://code.visualstudio.com/docs/languages/jsconfig).
 
-> _I will be writing a separate article for adding type information with vuex and vue-router._
+> ~~I will be writing a separate article for adding type information with vuex and vue-router.~~ [Type Vuex without TypeScript](https://znck.dev/blog/2018-type-vuex)
