@@ -23,7 +23,7 @@
     "markdown-it-math": "^4.1.1",
     "markdown-it-table-of-contents": "^0.4.4",
     "prettier": "^1.17.0",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.24.0",
     "rss": "^1.2.2"
   }
 }
