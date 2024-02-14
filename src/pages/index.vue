@@ -35,8 +35,8 @@ export default {
       </h1>
 
       <p>
-        I occasionally write about web, dev tooling and stuff. Here is something
-        for you to read:
+        I occasionally write about the web, dev tooling, and stuff. Here is
+        something for you to read:
       </p>
     </header>
 
