@@ -35,32 +35,9 @@ export default {
       </h1>
 
       <p>
-        I am running
-        <a
-          href="https://awesomeconf.dev"
-          target="_blank"
-          rel="noopener noreferrer"
-          >an awesome conference</a
-        >
-        and
-        <a
-          href="https://blr.vue.community/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >a vue meetup</a
-        >
-        in Bangalore. And I contribute to the
-        <a
-          href="https://github.com/znck"
-          target="_blank"
-          rel="noopener noreferrer"
-          >vue ecosystem</a
-        >
-        as a
-        <strong>core team member</strong>.
+        I occasionally write about web, dev tooling and stuff. Here is something
+        for you to read:
       </p>
-
-      <p>Here is something for you to read:</p>
     </header>
 
     <hr class="sep" aria-hidden="true" />
