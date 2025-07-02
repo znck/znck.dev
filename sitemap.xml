@@ -9,6 +9,12 @@
   <priority>0.5</priority>
 </url>
 <url>
+  <loc>https://znck.dev/articles/2018-11-11-type-vue</loc>
+  <lastmod>2018-11-11T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
   <loc>https://znck.dev/articles/2017-03-05-fiddle-with-vue</loc>
   <lastmod>2017-03-05T00:00:00.000Z</lastmod>
   <changefreq>monthly</changefreq>
@@ -23,12 +29,6 @@
 <url>
   <loc>https://znck.dev/articles/2017-11-29-accessible-components</loc>
   <lastmod>2017-11-29T00:00:00.000Z</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://znck.dev/articles/2018-11-11-type-vue</loc>
-  <lastmod>2018-11-11T00:00:00.000Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
 </url>
