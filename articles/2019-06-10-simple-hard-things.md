@@ -1,10 +1,4 @@
----
-published: 2019-06-10
-tags:
-  - design
-  - general
-image: ../public/2019-simple-hard-things/david-van-dijk-255503-unsplash.jpg
----
+
 
 # Simple Hard Things
 
@@ -16,7 +10,7 @@ I want to share a simple hard thing, but before that tell me, "do you like the d
 
 <Tweet id="1132564698677690368">
 
-Your blog looks clean, mind me making it a [@saber_land](https://twitter.com/saber_land) theme? 😬 &mdash; EGÖlST ([@_egoistlily](https://twitter.com/_egoistlily))
+Your blog looks clean, mind me making it a [@saber\_land](https://twitter.com/saber_land) theme? 😬 — EGÖlST ([@\_egoistlily](https://twitter.com/_egoistlily))
 
 </Tweet>
 
@@ -61,15 +55,15 @@ I can use line-height to fit the height constraint. A line-height of `3.5rem` or
 
 However, the height of the title block does not ensure that the baseline of the text lies on the grid.
 
-![Text baseline mis-aligned with the background grid.](../public/2019-simple-hard-things/mis-aligned.png)
+![Text baseline mis-aligned with the background grid.](../_assets/mis-aligned-DUzkIacu.png)
 
 I use top padding of 5px to align the text baseline, and since the line-height is multiple of eight, all lines of text magically align with the background grid.
 
-![Text baseline aligned with the background grid.](../public/2019-simple-hard-things/partially-aligned.png)
+![Text baseline aligned with the background grid.](../_assets/partially-aligned-BMJFz83W.png)
 
 However, the height of the title block is `117px` which breaks the height constraint and if one element breaks the constraint the effect cascades. I use the smallest bottom padding to make the height a multiple of eight. Here, it would be 3px (117px + 3px = 120px). The bottom padding complements top padding to become a multiple of eight i.e. 5px + 3px = 8px.
 
-![Text baseline and height aligned with the background grid.](../public/2019-simple-hard-things/aligned.png)
+![Text baseline and height aligned with the background grid.](../_assets/aligned-D_cSu0al.png)
 
 I got a pattern here: every text block would have a line-height which is multiple of eight, then top padding (which would always be less than 8px) to align text baseline and finally a complementing bottom padding.
 
@@ -85,21 +79,45 @@ So I apply this pattern to all the text elements. Other elements like images and
 $sizes: (
   'unit': 8px,
 
-  'base': '#unit' ('times': 2),
+  'base': '#unit'
+    (
+      'times': 2,
+    ),
+  'root': '#base',
 
-  'root': '#base', // Used to calculate rem from px.
-
-  'line-height-base': '#base' ('times': 1.5),
-
-  'font-size-ui': '#base' ('times': 0.75, 'convert-units': 'rem'),
-  'line-height-ui': '#base' ('times': 1, 'convert-units': 'rem'),
-  'vh-adjust-ui': '#unit' ('times': 4/8),
-  
-  'font-size-h1': '#base' ('times': 2.625, 'convert-units': 'rem'),
-  'line-height-h1': '#base' ('times': 3.5, 'convert-units': 'rem'),
-  'vh-adjust-h1': '#unit' ('times': 5/8),
-  
-  // ...
+  // Used to calculate rem from px.
+  'line-height-base': '#base'
+    (
+      'times': 1.5,
+    ),
+  'font-size-ui': '#base'
+    (
+      'times': 0.75,
+      'convert-units': 'rem',
+    ),
+  'line-height-ui': '#base'
+    (
+      'times': 1,
+      'convert-units': 'rem',
+    ),
+  'vh-adjust-ui': '#unit'
+    (
+      'times': 4/8,
+    ),
+  'font-size-h1': '#base'
+    (
+      'times': 2.625,
+      'convert-units': 'rem',
+    ),
+  'line-height-h1': '#base'
+    (
+      'times': 3.5,
+      'convert-units': 'rem',
+    ),
+  'vh-adjust-h1': '#unit'
+    (
+      'times': 5/8,
+    ), // ...
 );
 ```
 
@@ -113,6 +131,6 @@ Typesetting for znck.dev ([source](https://github.com/znck/znck.dev))
 
 It is hard to implement this simple idea for me so the simple hard thing.
 
-_It is hard to provide the simple._
+*It is hard to provide the simple.*
 
 Whenever you feel, it is simple, and I can easily get it. **Thank the creator**; she has done the hard work.

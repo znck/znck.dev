@@ -1,9 +1,4 @@
----
-published: 2019-05-26
-tags:
-  - programming
-  - coding style
----
+
 
 # Comments in Code
 
@@ -23,7 +18,7 @@ In an ideal world, with a perfect language, a code is for people to read. Howeve
 
 Every once in a while, we have to complicate parts of some code to make the product better. Machines are happy with this complicated code, so are our customers. However, humans (a.k.a. developers) are troubled. Every time, a developer visits this piece of complicated code, she wonders why did we do this?
 
-Indeed the "why" is missing from any code. As I said before, we write code to tell other people what we want a computer to do. Yes! "what"; The code says "what" (or more precisely "how"). We need something to share the "why" behind the code, and comments fill that gap. The comments are part of any language syntax to convey, why the code is written this way? 
+Indeed the "why" is missing from any code. As I said before, we write code to tell other people what we want a computer to do. Yes! "what"; The code says "what" (or more precisely "how"). We need something to share the "why" behind the code, and comments fill that gap. The comments are part of any language syntax to convey, why the code is written this way?
 
 ## Comments tell Why
 
@@ -57,13 +52,13 @@ What do you think now? Does it make any sense to remove the `change` event liste
 
 Comments are free-form text. Depending on the type of text, we get different kinds of comments. Following types are as I see them:
 
-- Clarification Comments
-- Documentation Comments
-- License Comments
-- Reference Comments
-- Tagged Comments
-- Control Comments
-- Dead-code Comments
+* Clarification Comments
+* Documentation Comments
+* License Comments
+* Reference Comments
+* Tagged Comments
+* Control Comments
+* Dead-code Comments
 
 ### Clarification Comments
 
@@ -75,11 +70,7 @@ As evident from the name, these comments clarify some obscure piece of code or l
 let getNow = Date.now
 if (inBrowser && !isIE) {
   const performance = window.performance
-  if (
-    performance &&
-    typeof performance.now === 'function' &&
-    getNow() > document.createEvent('Event').timeStamp
-  ) {
+  if (performance && typeof performance.now === 'function' && getNow() > document.createEvent('Event').timeStamp) {
     getNow = () => performance.now()
   }
 }
@@ -104,11 +95,7 @@ let getNow = Date.now
 // implementations (#9632)
 if (inBrowser && !isIE) {
   const performance = window.performance
-  if (
-    performance &&
-    typeof performance.now === 'function' &&
-    getNow() > document.createEvent('Event').timeStamp
-  ) {
+  if (performance && typeof performance.now === 'function' && getNow() > document.createEvent('Event').timeStamp) {
     // if the event timestamp, although evaluated AFTER the Date.now(), is
     // smaller than it, it means the event is using a hi-res timestamp,
     // and we need to use the hi-res version for event listener timestamps as
@@ -116,7 +103,7 @@ if (inBrowser && !isIE) {
     getNow = () => performance.now()
   }
 }
-``` 
+```
 
   <figcaption>
     <a href="https://github.com/vuejs/vue/blob/22790b250cd5239a8379b4ec8cc3a9b570dac4bc/src/core/observer/scheduler.js">core/observer/scheduler.js</a> from vue source
@@ -132,7 +119,7 @@ Even the purist self-documenting developers have nothing against documentation c
 ```js
 /**
  * Computes (a^b)
- * 
+ *
  * @param {number} a - The base number
  * @param {number} b - The exponent.
  */
@@ -143,7 +130,7 @@ function pow(a, b) {
 
 Editors use the structured information from doc comments to provide rich developer experience.
 
-![Screenshot: Editor intellisense using doc comments](../public/2019-comments-in-code/doc-comment.png)
+![Screenshot: Editor intellisense using doc comments](../_assets/doc-comment-C4Pd9mxy.png)
 
 Doc comments and editor intellisense give superpowers to us, we know what would a piece of code do without looking at the source.
 
@@ -178,17 +165,15 @@ License comments, in derived work, are an excellent way of honoring another pers
 
 ### Reference Comments
 
-A  significant part of a developer's work is copy-pasting from StackOverflow; we all know that. Sometimes we copy code without even thinking about it. There's no shame in that, but provide the reference to the next person working on that code. We can use a reference comment for that:
+A significant part of a developer's work is copy-pasting from StackOverflow; we all know that. Sometimes we copy code without even thinking about it. There's no shame in that, but provide the reference to the next person working on that code. We can use a reference comment for that:
 
 <figure data-type="code">
 
 ```js
 if (tag.indexOf('-') > -1) {
   // http://stackoverflow.com/a/28210364/1070244
-  return (unknownElementCache[tag] = (
-    el.constructor === window.HTMLUnknownElement ||
-    el.constructor === window.HTMLElement
-  ))
+  return (unknownElementCache[tag] =
+    el.constructor === window.HTMLUnknownElement || el.constructor === window.HTMLElement)
 }
 ```
 
@@ -212,7 +197,7 @@ Let's take another example from vue source:
 <figure data-type="code">
 
 ```js
-prevChildren.forEach(c => {
+prevChildren.forEach((c) => {
   c.data.transition = transitionData
 
   // TODO: record before patch positions
@@ -235,23 +220,25 @@ Tagged comments help us to continue concentrating on the current task while leav
 ### Control Comments
 
 Today, we have a plethora of tools, making it easier to write code.
-Linters make us adhere to a code style.  
-Transpilers allow us to use the latest syntax.  
-Bundlers help us to ship code better.  
+Linters make us adhere to a code style.\
+Transpilers allow us to use the latest syntax.\
+Bundlers help us to ship code better.
 
 These tools work well in most cases, but there are some scenarios where they need some help from the developer. Comments again provide an excellent way to provide information and context to these tools.
 
 For example, webpack allows async imports to be preloaded or prefetched, and we can configure this inline:
 
 ```js
-const HomePage = () => import(
-  /* webpackPreload: true */
-  './pages/home.vue'
-)
-const AboutPage = () => import(
-  /* webpackPrefetch: true */
-  './pages/about.vue'
-)
+const HomePage = () =>
+  import(
+    /* webpackPreload: true */
+    './pages/home.vue'
+  )
+const AboutPage = () =>
+  import(
+    /* webpackPrefetch: true */
+    './pages/about.vue'
+  )
 ```
 
 The comment `/* webpackPreload: true */` configures webpack inline to preload the home page. Similar, control comments are offered by eslint too:

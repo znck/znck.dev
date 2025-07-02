@@ -1,16 +1,10 @@
----
-published: 2019-05-20
-tag:
-  - organizing
-  - vue
-cover: ../public/2019-awesomeconf/cover.jpg
----
+
 
 # Running an awesome conference
 
 I love attending conferences. For inspiring talks, for making new friends and meeting old friends, or for learning new things, conferences have been influential in my journey as a developer. I like many conferences, but I want to be in every vue conference. If you been to a vue Conference, then you know that there’s something different about it. The environment is so welcoming and friendly. Sad! I have to travel across the world to be in one. I have longed to see a vue conference in India, my home, for a long time now.
 
-I decided, I was done waiting! _Let’s start a vue conference_, I urged Swapnil. He was in. We were ready. But we didn’t have the slightest clue how to. So, we started looking at other conferences. ReactFoo, JSFoo, VueConf, Connect.Tech and VueFes. These conferences are enormous. A lot goes into running them, and that scared me. It was not doable for me, for Swapnil, for a team of two who has been struggling to keep the vue meetup running.
+I decided, I was done waiting! *Let’s start a vue conference*, I urged Swapnil. He was in. We were ready. But we didn’t have the slightest clue how to. So, we started looking at other conferences. ReactFoo, JSFoo, VueConf, Connect.Tech and VueFes. These conferences are enormous. A lot goes into running them, and that scared me. It was not doable for me, for Swapnil, for a team of two who has been struggling to keep the vue meetup running.
 
 The dream would have ended there if Sid wasn’t there.
 
@@ -30,7 +24,7 @@ That random CFP has been very phenomenal for me. Who knew one random message, on
 >
 > would you like to give a talk on vue features that the react community should steal 😁
 >
-> [https://tinyconf.in](https://tinyconf.in) (not announced yet)
+> <https://tinyconf.in> (not announced yet)
 
 It was a different kind of CFP — “here’s a topic, you’re speaking on it.” If you know me, you know that I love taking vue to react conferences. I was in.
 
@@ -76,7 +70,7 @@ Got a name! Lucky us, google came up with .dev TLD around then. But we had to wa
 
 <Tweet id="1101209663834533888">
 
-Something exciting is brewing! 🤫</p>&mdash; Vue Bangalore (@VueBLR)
+Something exciting is brewing! 🤫</p>— Vue Bangalore (@VueBLR)
 
 </Tweet>
 
@@ -84,9 +78,9 @@ Next immediate step, build a website. We needed a theme, an identity for the con
 
 And we got a unique conference:
 
-- 30 attendees
-- Everyone speaks!
-- All about vue
+* 30 attendees
+* Everyone speaks!
+* All about vue
 
 <!-- Executing -->
 
@@ -96,9 +90,9 @@ Swapnil immediately put out a website and CFP for the AwesomeConf.
 
 The wait is over! Announcing an Awesome Vue.js Conference... 🎉
 
-- The best of Vue.js devs at one place. 😎
-- No one shall be a passive attendee, i.e. every participant has to speak. 🤓
-- Talks can range anywhere from 5 to 20 minutes. 💪
+* The best of Vue.js devs at one place. 😎
+* No one shall be a passive attendee, i.e. every participant has to speak. 🤓
+* Talks can range anywhere from 5 to 20 minutes. 💪
 
 May 4, Bangalore
 
@@ -108,10 +102,10 @@ Next step was to find a venue. We had the regular meetup venue as a backup. But 
 
 What do we have for sponsors?
 
-- 30 vue developers
-- One room
-- Growing frontend ecosystem
-- Networking opportunity
+* 30 vue developers
+* One room
+* Growing frontend ecosystem
+* Networking opportunity
 
 It was unconventional, far from regular conferences. We reached out to a few companies. Swapnil could lock-in a deal with [Meesho](https://meesho.com), and we got a fantastic hotel venue.
 
@@ -131,7 +125,7 @@ A day before the conference. We double checked the venue, perfected the schedule
 
 All set for [@AnAwesomeConf](https://twitter.com/AnAwesomeConf)!
 
-Just one thing left! 🤪 DM me your best [@vuejs](https://twitter.com/vuejs) puns [#AnAwesomeConf](https://twitter.com/hashtag/AnAwesomeConf) [#Vue](https://twitter.com/hashtag/Vue) [#VueBLR](https://twitter.com/hashtag/VueBLR) &mdash; Rahul Kadyan (@znck0)
+Just one thing left! 🤪 DM me your best [@vuejs](https://twitter.com/vuejs) puns [#AnAwesomeConf](https://twitter.com/hashtag/AnAwesomeConf) [#Vue](https://twitter.com/hashtag/Vue) [#VueBLR](https://twitter.com/hashtag/VueBLR) — Rahul Kadyan (@znck0)
 
 </Tweet>
 
@@ -139,13 +133,13 @@ I self-appointed myself, the master of ceremonies. A good MC must throw in bad p
 
 <!-- The D-day -->
 
-![AwesomeConf: No one shall be a passive attendee](../public/2019-awesomeconf/ac-standee.jpg){large}
+![AwesomeConf: No one shall be a passive attendee](../_assets/ac-standee-BKyjrjYJ.jpg)
 
 The conference day, we were excited, terrified, nervous, and every other thing. All attendees were there on time, which had rarely happened in our meetups. But there’s always someone who’s stuck in Bangalore traffic, but this one was our first speaker. It’s a different story, you should read [the article](https://dev.to/gokatz/first-time-speaker-fts-with-few-tips-45po) by Gokul.
 
-_**Enjoy the Vue**_ - Swapnil completed his welcome address and the conference begins. We had 5 sessions of 3 talks each, filled with breaks for discussions and a great lunch. Some people enjoyed talks, others enjoyed conversations but most enjoyed the lunch.
+***Enjoy the Vue*** - Swapnil completed his welcome address and the conference begins. We had 5 sessions of 3 talks each, filled with breaks for discussions and a great lunch. Some people enjoyed talks, others enjoyed conversations but most enjoyed the lunch.
 
-![Lunch: Secret of making a regular conference into an awesome conference](../public/2019-awesomeconf/ac-lunch.jpg){large}
+![Lunch: Secret of making a regular conference into an awesome conference](../_assets/ac-lunch-Dr_uv9oN.jpg)
 
 <!-- What went well? -->
 
@@ -153,13 +147,13 @@ _**Enjoy the Vue**_ - Swapnil completed his welcome address and the conference b
 
 15 talks, 8 first time speakers, 1 student. We did an excellent job with the first vue conference in India, and it seems likewise from the twitter reactions.
 
-![Tweets from AwesomeConf attendees](../public/2019-awesomeconf/tweets.jpg){large}
+![Tweets from AwesomeConf attendees](../_assets/tweets-A_fAqIev.jpg)
 
 I wanted to host a vue conference where every attendee is actively involved, and we did it. I am pleased with AwesomeConf, and so are the attendees. Also, no one was hurt by my bad jokes and puns, so that's a plus.
 
 <Tweet id="1124556436711849985">
 
-When someone asks you to explain your joke. [@znck0](https://twitter.com/znck0) [#AnAwesomeConf](https://twitter.com/hashtag/AnAwesomeConf) ![Rahul explaining a joke at AwesomeConf](https://t.co/higeRbCglc) &mdash; Swapnil Agarwal (@SwapAgarwal)
+When someone asks you to explain your joke. [@znck0](https://twitter.com/znck0) [#AnAwesomeConf](https://twitter.com/hashtag/AnAwesomeConf) ![Rahul explaining a joke at AwesomeConf](https://t.co/higeRbCglc) — Swapnil Agarwal (@SwapAgarwal)
 
 </Tweet>
 <!-- What didn't work? -->
@@ -174,13 +168,13 @@ When someone asks you to explain your joke. [@znck0](https://twitter.com/znck0) 
 
 I feel the conference provided the required platform to bring out those eight first-time speakers.
 
-_You are a conference speaker now!_  
-_You are awesome._  
-_You spoke at an awesome conference._  
-_Which conference?_ – I ended my closing address.  
-_An awesome conference_.
+*You are a conference speaker now!*\
+*You are awesome.*\
+*You spoke at an awesome conference.*\
+*Which conference?* – I ended my closing address.\
+*An awesome conference*.
 
-![That's all folks. It was an awesome conf.](../public/2019-awesomeconf/fin.jpg)
+![That's all folks. It was an awesome conf.](../_assets/fin-BGkQVUmD.jpg)
 
 <!-- Thanks & Mentions -->
 
@@ -193,4 +187,4 @@ Thanks [Suwardhan](https://instagram.com/suwardhan.design).
 
 [Swap](https://twitter.com/@SwapAgarwal) & [Znck](https://twitter.com/@znck0) would be back soon with next iteration of AwesomeConf.
 
-![AwesomeConf 2019 Pass](../public/2019-awesomeconf/signed.jpg)
+![AwesomeConf 2019 Pass](../_assets/signed-C6DkAyQG.jpg)

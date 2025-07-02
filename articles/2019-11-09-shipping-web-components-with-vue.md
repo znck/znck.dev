@@ -1,10 +1,4 @@
----
-published: 2019-10-28
-tags:
-  - vue
-  - web-components
-  - rollup-plugin-vue
----
+
 
 # Shipping Web Components with Vue
 
@@ -20,10 +14,10 @@ I decided to write a web component for code snippets on my blog.
 
 Web component spec is a meta-specification which depends on four other specs.
 
-- The Custom Elements specification
-- The shadow DOM specification
-- The HTML Template specification
-- The ES module specification
+* The Custom Elements specification
+* The shadow DOM specification
+* The HTML Template specification
+* The ES module specification
 
 The web components are part of the native web platform, and they allow us to write genuinely reusable elements. But, I miss the convenience of a Vue SFC. I miss computed properties and declarative event handler registration. Won't it be nice if we could write Vue components and ship web components?
 

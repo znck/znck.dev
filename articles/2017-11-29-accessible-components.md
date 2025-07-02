@@ -1,10 +1,4 @@
----
-published: 2017-11-29
-tags:
-  - vue
-  - accessibility
-  - testing
----
+
 
 # Accessible Components: Test Driven Approach
 
@@ -22,10 +16,9 @@ Let’s simple component which renders following HTML:
 <button role="datepicker">test</button>
 ```
 
-The `<button>` element has an invalid role value. We’ll validate generated HTML with [a11y](https://github.com/addyosmani/a11y) utility. ARIA [AX_ARIA_01](https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_01) rule would fail with the following message:
+The `<button>` element has an invalid role value. We’ll validate generated HTML with [a11y](https://github.com/addyosmani/a11y) utility. ARIA [AX\_ARIA\_01](https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_01) rule would fail with the following message:
 
 Elements with ARIA roles must use a valid, non-abstract ARIA role.
-
 
 ```vue file="src/Button.vue"
 <template>

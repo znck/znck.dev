@@ -1,10 +1,4 @@
----
-published: 2019-06-03
-tags:
-  - design
-  - color
-  - eli5
----
+
 
 # Finally some colors in my life
 
@@ -32,23 +26,30 @@ $$
 1 \times 100 + 2 \times 10 + 8 \times 1 = 128
 $$
 
+
 We know hundred is ten times ten.
 
 $$
 1 \times (10 \times (10 \times 1)) + 2 \times (10 \times 1) + 8 \times 1 = 128
 $$
 
+
 As we move from right to left, the value of a position is increasing ten folds. It is increasing ten folds because we have ten digits or say it is a base10 number. We have a smarter way to represent these ten folds increase: power notation. In power notation, we say:
 
 $$
 1  =  10^0
 $$
+
+
 $$
 10  =  10^1
 $$
+
+
 $$
 100  =  10^2
 $$
+
 
 <!-- Maybe explain base and exponent. -->
 
@@ -58,11 +59,13 @@ $$
 1  \times  10^2   +   2  \times  10^1   +   8  \times  10^0   =   128
 $$
 
+
 For brevity, we write these numbers in increasing order of power.
 
 $$
 8  \times  10^0   +   2  \times  10^1   +   1  \times  10^2   =   128
 $$
+
 
 Phew!
 
@@ -74,11 +77,13 @@ $$
 0 \times 2^0 + 0 \times 2^1 + 0 \times 2^2 + 0 \times 2^3 + 0 \times 2^4 + 0 \times 2^5 + 0 \times 2^6 + 1 \times 2^7 = 128
 $$
 
+
 The grey color (hex code `#808080`) would be 1000 0000 1000 0000 1000 0000, and computers would understand it. However, we, humans, would have a tough time using binary numbers. Just imagine, if my designer friend asks "What is the color of the button?" and I say, "It looks like one zero zero zero zero zero zero zero zero one zero zero zero zero ...". It is pretty damn exhausting. Moreover, I am not sure if anyone can comprehend these kinds of numbers. We need a better system to convey these numbers, like the number in the hex code of the grey color. The hex code `#808080` is a hexadecimal number (a base16 number system). The hexadecimal number 80 in power notation would be:
 
 $$
 0 \times 16^0 + 8 \times 16^1 = 128
 $$
+
 
 This number is relatively more comfortable to use as I can reply to my designer friend, "It looks like hex eighty eighty eighty."
 
@@ -90,19 +95,19 @@ Screens use lights to display colors. However, we don't need lights in all color
 
 Hence, grey has some red, some green, and some blue which makes me think grey is full of colors, then why does it look so... grey?
 
-![White light passing through prism](../public/2019-finally-some-colors/prism.png){small}
+![White light passing through prism](../_assets/prism-Da-XBeii.png)
 
 Colored lights mix additively or subtractively to give a resultant color. In our case, equal amounts of red, green, and blue cancel each other out, resulting into grey color. I cannot mix these colored lights in my head and write the correct hex code for the color I want to use. I need some other way to tell colors.
 
 Fortunately, there is a way: a color notation called HSL, which stands for hue, saturation, and lightness. Scary, huh! It seemed very complicated to me and chose to stick to color pickers until I saw [Miriam's talk at VueConf US 2019](https://youtu.be/VsG5l5e44ZY). She simplified HSL for me:
 
-- Hue is the color.
-- Saturation is the amount of color.
-- Lightness is the amount of light.
+* Hue is the color.
+* Saturation is the amount of color.
+* Lightness is the amount of light.
 
 Imagine if we paint a rainbow on a circular disc such that every radial line is in a different color, gradually changing from red to yellow, yellow to green, green to cyan, cyan to blue, and blue to red. On such a circle, the angle between any radial line with the red radial can be used to choose a color. We have red at 0deg, yellow at 60deg, green at 120deg, cyan at 180deg, blue at 240deg, again red at 360deg, and every other angle in between these would give a color which is a mixture of the two. Now, I know what could be the hue of the color I want.
 
-![A disk demonstrating hues of HSL](../public/2019-finally-some-colors/hsl.png){small}
+![A disk demonstrating hues of HSL](../_assets/hsl-CYBNVHMg.png)
 
 After picking hue, I choose the amount of the color, i.e., the saturation. It goes no color to full color, and we use percentage to set the amount required.
 
@@ -110,9 +115,9 @@ Finally, we pick a lightness to set the brightness of the color. It goes from da
 
 Let's pick the grey color:
 
-- Hue does not matter as it's grey.
-- We don't want any color, so we set it to 0%
-- The correct lightness value would be around 50%, in between black and white.
+* Hue does not matter as it's grey.
+* We don't want any color, so we set it to 0%
+* The correct lightness value would be around 50%, in between black and white.
 
 Hence, the grey color in HSL would be `hsl(0deg, 0%, 50.25%)` which is equivalent to `#808080`. Now I know how to make colors. I am adding colors to my blog.
 
@@ -120,7 +125,7 @@ Hence, the grey color in HSL would be `hsl(0deg, 0%, 50.25%)` which is equivalen
 
 I have been redesigning my blog for a while. With some help from [Suwardhan](https://suwardhan.com), I finally got the new design out.
 
-![Screenshot: Default Theme on znck.dev](../public/2019-finally-some-colors/default.png)
+![Screenshot: Default Theme on znck.dev](../_assets/default-CK3a9_P8.png)
 
 It looks clean and smooth, and I love it.
 
@@ -136,7 +141,7 @@ I choose white for text to get maximum contrast as the background would be dark.
 
 So, the background becomes <span title="The --hue-of-the-day is a CSS custom property. Google MDN CSS Custom Properties to know more.">`hsl(var(--hue-of-the-day), 100%, 3%)`</span>. I need one more color for highlights. I choose to use the contrasting hue of the day. It is amazing how easy it is to get contrasting color in HSL, subtract the hue value from 180deg. So, I have white for text, `hsl(var(--hue-of-the-day), 100%, 3%)` for background, and <span title="The calc is a CSS builtin function. Google MDN CSS calc to know more.">`hsl(calc(180deg - var(--hue-of-the-day)), 100%, 60%)`</span> for highlights.
 
-![Screenshot: Dark Theme on znck.dev](../public/2019-finally-some-colors/dark.png)
+![Screenshot: Dark Theme on znck.dev](../_assets/dark-YiuBcyfb.png)
 
 I use the following JavaScript snippet to set the hue of the day:
 

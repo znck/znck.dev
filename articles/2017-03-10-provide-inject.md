@@ -1,8 +1,4 @@
----
-published: 2017-03-10
-tags:
-  - vue
----
+
 
 # Provide/Inject in Vue 2.2
 
@@ -32,9 +28,7 @@ const Child = {
 }
 ```
 
-
 <iframe width="100%" height="480" src="https://jsfiddle.net/znck/4v95vfh3/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
-
 
 The provide/inject binding are **NOT** reactive. But if observed objects are provided, they do remain reactive.
 

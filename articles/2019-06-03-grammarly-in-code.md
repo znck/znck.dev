@@ -1,11 +1,4 @@
----
-published: 2019-11-09
-tags:
-  - diy
-  - vscode
-  - extension
-image: ./screenshot-ext.png
----
+
 
 # Grammarly in Code
 
@@ -23,7 +16,7 @@ No API -- yet! It's been six years since they first acknowledged that they don't
 
 Hence, "Grammarly API Github" — I hit Google again.
 
-![Screenshot of Google search results for query "Grammarly API Github"](../public/2019-grammarly-in-code/screenshot-google-search-2.png)
+![Screenshot of Google search results for query "Grammarly API Github"](../_assets/screenshot-google-search-2-Dto8dABI.png)
 
 I found something — a reverse-engineered [Grammarly client](https://github.com/stewartmcgown/grammarly-api). It's a sound library, and I decided to base my extension on this library.
 
@@ -31,7 +24,7 @@ I found something — a reverse-engineered [Grammarly client](https://github.com
 
 I wanted to validate the idea with minimum efforts, so I looked for a project scaffold to kickstart the extension. VS Code has [yeoman](https://yeoman.io) generator. Hence, all I needed was to run the command `yo code`.
 
-![Screenshot of Yeoman Visual Studio Code Generator running in iTerm2 zsh shell](../public/2019-grammarly-in-code/screenshot-yeoman.png)
+![Screenshot of Yeoman Visual Studio Code Generator running in iTerm2 zsh shell](../_assets/screenshot-yeoman-CnmZr87_.png)
 
 I picked the very first option: "New Extension (TypeScript)", and I got a good starting point. Next, I needed to create a small language server to analyze text content with Grammarly API and post grammar diagnostics. The Code's [Language Server Extension Guide](https://code.visualstudio.com/api/language-extensions/language-server-extension-guide) proved to be an excellent resource. I got the extension working in very few lines of code.
 
@@ -76,7 +69,7 @@ documents.onDidChangeContent(async ({ document }) => {
 
 I got it working. I could see red twiddling underlines screaming at me.
 
-![Screenshot of VS Code editor highlighting grammar issues and displaying Grammarly diagnostics](../public/2019-grammarly-in-code/screenshot-grammarly.png)
+![Screenshot of VS Code editor highlighting grammar issues and displaying Grammarly diagnostics](../_assets/screenshot-grammarly-clUtP2JH.png)
 
 I started writing, but Grammarly diagnostics was extremely slow. I had to wait for seconds, which is a lot for writing,
 I expected a near-immediate response. However, the response in Grammarly editor is quite snappy. I guess I was doing something wrong. I wondered how do Grammarly editor work?
@@ -85,7 +78,7 @@ I expected a near-immediate response. However, the response in Grammarly editor 
 
 By looking at the network logs in Chrome DevTools, I found Grammarly uses a WebSocket for connecting to the grammar service at `wss://capi.grammarly.com/freews`.
 
-![Screenshot of Chrome DevTools Network tab showing web socket connection to Grammarly API](../public/2019-grammarly-in-code/screenshot-ws.png)
+![Screenshot of Chrome DevTools Network tab showing web socket connection to Grammarly API](../_assets/screenshot-ws-B6r0839Q.png)
 
 On further inspection of messages, I found every message has a fixed structure: a message `id`, `action`, and the payload required for the `action`. The `id` value is from a sequence starting from 0 and incremented on every subsequent message. I guess, the `action` is the name of the function executed on the server, it looks like an <abbr title="Remote Procedure Call">RPC</abbr> API. For every message sent, the server returned a response with the same `id` as the message. I needed more data to understand the API, so I started fiddling with the Grammarly editor while monitoring the socket connection.
 
@@ -108,16 +101,7 @@ The editor starts a conversation with the server by sending a message with `star
     "audience": "expert",
     "style": "neutral",
     "emotion": "mild",
-    "emotions": [
-      "neutral",
-      "confident",
-      "joyful",
-      "optimistic",
-      "respectful",
-      "urgent",
-      "friendly",
-      "analytical"
-    ],
+    "emotions": ["neutral", "confident", "joyful", "optimistic", "respectful", "urgent", "friendly", "analytical"],
     "dialect": "american"
   },
   "clientSupports": [
@@ -219,7 +203,7 @@ The language server protocol support incremental document synchronization with t
 <figure data-type="code">
 
 ```ts
-connection.onDidChangeTextDocument(event => {
+connection.onDidChangeTextDocument((event) => {
   const { document, change } = event
   const { range, text } = change
 
@@ -230,7 +214,7 @@ connection.onDidChangeTextDocument(event => {
   // New revision of document.
   const newDocument = new TextDocument(
     document.rev + 1,
-    content.substr(0, offsetStart) + text + content.substr(offsetEnd)
+    content.substr(0, offsetStart) + text + content.substr(offsetEnd),
   )
 })
 ```
@@ -262,7 +246,7 @@ But, for Grammarly, we have to transform these range replacement events to opera
     <figcaption>Code displaying same message as VS Code change event and Grammarly OT</figcaption>
    </figure>
 
-1. Insert empty text in a non-empty range
+2. Insert empty text in a non-empty range
 
    <figure data-type="code">
 
@@ -283,10 +267,10 @@ But, for Grammarly, we have to transform these range replacement events to opera
    <figcaption>Code displaying same message as VS Code change event and Grammarly OT</figcaption>
    </figure>
 
-1. Insert non-empty text in a non-empty range
+3. Insert non-empty text in a non-empty range
 
    <figure data-type="code">
-   
+
    ```ts
    const event = {
      range: {
@@ -314,9 +298,9 @@ So, I ended up reimplementing the Grammarly API hooked it up with Code's content
 
 I followed the [VS Code Publishing Extension Guide](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) and got my extension on the marketplace. There were some hurdles in bundling the extension, but that deserves an article of its own. So, here I present ["Grammarly in Code"](https://marketplace.visualstudio.com/items?itemName=znck.grammarly).
 
-![Screenshot of Grammarly extension on VS Code marketplace](../public/2019-grammarly-in-code/screenshot-ext.png)
+![Screenshot of Grammarly extension on VS Code marketplace](../_assets/screenshot-ext-Ckxyxl0T.png)
 
-> Markdown. Code. Grammarly.  
-> Now, hear me ~~roar~~ write.
+> Markdown. Code. Grammarly.\
+> Now, hear me ~~undefined~~ write.
 
 The [Grammarly extension is open source](https://github.com/znck/grammarly), and you can contribute or file issues if you face any problems.

@@ -1,6 +1,4 @@
----
-published: 2020-01-14
----
+
 
 # Negative feedback comes from a good place
 
@@ -71,7 +69,7 @@ The feedback worked for you, and it worked for me. We are our better selves, now
 Following is a recent email, I sent for seeking feedback, I hope you find it
 useful:
 
-> Hey ~~Xxxx~~,
+> Hey ~~undefined~~,
 >
 > We have been working together for three weeks now. I value your feedback, and I'd like to be a more effective team member. Would you be willing to answer the questions below? Please be as honest as you can because that's what will help me the most—I promise nothing you say will offend me. Feedback is a gift, and I'm grateful for your taking the time.
 >
@@ -83,9 +81,9 @@ useful:
 >
 > Thanks.
 >
-> --
+> \--
 > Rahul Kadyan
-> [https://znck.me](https://znck.me)
+> <https://znck.me>
 
 ## Feedback is a gift
 

@@ -1,23 +1,23 @@
 # Rahul Kadyan
 
-> 
+> Software Engineer @ Grammarly
 
 ## Articles
 
-- [First Day in Vue.js](./articles/2017-03-03-first-day.md)
-- [Fiddle with Vue.js](./articles/2017-03-05-fiddle-with-vue.md)
-- [Provide/Inject in Vue 2.2](./articles/2017-03-10-provide-inject.md)
-- [Accessible Components: Test Driven Approach](./articles/2017-11-29-accessible-components.md)
-- [Type Vue without TypeScript](./articles/2018-11-11-type-vue.md)
-- [Type Vuex without TypeScript](./articles/2018-11-20-type-vuex.md): A practical guide for type checking vuex modules written in JS and getting things done.
-- [Running an awesome conference](./articles/2019-05-20-awesomeconf.md)
-- [Comments in Code](./articles/2019-05-26-comments-in-code.md)
-- [Finally some colors in my life](./articles/2019-06-03-finally-some-colors.md)
-- [Grammarly in Code](./articles/2019-06-03-grammarly-in-code.md)
-- [Simple Hard Things](./articles/2019-06-10-simple-hard-things.md)
-- [Shipping Web Components with Vue](./articles/2019-11-09-shipping-web-components-with-vue.md)
-- [Negative feedback comes from a good place](./articles/2020-01-14-appreciate-feedback.md)
+- [First Day in Vue.js](articles/2017-03-03-first-day.md): Back in college, junior year, we were exploring our entrepreneurial skills. I started a product development startup with couple of friends. We’re supposed to build iOS applications but some how we ended building websites.
+- [Fiddle with Vue.js](articles/2017-03-05-fiddle-with-vue.md): If you’ve created an issue on Vue.js repository for the first time then there is high probability that you skipped reading the contribution guidelines. By doing so you’ve created an issue that does not tell maintainers a thing and helps nobody. Next, you would be hit with a template response and your issue would be labelled need repro.
+- [Provide/Inject in Vue 2.2](articles/2017-03-10-provide-inject.md): The Initial D release of Vue have some amazing new features, including improved server side rendering, v-model customization, better error handling, provide & inject pair and many other small improvements.
+- [Accessible Components: Test Driven Approach](articles/2017-11-29-accessible-components.md): The web is undoubtedly the most vital resource today. Modern websites are built-in small building blocks; components. Practices from test-driven software development have employed to automate the correctness of these building blocks.
+- [Type Vue without TypeScript](articles/2018-11-11-type-vue.md): A practical guide for type checking vue components written in JS and getting things done.
+- [Type Vuex without TypeScript](articles/2018-11-20-type-vuex.md): A practical guide for type checking vuex modules written in JS and getting things done.
+- [Running an awesome conference](articles/2019-05-20-awesomeconf.md): I love attending conferences. For inspiring talks, for making new friends and meeting old friends, or for learning new things, conferences have been influential in my journey as a developer. I like many conferences, but I want to be in every vue conference. If you been to a vue Conference, then you know that there’s something different about it. The environment is so welcoming and friendly. Sad! I have to travel across the world to be in one. I have longed to see a vue conference in India, my home, for a long time now.
+- [Comments in Code](articles/2019-05-26-comments-in-code.md): So one more pull request got rejected for having a comment; "Good code is self-documenting.", said the reviewer.
+- [Finally some colors in my life](articles/2019-06-03-finally-some-colors.md): "I got a red shirt!", I scream, every time my friends jab that my wardrobe is grey and dull. They always call me out, "Get some colors, dude!".
+- [Grammarly in Code](articles/2019-06-03-grammarly-in-code.md): There's no simpler writing tool than markdown. There's no elegant editor than code. There's no better writing environment than markdown in <span title="VS Code">code</span>. It's perfect, but whenever I write, I find myself copy-pasting back and forth between Grammarly editor and VS Code editor. Grammarly makes my writing much better, but it also forces me to use their editor. Don't take me wrong I don't hate their editor, in fact, I kind of like it — clean, spacious, and responsive. But it's not sufficient for me as my articles generally have images, code snippets, figures, and sometimes markup. The lack of syntax highlight for markdown and markup is an absolute deal-breaker. If Grammarly worked in VS Code editor, wouldn't that be perfect?
+- [Simple Hard Things](articles/2019-06-10-simple-hard-things.md): Simple things are easy; everyone says so. However, in reality, it may not be so.
+- [Shipping Web Components with Vue](articles/2019-11-09-shipping-web-components-with-vue.md): I have been watching the web component spec. However, all the projects I have worked on were either using Vue or React, and these frameworks are more than capable of building complex applications. I never felt like using web components, but that changed yesterday.
+- [Negative feedback comes from a good place](articles/2020-01-14-appreciate-feedback.md): It's not easy to say negative things to people. In fact, it takes a lot of courage to point out the shortcoming. If someone does that for me, honest and brutal, I keep them close. Brutal and honest friends are dearest to me.
 
-## Other
+## Other Pages
 
-- [**[Rahul Kadyan](https://znck.me)**](./index.md)
+- [Rahul Kadyan](index.md): I write about software, technology, and occasionally, life.
