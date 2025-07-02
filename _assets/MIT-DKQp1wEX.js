@@ -1,4 +1,4 @@
-import{_ as i,g as n,a as e,F as s,o as a}from"./index-JzpJ4zml.js";const o={type:"page",title:"",description:`Permission is hereby granted, free of charge, to any person obtaining a copy
+import{_ as i,g as n,a as e,F as s,o as a}from"../index.mjs";const o={type:"page",title:"",description:`Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
