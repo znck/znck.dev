@@ -10,7 +10,12 @@ I searched the code marketplace for a Grammarly extension, but there wasn't one.
 
 "Grammarly API" — I entered in the Google white box and hit enter; the results disappointed me.
 
-<Tweet id="388621218586578944">No API--yet! We'll keep you posted! — @Grammarly</Tweet>
+<Tweet id="388621218586578944">
+
+> No API--yet! We'll keep you posted!
+> — [@Grammarly](https://twitter.com/Grammarly/status/388621218586578944)
+
+</Tweet>
 
 No API -- yet! It's been six years since they first acknowledged that they don't have a public API. I don't think developer environments ever make to their priority list.
 

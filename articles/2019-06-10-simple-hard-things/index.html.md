@@ -10,7 +10,8 @@ I want to share a simple hard thing, but before that tell me, "do you like the d
 
 <Tweet id="1132564698677690368">
 
-Your blog looks clean, mind me making it a [@saber\_land](https://twitter.com/saber_land) theme? 😬 — EGÖlST ([@\_egoistlily](https://twitter.com/_egoistlily))
+> Your blog looks clean, mind me making it a [@saber\_land](https://twitter.com/saber_land) theme? 😬
+> — [@\_egoistlily](https://twitter.com/_egoistlily/status/1132564698677690368)
 
 </Tweet>
 

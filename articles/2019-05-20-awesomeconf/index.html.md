@@ -70,7 +70,8 @@ Got a name! Lucky us, google came up with .dev TLD around then. But we had to wa
 
 <Tweet id="1101209663834533888">
 
-Something exciting is brewing! 🤫</p>— Vue Bangalore (@VueBLR)
+> Something exciting is brewing! 🤫
+> — [@VueBLR](https://twitter.com/VueBLR/status/1101209663834533888)
 
 </Tweet>
 
@@ -88,13 +89,14 @@ Swapnil immediately put out a website and CFP for the AwesomeConf.
 
 <Tweet id="1102617517292322816">
 
-The wait is over! Announcing an Awesome Vue.js Conference... 🎉
-
-* The best of Vue.js devs at one place. 😎
-* No one shall be a passive attendee, i.e. every participant has to speak. 🤓
-* Talks can range anywhere from 5 to 20 minutes. 💪
-
-May 4, Bangalore
+> The wait is over! Announcing an Awesome Vue.js Conference... 🎉
+>
+> * The best of Vue.js devs at one place. 😎
+> * No one shall be a passive attendee, i.e. every participant has to speak. 🤓
+> * Talks can range anywhere from 5 to 20 minutes. 💪
+>
+> May 4, Bangalore
+> — [@VueBLR](https://twitter.com/VueBLR/status/1102617517292322816)
 
 </Tweet>
 
@@ -123,9 +125,10 @@ A day before the conference. We double checked the venue, perfected the schedule
 
 <Tweet id="1124453377792864257">
 
-All set for [@AnAwesomeConf](https://twitter.com/AnAwesomeConf)!
-
-Just one thing left! 🤪 DM me your best [@vuejs](https://twitter.com/vuejs) puns [#AnAwesomeConf](https://twitter.com/hashtag/AnAwesomeConf) [#Vue](https://twitter.com/hashtag/Vue) [#VueBLR](https://twitter.com/hashtag/VueBLR) — Rahul Kadyan (@znck0)
+> All set for [@AnAwesomeConf](https://twitter.com/AnAwesomeConf)!
+>
+> Just one thing left! 🤪 DM me your best [@vuejs](https://twitter.com/vuejs) puns [#AnAwesomeConf](https://twitter.com/hashtag/AnAwesomeConf) [#Vue](https://twitter.com/hashtag/Vue) [#VueBLR](https://twitter.com/hashtag/VueBLR)
+> — [@znck0](https://twitter.com/znck0/status/1124453377792864257)
 
 </Tweet>
 
@@ -153,7 +156,8 @@ I wanted to host a vue conference where every attendee is actively involved, and
 
 <Tweet id="1124556436711849985">
 
-When someone asks you to explain your joke. [@znck0](https://twitter.com/znck0) [#AnAwesomeConf](https://twitter.com/hashtag/AnAwesomeConf) ![Rahul explaining a joke at AwesomeConf](https://t.co/higeRbCglc) — Swapnil Agarwal (@SwapAgarwal)
+> When someone asks you to explain your joke. [@znck0](https://twitter.com/znck0) [#AnAwesomeConf](https://twitter.com/hashtag/AnAwesomeConf) ![Rahul explaining a joke at AwesomeConf](https://t.co/higeRbCglc)
+> — [@SwapAgarwal](https://twitter.com/SwapAgarwal/status/1124556436711849985)
 
 </Tweet>
 <!-- What didn't work? -->

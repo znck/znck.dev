@@ -37,7 +37,8 @@ We won’t be introducing new dependencies to a project only to get the types ri
 
 <Tweet id="1062919689515368448">
 
-All the TypeScript + Vue users out there, what do you use to write Vuex modules and why?</p>— Rahul Kadyan (@znck0)
+> All the TypeScript + Vue users out there, what do you use to write Vuex modules and why?
+> — [@znck0](https://twitter.com/znck0/status/1062919689515368448)
 
 </Tweet>
 
