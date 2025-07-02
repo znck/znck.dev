@@ -6,99 +6,111 @@
   <description>Software Engineer @ Grammarly</description>
   <language>en-us</language>
   <atom:link href="https://znck.dev/rss.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 02 Jul 2025 05:53:38 GMT</lastBuildDate>
-  <pubDate>Wed, 02 Jul 2025 05:53:38 GMT</pubDate>
+  <lastBuildDate>Wed, 02 Jul 2025 17:31:36 GMT</lastBuildDate>
+  <pubDate>Wed, 02 Jul 2025 17:31:36 GMT</pubDate>
   <item>
+  <title></title>
+  <link>https://znck.dev/licenses/MIT</link>
+  <description>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</description>
+  <pubDate>Wed, 02 Jul 2025 17:30:00 GMT</pubDate>
+  <guid isPermaLink="true">https://znck.dev/licenses/MIT</guid>
+</item>
+<item>
   <title>Negative feedback comes from a good place</title>
-  <link>https://znck.dev/articles/2020-01-14-appreciate-feedback.html</link>
+  <link>https://znck.dev/articles/2020-01-14-appreciate-feedback</link>
   <description>It's not easy to say negative things to people. In fact, it takes a lot of courage to point out the shortcoming. If someone does that for me, honest and brutal, I keep them close. Brutal and honest friends are dearest to me.</description>
   <pubDate>Tue, 14 Jan 2020 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2020-01-14-appreciate-feedback.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2020-01-14-appreciate-feedback</guid>
 </item>
 <item>
   <title>Shipping Web Components with Vue</title>
-  <link>https://znck.dev/articles/2019-11-09-shipping-web-components-with-vue.html</link>
+  <link>https://znck.dev/articles/2019-11-09-shipping-web-components-with-vue</link>
   <description>I have been watching the web component spec. However, all the projects I have worked on were either using Vue or React, and these frameworks are more than capable of building complex applications. I never felt like using web components, but that changed yesterday.</description>
   <pubDate>Sat, 09 Nov 2019 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2019-11-09-shipping-web-components-with-vue.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2019-11-09-shipping-web-components-with-vue</guid>
 </item>
 <item>
   <title>Simple Hard Things</title>
-  <link>https://znck.dev/articles/2019-06-10-simple-hard-things.html</link>
+  <link>https://znck.dev/articles/2019-06-10-simple-hard-things</link>
   <description>Simple things are easy; everyone says so. However, in reality, it may not be so.</description>
   <pubDate>Mon, 10 Jun 2019 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2019-06-10-simple-hard-things.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2019-06-10-simple-hard-things</guid>
 </item>
 <item>
   <title>Finally some colors in my life</title>
-  <link>https://znck.dev/articles/2019-06-03-finally-some-colors.html</link>
+  <link>https://znck.dev/articles/2019-06-03-finally-some-colors</link>
   <description>"I got a red shirt!", I scream, every time my friends jab that my wardrobe is grey and dull. They always call me out, "Get some colors, dude!".</description>
   <pubDate>Mon, 03 Jun 2019 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2019-06-03-finally-some-colors.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2019-06-03-finally-some-colors</guid>
 </item>
 <item>
   <title>Grammarly in Code</title>
-  <link>https://znck.dev/articles/2019-06-03-grammarly-in-code.html</link>
+  <link>https://znck.dev/articles/2019-06-03-grammarly-in-code</link>
   <description>There's no simpler writing tool than markdown. There's no elegant editor than code. There's no better writing environment than markdown in <span title="VS Code">code</span>. It's perfect, but whenever I write, I find myself copy-pasting back and forth between Grammarly editor and VS Code editor. Grammarly makes my writing much better, but it also forces me to use their editor. Don't take me wrong I don't hate their editor, in fact, I kind of like it — clean, spacious, and responsive. But it's not sufficient for me as my articles generally have images, code snippets, figures, and sometimes markup. The lack of syntax highlight for markdown and markup is an absolute deal-breaker. If Grammarly worked in VS Code editor, wouldn't that be perfect?</description>
   <pubDate>Mon, 03 Jun 2019 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2019-06-03-grammarly-in-code.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2019-06-03-grammarly-in-code</guid>
 </item>
 <item>
   <title>Comments in Code</title>
-  <link>https://znck.dev/articles/2019-05-26-comments-in-code.html</link>
+  <link>https://znck.dev/articles/2019-05-26-comments-in-code</link>
   <description>So one more pull request got rejected for having a comment; "Good code is self-documenting.", said the reviewer.</description>
   <pubDate>Sun, 26 May 2019 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2019-05-26-comments-in-code.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2019-05-26-comments-in-code</guid>
 </item>
 <item>
   <title>Running an awesome conference</title>
-  <link>https://znck.dev/articles/2019-05-20-awesomeconf.html</link>
+  <link>https://znck.dev/articles/2019-05-20-awesomeconf</link>
   <description>I love attending conferences. For inspiring talks, for making new friends and meeting old friends, or for learning new things, conferences have been influential in my journey as a developer. I like many conferences, but I want to be in every vue conference. If you been to a vue Conference, then you know that there’s something different about it. The environment is so welcoming and friendly. Sad! I have to travel across the world to be in one. I have longed to see a vue conference in India, my home, for a long time now.</description>
   <pubDate>Mon, 20 May 2019 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2019-05-20-awesomeconf.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2019-05-20-awesomeconf</guid>
 </item>
 <item>
   <title>Type Vuex without TypeScript</title>
-  <link>https://znck.dev/articles/2018-11-20-type-vuex.html</link>
+  <link>https://znck.dev/articles/2018-11-20-type-vuex</link>
   <description>A practical guide for type checking vuex modules written in JS and getting things done.</description>
   <pubDate>Tue, 20 Nov 2018 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2018-11-20-type-vuex.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2018-11-20-type-vuex</guid>
 </item>
 <item>
   <title>Type Vue without TypeScript</title>
-  <link>https://znck.dev/articles/2018-11-11-type-vue.html</link>
+  <link>https://znck.dev/articles/2018-11-11-type-vue</link>
   <description>A practical guide for type checking vue components written in JS and getting things done.</description>
   <pubDate>Sun, 11 Nov 2018 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2018-11-11-type-vue.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2018-11-11-type-vue</guid>
 </item>
 <item>
   <title>Accessible Components: Test Driven Approach</title>
-  <link>https://znck.dev/articles/2017-11-29-accessible-components.html</link>
+  <link>https://znck.dev/articles/2017-11-29-accessible-components</link>
   <description>The web is undoubtedly the most vital resource today. Modern websites are built-in small building blocks; components. Practices from test-driven software development have employed to automate the correctness of these building blocks.</description>
   <pubDate>Wed, 29 Nov 2017 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2017-11-29-accessible-components.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2017-11-29-accessible-components</guid>
 </item>
 <item>
   <title>Provide/Inject in Vue 2.2</title>
-  <link>https://znck.dev/articles/2017-03-10-provide-inject.html</link>
+  <link>https://znck.dev/articles/2017-03-10-provide-inject</link>
   <description>The Initial D release of Vue have some amazing new features, including improved server side rendering, v-model customization, better error handling, provide & inject pair and many other small improvements.</description>
   <pubDate>Fri, 10 Mar 2017 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2017-03-10-provide-inject.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2017-03-10-provide-inject</guid>
 </item>
 <item>
   <title>Fiddle with Vue.js</title>
-  <link>https://znck.dev/articles/2017-03-05-fiddle-with-vue.html</link>
+  <link>https://znck.dev/articles/2017-03-05-fiddle-with-vue</link>
   <description>If you’ve created an issue on Vue.js repository for the first time then there is high probability that you skipped reading the contribution guidelines. By doing so you’ve created an issue that does not tell maintainers a thing and helps nobody.
 Next, you would be hit with a template response and your issue would be labelled need repro.</description>
   <pubDate>Sun, 05 Mar 2017 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2017-03-05-fiddle-with-vue.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2017-03-05-fiddle-with-vue</guid>
 </item>
 <item>
   <title>First Day in Vue.js</title>
-  <link>https://znck.dev/articles/2017-03-03-first-day.html</link>
+  <link>https://znck.dev/articles/2017-03-03-first-day</link>
   <description>Back in college, junior year, we were exploring our entrepreneurial skills. I started a product development startup with couple of friends. We’re supposed to build iOS applications but some how we ended building websites.</description>
   <pubDate>Fri, 03 Mar 2017 00:00:00 GMT</pubDate>
-  <guid isPermaLink="true">https://znck.dev/articles/2017-03-03-first-day.html</guid>
+  <guid isPermaLink="true">https://znck.dev/articles/2017-03-03-first-day</guid>
 </item>
 </channel>
 </rss>
