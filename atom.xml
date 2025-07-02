@@ -4,7 +4,7 @@
   <link href="https://znck.dev/atom.xml" rel="self"/>
   <link href="https://znck.dev/"/>
   <id>https://znck.dev/</id>
-  <updated>2025-07-02T20:50:44.435Z</updated>
+  <updated>2025-07-02T21:02:34.666Z</updated>
   <author>
     <name>Rahul Kadyan</name>
   </author>
@@ -13,7 +13,7 @@
     <title>Negative feedback comes from a good place</title>
     <link href="https://znck.dev/articles/2020-01-14-appreciate-feedback"/>
     <id>https://znck.dev/articles/2020-01-14-appreciate-feedback</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       It's not easy to say negative things to people. In fact, it takes a lot of courage to point out the shortcoming. If someone does that for me, honest and brutal, I keep them close. Brutal and honest friends are dearest to me.
@@ -27,7 +27,7 @@
     <title>Shipping Web Components with Vue</title>
     <link href="https://znck.dev/articles/2019-11-09-shipping-web-components-with-vue"/>
     <id>https://znck.dev/articles/2019-11-09-shipping-web-components-with-vue</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       I have been watching the web component spec. However, all the projects I have worked on were either using Vue or React, and these frameworks are more than capable of building complex applications. I never felt like using web components, but that changed yesterday.
@@ -41,7 +41,7 @@
     <title>Simple Hard Things</title>
     <link href="https://znck.dev/articles/2019-06-10-simple-hard-things"/>
     <id>https://znck.dev/articles/2019-06-10-simple-hard-things</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       Simple things are easy; everyone says so. However, in reality, it may not be so.
@@ -55,7 +55,7 @@
     <title>Finally some colors in my life</title>
     <link href="https://znck.dev/articles/2019-06-03-finally-some-colors"/>
     <id>https://znck.dev/articles/2019-06-03-finally-some-colors</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       "I got a red shirt!", I scream, every time my friends jab that my wardrobe is grey and dull. They always call me out, "Get some colors, dude!".
@@ -69,7 +69,7 @@
     <title>Grammarly in Code</title>
     <link href="https://znck.dev/articles/2019-06-03-grammarly-in-code"/>
     <id>https://znck.dev/articles/2019-06-03-grammarly-in-code</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       There's no simpler writing tool than markdown. There's no elegant editor than code. There's no better writing environment than markdown in <span title="VS Code">code</span>. It's perfect, but whenever I write, I find myself copy-pasting back and forth between Grammarly editor and VS Code editor. Grammarly makes my writing much better, but it also forces me to use their editor. Don't take me wrong I don't hate their editor, in fact, I kind of like it — clean, spacious, and responsive. But it's not sufficient for me as my articles generally have images, code snippets, figures, and sometimes markup. The lack of syntax highlight for markdown and markup is an absolute deal-breaker. If Grammarly worked in VS Code editor, wouldn't that be perfect?
@@ -83,7 +83,7 @@
     <title>Comments in Code</title>
     <link href="https://znck.dev/articles/2019-05-26-comments-in-code"/>
     <id>https://znck.dev/articles/2019-05-26-comments-in-code</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       So one more pull request got rejected for having a comment; "Good code is self-documenting.", said the reviewer.
@@ -97,7 +97,7 @@
     <title>Running an awesome conference</title>
     <link href="https://znck.dev/articles/2019-05-20-awesomeconf"/>
     <id>https://znck.dev/articles/2019-05-20-awesomeconf</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       I love attending conferences. For inspiring talks, for making new friends and meeting old friends, or for learning new things, conferences have been influential in my journey as a developer. I like many conferences, but I want to be in every vue conference. If you been to a vue Conference, then you know that there’s something different about it. The environment is so welcoming and friendly. Sad! I have to travel across the world to be in one. I have longed to see a vue conference in India, my home, for a long time now.
@@ -111,7 +111,7 @@
     <title>Type Vuex without TypeScript</title>
     <link href="https://znck.dev/articles/2018-11-20-type-vuex"/>
     <id>https://znck.dev/articles/2018-11-20-type-vuex</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       A practical guide for type checking vuex modules written in JS and getting things done.
@@ -125,7 +125,7 @@
     <title>Type Vue without TypeScript</title>
     <link href="https://znck.dev/articles/2018-11-11-type-vue"/>
     <id>https://znck.dev/articles/2018-11-11-type-vue</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       A practical guide for type checking vue components written in JS and getting things done.
@@ -139,7 +139,7 @@
     <title>Accessible Components: Test Driven Approach</title>
     <link href="https://znck.dev/articles/2017-11-29-accessible-components"/>
     <id>https://znck.dev/articles/2017-11-29-accessible-components</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       The web is undoubtedly the most vital resource today. Modern websites are built-in small building blocks; components. Practices from test-driven software development have employed to automate the correctness of these building blocks.
@@ -153,7 +153,7 @@
     <title>Provide/Inject in Vue 2.2</title>
     <link href="https://znck.dev/articles/2017-03-10-provide-inject"/>
     <id>https://znck.dev/articles/2017-03-10-provide-inject</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       The Initial D release of Vue have some amazing new features, including improved server side rendering, v-model customization, better error handling, provide & inject pair and many other small improvements.
@@ -167,7 +167,7 @@
     <title>Fiddle with Vue.js</title>
     <link href="https://znck.dev/articles/2017-03-05-fiddle-with-vue"/>
     <id>https://znck.dev/articles/2017-03-05-fiddle-with-vue</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       If you’ve created an issue on Vue.js repository for the first time then there is high probability that you skipped reading the contribution guidelines. By doing so you’ve created an issue that does not tell maintainers a thing and helps nobody.
@@ -182,7 +182,7 @@ Next, you would be hit with a template response and your issue would be labelled
     <title>First Day in Vue.js</title>
     <link href="https://znck.dev/articles/2017-03-03-first-day"/>
     <id>https://znck.dev/articles/2017-03-03-first-day</id>
-    <updated>2025-07-02T20:50:44.435Z</updated>
+    <updated>2025-07-02T21:02:34.666Z</updated>
     <summary type="html">
       <![CDATA[
       Back in college, junior year, we were exploring our entrepreneurial skills. I started a product development startup with couple of friends. We’re supposed to build iOS applications but some how we ended building websites.

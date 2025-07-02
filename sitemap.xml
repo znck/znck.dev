@@ -3,12 +3,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>https://znck.dev/articles/2017-03-03-first-day</loc>
-  <lastmod>2017-03-03T00:00:00.000Z</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.5</priority>
-</url>
-<url>
   <loc>https://znck.dev/articles/2017-03-05-fiddle-with-vue</loc>
   <lastmod>2017-03-05T00:00:00.000Z</lastmod>
   <changefreq>monthly</changefreq>
@@ -77,6 +71,12 @@
 <url>
   <loc>https://znck.dev/articles/2020-01-14-appreciate-feedback</loc>
   <lastmod>2020-01-14T00:00:00.000Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>https://znck.dev/articles/2017-03-03-first-day</loc>
+  <lastmod>2017-03-03T00:00:00.000Z</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
 </url>
