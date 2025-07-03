@@ -6,8 +6,20 @@
   <description>Software Engineer @ Grammarly</description>
   <language>en-us</language>
   <atom:link href="https://znck.dev/rss.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 02 Jul 2025 21:52:03 GMT</lastBuildDate>
-  <pubDate>Wed, 02 Jul 2025 21:52:03 GMT</pubDate>
+  <lastBuildDate>Thu, 03 Jul 2025 02:49:02 GMT</lastBuildDate>
+  <pubDate>Thu, 03 Jul 2025 02:49:02 GMT</pubDate>
+  <item>
+    <title>Package-First Philosophy</title>
+    <link>https://znck.dev/articles/2025-07-02-package-first-philosophy</link>
+    <description>
+      <![CDATA[
+        A year ago, we were facing a common challenge: a sprawling codebase where everything was interconnected. Fixing one issue often broke something else. Refactors felt like high-stakes operations. Code reviews were slow and confusing because no one was clear on ownership. It was a familiar problem, and it was draining.
+      ]]>
+    </description>
+    <pubDate>Wed, 02 Jul 2025 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://znck.dev/articles/2025-07-02-package-first-philosophy</guid>
+    
+  </item>
   <item>
     <title>Negative feedback comes from a good place</title>
     <link>https://znck.dev/articles/2020-01-14-appreciate-feedback</link>

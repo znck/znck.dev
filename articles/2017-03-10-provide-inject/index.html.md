@@ -15,8 +15,8 @@ It works in two parts — One component would provide data and other would use i
 ```js
 const Provider = {
   provide: {
-    foo: 'bar'
-  }
+    foo: 'bar',
+  },
 }
 ```
 
@@ -24,7 +24,7 @@ const Provider = {
 
 ```js
 const Child = {
-  inject: ['foo']
+  inject: ['foo'],
 }
 ```
 
@@ -34,18 +34,18 @@ The provide/inject binding are **NOT** reactive. But if observed objects are pro
 
 ```js
 const Provider = {
-  provide () {
+  provide() {
     const foo = {}
 
     Object.defineProperty(foo, 'bar', {
-        enumerable: true,
-        get: () => this.bar,
+      enumerable: true,
+      get: () => this.bar,
     })
 
     return { foo }
   },
 
-  data: () => ({ bar: 'baz' })
+  data: () => ({ bar: 'baz' }),
 }
 ```
 

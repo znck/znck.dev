@@ -6,6 +6,11 @@ I write about software, technology, and occasionally, life.
 
 ***
 
+## 2025
+
+**[Package-First Philosophy](articles/2025-07-02-package-first-philosophy/index.html.md)** *(July 2, 2025)*\
+Last year, I had the opportunity to design a monorepo at work. The experience taught me valuable lessons about code organization and team dynamics. This is the first in a series sharing those learnings—starting with how we made packages the center of our development universe.
+
 ## 2020
 
 **[Negative feedback comes from a good place](articles/2020-01-14-appreciate-feedback/index.html.md)** *(January 14, 2020)*\

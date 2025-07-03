@@ -29,7 +29,7 @@ Elements with ARIA roles must use a valid, non-abstract ARIA role.
 
 <script>
 export default {
-  name: 'MyButton'
+  name: 'MyButton',
 }
 </script>
 ```
@@ -48,16 +48,18 @@ const renderer = createRenderer()
 const a11y = pify(_a11y)
 const fs = pify(_fs)
 
-it('should be accessible', async t => {
+it('should be accessible', async (t) => {
   const w = mount({
     template: `<TargetComponent/>`,
     methods: { doSomething() {} },
-    components: { TargetComponent }
+    components: { TargetComponent },
   })
   const html = await renderer.renderToString(w.vm)
   const filename = '/tmp/a11y-test-source.html'
 
-  await fs.writeFile(filename, `
+  await fs.writeFile(
+    filename,
+    `
   <!doctype html>
   <html lang=en>
     <head>
@@ -67,15 +69,13 @@ it('should be accessible', async t => {
       ${html}
     </body>
   </html>
-  `)
+  `,
+  )
 
   const reports = await a11y(filename)
 
-  reports.audit.forEach(report => {
-    t.true(
-      report.result !== 'FAIL',
-      `[${report.severity.toUpperCase()}] ${report.heading}`
-    )
+  reports.audit.forEach((report) => {
+    t.true(report.result !== 'FAIL', `[${report.severity.toUpperCase()}] ${report.heading}`)
   })
 })
 ```
