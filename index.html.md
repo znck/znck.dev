@@ -57,3 +57,26 @@ A guide for Vue.js contributors on how to create proper minimal reproductions fo
 
 **[First Day in Vue.js](articles/2017-03-03-first-day/index.html.md)** *(March 3, 2017)*\
 The personal story of discovering Vue.js while struggling with Angular, and how Vue's simplicity and elegance made complex interactive features achievable in just a few hours.
+
+<script>
+(async () => {
+  try {
+    if (typeof navigator?.serviceWorker === 'undefined') {
+      return;
+    }
+
+    const registrations = await navigator.serviceWorker.getRegistrations();
+    for (const registration of registrations) {
+      await registration.unregister();
+    }
+
+    // Also clear caches
+    const cacheNames = await caches.keys();
+    for (const cacheName of cacheNames) {
+      await caches.delete(cacheName);
+    }
+  } catch {
+    // Ignore
+  }
+})();
+</script>
