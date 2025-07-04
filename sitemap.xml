@@ -4,98 +4,98 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https://znck.dev/articles/2017-03-03-first-day</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://znck.dev/articles/2017-03-05-fiddle-with-vue</loc>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2017-03-10-provide-inject</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2017-11-29-accessible-components</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2018-11-11-type-vue</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2018-11-20-type-vuex</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2019-05-20-awesomeconf</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2019-05-26-comments-in-code</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2019-06-03-finally-some-colors</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2019-06-03-grammarly-in-code</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2019-06-10-simple-hard-things</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2019-11-09-shipping-web-components-with-vue</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2020-01-14-appreciate-feedback</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2025-07-02-package-first-philosophy</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.5</priority>
 </url>
 <url>
   <loc>https://znck.dev/licenses/MIT</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
+  <lastmod>2025-07-04T03:58:57.084Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.5</priority>
-</url>
-<url>
-  <loc>https://znck.dev/articles/2017-03-05-fiddle-with-vue</loc>
-  <lastmod>2025-07-04T03:52:24.057Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
 </url>
 </urlset>
