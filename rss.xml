@@ -6,8 +6,8 @@
   <description>Software Engineer @ Grammarly</description>
   <language>en-us</language>
   <atom:link href="https://znck.dev/rss.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 04 Jul 2025 07:16:37 GMT</lastBuildDate>
-  <pubDate>Fri, 04 Jul 2025 07:16:37 GMT</pubDate>
+  <lastBuildDate>Sat, 05 Jul 2025 16:46:29 GMT</lastBuildDate>
+  <pubDate>Sat, 05 Jul 2025 16:46:29 GMT</pubDate>
   <item>
     <title>Package-First Philosophy</title>
     <link>https://znck.dev/articles/2025-07-02-package-first-philosophy</link>
@@ -57,18 +57,6 @@
     <enclosure url="https://znck.dev/_assets/david-van-dijk-255503-unsplash-DuPnNUrR.jpg" type="image/jpeg" length="154056"/>
   </item>
   <item>
-    <title>Grammarly in Code</title>
-    <link>https://znck.dev/articles/2019-06-03-grammarly-in-code</link>
-    <description>
-      <![CDATA[
-        There's no simpler writing tool than markdown. There's no elegant editor than code. There's no better writing environment than markdown in code. It's perfect, but whenever I write, I find myself copy-pasting back and forth between Grammarly editor and VS Code editor. Grammarly makes my writing much better, but it also forces me to use their editor. Don't take me wrong I don't hate their editor, in fact, I kind of like it — clean, spacious, and responsive. But it's not sufficient for me as my articles generally have images, code snippets, figures, and sometimes markup. The lack of syntax highlight for markdown and markup is an absolute deal-breaker. If Grammarly worked in VS Code editor, wouldn't that be perfect?
-      ]]>
-    </description>
-    <pubDate>Mon, 03 Jun 2019 00:00:00 GMT</pubDate>
-    <guid isPermaLink="true">https://znck.dev/articles/2019-06-03-grammarly-in-code</guid>
-    <enclosure url="https://znck.dev/_assets/screenshot-ext-Ckxyxl0T.png" type="image/png" length="692624"/>
-  </item>
-  <item>
     <title>Finally some colors in my life</title>
     <link>https://znck.dev/articles/2019-06-03-finally-some-colors</link>
     <description>
@@ -79,6 +67,18 @@
     <pubDate>Mon, 03 Jun 2019 00:00:00 GMT</pubDate>
     <guid isPermaLink="true">https://znck.dev/articles/2019-06-03-finally-some-colors</guid>
     <enclosure url="https://znck.dev/_assets/prism-Da-XBeii.png" type="image/png" length="36819"/>
+  </item>
+  <item>
+    <title>Grammarly in Code</title>
+    <link>https://znck.dev/articles/2019-06-03-grammarly-in-code</link>
+    <description>
+      <![CDATA[
+        There's no simpler writing tool than markdown. There's no elegant editor than code. There's no better writing environment than markdown in code. It's perfect, but whenever I write, I find myself copy-pasting back and forth between Grammarly editor and VS Code editor. Grammarly makes my writing much better, but it also forces me to use their editor. Don't take me wrong I don't hate their editor, in fact, I kind of like it — clean, spacious, and responsive. But it's not sufficient for me as my articles generally have images, code snippets, figures, and sometimes markup. The lack of syntax highlight for markdown and markup is an absolute deal-breaker. If Grammarly worked in VS Code editor, wouldn't that be perfect?
+      ]]>
+    </description>
+    <pubDate>Mon, 03 Jun 2019 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://znck.dev/articles/2019-06-03-grammarly-in-code</guid>
+    <enclosure url="https://znck.dev/_assets/screenshot-ext-Ckxyxl0T.png" type="image/png" length="692624"/>
   </item>
   <item>
     <title>Comments in Code</title>
