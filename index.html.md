@@ -8,6 +8,9 @@ I write about software, technology, and occasionally, life.
 
 ## 2025
 
+**[Before the Coffee Gets Cold](articles/2025-07-07-before-the-coffee-gets-cold/index.html.md)** *(July 2, 2025)*\
+Would you go back in time if you cannot change the past? Before the Coffee Gets Cold is a gentle, meditative exploration of longing, regret, and unresolved feelings through the lens of time travel.
+
 **[Package-First Philosophy](articles/2025-07-02-package-first-philosophy/index.html.md)** *(July 2, 2025)*\
 Last year, I had the opportunity to design a monorepo at work. The experience taught me valuable lessons about code organization and team dynamics. This is the first in a series sharing those learnings—starting with how we made packages the center of our development universe.
 

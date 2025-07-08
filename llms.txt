@@ -18,6 +18,7 @@
 - [Shipping Web Components with Vue](./articles/2019-11-09-shipping-web-components-with-vue/index.html.md): I have been watching the web component spec. However, all the projects I have worked on were either using Vue or React, and these frameworks are more than capable of building complex applications. I never felt like using web components, but that changed yesterday.
 - [Negative feedback comes from a good place](./articles/2020-01-14-appreciate-feedback/index.html.md): It's not easy to say negative things to people. In fact, it takes a lot of courage to point out the shortcoming. If someone does that for me, honest and brutal, I keep them close. Brutal and honest friends are dearest to me.
 - [Package-First Philosophy](./articles/2025-07-02-package-first-philosophy/index.html.md): A year ago, we were facing a common challenge: a sprawling codebase where everything was interconnected. Fixing one issue often broke something else. Refactors felt like high-stakes operations. Code reviews were slow and confusing because no one was clear on ownership. It was a familiar problem, and it was draining.
+- [Before the Coffee Gets Cold](./articles/2025-07-07-before-the-coffee-gets-cold/index.html.md): You sit on a chair in a small basement café, you can go back or forward in time, but only until your coffee gets cold. The rules are strict: you can't change the past, you cannot get up from your seat, and you can only interact with people who are also in the café at that moment.
 
 ## Other Pages
 
