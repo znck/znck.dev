@@ -8,6 +8,9 @@ I write about software, technology, and occasionally, life.
 
 ## 2025
 
+**[Single Version Policy](articles/2025-07-11-single-version-policy/index.html.md)** *(July 11, 2025)*
+Next in the series on monorepo learnings: how we tackled dependency chaos with a Single Version Policy. This approach ensures all packages share the same version of dependencies.
+
 **[Before the Coffee Gets Cold](articles/2025-07-07-before-the-coffee-gets-cold/index.html.md)** *(July 7, 2025)*\
 Would you go back in time if you cannot change the past? Before the Coffee Gets Cold is a gentle, meditative exploration of longing, regret, and unresolved feelings through the lens of time travel.
 

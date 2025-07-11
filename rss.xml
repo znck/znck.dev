@@ -6,8 +6,20 @@
   <description>Software Engineer @ Grammarly</description>
   <language>en-us</language>
   <atom:link href="https://znck.dev/rss.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 11 Jul 2025 07:04:40 GMT</lastBuildDate>
-  <pubDate>Fri, 11 Jul 2025 07:04:40 GMT</pubDate>
+  <lastBuildDate>Fri, 11 Jul 2025 19:50:00 GMT</lastBuildDate>
+  <pubDate>Fri, 11 Jul 2025 19:50:00 GMT</pubDate>
+  <item>
+    <title>Single Version Policy</title>
+    <link>https://znck.dev/articles/2025-07-11-single-version-policy/index.html</link>
+    <description>
+      <![CDATA[
+        A while back, we hit a wall that's all too familiar in monorepo life: dependency chaos. It was a classic case of "One team upgrades a library, another lags behind, and suddenly the same codebase runs three versions of React. Debugging becomes archaeology. Upgrades turn into whack-a-mole. Everyone feels the pain."
+      ]]>
+    </description>
+    <pubDate>Fri, 11 Jul 2025 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://znck.dev/articles/2025-07-11-single-version-policy/index.html</guid>
+    
+  </item>
   <item>
     <title>Before the Coffee Gets Cold</title>
     <link>https://znck.dev/articles/2025-07-07-before-the-coffee-gets-cold/index.html</link>
