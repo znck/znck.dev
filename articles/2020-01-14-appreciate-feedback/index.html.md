@@ -1,5 +1,3 @@
-
-
 # Negative feedback comes from a good place
 
 It's not easy to say negative things to people. In fact, it takes a lot of courage to point out the shortcoming. If someone does that for me, honest and brutal, I keep them close. Brutal and honest friends are dearest to me.

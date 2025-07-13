@@ -23,26 +23,29 @@ The result? Fewer surprises, faster reviews, and a codebase that feels like a te
 
 The key was making the right thing easy. We used pnpm's catalog feature to define all external dependency versions in one place:
 
-```yaml
-pnpm:
-  catalog:
-    react: 18.2.0
-    typescript: ^5.0.0
-    @types/node: ^20.0.0
+```yaml file=pnpm-workspace.yaml
+catalog:
+  react: 18.2.0
+  typescript: ^5.0.0
+  @types/node: ^20.0.0
 ```
 
 Inside each package, dependencies point to the catalog:
 
-```json
+```json file=package.json
 "dependencies": {
   "react": "catalog:"
 }
 ```
 
-Adding a new dependency? Run `pnpm add` from the package directory, then standardize it with a codemod (`pnpm dlx codemod@0.11 pnpm/catalog`). Internal packages use the `workspace:` protocol, keeping everything in sync:
+Adding a new dependency? Run `pnpm add` from the package directory, then standardize it with a codemod (`pnpm dlx codemod@0.11 pnpm/catalog`).
 
-```json
-"@your-org/utils": "workspace:^"
+Internal packages use the `workspace:` protocol, keeping everything in sync:
+
+```json file=package.json
+"dependencies": {
+  "@your-org/utils": "workspace:^"
+}
 ```
 
 External = `catalog:`\
@@ -64,3 +67,4 @@ CI enforces it. If someone tries to sneak in a pinned version, the build fails. 
 SVP isn't magic; it means recurring coordinated upgrades—sometimes you need to fix several packages at once. But it's a single, visible change, not a slow drift. And, the investment up front pays off in long-term sanity. For rare edge cases, we allow a second named catalog (like `next-react`), but only as an exception.
 
 SVP isn't just a rule—it's a foundation. It gives the team speed, safety, and focus. We wouldn't go back.
+

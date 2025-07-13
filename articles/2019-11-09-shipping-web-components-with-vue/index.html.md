@@ -4,8 +4,6 @@
 
 I have been watching the web component spec. However, all the projects I have worked on were either using Vue or React, and these frameworks are more than capable of building complex applications. I never felt like using web components, but that changed yesterday.
 
-<!-- more -->
-
 I was reading an article, and as usual, the reader mode on safari was turned on. There was an embedded tweet in the article, and it preserved the twitter styling even in the reading mode. It was surprising to me as I couldn't make the code snippets on my blog to maintain syntax highlights. I wondered what trickery was going behind the embedded — surprisingly, the magic was just a web component.
 
 I decided to write a web component for code snippets on my blog.

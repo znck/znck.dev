@@ -1,5 +1,3 @@
-
-
 # Finally some colors in my life
 
 "I got a red shirt!", I scream, every time my friends jab that my wardrobe is grey and dull. They always call me out, "Get some colors, dude!".

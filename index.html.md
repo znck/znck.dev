@@ -8,6 +8,9 @@ I write about software, technology, and occasionally, life.
 
 ## 2025
 
+**[Reclaim Toolchain Ownership](articles/2025-07-14-reclaim-toolchain-ownership/index.html.md)** *(July 14, 2025)*\
+Continuing the monorepo series, this post discusses the importance of owning your toolchain. It’s about customizing your development environment to fit your needs, rather than being constrained by default settings.
+
 **[Single Version Policy](articles/2025-07-11-single-version-policy/index.html.md)** *(July 11, 2025)*\
 Next in the series on monorepo learnings: how we tackled dependency chaos with a Single Version Policy. This approach ensures all packages share the same version of dependencies.
 

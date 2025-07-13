@@ -6,8 +6,20 @@
   <description>Software Engineer @ Grammarly</description>
   <language>en-us</language>
   <atom:link href="https://znck.dev/rss.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 11 Jul 2025 21:53:04 GMT</lastBuildDate>
-  <pubDate>Fri, 11 Jul 2025 21:53:04 GMT</pubDate>
+  <lastBuildDate>Sun, 13 Jul 2025 17:24:32 GMT</lastBuildDate>
+  <pubDate>Sun, 13 Jul 2025 17:24:32 GMT</pubDate>
+  <item>
+    <title>Reclaim Toolchain Ownership</title>
+    <link>https://znck.dev/articles/2025-07-14-reclaim-toolchain-ownership/index.html</link>
+    <description>
+      <![CDATA[
+        In my previous posts, I explored the benefits of building software with small, focused packages and maintaining a single version of each dependency across a monorepo. These practices bring structure to your codebase and simplify dependency management.
+      ]]>
+    </description>
+    <pubDate>Mon, 14 Jul 2025 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://znck.dev/articles/2025-07-14-reclaim-toolchain-ownership/index.html</guid>
+    
+  </item>
   <item>
     <title>Single Version Policy</title>
     <link>https://znck.dev/articles/2025-07-11-single-version-policy/index.html</link>
