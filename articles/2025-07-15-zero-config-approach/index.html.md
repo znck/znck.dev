@@ -2,9 +2,7 @@
 
 # Zero Config Approach
 
-Every monorepo starts out clean. A few packages. A handful of configs. Nothing too hard to manage.
-
-But scale changes everything.
+Every monorepo starts out clean. A few packages. A handful of configs. Nothing too hard to manage. But scale changes everything.
 
 Before long, you're drowning in boilerplate — config files that differ only slightly, scattered across every package. Changing one means changing a dozen. Forget one, and things break quietly. This is the **config drift** that plagues monorepos.
 
@@ -33,10 +31,7 @@ This isn't just messy—it's fundamentally unsustainable.
 
 Our zero config approach doesn't mean no configuration. It means **removing configuration from places it doesn't belong**.
 
-We asked ourselves:\
-*Why have per-package configuration when most of it is the same?*
-
-By defining package behavior in one central place, we eliminated repetitive boilerplate. This approach delivers:
+We asked ourselves: *Why have per-package configuration when most of it is the same?* By defining package behavior in one central place, we eliminated repetitive boilerplate. This approach delivers:
 
 * **No per-package configuration**
 * **No guesswork**
@@ -93,15 +88,14 @@ Our local Nx plugin became the brain of the monorepo:
 * One mental model shared across the team
 * One set of defaults tailored to our specific needs
 
-Contributors focus on writing code.\
-Maintainers focus on evolving the configurations.\
-Everyone benefits from improvements with no extra effort.
+Contributors focus on writing code. Maintainers focus on evolving the configurations. Everyone benefits from improvements with no extra effort.
 
 ## Reflection
 
-Monorepos don't fail because of scale.\
-They fail because of inconsistency.
-
-By encoding decisions into the local plugin and expressing behavior through tags and conventions, we've stopped chasing config drift and started scaling with confidence.
+Monorepos don't fail because of scale. They fail because of inconsistency. By encoding decisions into the local plugin and expressing behavior through tags and conventions, we've stopped chasing config drift and started scaling with confidence.
 
 The zero config approach isn't about eliminating configuration—it's a **strategy for sustainable growth**.
+
+***
+
+For a detailed technical breakdown of our implementation, check out [Brian Schiller's excellent write-up](https://brianschiller.com/blog/2025/06/04/inferred-nx-config/).
