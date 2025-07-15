@@ -8,6 +8,9 @@ I write about software, technology, and occasionally, life.
 
 ## 2025
 
+**[Zero Config Approach](articles/2025-07-15-zero-config-approach/index.html.md)** *(July 15, 2025)*\
+Every monorepo starts out clean, but as it scales, configuration files can become a burden. This post discusses how we embraced conventions and tag-driven automation to eliminate repetitive boilerplate and configuration drift.
+
 **[Reclaim Toolchain Ownership](articles/2025-07-14-reclaim-toolchain-ownership/index.html.md)** *(July 14, 2025)*\
 Continuing the monorepo series, this post discusses the importance of owning your toolchain. It’s about customizing your development environment to fit your needs, rather than being constrained by default settings.
 

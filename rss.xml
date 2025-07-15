@@ -6,8 +6,20 @@
   <description>Software Engineer @ Grammarly</description>
   <language>en-us</language>
   <atom:link href="https://znck.dev/rss.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 15 Jul 2025 05:13:18 GMT</lastBuildDate>
-  <pubDate>Tue, 15 Jul 2025 05:13:18 GMT</pubDate>
+  <lastBuildDate>Tue, 15 Jul 2025 06:02:14 GMT</lastBuildDate>
+  <pubDate>Tue, 15 Jul 2025 06:02:14 GMT</pubDate>
+  <item>
+    <title>Zero Config Approach</title>
+    <link>https://znck.dev/articles/2025-07-15-zero-config-approach/index.html</link>
+    <description>
+      <![CDATA[
+        Every monorepo starts out clean. A few packages. A handful of configs. Nothing too hard to manage.
+      ]]>
+    </description>
+    <pubDate>Tue, 15 Jul 2025 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://znck.dev/articles/2025-07-15-zero-config-approach/index.html</guid>
+    
+  </item>
   <item>
     <title>Reclaim Toolchain Ownership</title>
     <link>https://znck.dev/articles/2025-07-14-reclaim-toolchain-ownership/index.html</link>
@@ -93,18 +105,6 @@
     <enclosure url="https://znck.dev/_assets/david-van-dijk-255503-unsplash-DuPnNUrR.jpg" type="image/jpeg" length="154056"/>
   </item>
   <item>
-    <title>Finally some colors in my life</title>
-    <link>https://znck.dev/articles/2019-06-03-finally-some-colors/index.html</link>
-    <description>
-      <![CDATA[
-        "I got a red shirt!", I scream, every time my friends jab that my wardrobe is grey and dull. They always call me out, "Get some colors, dude!".
-      ]]>
-    </description>
-    <pubDate>Mon, 03 Jun 2019 00:00:00 GMT</pubDate>
-    <guid isPermaLink="true">https://znck.dev/articles/2019-06-03-finally-some-colors/index.html</guid>
-    <enclosure url="https://znck.dev/_assets/prism-Da-XBeii.png" type="image/png" length="36819"/>
-  </item>
-  <item>
     <title>Grammarly in Code</title>
     <link>https://znck.dev/articles/2019-06-03-grammarly-in-code/index.html</link>
     <description>
@@ -115,6 +115,18 @@
     <pubDate>Mon, 03 Jun 2019 00:00:00 GMT</pubDate>
     <guid isPermaLink="true">https://znck.dev/articles/2019-06-03-grammarly-in-code/index.html</guid>
     <enclosure url="https://znck.dev/_assets/screenshot-ext-Ckxyxl0T.png" type="image/png" length="692624"/>
+  </item>
+  <item>
+    <title>Finally some colors in my life</title>
+    <link>https://znck.dev/articles/2019-06-03-finally-some-colors/index.html</link>
+    <description>
+      <![CDATA[
+        "I got a red shirt!", I scream, every time my friends jab that my wardrobe is grey and dull. They always call me out, "Get some colors, dude!".
+      ]]>
+    </description>
+    <pubDate>Mon, 03 Jun 2019 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://znck.dev/articles/2019-06-03-finally-some-colors/index.html</guid>
+    <enclosure url="https://znck.dev/_assets/prism-Da-XBeii.png" type="image/png" length="36819"/>
   </item>
   <item>
     <title>Comments in Code</title>
