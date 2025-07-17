@@ -8,6 +8,9 @@ I write about software, technology, and occasionally, life.
 
 ## 2025
 
+**[A Tale of Two Monorepos](./articles/2025-07-30-a-tale-of-two-monorepos.md)** *(July 30, 2025)*\
+In this post, I share the story of two monorepos I designed at work. One at work and one at home. The differences in their design, structure, and the lessons learned from each.
+
 **[Zero Config Approach](articles/2025-07-15-zero-config-approach/index.html.md)** *(July 15, 2025)*\
 Every monorepo starts out clean, but as it scales, configuration files can become a burden. This post discusses how we embraced conventions and tag-driven automation to eliminate repetitive boilerplate and configuration drift.
 

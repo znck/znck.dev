@@ -6,8 +6,20 @@
   <description>Software Engineer @ Grammarly</description>
   <language>en-us</language>
   <atom:link href="https://znck.dev/rss.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 15 Jul 2025 06:21:16 GMT</lastBuildDate>
-  <pubDate>Tue, 15 Jul 2025 06:21:16 GMT</pubDate>
+  <lastBuildDate>Thu, 17 Jul 2025 05:40:45 GMT</lastBuildDate>
+  <pubDate>Thu, 17 Jul 2025 05:40:45 GMT</pubDate>
+  <item>
+    <title>A Tale of Two Monorepos</title>
+    <link>https://znck.dev/articles/2025-07-16-a-tale-of-two-monorepos/index.html</link>
+    <description>
+      <![CDATA[
+        At work, I'm designing a setup for hundreds of contributors across dozens of teams. In my personal time, I'm building products with a few friends—often owning entire codebases myself.
+      ]]>
+    </description>
+    <pubDate>Wed, 16 Jul 2025 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://znck.dev/articles/2025-07-16-a-tale-of-two-monorepos/index.html</guid>
+    
+  </item>
   <item>
     <title>Zero Config Approach</title>
     <link>https://znck.dev/articles/2025-07-15-zero-config-approach/index.html</link>
