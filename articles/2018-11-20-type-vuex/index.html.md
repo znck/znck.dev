@@ -2,7 +2,7 @@
 
 # Type Vuex without TypeScript
 
-> This is a continuation article to [Type Vue without TypeScript](./2018-type-vue), if you haven’t already read it, I suggest you read that first.
+> This is a continuation article to [Type Vue without TypeScript](../2018-11-11-type-vue/index.html.md), if you haven’t already read it, I suggest you read that first.
 
 ## Vuex does support types!
 
@@ -33,7 +33,7 @@ As you can see above, we get intellisense to let us know that commit and dispatc
 
 ![Vuex helper packages for TypeScript](../../_assets/6-DIBqQFA6.gif)
 
-We won’t be introducing new dependencies to a project only to get the types right, as most people are using just Vuex. However, [vuex-class](//github.com/ktsn/vuex-class), [vuex-typescript](//github.com/istrib/vuex-typescript) and [vuex-module-decorators](//github.com/championswimmer/vuex-module-decorators) are worth mentioning third-party packages assisting Vuex stores.
+We won’t be introducing new dependencies to a project only to get the types right, as most people are using just Vuex. However, [vuex-class](https://github.com/ktsn/vuex-class), [vuex-typescript](https://github.com/istrib/vuex-typescript) and [vuex-module-decorators](https://github.com/championswimmer/vuex-module-decorators) are worth mentioning third-party packages assisting Vuex stores.
 
 <Tweet id="1062919689515368448">
 
@@ -52,7 +52,7 @@ Vuex provides mapState, mapGetters, mapActions and mapMutations helpers to simpl
 
 ![Using Vuex store in Vue component](../../_assets/7-M3zxuUol.png)
 
-This problem is still unsolved in the TypeScript world, and there is not much we can do in the JavaScript world. However, there exists a pattern, and to my knowledge, popularised by [Chris Fritz](//twitter.com/chrisvfritz)’s [Enterprise Boilerplate](//github.com/chrisvfritz/vue-enterprise-boilerplate) which can be enhanced.
+This problem is still unsolved in the TypeScript world, and there is not much we can do in the JavaScript world. However, there exists a pattern, and to my knowledge, popularised by [Chris Fritz](https://twitter.com/chrisvfritz)’s [Enterprise Boilerplate](https://github.com/chrisvfritz/vue-enterprise-boilerplate) which can be enhanced.
 
 ### Helpers pattern in Vuex
 
@@ -86,4 +86,4 @@ Also, if you noticed the type of `completedTodos` in the above snippet, it says 
 
 ![Bug in VS Code which fails to display imported files (outdated)](../../_assets/13-DaHLSGuR.png)
 
-That’s all folks for Vuex and types without TypeScript. If you have question about it, you can reach me on Twitter ([@znck0](//twitter.com/znck0)).
+That’s all folks for Vuex and types without TypeScript. If you have question about it, you can reach me on Twitter ([@znck0](https://twitter.com/znck0)).
