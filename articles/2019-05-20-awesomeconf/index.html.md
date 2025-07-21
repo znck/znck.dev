@@ -192,3 +192,5 @@ Thanks [Suwardhan](https://instagram.com/suwardhan.design).
 [Swap](https://twitter.com/@SwapAgarwal) & [Znck](https://twitter.com/@znck0) would be back soon with next iteration of AwesomeConf.
 
 ![AwesomeConf 2019 Pass](../../_assets/signed-C6DkAyQG.jpg)
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

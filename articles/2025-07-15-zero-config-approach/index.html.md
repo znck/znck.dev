@@ -99,3 +99,5 @@ The zero config approach isn't about eliminating configuration—it's a **strate
 ***
 
 For a detailed technical breakdown of our implementation, check out [Brian Schiller's excellent write-up](https://brianschiller.com/blog/2025/06/04/inferred-nx-config/).
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

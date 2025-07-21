@@ -1,0 +1,2866 @@
+<!-- Page Begin: https://znck.dev/index.html -->
+
+
+# **[Rahul Kadyan](https://znck.me)**
+
+I write about software, technology, and occasionally, life.
+
+***
+
+## 2025
+
+**[A Tale of Two Monorepos](articles/2025-07-16-a-tale-of-two-monorepos/index.html.md)** *(July 16, 2025)*\
+In this post, I share the story of two monorepos I designed at work. One at work and one at home. The differences in their design, structure, and the lessons learned from each.
+
+**[Zero Config Approach](articles/2025-07-15-zero-config-approach/index.html.md)** *(July 15, 2025)*\
+Every monorepo starts out clean, but as it scales, configuration files can become a burden. This post discusses how we embraced conventions and tag-driven automation to eliminate repetitive boilerplate and configuration drift.
+
+**[Reclaim Toolchain Ownership](articles/2025-07-14-reclaim-toolchain-ownership/index.html.md)** *(July 14, 2025)*\
+Continuing the monorepo series, this post discusses the importance of owning your toolchain. It’s about customizing your development environment to fit your needs, rather than being constrained by default settings.
+
+**[Single Version Policy](articles/2025-07-11-single-version-policy/index.html.md)** *(July 11, 2025)*\
+Next in the series on monorepo learnings: how we tackled dependency chaos with a Single Version Policy. This approach ensures all packages share the same version of dependencies.
+
+**[Before the Coffee Gets Cold](articles/2025-07-07-before-the-coffee-gets-cold/index.html.md)** *(July 7, 2025)*\
+Would you go back in time if you cannot change the past? Before the Coffee Gets Cold is a gentle, meditative exploration of longing, regret, and unresolved feelings through the lens of time travel.
+
+**[Package-First Philosophy](articles/2025-07-02-package-first-philosophy/index.html.md)** *(July 2, 2025)*\
+Last year, I had the opportunity to design a monorepo at work. The experience taught me valuable lessons about code organization and team dynamics. This is the first in a series sharing those learnings—starting with how we made packages the center of our development universe.
+
+## 2020
+
+**[Negative feedback comes from a good place](articles/2020-01-14-appreciate-feedback/index.html.md)** *(January 14, 2020)*\
+Reflections on the importance of honest feedback and how to give and receive it constructively in professional environments.
+
+## 2019
+
+**[Shipping Web Components with Vue](articles/2019-11-09-shipping-web-components-with-vue/index.html.md)** *(November 9, 2019)*\
+A comprehensive guide on how to build and export Vue components as web components using Vue CLI and Rollup, making them reusable across different frameworks.
+
+**[Simple Hard Things](articles/2019-06-10-simple-hard-things/index.html.md)** *(June 10, 2019)*\
+Exploring the challenges of getting seemingly simple design details right, particularly around typography and spacing in web design.
+
+**[Grammarly in Code](articles/2019-06-03-grammarly-in-code/index.html.md)** *(June 3, 2019)*\
+The journey of building a VS Code extension to integrate Grammarly into the code editor, solving the pain of switching between editors while writing.
+
+**[Finally Some Colors](articles/2019-06-03-finally-some-colors/index.html.md)** *(June 3, 2019)*\
+Adding color and visual improvements to enhance the reading experience of a blog.
+
+**[Comments in Code](articles/2019-05-26-comments-in-code/index.html.md)** *(May 26, 2019)*\
+A detailed exploration of different types of code comments - clarification, documentation, license, reference, tagged, and control comments - with examples from Vue.js source.
+
+**[Running an awesome conference](articles/2019-05-20-awesomeconf/index.html.md)** *(May 20, 2019)*\
+The story of organizing Vue.js conferences in India, from the initial inspiration to the challenges and rewards of bringing the Vue community together.
+
+## 2018
+
+**[Type Vuex without TypeScript](articles/2018-11-20-type-vuex/index.html.md)** *(November 20, 2018)*\
+A continuation guide showing how to add type checking and intellisense to Vuex stores using JSDoc annotations and helper patterns, without switching to TypeScript.
+
+**[Type Vue without TypeScript](articles/2018-11-11-type-vue/index.html.md)** *(November 11, 2018)*\
+A practical guide demonstrating how to get TypeScript-like type checking and intellisense in Vue components using JSDoc annotations and VS Code, without actually using TypeScript.
+
+## 2017
+
+**[Accessible Components: Test Driven Approach](articles/2017-11-29-accessible-components/index.html.md)** *(November 29, 2017)*\
+How to use automated accessibility testing in Vue components to ensure they meet ARIA standards and provide inclusive user experiences.
+
+**[Provide/Inject in Vue 2.2](articles/2017-03-10-provide-inject/index.html.md)** *(March 10, 2017)*\
+An exploration of Vue's provide/inject feature introduced in version 2.2, showing how it enables dependency injection patterns for advanced component communication.
+
+**[Fiddle with Vue.js](articles/2017-03-05-fiddle-with-vue/index.html.md)** *(March 5, 2017)*\
+A guide for Vue.js contributors on how to create proper minimal reproductions for bug reports, including best practices for JSFiddle and repository setups.
+
+**[First Day in Vue.js](articles/2017-03-03-first-day/index.html.md)** *(March 3, 2017)*\
+The personal story of discovering Vue.js while struggling with Angular, and how Vue's simplicity and elegance made complex interactive features achievable in just a few hours.
+
+<script>
+(async () => {
+  try {
+    if (typeof navigator?.serviceWorker === 'undefined') {
+      return;
+    }
+
+    const registrations = await navigator.serviceWorker.getRegistrations();
+    for (const registration of registrations) {
+      await registration.unregister();
+    }
+
+    // Also clear caches
+    const cacheNames = await caches.keys();
+    for (const cacheName of cacheNames) {
+      await caches.delete(cacheName);
+    }
+  } catch {
+    // Ignore
+  }
+})();
+</script>
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2025-07-16-a-tale-of-two-monorepos/index.html -->
+
+
+# A Tale of Two Monorepos
+
+I've been living in two parallel monorepo worlds.
+
+At work, I'm designing a setup for hundreds of contributors across dozens of teams. In my personal time, I'm building products with a few friends—often owning entire codebases myself.
+
+In both cases, I've been iterating constantly, borrowing lessons from one to inform the other. After three iterations of each, I've ended up with two completely different implementations. They share core principles—Single Version Policy, Package-First Philosophy, and Zero-Config defaults—but their designs reflect the shape of the teams behind them.
+
+## Design Follows Team Shape
+
+Monorepo design isn't about picking the best tools or the most popular structure. It's about aligning the repo with your team's capabilities, goals, and constraints. When a team is made up of specialists, the system should make ownership and boundaries explicit. When a team thrives on shared context, the system should get out of the way. Each design responds to the human architecture that drives the code. That's why the same person, with the same principles, can arrive at very different implementations when the team shape changes.
+
+## Monorepo 1: One Product, Many Teams
+
+At work, three forces shaped our monorepo design: capabilities, goals, and constraints.
+
+Our capabilities came from the depth of the engineering organization—hundreds of contributors with specialized skills but limited shared context. The constraint was scale: dozens of teams all contributing to a single, complex product. The goal was to ensure safe, composable collaboration. We needed a system that allowed contributors to own parts of the codebase confidently while making their work intentionally accessible to others.
+
+## Monorepo 2: Many Products, One Team
+
+In this setup, the same three forces led to very different choices.
+
+The team had a high degree of shared context. Everyone could touch any part of the codebase without coordination. The constraint was ambition: we wanted to ship multiple products quickly, without fragmenting the team or the code. The goal was velocity—reusing as much as possible, avoiding friction, and staying close to the code.
+
+The result was a streamlined monorepo where flexibility and speed mattered more than boundaries. It wasn't designed for safety at scale, but for momentum in motion.
+
+## Comparing the Designs
+
+The contrast between these two monorepos is best understood not through tooling choices alone, but through the logic behind each decision. Here's how they diverged:
+
+### Monorepo 1
+
+#### Package Structure
+
+In monorepo 1, APIs were explicit. Every export required a TSDoc comment with a `@public` tag, making it clear what was intended for public use. We used Rollup with `@microsoft/api-extractor` to strip away non-public exports, ensuring that only the intended APIs were exposed.
+
+The package structure looked like this:
+
+```
+packages/
+  ├── package-a/
+  │   ├── src/
+  │   │   ├── index.ts
+  │   │   ├── index.spec.ts
+  │   │   ├── testing.ts
+  │   │   └── testing.spec.ts
+  │   ├── dist/
+  │   │   ├── index.cjs
+  │   │   ├── index.cjs.map
+  │   │   ├── index.mjs
+  │   │   ├── index.mjs.map
+  │   │   ├── index.d.ts
+  │   │   ├── index.api.json
+  │   │   ├── checksum.txt
+  │   │   ├── testing.mjs
+  │   │   ├── testing.mjs.map
+  │   │   └── testing.d.ts
+  │   ├── report/
+  │   │   ├── index.api.md
+  │   │   └── testing.api.md
+  │   ├── package.json
+  │   ├── readme.md
+  │   └── tsconfig.json
+```
+
+The structure follows clear conventions:
+
+* `src/` contains the source code, including test files
+* `dist/` contains the built files
+* `report/` contains API information snapshots generated by `@microsoft/api-extractor`
+* `package.json` defines the package metadata, including Nx targets and code ownership
+
+#### Package: `package.json`
+
+The `exports` field defines entry points for the package. There may be multiple entry points, each with its own type definitions and module formats.
+
+The Nx tags (`package.json#nx.tags`) define what targets should be attached to the package:
+
+* `library` tag is an alias for `vitest`, `typecheck`, `rollup`, and `eslint` tags
+* `app` tag is an alias for `playwright`, `vitest`, `typecheck`, `vite` and `eslint` tags
+* `library` tag adds `release` target if `private` field in `package.json` is not set to `true`
+* `vitest` tag adds `build_vitest` target to run tests with Vitest
+* `typecheck` tag adds `build_typecheck` target to type check using `tsc`
+* `rollup` tag adds `build_rollup` target to build the package using Rollup. Rollup input options are inferred from the `exports` field
+* `eslint` tag adds `lint_eslint` target to lint the package using ESLint
+* `playwright` tag adds `test_playwright` target to run E2E tests using Playwright. It also creates atomic targets: `test_playwright_<spec_file_path_slug>`, which are all composed in composite `test_playwright` target
+
+Additionally, composite targets `lint` combining `lint_*`, `build` combining `build_*`, and `test` combining `test_*` are added too. This enables a consistent developer experience across packages—just run `nx build` in any package.
+
+The `author` and `contributors` fields are used to create `CODEOWNERS` file for GitLab.
+
+A sample package.json looks like this:
+
+```json file=packages/package-a/package.json
+{
+  "name": "@myorg/package-a",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.mjs"
+    },
+    "./testing": {
+      "types": "./dist/testing.d.ts",
+      "import": "./dist/testing.mjs",
+      "default": "./dist/testing.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "author": "@user.name",
+  "contributors": ["@user.name", "@team-name"],
+  "nx": { "tags": ["library"] }
+}
+```
+
+#### Entrypoint: `src/index.ts` and others
+
+The package entry points must have source files in the `src/` directory.
+
+* `.` or `@myorg/package-a` is the main entry point, built from `src/index.ts`
+* `./testing` or `@myorg/package-a/testing` is an additional entry point for testing utilities, built from `src/testing.ts`
+* `./<entrypoint>` or `@myorg/package-a/<entrypoint>` is another entry point, built from `src/<entrypoint>.ts`
+
+We support only one level for entry points, so `@myorg/package-a/foo/bar` is discouraged.
+
+The `./testing` is reserved for testing utilities such as stubs and mocks to support downstream testing.
+
+The entry point file must have a package documentation comment:
+
+```ts file=packages/package-a/src/index.ts
+/**
+ * @packageDocumentation
+ * One line description of the package.
+ */
+```
+
+> As per Package-First Philosophy, if you cannot describe everything a package does in one line, then you should probably split the package.
+
+#### Documentation
+
+We used [TSDoc](https://tsdoc.org) for documentation. For most packages, inline documentation is more than enough, but when needed, markdown files can be used. The `readme.md` file (if it exists) is used as the package landing page with API reference generated from API model (`dist/*.api.json`) files.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../assets/inkwell-docs.dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="../assets/inkwell-docs.light.png">
+  <img src="../../_assets/inkwell-docs.light-ClE2rSZq.png" alt="Documentation website screenshot" width="100%">
+</picture>
+
+#### Dev Server Direct Linking
+
+We used Vite dev-server and bypassed building individual packages using `resolve.alias` config. Since we had a convention for entry point files and single flexible but shared configuration, we could directly link package imports to source files.
+
+```ts file=vite.config.mts
+import { defineConfig } from 'vite'
+import * as path from 'node:path'
+
+const rootDir = import.meta.dirname
+
+export default defineConfig({
+  resolve: {
+    alias: [
+      { find: /@myorg\/([^/]+)/, replacement: path.join(rootDir, 'packages/$1/src/index.ts') },
+      { find: /@myorg\/([^/]+)\/([^/]+)/, replacement: path.join(rootDir, 'packages/$1/src/$2.ts') },
+    ],
+  },
+})
+```
+
+<br>
+
+### Monorepo 2
+
+#### Package Structure
+
+In monorepo 2, the design was more flexible and less constrained by explicit boundaries. The package structure was simpler, focusing on rapid development and iteration.
+
+The package structure looked like this:
+
+```
+packages/
+  ├── package-a/
+  │   ├── src/
+  │   │   ├── index.mts
+  │   │   ├── index.spec.mts
+  │   │   ├── testing.mts
+  │   │   └── testing.spec.mts
+  │   ├── package.json
+  │   ├── readme.md
+  │   └── tsconfig.json
+```
+
+The structure is defined by simplicity:
+
+* `src/` contains the source code, including test files
+* No need for `dist/` directory as the code is either executed directly on Node.js with type stripping or served through Vite
+* No separate API documentation generation; the focus is on inline documentation and simplicity
+
+#### Package: `package.json`
+
+```json file=packages/package-a/package.json
+{
+  "name": "@myorg/package-a",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.mts",
+    "./testing": "./src/testing.mts",
+    "./package.json": "./package.json"
+  },
+  "nx": { "tags": ["library"] }
+}
+```
+
+We used a simplified `exports` field, pointing directly to the source files. This allowed us to skip the build step for development, relying on type stripping for execution.
+
+The `library` tag behaved similarly to monorepo 1, adding targets for testing, type checking, and linting. However, the targets were simpler and more focused on rapid iteration.
+
+#### Entrypoint: `src/index.mts` and others
+
+The conventions for entry points are similar to monorepo 1.
+
+#### Documentation
+
+Documentation was primarily inline, with a focus on simplicity. We used TSDoc comments for API documentation, but there was no separate API model generation. In the future, when we consider open sourcing some packages, inline documentation will be extracted to markdown files.
+
+#### Dev Server Direct Linking
+
+Similar to monorepo 1, we used Vite for development with the same direct source linking approach.
+
+### Conclusion
+
+While they share philosophical roots—like Package-First, Single Version Policy, and Zero-Config approach—each monorepo is a distinct reflection of the environment it serves.
+
+A monorepo is not an architectural ideal. It's a reflection.
+
+It reflects how your team thinks, communicates, and collaborates. Your monorepo is an extension of your team's internal structure and shared habits.
+
+So before choosing tools or setting rules, start by asking:
+
+* What do we know today, and how is that knowledge distributed?
+* What do we each own—and what do we need to borrow?
+* How do we want to build, review, and release code together?
+
+When the answers to these questions are clear, the right structure tends to follow.
+
+## Reflection
+
+Every monorepo is shaped by the team behind it. I've learned that there's no universal template—only trade-offs that make sense within a given context. Design follows people, not preferences. The best outcomes come when structure grows from how people work.
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2025-07-15-zero-config-approach/index.html -->
+
+
+# Zero Config Approach
+
+Every monorepo starts out clean. A few packages. A handful of configs. Nothing too hard to manage. But scale changes everything.
+
+Before long, you're drowning in boilerplate — config files that differ only slightly, scattered across every package. Changing one means changing a dozen. Forget one, and things break quietly. This is the **config drift** that plagues monorepos.
+
+We solved this by embracing conventions and tag-driven automation, making configuration invisible to contributors while giving maintainers full control over how the monorepo scales.
+
+## The Problem with Repetition
+
+Our monorepo was littered with nearly identical configuration files:
+
+* `vite.config.ts`
+* `project.json`
+* `rollup.config.js`
+
+Most varied only in name or minor details, yet they appeared everywhere.
+
+Why is this a problem?
+
+* Changes become error-prone—you might miss files, especially across branches
+* It's difficult to distinguish between intentional and accidental differences
+* Creating new packages becomes tedious, requiring boilerplate copying and tweaking
+* Best practices evolve, but packages drift away from them over time
+
+This isn't just messy—it's fundamentally unsustainable.
+
+## A Shift in Perspective
+
+Our zero config approach doesn't mean no configuration. It means **removing configuration from places it doesn't belong**.
+
+We asked ourselves: *Why have per-package configuration when most of it is the same?* By defining package behavior in one central place, we eliminated repetitive boilerplate. This approach delivers:
+
+* **No per-package configuration**
+* **No guesswork**
+* **No boilerplate**
+
+## Convention Over Configuration
+
+We established predictable conventions to define shared configuration across packages:
+
+* Every package follows a `src/` and `dist/` directory structure
+* The entry point is always `src/index.ts`
+* Rollup builds are inferred from `package.json#exports`
+* Vite aliases the package name to its source, enabling fast development linking
+* API documentation is generated from JSDoc comments
+* Undocumented APIs are automatically excluded from builds
+* Tests are in `.spec.ts` file next to the source
+* Linting and formatting are consistent across all packages
+
+These weren't revolutionary ideas—just consistent decisions applied uniformly across the repo.
+
+We placed all shared configuration in the executors of our local Nx plugin.
+
+## Behavior from Tags
+
+We took this a step further by using **Nx tags as behavioral triggers**.
+
+For example, a package with the `library` tag automatically receives:
+
+* `build`, `lint`, and `test` targets set by the plugin
+* No need for a `project.json`, just add the tag to `package.json`
+* If `"private": true` in `package.json` is not set, the plugin adds `publish` and `release` targets
+
+Tags express *intent*. The plugin translates that intent into actionable behavior by defining dynamic Nx targets.
+
+## Frictionless for the Common Case
+
+If your package fits the common pattern, you get zero config.
+
+But what about special cases? Simply omit the tags and add your own configuration. Our guideline:
+
+> The **second** time a package needs the same configuration, it's a signal to pull it into the plugin.
+
+This approach allows conventions to emerge naturally from repeated patterns, giving us:
+
+* Flexibility for edge cases
+* Consistency for everything else
+* A clear path to scale without drift
+
+## Centralize the Smarts
+
+Our local Nx plugin became the brain of the monorepo:
+
+* One place to define how targets behave
+* One mental model shared across the team
+* One set of defaults tailored to our specific needs
+
+Contributors focus on writing code. Maintainers focus on evolving the configurations. Everyone benefits from improvements with no extra effort.
+
+## Reflection
+
+Monorepos don't fail because of scale. They fail because of inconsistency. By encoding decisions into the local plugin and expressing behavior through tags and conventions, we've stopped chasing config drift and started scaling with confidence.
+
+The zero config approach isn't about eliminating configuration—it's a **strategy for sustainable growth**.
+
+***
+
+For a detailed technical breakdown of our implementation, check out [Brian Schiller's excellent write-up](https://brianschiller.com/blog/2025/06/04/inferred-nx-config/).
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2025-07-14-reclaim-toolchain-ownership/index.html -->
+
+
+# Reclaim Toolchain Ownership
+
+In my previous posts, I explored the benefits of building software with **small, focused packages** and maintaining **a single version of each dependency** across a monorepo. These practices bring structure to your codebase and simplify dependency management.
+
+But structure and consistency alone won’t take you far enough.
+
+To create a monorepo that scales you need something more: **ownership of your toolchain**.
+
+## Defaults Aren’t Destiny
+
+Most modern tools come with sensible defaults, which is helpful. But general defaults are just that—**general**. They don’t account for your specific needs: the number of web apps you manage, how your team works, or the way you want your documentation to look.
+
+Over time, these default choices can create friction, for example:
+
+* **Vite** runs dev servers on port `5173` by default. Add a second app, and you face port conflicts or random port assignments.
+* **Storybook** assumes one instance per package, but a single global instance that aggregates all stories is often more practical.
+* **API Documenter** generates one file per type, which can be overwhelming for small packages. A single-page reference is easier to navigate.
+
+Individually, these issues aren't deal-breakers. But in a monorepo, every rough edge compounds, creating unnecessary complexity.
+
+## What Toolchain Ownership Looks Like
+
+Owning your toolchain doesn't mean reinventing every tool. It means tailoring the toolchain to fit *your* project.
+
+Here's an example:
+
+* Assigning stable, unique ports to each app—so you can run multiple servers without guessing.
+* Centralizing Storybook into one instance—so contributors can access the full set of components in one place.
+* Generating API docs as single pages—aligned with your package philosophy.
+
+These adjustments may seem small, but they significantly improve the developer experience. And they're achievable because you control the tooling.
+
+For instance, we use **Nx** to manage our monorepo. Instead of duplicating configurations across packages, we have a **local Nx plugin**.
+
+This plugin acts as a central hub for:
+
+* Defining custom executors (e.g., for `vite`, `storybook`, or `api-documenter`).
+* Configuring generators and project scaffolding.
+* Managing consistent setups across all packages.
+
+This plugin provides **a programmable layer of control**, scoped to our repo but aligned with the Nx ecosystem. It's a single place to encode decisions, defaults, and custom logic.
+
+## Customize, Don’t Fork
+
+Customization can feel risky, as if you’re straying from the beaten path and making upgrades harder. But consider this:
+
+> You upgrade a few times a year. You live with your tooling every day.
+
+Daily experience matters more than theoretical upgradability. That said, customization doesn't mean going off-road. Most tools offer public extension points—**plugins, custom configurations, composable APIs**. Use these to stay close to the ecosystem while tailoring it to your needs.
+
+Ownership doesn't mean doing everything yourself—it means being intentional about the defaults you keep and the ones you reshape.
+
+## Avoiding Fragmentation
+
+Without shared tooling, packages start to drift:
+
+* One might use a slightly different `vite.config.ts`.
+* Another might override the linter in ways that break formatting.
+* A third might have a test setup that confuses new contributors.
+
+This fragmentation leads to inefficiency and frustration—death by a thousand configs.
+
+Toolchain ownership is the antidote. It provides **a single place to encode your opinions** and ensures consistent application across the repo.
+
+## Reflection
+
+Reclaiming your toolchain requires a mindset shift. It means treating tooling not as a black box or a necessary evil, but as an integral part of your product.
+
+When you shape it with care—when you own it—the entire engineering experience improves: faster feedback, fewer surprises, better collaboration.
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2025-07-11-single-version-policy/index.html -->
+
+
+# Single Version Policy
+
+A while back, we hit a wall that's all too familiar in monorepo life: dependency chaos. It was a classic case of "One team upgrades a library, another lags behind, and suddenly the same codebase runs three versions of React. Debugging becomes archaeology. Upgrades turn into whack-a-mole. Everyone feels the pain."
+
+We needed a new approach—one that would bring order, predictability, and speed. So we made a bold move: **one version to rule them all**.
+
+## Why Single Version?
+
+If a dependency is shared, its version should be too.
+
+A Single Version Policy (SVP) means every package in the monorepo shares the same version of any given dependency. This approach unlocks powerful benefits for teams working together at scale:
+
+* **Consistency**: No more version drift or mysterious bugs from mismatched libraries
+* **Simplicity**: Upgrades become a single change, not a scavenger hunt
+* **Smaller builds**: No duplicate dependencies bloating your bundles
+* **Confidence**: Everyone knows exactly what's running in production
+
+The result? Fewer surprises, faster reviews, and a codebase that feels like a team effort—not a patchwork.
+
+## How We Made It Work
+
+The key was making the right thing easy. We used pnpm's catalog feature to define all external dependency versions in one place:
+
+```yaml file=pnpm-workspace.yaml
+catalog:
+  react: 18.2.0
+  typescript: ^5.0.0
+  @types/node: ^20.0.0
+```
+
+Inside each package, dependencies point to the catalog:
+
+```json file=package.json
+"dependencies": {
+  "react": "catalog:"
+}
+```
+
+Adding a new dependency? Run `pnpm add` from the package directory, then standardize it with a codemod (`pnpm dlx codemod@0.11 pnpm/catalog`).
+
+Internal packages use the `workspace:` protocol, keeping everything in sync:
+
+```json file=package.json
+"dependencies": {
+  "@your-org/utils": "workspace:^"
+}
+```
+
+External = `catalog:`\
+Internal = `workspace:^`
+
+No guesswork. No drift.
+
+## Guardrails: Linting for Safety
+
+A policy is only as strong as its enforcement. We wrote a custom ESLint rule to check every `package.json`:
+
+* All external dependencies must use `catalog:`
+* All internal dependencies must use `workspace:`
+
+CI enforces it. If someone tries to sneak in a pinned version, the build fails. It's not glamorous, but it's essential.
+
+## Tradeoffs and Lessons
+
+SVP isn't magic; it means recurring coordinated upgrades—sometimes you need to fix several packages at once. But it's a single, visible change, not a slow drift. And, the investment up front pays off in long-term sanity. For rare edge cases, we allow a second named catalog (like `next-react`), but only as an exception.
+
+SVP isn't just a rule—it's a foundation. It gives the team speed, safety, and focus. We wouldn't go back.
+
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2025-07-07-before-the-coffee-gets-cold/index.html -->
+
+
+# Before the Coffee Gets Cold
+
+You sit on a chair in a small basement café, you can go back or forward in time, but only until your coffee gets cold. The rules are strict: you can't change the past, you cannot get up from your seat, and you can only interact with people who are also in the café at that moment.
+
+At first glance, I thought what is the point of such a time travel experience? What surprised me was how those constraints made the stories more powerful. Each chapter is a quiet exploration of longing, regret, and unresolved feelings. The time travel becomes a device not for fixing the past, but for understanding it better.
+
+<br>
+
+![Before the Coffee Gets Cold](https://upload.wikimedia.org/wikipedia/en/9/9c/Before_the_Coffee_Gets_Cold_book_cover.webp)
+
+> *Before the Coffee Gets Cold* by Toshikazu Kawaguchi
+
+It’s a gentle, meditative book. The kind you read slowly. The kind that lingers. If you're looking for something tender and imaginative, Before the Coffee Gets Cold is worth sitting with—ideally while your own cup is still warm.
+
+<br>
+
+Would you go back in time if you cannot change the past?
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2025-07-02-package-first-philosophy/index.html -->
+
+
+# Package-First Philosophy
+
+A year ago, we were facing a common challenge: a sprawling codebase where everything was interconnected. Fixing one issue often broke something else. Refactors felt like high-stakes operations. Code reviews were slow and confusing because no one was clear on ownership. It was a familiar problem, and it was draining.
+
+We decided to change that—not just with better tooling, but by reshaping the way we thought about code.
+
+So we made a simple bet: **make packages the center of the universe**.
+
+## Why Package-First?
+
+If something deserves a name, it deserves a package.
+
+In our world, a package is a unit of structure, ownership, and contribution. It owns its code, tests, documentation, and public interface. It’s a contract—not just to the system, but to the team maintaining it.
+
+This model provides several benefits:
+
+* **Isolation**: Changes in one package stay within that package.
+* **Ownership**: Contributors are responsible for specific, focused units.
+* **Autonomy**: You don’t need to coordinate across teams to ship new features.
+* **Composability**: Small components can be combined to create larger systems.
+* **Focus**: The smaller the surface area, the easier it is to reason about.
+
+The side effect? Simpler code, fewer arguments, faster reviews, and clearer responsibilities.
+
+## Habits, Triggers, and Code
+
+While reading *The Power of Habit* by Charles Duhigg, one idea stood out: habits are built on cues, routines, and rewards. Change the cue, and the routine often follows.
+
+That resonated with our experience.
+
+Once we made it easy to create a new package—just a few keystrokes and a scaffolded module was ready—developers started defaulting to it. The friction was gone. The cue shifted: instead of asking "where should I add this code?", the new instinct became "should I create a new package for this?"
+
+The result? A new habit. Modular thinking became automatic. Developers started creating focused packages, with clear interfaces and isolated tests. The reward was immediate: fewer merge conflicts, faster reviews, and a deeper sense of ownership.
+
+As Duhigg puts it, once a habit loop is established, it reinforces itself. The package-first mindset became that loop.
+
+## Enabling Package-First Development
+
+Making package creation easy was a game-changer. Teams stopped overloading existing modules and started creating new packages instead. The monolith didn’t shrink, but it became much more understandable.
+
+We used Nx and pnpm to implement this, but the tools were just the means to an end. Here’s what we focused on:
+
+* **Nx generators**: These scaffold fully functional packages for known types—`utility`, `tool`, `feature`, or `app`. Each package comes with build, test, lint, and documentation preconfigured.
+* **Ready-to-use packages**: No extra setup required. Just start writing code.
+* **Explicit public interfaces**: All public interfaces are clearly marked with `@public`, and we enforce this through tooling.
+
+As friction disappeared, hesitation followed suit. Developers iterated faster, experimented more, and by default, wrote more modular code.
+
+## Metadata is Ownership
+
+Every package clearly defines its owner, where to file bugs, and what it does. But the real power is in the metadata: the `package.json` often tells you more than the code itself. It communicates intent, capabilities, and responsibilities—all without opening a single `.ts` file.
+
+Here’s how it works:
+
+* **Ownership metadata** drives the routing of code reviews, ensuring that the right people are involved.
+* **Capability metadata** enables feature discovery and helps developers understand what each package is responsible for.
+* **Dependency metadata** powers impact analysis, letting you know how changes will affect other parts of the codebase.
+
+This isn’t just documentation—it’s operational infrastructure. By treating packages as self-describing units, we gain confidence across the board, and this structure supports automated tooling and decision-making.
+
+## Scale by Design
+
+When everything is a package:
+
+* Teams onboard faster because they understand exactly where to find and contribute to code.
+* Features become portable, easily shared and reused.
+* Applications become compositions rather than monolithic systems.
+* Dependencies stay local, reducing complexity and risk.
+
+It’s not magic—it’s just structure. And structure scales.
+
+In the first six months, we saw over 80 new packages created, many by teams who had never worked in this repo before. That wasn’t just a win for tooling—it was a shift in how people thought about software: small, manageable units, clear contracts, and fast feedback.
+
+As we leaned further into the package-first model, it reinforced itself. Better structure led to better habits. Better habits led to better software.
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2020-01-14-appreciate-feedback/index.html -->
+
+
+# Negative feedback comes from a good place
+
+It's not easy to say negative things to people. In fact, it takes a lot of courage to point out the shortcoming. If someone does that for me, honest and brutal, I keep them close. Brutal and honest friends are dearest to me.
+
+## Feedback is hard
+
+We used to have 360-degree feedbacks at Myntra (I mean they still have, I am no more with them but I will again use "we"). I used to hate those and often treated them a waste of time. When I look back today, I hated it because I couldn't write about people and their work. I couldn't write because it's challenging to recall what they did this year and how could I remember their work when I was having a hard time remembering mine. What did I do this year? I have been working on this component for the past few weeks. And oh! I shipped that feature before that. And... and... what the hell did I do? And you're asking me feedback on your work?
+
+I used to face the same empty wall when I had to ask for feedback. We were living in now with no recollection of past, very little recollection. This wasn't working for me, and I guess neither for people working with me, I feel they even didn't know that we weren't a good team. The first 360-feedback was a disaster, I didn't write anything, about me or my work or them or their work, nothing at all.
+
+My manager called for a 1-on-1, "Why didn't you fill your self-review?". I didn't tell him that I didn't remember, "Do we really need to? I mean, I working well, you know that. Isn't it a waste of time?". That day I got to know that 360-feedbacks are a precursor to the forthcoming calibration meeting, unknown to me, these corporate shenanigans, I thought. The calibration meeting was a hidden championship where every employee was compared with every other in the same role. Hidden because you don't represent yourself; instead, your manager represents you. "But, you know what I have worked on", it struck me, shit—what the hell would he remember about my work when I couldn't. Maybe subconsciously I thought he's oracle or something, he would know, I can count on him, go be my champion and fetch me a promotion. But, it doesn't work like that, and I am lucky I got to know this very early in my career.
+
+## It takes courage
+
+I started writing all significant tasks I was working on or peers who interacted with me. It was all one big text note, it had all I needed, what I worked on, what they worked on if found something wrong in their work or their behaviour, I did keep a note of everything necessary. It helped me in 1-on-1s to set my goals, to steer myself into a kind of position I wanted.
+
+Today when I look back, I feel I didn't do justice to my peers. I didn't tell them in time, I waited for the 360-feedback because I had content, I could write this time, and I did write. But that feedback was useless, it was late by 6 months, they couldn't do anything then, even if they eagerly wanted to do something. I set them up for failure. I did. But what else could I do, I didn't know you're supposed to tell people, nobody told me. Nobody asked me for feedback, not before the D-day. And I didn't dare to tell them unasked for. It takes courage to give feedback, even more, when unasked for.
+
+## We react poorly to negative feedback
+
+If someone points out your mistakes or failure, it's natural that you would get in a defensive position. We try to divert, come up with excuses—"I wanted to write test cases but you know the deadline was so harsh, I could barely complete the task itself.", guess what the task is still incomplete and whatever you say to in defence of negative feedback, it's always what it is—a defence, an excuse, a diversion.
+
+Acceptance is a good response, a question is even better, in fact, is the best response—"I feel that's true, I think I have underestimated the task, how could I have done this better?". Ask questions, get more information, get actionable feedback. And keep telling your head, she is trying to help me, be rational, be reasonable, open to suggestions and don't shut her off, listen, listen, listen and ask.
+
+## Not taking personally is a superpower
+
+"That's not a good way to do it, it could turn into some serious performance issue".
+
+We attach ourselves to our work so much that we tend to loose where do we end and where does our work start. An objective comment on a piece of code can become an attack on my code suddenly. My code, my precious. Keeping oneself detached from work is a superpower, and no one is born with it, neither can one be bitten by a radioactive spider to gain it. You have to practice, practice in the face of every criticism, every negative feedback that listens, listen, listen and ask. She is talking about this code and not me, there could be some merit in her suggestion, I should stay open to ideas.
+
+"I thought due to these constraints, we have a reasonable upper bound, maybe I missed something, why do you think it could run into performance issues?"
+
+## Feedback Driven Development
+
+We all want to be better, we aspire to, and yet we never ask. Feedback is the fuel for personal development and you need to ask for it, for you to grow, to be better.
+
+I have learned something about using feedback as a fuel for personal development, partly from my experiences and partly from "The Making of a Manager" by Julie Zhou. I call it FDD, F stands for both—fuckup and feedback, both are necessary for one's growth. One makes mistakes to be better but needs feedback to learn from them.
+
+### Ask for feedback
+
+You won't get anything unless you ask—promotion, relationship, and even feedback, so ask, ask and ask.
+
+Who do you ask? Ask your manager, ask your peers, ask your friends, ask your partner, ask your parents, ask that person who listened you talk, ask that person who read your article, ask that maintainer who reviewed your pull request, ask that person who depends on your work or your work depends on, ask everyone who you can, there is not a thing like too much feedback, ask as much you can.
+
+What do you ask? Ask what you want to be better at, ask something that you can quantify, ask something that demands honesty, ask something that opens up a dialogue. For example, I am learning to write, I want to be better at it, so I would ask "Does the content feel engaging?", "I want to share my learnings, but I don't want to appear authoritative, do you feel the content welcoming and honest?" "Is the flow of the good? Do you feel disconnected or losing thought while reading?" "Do you see any words or phrases that don't sound well in your culture?" "What did you like most? And what did you not like?" "What do you feel is working great and want to see more?" I mean ask a question that advances you towards your definition of better.
+
+### Appreciate the feedback
+
+Thank them who give you feedback, appreciate their efforts. Giving feedback is not easy so let them know you are grateful, and it is helping you. Thank them even if they can't provide you with feedback, they are not bound to, and they can always ignore. They give you feedback or not, but they should know that you respect their time, you're thankful, and their feedback means a lot to you.
+
+### Act on feedback
+
+All feedback is worthless, a waste of time if you don't act on it. I give you some feedback, but I see you doing actions against it like you haven't even heard what I said. I would feel like I am wasting my time and eventually I would stop engaging, you would like it too. Don't let the wellwishers die off, they want you to better, they want you to grow, they shouldn't feel irrelevant or unheard.
+
+### Report back
+
+When you act on some feedback and find that it is actually making you better, don't miss the chance to report back, they went out of the line to help, you owe it to them, you report them your improvements. I would love to hear if something I suggested is working for you, it's feedback on feedback, it would help me to be a better help for someone else.
+
+What if it didn't work for you? nothing changes, you still report, I know it's hard to share failures, but failures need to be heard, failures make us better. We hear way less about failures even though they are more common, everyone fails at something or sometimes. If my suggestions do not work well for you, I expect to hear back, I don't want to set other people on the wrong path, I want to hear I failed, I want to learn, don't take away my failures.
+
+What if you already know it won't work because you've tried or heard about it? You still report back, if someone is courageous enough to give you feedback, they surely can handle feedback, or I'll assume they can. Do not hide failures and do share successes, we need to hear them all.
+
+### Ask again
+
+The feedback worked for you, and it worked for me. We are our better selves, now what? Now we repeat, the best thing about "better" is that there is always a "better" better than "better". So, keep asking for feedback.
+
+Following is a recent email, I sent for seeking feedback, I hope you find it
+useful:
+
+> Hey ~~undefined~~,
+>
+> We have been working together for three weeks now. I value your feedback, and I'd like to be a more effective team member. Would you be willing to answer the questions below? Please be as honest as you can because that's what will help me the most—I promise nothing you say will offend me. Feedback is a gift, and I'm grateful for your taking the time.
+>
+> I spent my first week to understand the project and it's source code, and for the last two weeks, I have been working on InputDate component. How do you think I'm doing on that? Any suggestions on how I can do better here?
+>
+> Initially I estimated to complete the InputDate component in two weeks but while working on it, I found it builds upon other components like button, dropdown, popper, select box etc. which warranted building those base components first. What do you think I could have done better here?
+>
+> What am I doing well that you'd like to see me do more of? What should I stop doing? Any other suggestions?
+>
+> Thanks.
+>
+> \--
+> Rahul Kadyan
+> <https://znck.me>
+
+## Feedback is a gift
+
+I appreciate your time, I hope you enjoyed this and would love to hear some feedback from you. So, write to me if you could.
+
+I would leave you with a quote from **The Making of a Manager**:
+
+> "Feedback is a gift." It costs time and effort to share, but when we have it, we're better off. So let's give it generously.
+
+I recommend reading [The Making of a Manager](https://amzn.to/2MGVAx7) or at least the fourth chapter—The Art of Feedback.
+
+<script setup>
+  const hello = 'Hello, World!'
+</script>
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2019-11-09-shipping-web-components-with-vue/index.html -->
+
+
+# Shipping Web Components with Vue
+
+I have been watching the web component spec. However, all the projects I have worked on were either using Vue or React, and these frameworks are more than capable of building complex applications. I never felt like using web components, but that changed yesterday.
+
+I was reading an article, and as usual, the reader mode on safari was turned on. There was an embedded tweet in the article, and it preserved the twitter styling even in the reading mode. It was surprising to me as I couldn't make the code snippets on my blog to maintain syntax highlights. I wondered what trickery was going behind the embedded — surprisingly, the magic was just a web component.
+
+I decided to write a web component for code snippets on my blog.
+
+## Web Component Spec
+
+Web component spec is a meta-specification which depends on four other specs.
+
+* The Custom Elements specification
+* The shadow DOM specification
+* The HTML Template specification
+* The ES module specification
+
+The web components are part of the native web platform, and they allow us to write genuinely reusable elements. But, I miss the convenience of a Vue SFC. I miss computed properties and declarative event handler registration. Won't it be nice if we could write Vue components and ship web components?
+
+## Shipping Web Components with Vue CLI
+
+Vue CLI supports exporting Vue components to web components.
+
+Let's take an example Vue component.
+
+<figure data-type="code">
+
+<!-- Code file not found: my-component.vue -->
+
+<figcaption>A sample Vue component</figcaption>
+</figure>
+
+We have to create a wrapper to export this Vue component as a web component.
+
+<figure data-type="code">
+
+<!-- Code file not found: my-component-wrapper.js -->
+
+<figcaption>An exmaple of web component wrapper utility for Vue component</figcaption>
+</figure>
+
+And using Vue CLI, we can export a web component.
+
+<figure data-type="code">
+
+```bash
+vue build -t wc -n my-component my-component-wrapper.js
+```
+
+<figcaption>Vue CLI command to export web component</figcaption>
+</figure>
+
+The exported web component works like a charm, but the code outputted is obscure.
+
+<figure data-type="code">
+
+```js file=my-component.cli.js
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+
+// >>> redacted 900 lines
+
+// CONCATENATED MODULE: ./my-component.vue
+
+
+
+function injectStyles (context) {
+
+  var style0 = __webpack_require__("0079")
+if (style0.__inject__) style0.__inject__(context)
+
+}
+
+/* normalize component */
+
+var component = componentNormalizer_normalizeComponent(
+  my_componentvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  injectStyles,
+  null,
+  null
+  ,true
+)
+
+/* harmony default export */ var my_component = (component.exports);
+// CONCATENATED MODULE: ./my-component-wrapper.js?shadow
+
+
+
+window.customElements.define('my-component', dist_vue_wc_wrapper(external_Vue_default.a, my_component));
+// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service-global/node_modules/@vue/cli-service/lib/commands/build/entry-wc.js
+
+/***/ })
+
+/******/ });
+```
+
+<figcaption>Web component export of the example component using Vue CLI</figcaption>
+</figure>
+
+## Shipping Web Components with Rollup
+
+We would use the same example component and export web component using rollup.
+
+<figure data-type="code">
+
+```js file=rollup.config.js
+import vue from 'rollup-plugin-vue'
+
+export default {
+  input: './my-component-wrapper.js',
+  output: {
+    format: 'esm',
+    file: './my-component.esm.js',
+    sourcemap: false,
+  },
+  plugins: [vue({ isWebComponent: true, template: { isProduction: true } })],
+  external: ['vue', 'vue-runtime-helpers', '@vue/web-component-wrapper'],
+}
+```
+
+<figcaption>Rollup config to build Vue component as web component</figcaption>
+</figure>
+
+And we get a much readable output source for the exported web component.
+
+<figure data-type="code">
+
+```js file=my-component.esm.js
+import Vue from 'vue'
+import wrap from '@vue/web-component-wrapper'
+import { normalizeComponent, createInjectorShadow } from 'vue-runtime-helpers'
+
+var script = {
+  props: {
+    name: String,
+  },
+}
+
+/* script */
+const __vue_script__ = script
+
+/* template */
+var __vue_render__ = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c('h1', { staticClass: 'hello' }, [_vm._v('Hello ' + _vm._s(_vm.name))])
+}
+var __vue_staticRenderFns__ = []
+
+/* style */
+const __vue_inject_styles__ = function (inject) {
+  if (!inject) return
+  inject('data-v-facfc1de_0', { source: '.hello{color:#00f}', map: undefined, media: undefined })
+}
+/* scoped */
+const __vue_scope_id__ = undefined
+/* module identifier */
+const __vue_module_identifier__ = undefined
+/* functional template */
+const __vue_is_functional_template__ = false
+
+var MyComponent = normalizeComponent(
+  { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
+  __vue_inject_styles__,
+  __vue_script__,
+  __vue_scope_id__,
+  __vue_is_functional_template__,
+  __vue_module_identifier__,
+  true,
+  undefined,
+  undefined,
+  createInjectorShadow,
+)
+
+window.customElements.define('my-component', wrap(Vue, MyComponent))
+```
+
+<figcaption>Web component export of the example component using rollup-plugin-vue</figcaption>
+</figure>
+
+The web component exported by the above Rollup config is an ES module, and you have to bundle it in your application. However, we can also ship browser compatible web components using Rollup.
+
+### Web Component export as UMD package
+
+The <abbr title="Universal Module Definition">UMD</abbr> output format is directly executable in the browser, and we have to make small tweaks to above Rollup config to generate a UMD build.
+
+<figure data-type="code">
+
+```js file=rollup.config.js
+import vue from 'rollup-plugin-vue'
+import resolve from 'rollup-plugin-node-resolve'
+
+export default {
+  input: './my-component-wrapper.js',
+  output: {
+    format: 'umd',
+    file: './my-component.umd.js',
+    sourcemap: false,
+    globals: { vue: 'Vue' },
+  },
+  plugins: [vue({ isWebComponent: true, template: { isProduction: true } }), resolve()],
+  external: ['vue'],
+}
+```
+
+<figcaption>Rollup config to build Vue component as web component in UMD format</figcaption>
+</figure>
+
+And you can use this web component directly in HTML.
+
+<figure data-type="code">
+
+```html
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>my-component demo</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="./my-component.umd.js"></script>
+  </head>
+
+  <body>
+    <my-component></my-component>
+  </body>
+</html>
+```
+
+<figcaption>Example code to consume the above exported web component</figcaption>
+</figure>
+
+> **NOTE:**
+>
+> The web components exported by Vue CLI or RollupPluginVue would require Vue as a dependency.
+> If you are planning to use the above-built web component in a React or Angular application, you have to ship Vue runtime too.
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2019-06-10-simple-hard-things/index.html -->
+
+
+# Simple Hard Things
+
+Simple things are easy; everyone says so. However, in reality, it may not be so.
+
+Have you ever met someone who likes complicated things? Well, I haven't! I'm pretty sure; everyone wants simple. We create simple interfaces, write simple, and ship simple products. I like simple things, as they are easy for most of us, in most situations. However, simple is not guaranteed to be easy.
+
+I want to share a simple hard thing, but before that tell me, "do you like the design of this blog?". I know at least one person likes it as Egoist says, "Your blog looks clean."
+
+<Tweet id="1132564698677690368">
+
+> Your blog looks clean, mind me making it a [@saber\_land](https://twitter.com/saber_land) theme? 😬
+> — [@\_egoistlily](https://twitter.com/_egoistlily/status/1132564698677690368)
+
+</Tweet>
+
+Clean or say it looks simple.
+
+Ask me, was it simple building it?
+
+The core idea here is simple and straightforward. I wanted to create a website with a grid in the background. All the contents i.e., text, paragraphs, headings, images, code snippets, etc. should align with the background grid.
+
+However, the implementation of this simple idea is quite hard. I started with the background. I need a repeating grid pattern for the background image, so I prayed the [SVG goddess](https://twitter.com/sarah_edo), and she blessed me with knowledge to write following snippet:
+
+<figure data-type="code">
+
+```svg
+<svg width="100%" height="100%"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="4" height="4" patternUnits="userSpaceOnUse">
+      <path d="M 4 0 L 0 0 0 4" fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
+```
+
+<figcaption>
+
+SVG image used to draw background grid pattern.
+
+</figcaption>
+
+</figure>
+
+Next, I have to put some text on the page, and since everything should align with the grid, I'm restricted to use sizes and heights which are multiple of eight.
+
+I set the base `font-size` of the page to `16px` and use relative units for sizes and heights.
+
+[Suwardhan](https://suwardhan.com) has crunched an elegant type system for me, "The title of should use a 42px font.". However, 42 is not a multiple of eight. It doesn't align with my background grid, and I don't want to mess up with his design. What should I do?
+
+I can use line-height to fit the height constraint. A line-height of `3.5rem` or `56px` works well here. If the title spans over two lines, then the height of the title block would be two times the line-height (i.e. `112px`).
+
+However, the height of the title block does not ensure that the baseline of the text lies on the grid.
+
+![Text baseline mis-aligned with the background grid.](../../_assets/mis-aligned-DUzkIacu.png)
+
+I use top padding of 5px to align the text baseline, and since the line-height is multiple of eight, all lines of text magically align with the background grid.
+
+![Text baseline aligned with the background grid.](../../_assets/partially-aligned-BMJFz83W.png)
+
+However, the height of the title block is `117px` which breaks the height constraint and if one element breaks the constraint the effect cascades. I use the smallest bottom padding to make the height a multiple of eight. Here, it would be 3px (117px + 3px = 120px). The bottom padding complements top padding to become a multiple of eight i.e. 5px + 3px = 8px.
+
+![Text baseline and height aligned with the background grid.](../../_assets/aligned-D_cSu0al.png)
+
+I got a pattern here: every text block would have a line-height which is multiple of eight, then top padding (which would always be less than 8px) to align text baseline and finally a complementing bottom padding.
+
+So I apply this pattern to all the text elements. Other elements like images and code snippets needed similar fine adjustments, and finally, I had a page with complete text and background alignment.
+
+"Noto Serif looks better than Helvetica, replace the primary font." - Suwardhan
+
+🤦‍♂️ The two fonts have different baseline heights, so I have to adjust the top-paddings again. Readjusting text in dozens of places is a daunting task, and it would be even harder in the future. I decide to bring in <span title="A topic for some other day!">atomic design pattern and use [accoutrement](https://www.oddbird.net/accoutrement/) for token management</span>. So, all my adjustments are in one file:
+
+<figure data-type="code">
+
+```scss
+$sizes: (
+  'unit': 8px,
+
+  'base': '#unit'
+    (
+      'times': 2,
+    ),
+  'root': '#base',
+
+  // Used to calculate rem from px.
+  'line-height-base': '#base'
+    (
+      'times': 1.5,
+    ),
+  'font-size-ui': '#base'
+    (
+      'times': 0.75,
+      'convert-units': 'rem',
+    ),
+  'line-height-ui': '#base'
+    (
+      'times': 1,
+      'convert-units': 'rem',
+    ),
+  'vh-adjust-ui': '#unit'
+    (
+      'times': 4/8,
+    ),
+  'font-size-h1': '#base'
+    (
+      'times': 2.625,
+      'convert-units': 'rem',
+    ),
+  'line-height-h1': '#base'
+    (
+      'times': 3.5,
+      'convert-units': 'rem',
+    ),
+  'vh-adjust-h1': '#unit'
+    (
+      'times': 5/8,
+    ), // ...
+);
+```
+
+<figcaption>
+
+Typesetting for znck.dev ([source](https://github.com/znck/znck.dev))
+
+</figcaption>
+
+</figure>
+
+It is hard to implement this simple idea for me so the simple hard thing.
+
+*It is hard to provide the simple.*
+
+Whenever you feel, it is simple, and I can easily get it. **Thank the creator**; she has done the hard work.
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2019-06-03-finally-some-colors/index.html -->
+
+
+# Finally some colors in my life
+
+"I got a red shirt!", I scream, every time my friends jab that my wardrobe is grey and dull. They always call me out, "Get some colors, dude!".
+
+Colors, huh!
+
+## Colors
+
+I like grey; it's my absolute favorite. Grey is a color. I see grey as `#808080`, call me a nerd, but I do see `#808080`. `#808080` is how we tell computers that I want grey.
+
+The number `#808080`, we call it hex code (short for hexadecimal code) of a color.
+
+One important thing to note here, this 80 in hex code is not the number eighty we learned in the math class. Why it's like that?
+
+Let us ignore why, for a while, and we revisit the elementary math class first.
+
+We have ten digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9. We use these digits to make numbers, and we get a system to make numbers. We are using ten digits in this number system, so it is a base10 number system, also known as the decimal number system.
+
+The 80 in the hex code is 128 in the decimal number system (let's ignore how for a while).
+
+I see the number 128 as a hundred, a twenty, and an eight. We can break it further, a hundred, two tens and an eight.
+
+$$
+1 \times 100 + 2 \times 10 + 8 \times 1 = 128
+$$
+
+
+We know hundred is ten times ten.
+
+$$
+1 \times (10 \times (10 \times 1)) + 2 \times (10 \times 1) + 8 \times 1 = 128
+$$
+
+
+As we move from right to left, the value of a position is increasing ten folds. It is increasing ten folds because we have ten digits or say it is a base10 number. We have a smarter way to represent these ten folds increase: power notation. In power notation, we say:
+
+$$
+1  =  10^0
+$$
+
+
+$$
+10  =  10^1
+$$
+
+
+$$
+100  =  10^2
+$$
+
+
+<!-- Maybe explain base and exponent. -->
+
+Let's write 128 with power notation.
+
+$$
+1  \times  10^2   +   2  \times  10^1   +   8  \times  10^0   =   128
+$$
+
+
+For brevity, we write these numbers in increasing order of power.
+
+$$
+8  \times  10^0   +   2  \times  10^1   +   1  \times  10^2   =   128
+$$
+
+
+Phew!
+
+However, we got one little problem computers do not understand decimal numbers. They use base2 number system (also called binary number system) which means only two digits: 0 and 1. The decimal number 128 is 1000 0000 in the binary number system.
+
+Similar to decimal number above, we can write 1000 0000 in power notation:
+
+$$
+0 \times 2^0 + 0 \times 2^1 + 0 \times 2^2 + 0 \times 2^3 + 0 \times 2^4 + 0 \times 2^5 + 0 \times 2^6 + 1 \times 2^7 = 128
+$$
+
+
+The grey color (hex code `#808080`) would be 1000 0000 1000 0000 1000 0000, and computers would understand it. However, we, humans, would have a tough time using binary numbers. Just imagine, if my designer friend asks "What is the color of the button?" and I say, "It looks like one zero zero zero zero zero zero zero zero one zero zero zero zero ...". It is pretty damn exhausting. Moreover, I am not sure if anyone can comprehend these kinds of numbers. We need a better system to convey these numbers, like the number in the hex code of the grey color. The hex code `#808080` is a hexadecimal number (a base16 number system). The hexadecimal number 80 in power notation would be:
+
+$$
+0 \times 16^0 + 8 \times 16^1 = 128
+$$
+
+
+This number is relatively more comfortable to use as I can reply to my designer friend, "It looks like hex eighty eighty eighty."
+
+Why do we need three eighties for one color?
+
+Yay! I can talk about Color Theory. I feel like a designer now.
+
+Screens use lights to display colors. However, we don't need lights in all colors. A small set of colored lights can be mixed to create various colors. One such set is lights of red, green and blue color. So the three eighties in the hex code of grey are amounts of red, green, and blue colors, and it is also the reason that hex code is also called RGB code.
+
+Hence, grey has some red, some green, and some blue which makes me think grey is full of colors, then why does it look so... grey?
+
+![White light passing through prism](../../_assets/prism-Da-XBeii.png)
+
+Colored lights mix additively or subtractively to give a resultant color. In our case, equal amounts of red, green, and blue cancel each other out, resulting into grey color. I cannot mix these colored lights in my head and write the correct hex code for the color I want to use. I need some other way to tell colors.
+
+Fortunately, there is a way: a color notation called HSL, which stands for hue, saturation, and lightness. Scary, huh! It seemed very complicated to me and chose to stick to color pickers until I saw [Miriam's talk at VueConf US 2019](https://youtu.be/VsG5l5e44ZY). She simplified HSL for me:
+
+* Hue is the color.
+* Saturation is the amount of color.
+* Lightness is the amount of light.
+
+Imagine if we paint a rainbow on a circular disc such that every radial line is in a different color, gradually changing from red to yellow, yellow to green, green to cyan, cyan to blue, and blue to red. On such a circle, the angle between any radial line with the red radial can be used to choose a color. We have red at 0deg, yellow at 60deg, green at 120deg, cyan at 180deg, blue at 240deg, again red at 360deg, and every other angle in between these would give a color which is a mixture of the two. Now, I know what could be the hue of the color I want.
+
+![A disk demonstrating hues of HSL](../../_assets/hsl-CYBNVHMg.png)
+
+After picking hue, I choose the amount of the color, i.e., the saturation. It goes no color to full color, and we use percentage to set the amount required.
+
+Finally, we pick a lightness to set the brightness of the color. It goes from dark black to bright white and similar to saturation; we use a percentage value.
+
+Let's pick the grey color:
+
+* Hue does not matter as it's grey.
+* We don't want any color, so we set it to 0%
+* The correct lightness value would be around 50%, in between black and white.
+
+Hence, the grey color in HSL would be `hsl(0deg, 0%, 50.25%)` which is equivalent to `#808080`. Now I know how to make colors. I am adding colors to my blog.
+
+## The dark theme
+
+I have been redesigning my blog for a while. With some help from [Suwardhan](https://suwardhan.com), I finally got the new design out.
+
+![Screenshot: Default Theme on znck.dev](../../_assets/default-CK3a9_P8.png)
+
+It looks clean and smooth, and I love it.
+
+However, the brightness hurt my eyes. I am more of a dark mode person. I have to build a dark theme for me, and it is, precisely the opportunity I have been looking to throw in lots of colors.
+
+In the default theme, I have a light yellowish background, black text, and bright orange highlights. So, I need three colors for the dark mode too: a text color, a background color, and a highlight color.
+
+I choose white for text to get maximum contrast as the background would be dark. For background, I need some color with very low lightness. I pick: `hsl(0deg, 100%, 3%)`. I notice that text contrast remains the same, no matter what is the hue, which allows me to throw in lots of colors. I wonder, if somehow I can pass a random hue value to the background color, I can get as many colors as I want.
+
+## The color of the day
+
+"Wonder! every day there's a new color.", I want it, I want it, I want it. How do I get a new hue every day? Can I use date? I think I can. There are 365 days in a year, and 360 degrees of hues (hue is circular so 361deg is equal to 1deg), I can use the day number as the value of the hue. I call it the hue of the day.
+
+So, the background becomes <span title="The --hue-of-the-day is a CSS custom property. Google MDN CSS Custom Properties to know more.">`hsl(var(--hue-of-the-day), 100%, 3%)`</span>. I need one more color for highlights. I choose to use the contrasting hue of the day. It is amazing how easy it is to get contrasting color in HSL, subtract the hue value from 180deg. So, I have white for text, `hsl(var(--hue-of-the-day), 100%, 3%)` for background, and <span title="The calc is a CSS builtin function. Google MDN CSS calc to know more.">`hsl(calc(180deg - var(--hue-of-the-day)), 100%, 60%)`</span> for highlights.
+
+![Screenshot: Dark Theme on znck.dev](../../_assets/dark-YiuBcyfb.png)
+
+I use the following JavaScript snippet to set the hue of the day:
+
+```js
+function hue() {
+  const now = new Date()
+  const start = new Date(now.getFullYear(), 0, 0)
+  const diff = now - start
+  const oneDay = 1000 * 60 * 60 * 24
+  const day = Math.floor(diff / oneDay)
+
+  return day + 'deg'
+}
+
+document.body.style['--hue-of-the-day'] = hue()
+```
+
+That's all folks.
+
+I have a dark mode full of colors. Now, I got 723 colors: 360 backgrounds and 360 text colors of the dark theme, the background color of the light theme, the text color of the light theme, and "I got a red shirt!".
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2019-06-03-grammarly-in-code/index.html -->
+
+
+# Grammarly in Code
+
+There's no simpler writing tool than markdown. There's no elegant editor than [code](https://code.visualstudio.com). There's no better writing environment than markdown in <span title="VS Code">code</span>. It's perfect, but whenever I write, I find myself copy-pasting back and forth between Grammarly editor and VS Code editor. Grammarly makes my writing much better, but it also forces me to use their editor. Don't take me wrong I don't hate their editor, in fact, I kind of like it — clean, spacious, and responsive. But it's not sufficient for me as my articles generally have images, code snippets, figures, and sometimes markup. The lack of syntax highlight for markdown and markup is an absolute deal-breaker. If Grammarly worked in VS Code editor, wouldn't that be perfect?
+
+I searched the code marketplace for a Grammarly extension, but there wasn't one. So, I continued jumping between Grammarly and Code, waiting for someone to remedy my pain. A year passed, but nobody came up with a solution. I couldn't bear it anymore; I had to help me; I had to build the integration myself. And, the journey of getting Grammarly in Code began.
+
+## Hunt for Grammarly API
+
+"Grammarly API" — I entered in the Google white box and hit enter; the results disappointed me.
+
+<Tweet id="388621218586578944">
+
+> No API--yet! We'll keep you posted!
+> — [@Grammarly](https://twitter.com/Grammarly/status/388621218586578944)
+
+</Tweet>
+
+No API -- yet! It's been six years since they first acknowledged that they don't have a public API. I don't think developer environments ever make to their priority list.
+
+Hence, "Grammarly API Github" — I hit Google again.
+
+![Screenshot of Google search results for query "Grammarly API Github"](../../_assets/screenshot-google-search-2-Dto8dABI.png)
+
+I found something — a reverse-engineered [Grammarly client](https://github.com/stewartmcgown/grammarly-api). It's a sound library, and I decided to base my extension on this library.
+
+## Building the Extension
+
+I wanted to validate the idea with minimum efforts, so I looked for a project scaffold to kickstart the extension. VS Code has [yeoman](https://yeoman.io) generator. Hence, all I needed was to run the command `yo code`.
+
+![Screenshot of Yeoman Visual Studio Code Generator running in iTerm2 zsh shell](../../_assets/screenshot-yeoman-CnmZr87_.png)
+
+I picked the very first option: "New Extension (TypeScript)", and I got a good starting point. Next, I needed to create a small language server to analyze text content with Grammarly API and post grammar diagnostics. The Code's [Language Server Extension Guide](https://code.visualstudio.com/api/language-extensions/language-server-extension-guide) proved to be an excellent resource. I got the extension working in very few lines of code.
+
+<figure data-type="code">
+
+```ts
+import { createConnection, TextDocuments } from 'vscode-languageserver'
+import { Grammarly } from '@stewartmcgown/grammarly-api'
+
+// Create a connection for the server.
+const connection = createConnection()
+
+// Create a simple text document manager.
+const documents: TextDocuments = new TextDocuments()
+
+connection.onInitialize(() => ({
+  capabilities: {
+    textDocumentSync: documents.syncKind,
+  },
+}))
+
+documents.onDidChangeContent(async ({ document }) => {
+  const results = await new Grammarly().analyze(document.getText())
+
+  const diagnostics = results.alerts.map(() => {
+    /*
+    convert results to Code diagnostics.
+    ...
+    */
+  })
+
+  // Send diagnostics
+  connection.sendDiagnostics({
+    uri: document.uri,
+    diagnostics,
+  })
+})
+```
+
+<figcaption>A naive language server implementation to provide grammar diagnostics using Grammarly API</figcaption>
+</figure>
+
+I got it working. I could see red twiddling underlines screaming at me.
+
+![Screenshot of VS Code editor highlighting grammar issues and displaying Grammarly diagnostics](../../_assets/screenshot-grammarly-clUtP2JH.png)
+
+I started writing, but Grammarly diagnostics was extremely slow. I had to wait for seconds, which is a lot for writing,
+I expected a near-immediate response. However, the response in Grammarly editor is quite snappy. I guess I was doing something wrong. I wondered how do Grammarly editor work?
+
+## Peeking into Grammarly API
+
+By looking at the network logs in Chrome DevTools, I found Grammarly uses a WebSocket for connecting to the grammar service at `wss://capi.grammarly.com/freews`.
+
+![Screenshot of Chrome DevTools Network tab showing web socket connection to Grammarly API](../../_assets/screenshot-ws-B6r0839Q.png)
+
+On further inspection of messages, I found every message has a fixed structure: a message `id`, `action`, and the payload required for the `action`. The `id` value is from a sequence starting from 0 and incremented on every subsequent message. I guess, the `action` is the name of the function executed on the server, it looks like an <abbr title="Remote Procedure Call">RPC</abbr> API. For every message sent, the server returned a response with the same `id` as the message. I needed more data to understand the API, so I started fiddling with the Grammarly editor while monitoring the socket connection.
+
+The editor starts a conversation with the server by sending a message with `start` action, which looks like the following snippet:
+
+<figure data-type="code">
+
+```json
+{
+  "id": 1,
+  "action": "start",
+  "client": "denali_editor",
+  "clientSubtype": "general",
+  "clientVersion": "1.5.43-2120+master",
+  "dialect": "american",
+  "docid": "419610520",
+  "documentContext": {
+    "goals": ["convince", "describe", "inform"],
+    "domain": "technical",
+    "audience": "expert",
+    "style": "neutral",
+    "emotion": "mild",
+    "emotions": ["neutral", "confident", "joyful", "optimistic", "respectful", "urgent", "friendly", "analytical"],
+    "dialect": "american"
+  },
+  "clientSupports": [
+    "text_info",
+    "free_inline_advanced_alerts",
+    "readability_check",
+    "sentence_variety_check",
+    "filler_words_check",
+    "alerts_update",
+    "alerts_changes",
+    "free_clarity_alerts",
+    "super_alerts",
+    "consistency_check",
+    "hidden_alerts_update",
+    "set_goals_link"
+  ]
+}
+```
+
+<figcaption>The first message sent to Grammarly WebSocket server</figcaption>
+</figure>
+
+And the editor always waited for the response for the `start` action:
+
+<figure data-type="code">
+
+```json
+{ "sid": 1, "action": "start", "id": 1 }
+```
+
+<figcaption>Ack from Grammarly server for the start message</figcaption>
+</figure>
+
+After receiving the acknowledgment for the `start` action, the editor sends another message with `submit_ot` action. The `submit_ot` action
+sends the contents of the document as payload.
+
+<figure data-type="code">
+
+```json
+{
+  "id": 1,
+  "action": "submit_ot",
+  "rev": 0,
+  "doc_len": 0,
+  "deltas": [
+    {
+      "ops": [
+        {
+          "insert": "I got grammarly working in code.\n\nAnd it's pointing at speling mistakes.\n"
+        }
+      ]
+    }
+  ]
+}
+```
+
+<figcaption>Initial message sent to Grammarly server for grammar anaylsis</figcaption>
+</figure>
+
+In response to the `submit_ot` action, the server sends a series of `alert` actions. Each `alert` action represents some issue in the document. The `alert` actions are followed by a `finished` action which signifies end of diagnostics list.
+
+In [Stewart McGown implementation of Grammarly API](https://github.com/stewartmcgown/grammarly-api), the `finished` message is used as the end of the transaction, and all `alert` messages received so far are returned as resolved promise form the `analyze` method. I feel it's sufficient for immutable text, but I don't have immutable text, my text changes with every keypress. So, I started editing in Grammarly editor and monitored the socket connection.
+
+The editor sends `submit_ot` action on every change.
+
+<figure data-type="code">
+
+```json
+{
+  "id": 3,
+  "action": "submit_ot",
+  "rev": 1,
+  "doc_len": 74,
+  "deltas": [{ "ops": [{ "retain": 73 }, { "insert": "a" }] }]
+}
+```
+
+```json
+{
+  "id": 4,
+  "action": "submit_ot",
+  "rev": 2,
+  "doc_len": 75,
+  "deltas": [{ "ops": [{ "retain": 73 }, { "delete": 1 }] }]
+}
+```
+
+<figcaption>Example insertion and deletion messages from Grammarly Operation Transformation messages</figcaption>
+</figure>
+
+The `submit_ot` message includes document length (`doc_len`), revision (`rev`), and insertion or deletion operations (`deltas` array with `ops`). Recently, I have been reading about conflict-free replication in distributed data structures, and I feel the `ot` in `submit_ot` stands for [operational transformation](https://en.wikipedia.org/wiki/Operational_transformation). Grammarly's OT (or operational transformation) implementation seems to use revision (`rev`) and document length (`doc_len`) for state assertion and `deltas` for transformation messages. In response to `submit_ot` action, the server would send a series of `alert` actions, which got affected by the change triggered by `submit_ot` action, followed by a `finished` action.
+
+I wondered, if I could generate these operational transformation messages from Code's content change events, I could potentially get realtime diagnostics from Grammarly.
+
+## Generationg Operational Transformations
+
+The language server protocol support incremental document synchronization with the Code editor, however, Code's content change events are slightly different. The change event uses range replacement, which makes synchronization simple and it requires less number of messages.
+
+<figure data-type="code">
+
+```ts
+connection.onDidChangeTextDocument((event) => {
+  const { document, change } = event
+  const { range, text } = change
+
+  const content = document.getText()
+  const offsetStart = document.offsetAt(range.start)
+  const offsetEnd = document.offsetAt(range.end)
+
+  // New revision of document.
+  const newDocument = new TextDocument(
+    document.rev + 1,
+    content.substr(0, offsetStart) + text + content.substr(offsetEnd),
+  )
+})
+```
+
+<figcaption>Example implementation of incremental document sync using content change events</figcaption>
+</figure>
+
+But, for Grammarly, we have to transform these range replacement events to operational transformation messages. There are three possible scenarios in range replacement:
+
+1. Insert non-empty text in an empty range
+
+    <figure data-type="code">
+
+   ```ts
+   const event = {
+     range: {
+       start: { line: 3, column: 0 },
+       end: { line: 3, column: 0 },
+     },
+     text: 'a',
+   }
+
+   const OT = {
+     ops: [{ retain: 73 }, { insert: 'a' }],
+     // 73 is offest at Line 3 Column 0
+   }
+   ```
+
+    <figcaption>Code displaying same message as VS Code change event and Grammarly OT</figcaption>
+   </figure>
+
+2. Insert empty text in a non-empty range
+
+   <figure data-type="code">
+
+   ```ts
+   const event = {
+     range: {
+       start: { line: 3, column: 0 },
+       end: { line: 3, column: 1 },
+     },
+     text: '',
+   }
+
+   const OT = {
+     ops: [{ retain: 73 }, { delete: 1 }],
+   }
+   ```
+
+   <figcaption>Code displaying same message as VS Code change event and Grammarly OT</figcaption>
+   </figure>
+
+3. Insert non-empty text in a non-empty range
+
+   <figure data-type="code">
+
+   ```ts
+   const event = {
+     range: {
+       start: { line: 3, column: 0 },
+       end: { line: 3, column: 1 },
+     },
+     text: 'b',
+   }
+
+   const OT1 = {
+     ops: [{ retain: 73 }, { delete: 1 }],
+   }
+
+   const OT2 = {
+     ops: [{ retain: 72 }, { insert: 'b' }],
+   }
+   ```
+
+   <figcaption>Code displaying same message as VS Code change event and Grammarly OT</figcaption>
+   </figure>
+
+So, I ended up reimplementing the Grammarly API hooked it up with Code's content change events. And I got the near-real-time feedback from Grammarly service. I skipped how I handled authentication in this article, it was tricky one, but I got a good starting point from [Stewart McGown implementation of Grammarly API](https://github.com/stewartmcgown/grammarly-api).
+
+## Shipping the extension
+
+I followed the [VS Code Publishing Extension Guide](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) and got my extension on the marketplace. There were some hurdles in bundling the extension, but that deserves an article of its own. So, here I present ["Grammarly in Code"](https://marketplace.visualstudio.com/items?itemName=znck.grammarly).
+
+![Screenshot of Grammarly extension on VS Code marketplace](../../_assets/screenshot-ext-Ckxyxl0T.png)
+
+> Markdown. Code. Grammarly.\
+> Now, hear me ~~undefined~~ write.
+
+The [Grammarly extension is open source](https://github.com/znck/grammarly), and you can contribute or file issues if you face any problems.
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2019-05-26-comments-in-code/index.html -->
+
+
+# Comments in Code
+
+So one more pull request got rejected for having a comment; "Good code is self-documenting.", said the reviewer.
+
+## Good code
+
+What is good code? My code runs fast, is it "good code"? My code requires low memory, is it "good code"? It is difficult to answer, "what is good code?" without knowing, "why do we write code?".
+
+In my opinion, we write code to tell other people what we want a computer to do. We write for people. The preface of the book [Structure and Interpretation of Computer Programs](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-7.html), by Abelson, Sussman, and Sussman, captures the intent appropriately:
+
+> Programs must be written for people to read, and only incidentally for machines to execute.
+
+Code is for people to read.
+
+In an ideal world, with a perfect language, a code is for people to read. However, ours is not an ideal world, and any programming language is far from perfect. Once in a while, we have to cut corners to improve performance or to fix a tricky bug or to handle an edge-case. After all, we want to ship better products, and it diverts us from the primary objective of writing code: "for people to read."
+
+Every once in a while, we have to complicate parts of some code to make the product better. Machines are happy with this complicated code, so are our customers. However, humans (a.k.a. developers) are troubled. Every time, a developer visits this piece of complicated code, she wonders why did we do this?
+
+Indeed the "why" is missing from any code. As I said before, we write code to tell other people what we want a computer to do. Yes! "what"; The code says "what" (or more precisely "how"). We need something to share the "why" behind the code, and comments fill that gap. The comments are part of any language syntax to convey, why the code is written this way?
+
+## Comments tell Why
+
+Let's take an example of lazy `v-model` directive in Vue. The `v-model` directive binds a variable in JavaScript to an `<input>` field such that the variables value updates as user types in the input field. However, for languages which use <span title="Input Method Handler">[IME](https://en.wikipedia.org/wiki/Input_method)</span>, this approach does not work, so Vue provides a lazy modifier. Following is the code snippet which handles lazy modifier:
+
+```js
+if (!binding.modifiers.lazy) {
+  el.addEventListener('compositionstart', onCompositionStart)
+  el.addEventListener('compositionend', onCompositionEnd)
+  el.addEventListener('change', onCompositionEnd)
+}
+```
+
+It is clear from the code that the `onCompositionEnd` method listens to `compositionend` and `change` events. [The spec](https://developer.mozilla.org/en-US/docs/Web/API/Element/compositionend_event) says that the `compositionend` event is fired when composition completes or cancels, then why does this piece of code attach extra event listener. It looks like Evan forgot to remove it, let's send a PR. It makes sense absolute sense to remove that line of code, however only because the why is missing! Let's add the "why" to above code:
+
+```js
+if (!binding.modifiers.lazy) {
+  el.addEventListener('compositionstart', onCompositionStart)
+  el.addEventListener('compositionend', onCompositionEnd)
+  // Safari < 10.2 & UIWebView doesn't fire compositionend when
+  // switching focus before confirming composition choice
+  // this also fixes the issue where some browsers e.g. iOS Chrome
+  // fires "change" instead of "input" on autocomplete.
+  el.addEventListener('change', onCompositionEnd)
+}
+```
+
+What do you think now? Does it make any sense to remove the `change` event listener? Comments provide essential information about the code without adding any runtime overhead. Does that mean all comments are good? What do all comments mean anyways?
+
+## Types of Comments
+
+Comments are free-form text. Depending on the type of text, we get different kinds of comments. Following types are as I see them:
+
+* Clarification Comments
+* Documentation Comments
+* License Comments
+* Reference Comments
+* Tagged Comments
+* Control Comments
+* Dead-code Comments
+
+### Clarification Comments
+
+As evident from the name, these comments clarify some obscure piece of code or logic. Let's take another example from vue source:
+
+<figure data-type="code">
+
+```js
+let getNow = Date.now
+if (inBrowser && !isIE) {
+  const performance = window.performance
+  if (performance && typeof performance.now === 'function' && getNow() > document.createEvent('Event').timeStamp) {
+    getNow = () => performance.now()
+  }
+}
+```
+
+  <figcaption>
+    <a href="https://github.com/vuejs/vue/blob/22790b250cd5239a8379b4ec8cc3a9b570dac4bc/src/core/observer/scheduler.js">core/observer/scheduler.js</a> with comments removed
+  </figcaption>
+</figure>
+
+This code snippet patches an inconsistency in browsers event timestamp API. From looking at the code, we get that we want to use `Date.now`; However, for some condition, we switch to `performance.now`. It is unclear why would we need this, but the comments can clarify:
+
+<figure data-type="code">
+
+```js
+let getNow = Date.now
+// Determine what event timestamp the browser is using. Annoyingly, the
+// timestamp can either be hi-res (relative to page load) or low-res
+// (relative to UNIX epoch), so in order to compare time we have to use the
+// same timestamp type when saving the flush timestamp.
+// All IE versions use low-res event timestamps, and have problematic clock
+// implementations (#9632)
+if (inBrowser && !isIE) {
+  const performance = window.performance
+  if (performance && typeof performance.now === 'function' && getNow() > document.createEvent('Event').timeStamp) {
+    // if the event timestamp, although evaluated AFTER the Date.now(), is
+    // smaller than it, it means the event is using a hi-res timestamp,
+    // and we need to use the hi-res version for event listener timestamps as
+    // well.
+    getNow = () => performance.now()
+  }
+}
+```
+
+  <figcaption>
+    <a href="https://github.com/vuejs/vue/blob/22790b250cd5239a8379b4ec8cc3a9b570dac4bc/src/core/observer/scheduler.js">core/observer/scheduler.js</a> from vue source
+  </figcaption>
+</figure>
+
+The comments which tell "why" and explain the reason behind the code, I call them clarification comment. I recommend using clarification comments as long as you maintain them with the code associated. Yes, they add a little maintenance overhead but also keep the code understandable for humans.
+
+### Documentation Comments
+
+Even the purist self-documenting developers have nothing against documentation comments (or doc comments). Doc comments provide additional information for APIs and make them approachable by humans.
+
+```js
+/**
+ * Computes (a^b)
+ *
+ * @param {number} a - The base number
+ * @param {number} b - The exponent.
+ */
+function pow(a, b) {
+  // ...
+}
+```
+
+Editors use the structured information from doc comments to provide rich developer experience.
+
+![Screenshot: Editor intellisense using doc comments](../../_assets/doc-comment-C4Pd9mxy.png)
+
+Doc comments and editor intellisense give superpowers to us, we know what would a piece of code do without looking at the source.
+
+Also, Doc comments are used to automate API documentation generation.
+
+### License Comments
+
+Today, we do dependency driven development. Every project depends on thousands of other projects. Licenses play an essential role in DDD. Some licenses allow modifying the original code. For example, the virtual DOM implementation in vue is a fork of Snabbdom.
+
+<figure data-type="code">
+
+```js
+/**
+ * Virtual DOM patching algorithm based on Snabbdom by
+ * Simon Friis Vindum (@paldepind)
+ * Licensed under the MIT License
+ * https://github.com/paldepind/snabbdom/blob/master/LICENSE
+ *
+ * modified by Evan You (@yyx990803)
+ *
+ * Not type-checking this because this file is perf-critical and the cost
+ * of making flow understand it is not worth it.
+ */
+```
+
+  <figcaption>
+    <a href="https://github.com/vuejs/vue/blob/22790b250cd5239a8379b4ec8cc3a9b570dac4bc/src/core/vdom/patch .js">core/vdom/patch.js:L1-10</a> from vue source
+  </figcaption>
+</figure>
+
+License comments, in derived work, are an excellent way of honoring another person's work.
+
+### Reference Comments
+
+A significant part of a developer's work is copy-pasting from StackOverflow; we all know that. Sometimes we copy code without even thinking about it. There's no shame in that, but provide the reference to the next person working on that code. We can use a reference comment for that:
+
+<figure data-type="code">
+
+```js
+if (tag.indexOf('-') > -1) {
+  // http://stackoverflow.com/a/28210364/1070244
+  return (unknownElementCache[tag] =
+    el.constructor === window.HTMLUnknownElement || el.constructor === window.HTMLElement)
+}
+```
+
+  <figcaption>
+    <a href="https://github.com/vuejs/vue/blob/22790b250cd5239a8379b4ec8cc3a9b570dac4bc/src/platforms/web/util/element.js">platforms/web/util/element.js:L66-72</a> from vue source
+  </figcaption>
+</figure>
+
+The reference comments are often permalinks to StackOverflow (or similar platform) answers, although they can be page numbers from any book or snippets from other projects too. Add a reference comment whenever you copy-paste something in your code.
+
+### Tagged Comments
+
+Tagged comments are inline reminders, something like a note to future self. They start with a fixed prefix, called tag here. Most common tag is `TODO`, but you can use any tag.
+
+```js
+// TODO: Write some code here
+```
+
+Let's take another example from vue source:
+
+<figure data-type="code">
+
+```js
+prevChildren.forEach((c) => {
+  c.data.transition = transitionData
+
+  // TODO: record before patch positions
+
+  if (map[c.key]) {
+    kept.push(c)
+  } else {
+    removed.push(c)
+  }
+})
+```
+
+  <figcaption>
+    <a href="https://github.com/vuejs/vue/blob/22790b250cd5239a8379b4ec8cc3a9b570dac4bc/src/platforms/weex/runtime/components/transition-group.js">platforms/weex/runtime/components/transition-group.js:L60-70</a> from vue source
+  </figcaption>
+</figure>
+
+Tagged comments help us to continue concentrating on the current task while leaving hints for what to do next.
+
+### Control Comments
+
+Today, we have a plethora of tools, making it easier to write code.
+Linters make us adhere to a code style.\
+Transpilers allow us to use the latest syntax.\
+Bundlers help us to ship code better.
+
+These tools work well in most cases, but there are some scenarios where they need some help from the developer. Comments again provide an excellent way to provide information and context to these tools.
+
+For example, webpack allows async imports to be preloaded or prefetched, and we can configure this inline:
+
+```js
+const HomePage = () =>
+  import(
+    /* webpackPreload: true */
+    './pages/home.vue'
+  )
+const AboutPage = () =>
+  import(
+    /* webpackPrefetch: true */
+    './pages/about.vue'
+  )
+```
+
+The comment `/* webpackPreload: true */` configures webpack inline to preload the home page. Similar, control comments are offered by eslint too:
+
+```js
+// eslint-disable-next-line
+eval(...)
+```
+
+The comment `// eslint-disable-next-line` tells eslint to shut up for the next line. Control comments give superpowers to toolings and developers to finetune their applications.
+
+### Dead-code Comments
+
+The commented code or dead-code comments are the worst kinds of comments. There is absolutely no reason for their existence, delete them!
+
+Let's see an example from vue source:
+
+<figure data-type="code">
+
+```js
+// children.forEach(callPendingCbs)
+
+// Promise.all(children.map(c => {
+//   const oldPos = c.data.pos
+//   const newPos = c.data.newPos
+//   const dx = oldPos.left - newPos.left
+//   const dy = oldPos.top - newPos.top
+//   if (dx || dy) {
+//     c.data.moved = true
+//     return this.animate(c.elm, {
+//       styles: {
+//         transform: `translate(${dx}px,${dy}px)`
+//       }
+//     })
+//   }
+// }))
+```
+
+  <figcaption>
+    <a href="https://github.com/vuejs/vue/blob/22790b250cd5239a8379b4ec8cc3a9b570dac4bc/src/platforms/weex/runtime/components/transition-group.js">platforms/weex/runtime/components/transition-group.js:L97-128</a> from vue source
+  </figcaption>
+</figure>
+
+I hate dead-code comments; they are easy to add but difficult to remove. When you come back to dead-code comments, you always wonder, why did you comment this code in the first place?
+
+Please remove dead-code comments from vue, send a pull request.
+
+## Comment! Comment! Comment
+
+Comments are compelling tools in programming languages. Use them to complement your code, to answer questions which are unanswered by the code. Do not use comments to create more questions.
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2019-05-20-awesomeconf/index.html -->
+
+
+# Running an awesome conference
+
+I love attending conferences. For inspiring talks, for making new friends and meeting old friends, or for learning new things, conferences have been influential in my journey as a developer. I like many conferences, but I want to be in every vue conference. If you been to a vue Conference, then you know that there’s something different about it. The environment is so welcoming and friendly. Sad! I have to travel across the world to be in one. I have longed to see a vue conference in India, my home, for a long time now.
+
+I decided, I was done waiting! *Let’s start a vue conference*, I urged Swapnil. He was in. We were ready. But we didn’t have the slightest clue how to. So, we started looking at other conferences. ReactFoo, JSFoo, VueConf, Connect.Tech and VueFes. These conferences are enormous. A lot goes into running them, and that scared me. It was not doable for me, for Swapnil, for a team of two who has been struggling to keep the vue meetup running.
+
+The dream would have ended there if Sid wasn’t there.
+
+One evening, Sid dropped something in my Twitter inbox:
+
+> Hi! I have a CFP for you. 😅
+
+That random CFP has been very phenomenal for me. Who knew one random message, on the evening of 23rd December 2018, would make a conference organizer one day. Thanks a lot, Sid for the birthday gift!
+
+> Hi 👋
+>
+> This is random but I'm organizing a tiny react conference on Jan 5
+>
+> very few attendees compared to a normal conf (25) and plenty of time between talks to discuss and have conversations
+>
+> I realize that's the part I most enjoy at conferences, so it would be cool to shape the entire conference around it
+>
+> would you like to give a talk on vue features that the react community should steal 😁
+>
+> <https://tinyconf.in> (not announced yet)
+
+It was a different kind of CFP — “here’s a topic, you’re speaking on it.” If you know me, you know that I love taking vue to react conferences. I was in.
+
+[TinyConf](https://tinyconf.in) was excellent, I had a great time. I got a valuable lesson out of it: conferences can be small.
+
+A small conference! A hope! A possibility!
+
+<!-- Planning -->
+
+The dream was back on! We decided to have a small conference, 30 people. Next, we needed speakers, a catchy name, and a venue. Everything we’re already doing for meetups but this time for the conference.
+
+We started with the name to get the domain. Don’t we all like to buy a domain the moment idea strikes!
+
+The first choice was: **EliteConf** - best vue developers at one place.
+
+The name didn’t paint the picture of inclusiveness and warmth of a vue conference. Next set of choices were:
+
+OpenConf, FocusConf, AllConf, VuetifulConf, VueUnconf
+
+Nah! None of these.
+
+What about **CoreConf**?
+
+But we don’t have all core members speaking.
+
+**MiniConf**?
+
+Very close to Sid’s tinyconf, it has been our inspiration but sounds like a ripoff.
+
+**SuperConf**?
+
+Nah! We want first-time speakers, it’s not very inviting. Maybe **DebutConf**?
+
+Maybe! It can be a meetup theme, though.
+
+**AwesomeConf**?
+
++1
+
+Nothing against AwesomeConf. Even if I had something, it would have been impossible to convince Swapnil otherwise. That guy is crazy for awesome lists!
+
+Got a name! Lucky us, google came up with .dev TLD around then. But we had to wait for the public release and hope nobody gets awesomeconf.dev during pre-release days. The days were hard, and the nights were long. Finally, we got it - [awesomeconf.dev](https://awesomeconf.dev)
+
+<Tweet id="1101209663834533888">
+
+> Something exciting is brewing! 🤫
+> — [@VueBLR](https://twitter.com/VueBLR/status/1101209663834533888)
+
+</Tweet>
+
+Next immediate step, build a website. We needed a theme, an identity for the conference. A theme which represents the part we enjoy most: conversations. If you’re a speaker, it’s easier to start a conversation as people already know what you're working on. We decided, let's make everyone speak!
+
+And we got a unique conference:
+
+* 30 attendees
+* Everyone speaks!
+* All about vue
+
+<!-- Executing -->
+
+Swapnil immediately put out a website and CFP for the AwesomeConf.
+
+<Tweet id="1102617517292322816">
+
+> The wait is over! Announcing an Awesome Vue.js Conference... 🎉
+>
+> * The best of Vue.js devs at one place. 😎
+> * No one shall be a passive attendee, i.e. every participant has to speak. 🤓
+> * Talks can range anywhere from 5 to 20 minutes. 💪
+>
+> May 4, Bangalore
+> — [@VueBLR](https://twitter.com/VueBLR/status/1102617517292322816)
+
+</Tweet>
+
+Next step was to find a venue. We had the regular meetup venue as a backup. But we wanted better, something like a hotel conference room! So, we started looking for sponsors.
+
+What do we have for sponsors?
+
+* 30 vue developers
+* One room
+* Growing frontend ecosystem
+* Networking opportunity
+
+It was unconventional, far from regular conferences. We reached out to a few companies. Swapnil could lock-in a deal with [Meesho](https://meesho.com), and we got a fantastic hotel venue.
+
+We were targeting to have 30 people and had all arrangements. But, we didn’t realize it would be impossible to have 30 sessions. In fact, we could not accommodate more than 15 talks.
+
+We decided to go with 15 talks. For other 15 available seats, we decided to allow +1 with every speaker.
+
+> Hello everyone! 👋
+>
+> Speaking at a conference can be stressful and intimidating. A familiar face can be very comforting and confidence boosting. We encourage you to ask your significant other or your friend or your colleague to join AwesomeConf for a day with Vue.
+>
+> If you plan to bring +1 to the conference, please confirm by replying to this thread.
+
+A day before the conference. We double checked the venue, perfected the schedule. Everything was perfect. Well, except the one most important thing:
+
+<Tweet id="1124453377792864257">
+
+> All set for [@AnAwesomeConf](https://twitter.com/AnAwesomeConf)!
+>
+> Just one thing left! 🤪 DM me your best [@vuejs](https://twitter.com/vuejs) puns [#AnAwesomeConf](https://twitter.com/hashtag/AnAwesomeConf) [#Vue](https://twitter.com/hashtag/Vue) [#VueBLR](https://twitter.com/hashtag/VueBLR)
+> — [@znck0](https://twitter.com/znck0/status/1124453377792864257)
+
+</Tweet>
+
+I self-appointed myself, the master of ceremonies. A good MC must throw in bad puns. Chris and Ben shared their most prized collection of vue puns. Now, I was ready. I was hosting a conference. I was a **conference organizer**.
+
+<!-- The D-day -->
+
+![AwesomeConf: No one shall be a passive attendee](../../_assets/ac-standee-BKyjrjYJ.jpg)
+
+The conference day, we were excited, terrified, nervous, and every other thing. All attendees were there on time, which had rarely happened in our meetups. But there’s always someone who’s stuck in Bangalore traffic, but this one was our first speaker. It’s a different story, you should read [the article](https://dev.to/gokatz/first-time-speaker-fts-with-few-tips-45po) by Gokul.
+
+***Enjoy the Vue*** - Swapnil completed his welcome address and the conference begins. We had 5 sessions of 3 talks each, filled with breaks for discussions and a great lunch. Some people enjoyed talks, others enjoyed conversations but most enjoyed the lunch.
+
+![Lunch: Secret of making a regular conference into an awesome conference](../../_assets/ac-lunch-Dr_uv9oN.jpg)
+
+<!-- What went well? -->
+
+## Did we meet our expectations?
+
+15 talks, 8 first time speakers, 1 student. We did an excellent job with the first vue conference in India, and it seems likewise from the twitter reactions.
+
+![Tweets from AwesomeConf attendees](../../_assets/tweets-A_fAqIev.jpg)
+
+I wanted to host a vue conference where every attendee is actively involved, and we did it. I am pleased with AwesomeConf, and so are the attendees. Also, no one was hurt by my bad jokes and puns, so that's a plus.
+
+<Tweet id="1124556436711849985">
+
+> When someone asks you to explain your joke. [@znck0](https://twitter.com/znck0) [#AnAwesomeConf](https://twitter.com/hashtag/AnAwesomeConf) ![Rahul explaining a joke at AwesomeConf](https://t.co/higeRbCglc)
+> — [@SwapAgarwal](https://twitter.com/SwapAgarwal/status/1124556436711849985)
+
+</Tweet>
+<!-- What didn't work? -->
+
+## What didn't work?
+
+**The projector**. We had some issues with the projector throughout the day. Working with projectors is terrible. Daisy chaining dongles to get the correct port. Checking loose connections. Changing laptops after every talk. It was too much work. We should have tested it a day before. Also, a multi-input projector would have been much better.
+
+**Recording**. We did try to record the conference. Our lack of experience with professional recording setup resulted in terrible videos. The talks were excellent, and they deserve to be shared with the world. We will plan better next time.
+
+## It was an awesome conference!
+
+I feel the conference provided the required platform to bring out those eight first-time speakers.
+
+*You are a conference speaker now!*\
+*You are awesome.*\
+*You spoke at an awesome conference.*\
+*Which conference?* – I ended my closing address.\
+*An awesome conference*.
+
+![That's all folks. It was an awesome conf.](../../_assets/fin-BGkQVUmD.jpg)
+
+<!-- Thanks & Mentions -->
+
+Thanks a lot for being part of the AwesomeConf.
+
+Thanks [Sid](https://twitter.com/@siddharthkp) for inspiring us and introducing to the idea of [a tiny conference](https://sid.studio/post/tinyconf).
+Thanks [Zainab](https://twitter.com/@zainabbawa) for helping and mentoring us.
+Thanks [Meesho](https://twitter.com/@MeeshoApp) for supporting us.
+Thanks [Suwardhan](https://instagram.com/suwardhan.design).
+
+[Swap](https://twitter.com/@SwapAgarwal) & [Znck](https://twitter.com/@znck0) would be back soon with next iteration of AwesomeConf.
+
+![AwesomeConf 2019 Pass](../../_assets/signed-C6DkAyQG.jpg)
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2018-11-20-type-vuex/index.html -->
+
+
+# Type Vuex without TypeScript
+
+> This is a continuation article to [Type Vue without TypeScript](../2018-11-11-type-vue/index.html.md), if you haven’t already read it, I suggest you read that first.
+
+## Vuex does support types!
+
+The official state management library for Vue does support TypeScript. It provides MutationTree and ActionTree type helpers to get auto-completion and intellisense in mutations and actions.
+
+![Vuex store implementation written in TypeScript](../../_assets/1-BnqozjI5.png)
+
+We can also get types in JavaScript with JSDoc `@type` annotation.
+
+![Vuex store implementation written in JavaScript](../../_assets/2-BQlXO-Xp.png)
+
+If we use options syntax for creating a store, most of the boilerplate comments are unnecessary.
+
+![Vuex store implementation written in JavaScript using options syntax](../../_assets/3-Bslfh-Hi.png)
+
+The TypeScript API for Vuex is limited however. Type checks and intellisense in commit and dispatch are very primitive.
+
+<figure data-type="image">
+  <div stack row wide>
+    <img src="../../_assets/4-BJtctiMc.png" alt="Screenshot: Intellisense in commit methods of vuex store" />
+    <img src="../../_assets/5-CyV0s8iN.png" alt="Screenshot: Intellisense in dispatch methods of vuex store" />
+  </div>
+
+  <figcaption>Intellisense in commit (left) and dispatch (right) methods of Vuex store</figcaption>
+</figure>
+
+As you can see above, we get intellisense to let us know that commit and dispatch take strings as the first argument, but we don’t get a list of registered actions and mutations. There is not much we can do here, with or without TypeScript. However, there are lots of third-party packages trying to get the types right in the Vuex store and modules.
+
+![Vuex helper packages for TypeScript](../../_assets/6-DIBqQFA6.gif)
+
+We won’t be introducing new dependencies to a project only to get the types right, as most people are using just Vuex. However, [vuex-class](https://github.com/ktsn/vuex-class), [vuex-typescript](https://github.com/istrib/vuex-typescript) and [vuex-module-decorators](https://github.com/championswimmer/vuex-module-decorators) are worth mentioning third-party packages assisting Vuex stores.
+
+<Tweet id="1062919689515368448">
+
+> All the TypeScript + Vue users out there, what do you use to write Vuex modules and why?
+> — [@znck0](https://twitter.com/znck0/status/1062919689515368448)
+
+</Tweet>
+
+The next version of Vuex would be built with an API which plays well with TypeScript.
+
+We cannot do much with committing mutations and dispatching actions due to limitations in the TypeScript API for Vuex. Though with namespaced modules, we can limit the scope of a store and keep individual store modules comprehendible. However, there is another area of Vuex which can use types and intellisense.
+
+### Using Vuex Store in Vue components
+
+Vuex provides mapState, mapGetters, mapActions and mapMutations helpers to simplify binding store state in Vue components. However, the API is string literals based and sort of impossible to provide types and intellisense.
+
+![Using Vuex store in Vue component](../../_assets/7-M3zxuUol.png)
+
+This problem is still unsolved in the TypeScript world, and there is not much we can do in the JavaScript world. However, there exists a pattern, and to my knowledge, popularised by [Chris Fritz](https://twitter.com/chrisvfritz)’s [Enterprise Boilerplate](https://github.com/chrisvfritz/vue-enterprise-boilerplate) which can be enhanced.
+
+### Helpers pattern in Vuex
+
+According to Chris’ helper pattern, we create a store helper file, and all the mapXxx method calls of Vuex store usages are collected here. We can create contextual groups of computed and methods properties which can be added to components directly.
+
+![Vuex helper pattern example](../../_assets/8-CxNvcxE4.png)
+
+Other than providing possibilities of intellisense enhancements, this pattern reduces the surface area affected by Vuex in an application. Let’s say if Vuex introduces breaking changes then we have to update only helpers.js file. Also, it reduces code footprint and increases reuse of mapXxx across packages.
+
+### Intellisense for Vuex stores written with helpers pattern
+
+We can annotate exports from helpers in such a way that we get better intellisense when used in the component.
+
+e.g., In the following code snippet, addTodo method accepts a text argument of type string.
+
+![Intellisense in Vuex mapped methods](../../_assets/9-ahcXzF5b.png)
+
+Intellisense in above snippet is not automatic; it requires some type-casts using JSDocs. e.g., There should be addTodo method on the type of todosMethods object exported by helpers module. So with a type definition using @typedef, we can name this type TodoMethods.
+
+![Vuex helpers with JSDoc type annotations](../../_assets/10-rVszHpV-.png)
+
+In the above type definition, TodoMethods has a property addTodo of type function. To define a function type, we can use a double curly bracket, similar to Vue’s moustache syntax (`{{ ... }}`). In the double curly brackets, we add types in format (param: type): return-type and hence for a function accepting one string argument, we have `{{ (text: string): void }}`. As we know an action always returns a promise, we can augment addTodo method type to `{{ (text: string): Promise<void> }}`. Similarly, we can add a type to computed properties, but as required by API, these should be functions.
+
+![VS Code Type Inference](../../_assets/11-DpGttMf7.png)
+
+This approach is a little brittle as any changes in properties used in `mapXxx` could potentially effect JSDoc type definitions. Also, any new property added to mapXxx functions requires type definition to be added to the corresponding typedef.
+
+Also, if you noticed the type of `completedTodos` in the above snippet, it says `any[]`. It’s due to a bug in VS Code which does not show imported types correctly.
+
+![JSDoc type hint](../../_assets/12-Bks9Zzdt.png)
+
+![Bug in VS Code which fails to display imported files (outdated)](../../_assets/13-DaHLSGuR.png)
+
+That’s all folks for Vuex and types without TypeScript. If you have question about it, you can reach me on Twitter ([@znck0](https://twitter.com/znck0)).
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2018-11-11-type-vue/index.html -->
+
+
+# Type Vue without TypeScript
+
+A practical guide for type checking vue components written in JS and getting things done.
+
+## Why do we need types?
+
+In the last decade, browsers have become very powerful, allowing developers to build rich interactive applications. The interactivity and richness have come with an increase in complexity and size of the codebase in the frontend. Large complex codebases demand more attention and frontend teams have become larger.
+
+When more than one developer collaborates, there is a requirement of clear interfaces and APIs. JavaScript is very flexible, but you cannot deduce the type of arguments a function would accept.
+
+e.g., What do you think print function’s argument type is?
+
+```js
+function print(value) {
+  console.log(value)
+}
+```
+
+The type of value is ambiguous, even after looking at the source code of the print function which poses problems in large codebases where you cannot afford to jump into the source to deduce argument type of a function. One way to resolve this issue is to document the function’s API, but docs have a tendency of getting outdated.
+
+**What if there were a way to know a function’s argument types by just glancing over the function name?**
+
+Yes, there is a way: types or TypeScript.
+
+```ts
+function print(value: string) {
+  console.log(value)
+}
+```
+
+As soon as we look at the print function, we know value should be a string. That little information immediately boosts collaboration and productivity.
+
+In some sense, types make APIs self-documenting. Apart from this, code editors/IDEs also benefit a lot from types. IDEs can provide intelligent suggestions, and display type mismatches inline.
+
+<figure data-type="image" small>
+  <div stack column>
+    <img src="../../_assets/1-DXdjX5-5.png" alt="Screenshot: Intellisense/Type-based suggestion" />
+    <img src="../../_assets/2-D7MsCXN1.png" alt="Screenshot: Type mismatch error" />
+  </div>
+  <figcaption>Intellisense/Type-based suggestion (top) — Type mismatch error (bottom)</figcaption>
+</figure>
+
+> Any application that *can* be written in ~~undefined~~ TypeScript, *will* eventually be written in ~~undefined~~ TypeScript.
+>
+> – ~~undefined~~ Rahul Kadyan
+
+## So TypeScript is it?
+
+TypeScript makes interfaces explicit and enables collaboration, but it comes with its complexity and downsides.
+
+* Additional time would be spent adding types.
+
+* JavaScript’s flexibility is lost as we have to type everything and sometimes it gets very complicated to add types.
+
+* A steep learning curve and retraining of developer staff.
+
+## Vue and TypeScript
+
+Vue provides a fluent object-based API for authoring composable components.
+
+<figure data-type="code">
+
+```js
+export default {
+  data() {
+    return {
+      items: [],
+    }
+  },
+  methods: {
+    add(text) {
+      this.items.push({ text, done: false })
+    },
+    complete(index) {
+      this.items[index].done = true
+    },
+  },
+}
+```
+
+  <figcaption>Todo list component (JavaScript)</figcaption>
+</figure>
+
+The above component can be written in TypeScript as:
+
+<figure data-type="code">
+
+```ts
+import { Component, Vue } from 'vue-property-decorator'
+
+interface TodoItem {
+  text: string
+  done: boolean
+}
+
+@Component
+export default class Todo extends Vue {
+  private items!: TodoItem[]
+
+  private add(text: string) {
+    this.items.push({ text, done: false })
+  }
+
+  private complete(index: number) {
+    this.items[index].done = true
+  }
+}
+```
+
+  <figcaption>Todo list component (TypeScript)</figcaption>
+</figure>
+
+With TypeScript, you get type based intellisense which boosts developer productivity.
+
+<figure data-type="image" large>
+  <div stack row wide>
+    <img src="../../_assets/3-Co-pR-53.png" alt="VS Code type inference in Vue components written in JavaScript">
+    <img src="../../_assets/4-D0jie-PY.png" alt="VS Code type inference in Vue components written in TypeScript">
+  </div>
+
+  <figcaption>VS Code type inference in Vue components written in JavaScript(left) and TypeScript(right)</figcaption>
+</figure>
+
+TypeScript support in Vue was an afterthought, and it becomes quite verbose in real-world applications. ***Good thing is that’s going to change with Vue 3 coming mid-next year.***
+
+Adding types to Vuex is even more complex and unpleasant. Also, the intellisense on state/getter/actions mapped to components is almost non-existent.
+
+> Most common bugs in Vue apps are not due to type errors.
+>
+> — Chris Fritz, Curator of Vue Docs
+
+Yes, that’s true, and tools like ESLint are far more helpful in catching these bugs.
+
+## So, do we need TypeScript at all?
+
+Maybe but you don’t need to jump on it today. TypeScript ensures type safety, documents API interfaces and enables intellisense in IDEs. I feel intellisense is far more critical in Vue application projects than type safety.
+
+The best thing about TypeScript is that **you can take advantage of TypeScript without using TypeScript**.
+
+Yes, with VS Code and TypeScript, we can get intellisense in JavaScript files. We can enforce type safety too if we want that. VS Code infers JSDoc annotations to generate TypeScript definition on the fly. Let’s set up a JavaScript project with types and intellisense.
+
+## Intellisense in JavaScript
+
+In JavaScript files, VS Code infers types for static values to provide intellisense, including object property names, function return value type, and property types.
+
+<figure data-type="image" large>
+  <div stack column>
+    <img src="../../_assets/6-orW9u2_f.png" alt="VS Code type inference on object properties">
+    <img src="../../_assets/7-CmEfACGG.png" alt="return value from function">
+  </div>
+
+  <figcaption>VS Code type inference on object properties (top) and return value from function (bottom)</figcaption>
+</figure>
+
+VS Code has [automatic type acquisition](https://code.visualstudio.com/docs/languages/javascript#_automatic-type-acquisition) which uses npm package’s bundled types or community types from [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) to provide intellisense, including method signature and parameter info. Also, using Vue’s type information and [Vetur plugin](https://marketplace.visualstudio.com/items?itemName=octref.vetur), it can provide rich completions and type information in .vue files too.
+
+![Autocomplete Suggestions](../../_assets/8-DFrj1CFY.png)
+
+![Type Inference](../../_assets/9-CVbkwbCz.png)
+
+However, static type inference for array literals and dynamic values is not possible, for such cases, VS Code can use [JSDoc](http://usejsdoc.org) annotations to collect type information. In the following snippet, type of this.items is detected as an array of type any, as it’s known statically that this.items is an array, but there is no information about values in the array. We can use a@type annotation for adding type information to this.items, @type allows adding type information, similar to any typed language (or TypeScript).
+
+![VS Code type inference in Vue components written in JavaScript](../../_assets/9-CVbkwbCz.png)
+
+![VS Code type inference in Vue components written in JavaScript with JSDoc annotation](../../_assets/11-BNrKlz7P.png)
+
+VS Code type inference from JSDoc comments is as reasonable as TypeScript. See the following code snippets written in JavaScript and TypeScript.
+
+![VS Code type inference in Vue components written in JavaScript](../../_assets/11-BNrKlz7P.png)
+
+![VS Code type inference in Vue components written in Typescript](../../_assets/4-D0jie-PY.png)
+
+## Using JSDoc to add type information to Vue components
+
+Vue component options have data, props, computed and methods which when provided with type information can significantly improve the developer experience.
+
+## 1. Data
+
+We have to provide @type annotations for properties which are impossible infer statically. e.g.:
+
+<figure data-type="image">
+  <div stack row wide>
+    <img src="../../_assets/14-NbmcO2-_.png" alt="Vue component definition">
+    <img src="../../_assets/15-CLSFubmO.png" alt="Inferred type data object">
+  </div>
+
+  <figcaption>Vue component definition (left) and inferred type data object (right)</figcaption>
+</figure>
+
+In the above snippet, items and currentItem have incomplete type information, so we need@type annotations only for those two properties.
+
+<figure data-type="image">
+  <div stack row wide>
+    <img src="../../_assets/16-BHsyYu-R.png" alt="Vue component definition">
+    <img src="../../_assets/17-C8jafV6L.png" alt="inferred type data object">
+  </div>
+
+  <figcaption>Vue component definition (left) and inferred type data object (right)</figcaption>
+</figure>
+
+Type definitions for items and currentItem are quite similar. If we were writing TypeScript, we would have created an interface for the item type. With JSDoc, we can define custom types or interfaces using a@typedef annotation.
+
+<figure data-type="image">
+  <div stack row>
+    <img src="../../_assets/18-CHaWca_p.png" alt="JSDoc typedef example">
+    <img src="../../_assets/19-D_kZIjcx.png" alt="inferred type in VS Code">
+  </div>
+
+  <figcaption>JSDoc typedef example (left) and inferred type in VS Code (right)</figcaption>
+</figure>
+
+Autocomplete suggestions and type information for data are available on this context in life-cycle hooks, methods, computed and watch handlers.
+
+## 2. Props
+
+For primitive props, VS Code can infer type information automatically.
+
+![Vue component options with props as object map of types](../../_assets/20-Cg4DW3vD.png)
+
+![Vue component options with props as validator options having type key](../../_assets/21-CmyH3I-R.png)
+
+However, if you have Object or Array as the type, then auto-inferred type information is useless. In such cases, we have to provide type information with a @type annotation.
+
+![Vue component options with props as object map of types having complex types](../../_assets/22-DR5o5qSS.png)
+
+It even works with the validator options syntax for props.
+
+![Vue component options with props as validator options having type key having complex types](../../_assets/23-DVc9JlQh.png)
+
+When defining prop names as an array, it's a little complex to provide type information. It is discouraged to use names array for props definition.
+
+![Discouraged syntax for prop definition in Vue component options](../../_assets/24-CbLZXw7V.png)
+
+## 3. Computed
+
+For computed properties, automatic return type inference does not work as expected but it does provide computed property names in suggestions.
+
+![Vue component’s computed property in VS Code suggestions](../../_assets/25-DjRbyL78.png)
+
+So with a @returns annotation, we can provide type information for the returned value as well.
+
+![Vue component’s computed property with type information inferred from JSDoc in VS Code suggestions](../../_assets/26-C0DEYuO4.png)
+
+## 4. Methods
+
+Method names are available in VS Code suggestions on this context, but they lack type information.
+
+![Vue component’s method name autocomplete suggestion in VS Code](../../_assets/27-CWVjhiti.png)
+
+Here, we see the add method accepts one parameter text and returns a number, the auto inferred information is already beneficial, and if we can provide type information for the text parameter, we get the complete experience of a typed language. Moreover, we can add types to parameters using the `@param` annotation.
+
+![Vue component’s method name autocomplete suggestion in VS Code with complete type information](../../_assets/28-B1G3HcBE.png)
+
+We can even provide a small description of the method if it’s not clear from its name.
+
+![Vue component’s method name autocomplete suggestion in VS Code with complete type information and custom description](../../_assets/29-Ck_l4EDS.png)
+
+VS Code supports even more JSDoc annotations; you can find the complete list of supported annotations on the [VS Code wiki page](https://github.com/Microsoft/TypeScript/wiki/JsDoc-support-in-JavaScript).
+
+## Can we do strict type checks in JavaScript?
+
+Yes, it’s possible, add `// @ts-check` at the start of the script in .vue file.
+
+![Strict type check errors in JavaScript](../../_assets/30-jfmENuE8.png)
+
+If you want to enable strict type checks in the whole project, then you should add a jsconfig.json file to the project root.
+
+```json
+{
+  "compilerOptions": {
+    "checkJs": true
+  }
+}
+```
+
+You can find more options at the [jsconfig.json reference](https://code.visualstudio.com/docs/languages/jsconfig).
+
+> ~~undefined~~ [Type Vuex without TypeScript](https://znck.dev/blog/2018-type-vuex)
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2017-11-29-accessible-components/index.html -->
+
+
+# Accessible Components: Test Driven Approach
+
+The web is undoubtedly the most vital resource today. Modern websites are built-in small building blocks; **components**. Practices from test-driven software development have employed to automate the correctness of these building blocks.
+
+The internet should be accessible to all. It is essential to provide equal access and opportunity to people with disabilities.
+
+You can find many tools to check accessibility on web pages. But, in my opinion, when you’re testing web pages in a modern application, you’re very late. Accessibility testing should be employed at the lowest level; you should create accessible components.
+
+## Unit Testing Accessibility
+
+Let’s simple component which renders following HTML:
+
+```html
+<button role="datepicker">test</button>
+```
+
+The `<button>` element has an invalid role value. We’ll validate generated HTML with [a11y](https://github.com/addyosmani/a11y) utility. ARIA [AX\_ARIA\_01](https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#ax_aria_01) rule would fail with the following message:
+
+Elements with ARIA roles must use a valid, non-abstract ARIA role.
+
+```vue file="src/Button.vue"
+<template>
+  <button class="button" role="datepicker">
+    <slot />
+  </button>
+</template>
+
+<script>
+export default {
+  name: 'MyButton',
+}
+</script>
+```
+
+```js file="src/Button.spec.js"
+import it from 'ava'
+import pify from 'pify'
+import _a11y from 'a11y'
+import _fs from 'fs'
+import { mount } from 'vue-test-utils'
+import { createRenderer } from 'vue-server-renderer'
+
+import TargetComponent from '../src/Button.vue'
+
+const renderer = createRenderer()
+const a11y = pify(_a11y)
+const fs = pify(_fs)
+
+it('should be accessible', async (t) => {
+  const w = mount({
+    template: `<TargetComponent/>`,
+    methods: { doSomething() {} },
+    components: { TargetComponent },
+  })
+  const html = await renderer.renderToString(w.vm)
+  const filename = '/tmp/a11y-test-source.html'
+
+  await fs.writeFile(
+    filename,
+    `
+  <!doctype html>
+  <html lang=en>
+    <head>
+      <title>Test Component</title>
+    </head>
+    <body>
+      ${html}
+    </body>
+  </html>
+  `,
+  )
+
+  const reports = await a11y(filename)
+
+  reports.audit.forEach((report) => {
+    t.true(report.result !== 'FAIL', `[${report.severity.toUpperCase()}] ${report.heading}`)
+  })
+})
+```
+
+The above example demonstrates static checks HTML for accessibility. Next, I would be exploring techniques to test accessibility for all four types of disabilities — visual, auditory, motor, and cognitive. [The a11y project](http://a11yproject.com/) has curated a list of rules as [web accessibility checklist](http://a11yproject.com/checklist), an automated tool to run these rules would be next step in my accessibility exploration.
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2017-03-10-provide-inject/index.html -->
+
+
+# Provide/Inject in Vue 2.2
+
+The **Initial D** release of Vue have some amazing new features, including improved server side rendering, v-model customization, better error handling, provide & inject pair and many other small improvements.
+
+The provide and inject pair offers data flow deep in descendant chain. Ancestor components can serve as dependency injector for all its descendants, regardless how deep the component hierarchy is. The feature is advertised for advance plugin/component usages.
+
+## Workflow
+
+It works in two parts — One component would provide data and other would use it (inject).
+
+> The provide option should be an object or a function that returns an object. This object contains the properties that are available for injection into its descendants. You can use ES2015 Symbols as keys in this object, but only in environments that natively support Symbol and Reflect.ownKeys.
+
+```js
+const Provider = {
+  provide: {
+    foo: 'bar',
+  },
+}
+```
+
+> The inject options should be either an Array of strings or an object where the keys stand for the local binding name, and the value being the key (`string` or `Symbol`) to search for in available injections.
+
+```js
+const Child = {
+  inject: ['foo'],
+}
+```
+
+<iframe width="100%" height="480" src="https://jsfiddle.net/znck/4v95vfh3/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+The provide/inject binding are **NOT** reactive. But if observed objects are provided, they do remain reactive.
+
+```js
+const Provider = {
+  provide() {
+    const foo = {}
+
+    Object.defineProperty(foo, 'bar', {
+      enumerable: true,
+      get: () => this.bar,
+    })
+
+    return { foo }
+  },
+
+  data: () => ({ bar: 'baz' }),
+}
+```
+
+<figure data-type="code">
+  <div data-iframe>
+    <iframe width="100%" height="480" src="https://jsfiddle.net/znck/fdzwtz43/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+  </div>
+
+  <figcaption>Reactive provide/inject example</figcaption>
+</figure>
+
+Injections are available in props and data. So, you could set prop defaults to injected data or you can use injections as initial data.
+
+## Performance
+
+Both provide and inject are one time actions performed at component initialisation. So, there won’t be any apparent performance degradation.
+
+provide action is constant time.
+
+For each injected property, inject would traverse the parent chain until first provider is reached.
+
+## Conclusion
+
+With provide/inject, you can provide data to distant descendent and that allows to create amazing functionalities. A whole new type of Vue plugins are about to appear.
+
+For example: A parent component can inject validation messages in input components.
+
+<iframe width="100%" height="480" src="https://jsfiddle.net/znck/go4yepc1/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2017-03-05-fiddle-with-vue/index.html -->
+
+
+# Fiddle with Vue.js
+
+If you’ve created an issue on Vue.js repository for the first time then there is high probability that you skipped reading the contribution guidelines. By doing so you’ve created an issue that does not tell maintainers a thing and helps nobody.
+Next, you would be hit with a template response and your issue would be labelled need repro.
+
+## What is need repro?
+
+Issues labelled need reproduction or need repro are ignored by maintainers. Maintainers want to fix every issue but they can’t, until they could recreate same issue and find out what is causing it. A copy & paste of console log or “Your shit is broken. Fix it!”, is not helping these guys.
+
+## Why should you create a repro?
+
+> I work on a lot of different open source projects. I really do like building software that makes other people’s lives easier, but it’s crazy time-consuming. One of the most time-consuming parts is responding to issues. A lot of OSS maintainers will bend over backwards to try and understand your specific problem and diagnose it, to the point of setting up new test projects, fussing around with different Node versions, reading the documentation for build tools that we don’t use, debugging problems in third party dependencies that appear to be involved in the problem… and so on. I’ve personally spent hundreds of hours of my free time doing these sorts of things to try and help people out, because I want to be a responsible maintainer and I want the users of my software to be productive and happy.
+> But it’s not sustainable.
+> So I’m instituting a new rule: if you report an issue, you must have a minimal reproduction that demonstrates the problem. You might think you’ve already provided a repro — in fact you might have spent a lot of time figuring out where you think the problem lies, and writing instructions for maintainers to follow, and we’re grateful for that. But if you got sent here, it’s because it’s not enough.
+
+This is an extract from [Rich Harris](https://github.com/Rich-Harris)’ gist on “[Please include a repro](https://gist.github.com/Rich-Harris/88c5fc2ac6dc941b22e7996af05d70ff)”.
+
+## How to create a repro?
+
+To maintainers, it seems trivial to create a repro but most people struggle isolating the issue and recreating it on jsfiddle (or others), some don’t want to share details of their project and some are just lazy.
+You can use jsfiddle/jsbin to reproduce your issue. If you need a build tool then scaffold a repository using `vue build` tool. Following is a step by step process I follow when creating an issue:
+
+### To create a repro on jsfiddle
+
+* **Start with a template:** You should use a template, it saves time and better than an empty screen to get started. Use template (<https://jsfiddle.net/39epgLj0/>) from Vue’s contribution guidelines.
+* **Write minimal code:** If your fiddle has few lines it is more likely to be solved faster, as it is easier to comprehend small code and issue is already isolated all we have to do is find the cause. You can start pasting the code from your project and strip off all unnecessary stuff and then replace the data with fakes.
+* **Explicitly define dependencies:** Jsfiddle allows you to add external dependencies but rather you should add a script tag with <https://unpkg.com/> link.
+* **Follow coding style:** If every one follows same code style then cognitive friction of reading others' code is reduced. [Pablo Henrique](https://github.com/pablohpsilva) has prepared an [extensive code style guide](https://pablohpsilva.github.io/vuejs-component-style-guide/), you should follow that.
+  > ~~undefined~~
+* **Add comments:** Describe your intent in code. Comments guide readers to understand your code better and be on same page as you’re.
+  I’ve created an example fiddle demonstration.
+
+<iframe width="100%" height="480" src="https://jsfiddle.net/znck/hm2sfh4r/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen"  frameborder="0"></iframe>
+
+### To create a repro repository
+
+* **Use Vue build tool:** You can create zero configuration development setup using vue build. Go through documentation (<https://github.com/vuejs/vue-cli/blob/master/docs/build.md>) to know more.
+
+* **Include README.md:** Describe your issue briefly and provide steps to produce the issue. Following is an example README.md
+
+  ```markdown
+  # Issue: rollup build fails when shared cache
+
+  When using the rollup option `separateCaches` to speed up successive builds for `gulp.watch`,
+  I get an error on each rebuild. On the first run it builds successfully because `separateCaches` is `undefined`.
+
+  ## Steps to reproduce
+
+  - Run `gulp watch`
+  - Update something in a .js file
+
+  > Related issues: #55, #97
+  ```
+
+* **Push to Github:** Create a github repository and push the repro code.
+
+### To create an issue
+
+Always follow contribution guidelines. I know it’s really difficult to read a large article when you’re stuck with an issue. That is why Vue.js team is experimenting with a tool to help users to create issues. It is not in production yet but you can use the prototype (<http://vue-issue.surge.sh/>).
+
+<!-- Page End -->
+
+
+<!-- Page Begin: https://znck.dev/articles/2017-03-03-first-day/index.html -->
+
+
+# First Day in Vue.js
+
+Back in college, junior year, we were exploring our entrepreneurial skills. I started a product development startup with couple of friends. We’re supposed to build iOS applications but some how we ended building websites.
+
+In the short run of our venture we served variety of clients. And there was one providing on demand makeup & haircut services. The product was ready in 40–50 days but one page was not ready for production.
+
+## The Page
+
+It had services offered by the client divided into categories and subcategories. User could add multiple instances of same service. So, I hacked up some logic with jQuery and selectors. All cool! ready for production.
+
+![Mock screen for the service list page.](../../_assets/first-day-screenshot-CSbNDhqH.png)
+
+But next they added a summery view of selected services. And guess what! modifying services in the summery view should update in original listing. Somehow we did it but it created a mess of events, callbacks and selectors that could fry up brains of best developers. Something was needed to be done at least for sake of next developer who would fight in with my dirty code.
+
+Next, I started looking for MVVM libraries and apparently to us Angular was the most popular one. Understanding all that ng-\* stuff was way too complex and infeasible to implement in just one page. Alternative? Yep a week long hunt for alternatives.
+
+Clicking through links on blogs & StackOverflow some how reached to Vue.js repository. With a scroll through the docs, I was writing Vue components. Best part was I didn’t have to change anything, just added Vue to one page without any change in app structure. In couple of hours, it was ready. There were no unexpected bugs. Code was clean & understandable. And it took me couple of hours to implement everything (if you exclude time wasted in looking for Angular alternatives). Beautiful! isn’t it?
+
+## Thank you Angular!
+
+If Angular wasn’t that crappy & rigid back then I couldn’t have found Vue. The time wasted in looking for Angular alternatives is the best wasted time of my life and it was Angular that made me love Vue.
+
+Thanks a lot! Angular.
+
+## And beyond…
+
+Vue has came a long way since then I’m glad I’m part of it’s journey as a core team member.
+
+<!-- Page End -->

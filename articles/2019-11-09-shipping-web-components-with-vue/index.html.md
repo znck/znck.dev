@@ -264,3 +264,5 @@ And you can use this web component directly in HTML.
 >
 > The web components exported by Vue CLI or RollupPluginVue would require Vue as a dependency.
 > If you are planning to use the above-built web component in a React or Angular application, you have to ship Vue runtime too.
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

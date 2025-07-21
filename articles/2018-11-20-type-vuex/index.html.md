@@ -87,3 +87,5 @@ Also, if you noticed the type of `completedTodos` in the above snippet, it says 
 ![Bug in VS Code which fails to display imported files (outdated)](../../_assets/13-DaHLSGuR.png)
 
 That’s all folks for Vuex and types without TypeScript. If you have question about it, you can reach me on Twitter ([@znck0](https://twitter.com/znck0)).
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

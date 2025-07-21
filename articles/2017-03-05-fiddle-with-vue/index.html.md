@@ -59,3 +59,5 @@ You can use jsfiddle/jsbin to reproduce your issue. If you need a build tool the
 ### To create an issue
 
 Always follow contribution guidelines. I know it’s really difficult to read a large article when you’re stuck with an issue. That is why Vue.js team is experimenting with a tool to help users to create issues. It is not in production yet but you can use the prototype (<http://vue-issue.surge.sh/>).
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

@@ -135,3 +135,5 @@ It is hard to implement this simple idea for me so the simple hard thing.
 *It is hard to provide the simple.*
 
 Whenever you feel, it is simple, and I can easily get it. **Thank the creator**; she has done the hard work.
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

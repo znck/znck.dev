@@ -289,3 +289,5 @@ Please remove dead-code comments from vue, send a pull request.
 ## Comment! Comment! Comment
 
 Comments are compelling tools in programming languages. Use them to complement your code, to answer questions which are unanswered by the code. Do not use comments to create more questions.
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

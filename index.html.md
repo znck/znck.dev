@@ -95,3 +95,5 @@ The personal story of discovering Vue.js while struggling with Angular, and how 
   }
 })();
 </script>
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

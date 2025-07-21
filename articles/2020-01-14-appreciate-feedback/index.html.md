@@ -98,3 +98,5 @@ I recommend reading [The Making of a Manager](https://amzn.to/2MGVAx7) or at lea
 <script setup>
   const hello = 'Hello, World!'
 </script>
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

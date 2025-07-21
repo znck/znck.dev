@@ -251,3 +251,5 @@ When the answers to these questions are clear, the right structure tends to foll
 ## Reflection
 
 Every monorepo is shaped by the team behind it. I've learned that there's no universal template—only trade-offs that make sense within a given context. Design follows people, not preferences. The best outcomes come when structure grows from how people work.
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

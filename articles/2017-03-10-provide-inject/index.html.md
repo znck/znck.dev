@@ -74,3 +74,5 @@ With provide/inject, you can provide data to distant descendent and that allows 
 For example: A parent component can inject validation messages in input components.
 
 <iframe width="100%" height="480" src="https://jsfiddle.net/znck/go4yepc1/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

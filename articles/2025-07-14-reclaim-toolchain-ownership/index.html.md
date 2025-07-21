@@ -69,3 +69,5 @@ Toolchain ownership is the antidote. It provides **a single place to encode your
 Reclaiming your toolchain requires a mindset shift. It means treating tooling not as a black box or a necessary evil, but as an integral part of your product.
 
 When you shape it with care—when you own it—the entire engineering experience improves: faster feedback, fewer surprises, better collaboration.
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

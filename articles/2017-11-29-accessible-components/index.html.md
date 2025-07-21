@@ -81,3 +81,5 @@ it('should be accessible', async (t) => {
 ```
 
 The above example demonstrates static checks HTML for accessibility. Next, I would be exploring techniques to test accessibility for all four types of disabilities — visual, auditory, motor, and cognitive. [The a11y project](http://a11yproject.com/) has curated a list of rules as [web accessibility checklist](http://a11yproject.com/checklist), an automated tool to run these rules would be next step in my accessibility exploration.
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

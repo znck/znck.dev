@@ -68,3 +68,5 @@ SVP isn't magic; it means recurring coordinated upgrades—sometimes you need to
 
 SVP isn't just a rule—it's a foundation. It gives the team speed, safety, and focus. We wouldn't go back.
 
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

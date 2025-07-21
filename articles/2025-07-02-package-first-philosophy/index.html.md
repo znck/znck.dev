@@ -74,3 +74,5 @@ It’s not magic—it’s just structure. And structure scales.
 In the first six months, we saw over 80 new packages created, many by teams who had never worked in this repo before. That wasn’t just a win for tooling—it was a shift in how people thought about software: small, manageable units, clear contracts, and fast feedback.
 
 As we leaned further into the package-first model, it reinforced itself. Better structure led to better habits. Better habits led to better software.
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

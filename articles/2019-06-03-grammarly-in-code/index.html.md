@@ -309,3 +309,5 @@ I followed the [VS Code Publishing Extension Guide](https://code.visualstudio.co
 > Now, hear me ~~undefined~~ write.
 
 The [Grammarly extension is open source](https://github.com/znck/grammarly), and you can contribute or file issues if you face any problems.
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

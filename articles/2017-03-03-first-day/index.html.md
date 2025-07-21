@@ -27,3 +27,5 @@ Thanks a lot! Angular.
 ## And beyond…
 
 Vue has came a long way since then I’m glad I’m part of it’s journey as a core team member.
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

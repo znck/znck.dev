@@ -17,3 +17,5 @@ It’s a gentle, meditative book. The kind you read slowly. The kind that linger
 <br>
 
 Would you go back in time if you cannot change the past?
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

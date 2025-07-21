@@ -278,3 +278,5 @@ If you want to enable strict type checks in the whole project, then you should a
 You can find more options at the [jsconfig.json reference](https://code.visualstudio.com/docs/languages/jsconfig).
 
 > ~~undefined~~ [Type Vuex without TypeScript](https://znck.dev/blog/2018-type-vuex)
+
+<!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->
