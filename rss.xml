@@ -6,8 +6,20 @@
   <description>Software Engineer @ Grammarly</description>
   <language>en-us</language>
   <atom:link href="https://znck.dev/rss.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 15 Aug 2025 06:09:07 GMT</lastBuildDate>
-  <pubDate>Fri, 15 Aug 2025 06:09:07 GMT</pubDate>
+  <lastBuildDate>Sun, 23 Nov 2025 03:16:27 GMT</lastBuildDate>
+  <pubDate>Sun, 23 Nov 2025 03:16:27 GMT</pubDate>
+  <item>
+    <title>Designing a result type that feels native in TypeScript</title>
+    <link>https://znck.dev/articles/2025-11-22-designing-a-result-type/index.html</link>
+    <description>
+      <![CDATA[
+        Over the years, I've worked in several TypeScript codebases that leaned heavily on fp-ts, Effect, and a few homegrown FP-inspired Result types. They all had good intentions, but they never felt like TypeScript. Each brought its own mental model, its own vocabulary, and its own way of composing functions. When you're deep in those systems, you start thinking in terms of Either, Task, Effect, pipe, and typeclass instances, not in terms of the language you're actually writing.
+      ]]>
+    </description>
+    <pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://znck.dev/articles/2025-11-22-designing-a-result-type/index.html</guid>
+    
+  </item>
   <item>
     <title>A Tale of Two Monorepos</title>
     <link>https://znck.dev/articles/2025-07-16-a-tale-of-two-monorepos/index.html</link>

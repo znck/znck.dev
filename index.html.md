@@ -8,6 +8,9 @@ I write about software, technology, and occasionally, life.
 
 ## 2025
 
+**[Designing a result type that feels native in TypeScript](articles/2025-11-22-designing-a-result-type/index.html.md)** *(November 22, 2025)*\
+A journey through designing a Result type that integrates naturally with TypeScript's control flow, using Promises as inspiration to create an error-handling pattern that feels like part of the language.
+
 **[A Tale of Two Monorepos](articles/2025-07-16-a-tale-of-two-monorepos/index.html.md)** *(July 16, 2025)*\
 In this post, I share the story of two monorepos I designed at work. One at work and one at home. The differences in their design, structure, and the lessons learned from each.
 
