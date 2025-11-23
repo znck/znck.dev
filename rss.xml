@@ -6,8 +6,20 @@
   <description>Software Engineer @ Grammarly</description>
   <language>en-us</language>
   <atom:link href="https://znck.dev/rss.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sun, 23 Nov 2025 03:16:27 GMT</lastBuildDate>
-  <pubDate>Sun, 23 Nov 2025 03:16:27 GMT</pubDate>
+  <lastBuildDate>Sun, 23 Nov 2025 09:24:32 GMT</lastBuildDate>
+  <pubDate>Sun, 23 Nov 2025 09:24:32 GMT</pubDate>
+  <item>
+    <title>A No‑Fuss Option Type for TypeScript</title>
+    <link>https://znck.dev/articles/2025-11-23-simple-option-type/index.html</link>
+    <description>
+      <![CDATA[
+        Whenever I parse input, read configuration, or look up values in a map, I hit the same problem: sometimes a value is present, sometimes it isn't. JavaScript gives us undefined, null, and a long trail of defensive if checks. None of these carry any semantic meaning.
+      ]]>
+    </description>
+    <pubDate>Sun, 23 Nov 2025 00:00:00 GMT</pubDate>
+    <guid isPermaLink="true">https://znck.dev/articles/2025-11-23-simple-option-type/index.html</guid>
+    
+  </item>
   <item>
     <title>Designing a result type that feels native in TypeScript</title>
     <link>https://znck.dev/articles/2025-11-22-designing-a-result-type/index.html</link>

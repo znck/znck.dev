@@ -8,6 +8,9 @@ I write about software, technology, and occasionally, life.
 
 ## 2025
 
+**[A No-Fuss Option Type for TypeScript](articles/2025-11-23-simple-option-type/index.html.md)** *(November 23, 2025)*\
+A minimal Option type for TypeScript that expresses absence cleanly without defensive checks. Built on discriminated unions and control-flow narrowing to keep things simple and predictable.
+
 **[Designing a result type that feels native in TypeScript](articles/2025-11-22-designing-a-result-type/index.html.md)** *(November 22, 2025)*\
 A journey through designing a Result type that integrates naturally with TypeScript's control flow, using Promises as inspiration to create an error-handling pattern that feels like part of the language.
 
