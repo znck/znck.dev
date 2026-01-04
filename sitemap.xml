@@ -4,133 +4,139 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https://znck.dev/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.0</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2017-03-03-first-day/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2017-03-05-fiddle-with-vue/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2017-03-10-provide-inject/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2017-11-29-accessible-components/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2018-11-11-type-vue/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2018-11-20-type-vuex/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2019-05-20-awesomeconf/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2019-05-26-comments-in-code/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2019-06-03-finally-some-colors/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2019-06-03-grammarly-in-code/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2019-06-10-simple-hard-things/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2019-11-09-shipping-web-components-with-vue/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2020-01-14-appreciate-feedback/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2025-07-02-package-first-philosophy/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2025-07-07-before-the-coffee-gets-cold/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2025-07-11-single-version-policy/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2025-07-14-reclaim-toolchain-ownership/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2025-07-15-zero-config-approach/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2025-07-16-a-tale-of-two-monorepos/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2025-11-22-designing-a-result-type/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://znck.dev/articles/2025-11-23-simple-option-type/index.html</loc>
-  <lastmod>2025-12-10T07:48:19.803Z</lastmod>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://znck.dev/articles/2026-01-04-small-things-like-these/index.html</loc>
+  <lastmod>2026-01-04T21:58:15.763Z</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.8</priority>
 </url>

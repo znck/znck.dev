@@ -6,6 +6,11 @@ I write about software, technology, and occasionally, life.
 
 ***
 
+## 2026
+
+**[Little Things Like These](articles/2026-01-04-small-things-like-these/index.html.md)** *(January 4, 2026)*\
+A reflection on Claire Keegan's powerful novella about moral courage, silence, and the cost of conscience in 1980s Ireland.
+
 ## 2025
 
 **[A No-Fuss Option Type for TypeScript](articles/2025-11-23-simple-option-type/index.html.md)** *(November 23, 2025)*\
