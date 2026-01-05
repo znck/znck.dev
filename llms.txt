@@ -4,7 +4,7 @@
 
 ## Articles
 
-- [Little Things Like These](./articles/2026-01-04-small-things-like-these/index.html.md): I just finished Claire Keegan's Little Things Like These, and I'm still sitting with the weight of it.
+- [Small Things Like These](./articles/2026-01-04-small-things-like-these/index.html.md): I just finished Claire Keegan's Small Things Like These, and I'm still sitting with the weight of it.
 - [A No‑Fuss Option Type for TypeScript](./articles/2025-11-23-simple-option-type/index.html.md): Whenever I parse input, read configuration, or look up values in a map, I hit the same problem: sometimes a value is present, sometimes it isn't. JavaScript gives us undefined, null, and a long trail of defensive if checks. None of these carry any semantic meaning.
 - [Designing a result type that feels native in TypeScript](./articles/2025-11-22-designing-a-result-type/index.html.md): Over the years, I've worked in several TypeScript codebases that leaned heavily on fp-ts, Effect, and a few homegrown FP-inspired Result types. They all had good intentions, but they never felt like TypeScript. Each brought its own mental model, its own vocabulary, and its own way of composing functions. When you're deep in those systems, you start thinking in terms of Either, Task, Effect, pipe, and typeclass instances, not in terms of the language you're actually writing.
 - [A Tale of Two Monorepos](./articles/2025-07-16-a-tale-of-two-monorepos/index.html.md): At work, I'm designing a setup for hundreds of contributors across dozens of teams. In my personal time, I'm building products with a few friends—often owning entire codebases myself.

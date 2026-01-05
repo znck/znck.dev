@@ -1,8 +1,8 @@
 
 
-# Little Things Like These
+# Small Things Like These
 
-I just finished Claire Keegan's *Little Things Like These*, and I'm still sitting with the weight of it.
+I just finished Claire Keegan's *Small Things Like These*, and I'm still sitting with the weight of it.
 
 ![The town as I pictured it, generated with ChatGPT](../../_assets/2026-01-small-things-town-DN_1Erad.png)
 
@@ -24,8 +24,8 @@ When Furlong finally makes his choice—and it's a choice that will cost him eve
 
 By leaving it open, Keegan asks us directly: Could you make this choice? Could you bear this weight?
 
-![Little Things Like These](https://upload.wikimedia.org/wikipedia/en/2/2a/Small_Things_Like_These.jpeg)
+![Small Things Like These](https://upload.wikimedia.org/wikipedia/en/2/2a/Small_Things_Like_These.jpeg)
 
-*Little Things Like These* is a slim book with enormous emotional power. It's about the cost of staying silent, the courage required to act when everyone around you has chosen comfort over conscience. It's about how trauma echoes, how small acts of mercy ripple forward, and how sometimes doing the right thing means walking across that bridge alone into the cold.
+*Small Things Like These* is a slim book with enormous emotional power. It's about the cost of staying silent, the courage required to act when everyone around you has chosen comfort over conscience. It's about how trauma echoes, how small acts of mercy ripple forward, and how sometimes doing the right thing means walking across that bridge alone into the cold.
 
 <!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->
