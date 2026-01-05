@@ -29,4 +29,5 @@
 
 ## Other Pages
 
+- [Books at Home](./apps/books-at-home/index.html.md): Your personal book library manager for iPhone, iPad, and Mac
 - [Rahul Kadyan](./index.html.md): I write about software, technology, and occasionally, life.
