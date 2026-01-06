@@ -5,6 +5,14 @@
 
 Your complete personal book library manager. Catalog your collection, track your reading journey, and share with friends and family.
 
+<div style="display: flex; gap: 1rem; overflow-x: auto; padding: 1rem 0; scroll-snap-type: x mandatory;">
+  <img src="../../_assets/home-C-UKxcpM.png" alt="Library" style="height: 500px; width: auto; flex-shrink: 0; scroll-snap-align: start; border-radius: 0.5rem;">
+  <img src="../../_assets/book-details-DKzG3aW_.png" alt="Book Details" style="height: 500px; width: auto; flex-shrink: 0; scroll-snap-align: start; border-radius: 0.5rem;">
+  <img src="../../_assets/book-loaned-BCZgKnJw.png" alt="Lending" style="height: 500px; width: auto; flex-shrink: 0; scroll-snap-align: start; border-radius: 0.5rem;">
+  <img src="../../_assets/wishlist-oEEWOgGV.png" alt="Wishlist" style="height: 500px; width: auto; flex-shrink: 0; scroll-snap-align: start; border-radius: 0.5rem;">
+  <img src="../../_assets/statistics-CuWwNH8M.png" alt="Statistics" style="height: 500px; width: auto; flex-shrink: 0; scroll-snap-align: start; border-radius: 0.5rem;">
+</div>
+
 ## Features
 
 ### Library Management
@@ -36,11 +44,6 @@ See your total books and pages read, visualize reading status distribution, trac
 Available on the App Store for iPhone, iPad, and Mac.
 
 <!-- [Download on the App Store](https://apps.apple.com/app/books-at-home/id000000000) -->
-
-## Links
-
-* [Support](support/index.html.md)
-* [Privacy Policy](privacy-policy/index.html.md)
 
 ***
 
