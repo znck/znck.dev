@@ -44,8 +44,4 @@ Available on the App Store for iPhone, iPad, and Mac.
 
 <!-- [Download on the App Store](https://apps.apple.com/app/books-at-home/id000000000) -->
 
-***
-
-Copyright © 2025 Rahul Kadyan. All rights reserved.
-
 <!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->
