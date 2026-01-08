@@ -12,6 +12,19 @@ Your complete personal book library manager. Catalog your collection, track your
   <img src="../../_assets/statistics-CuWwNH8M.png" alt="Statistics" style="height: 500px; width: auto; flex-shrink: 0; scroll-snap-align: start; border-radius: 0.5rem;">
 </div>
 
+## Download
+
+Available on the App Store for iPhone, iPad, and Mac.
+
+<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+  <a href="https://apps.apple.com/us/app/books-at-home/id6757405333">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 40px;">
+  </a>
+  <a href="https://apps.apple.com/us/app/books-at-home/id6757405333?platform=mac">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-mac-app-store.svg" alt="Download on the Mac App Store" style="height: 40px;">
+  </a>
+</div>
+
 ## Features
 
 ### Library Management
@@ -38,10 +51,50 @@ Share your collection with friends and family via iCloud. Browse libraries share
 
 See your total books and pages read, visualize reading status distribution, track books finished over time, and discover your most-read authors.
 
-## Download
+## Support
 
-Available on the App Store for iPhone, iPad, and Mac.
+### Frequently Asked Questions
 
-<!-- [Download on the App Store](https://apps.apple.com/app/books-at-home/id000000000) -->
+#### How do I add books to my library?
+
+You can add books in three ways:
+
+1. **Scan ISBN barcode** - Use the camera to scan the barcode on your book
+2. **Search** - Search by title, author, or ISBN
+3. **Manual entry** - Add book details manually
+
+#### How does iCloud sync work?
+
+Books at Home automatically syncs your library across all your Apple devices signed into the same iCloud account. Make sure iCloud is enabled in your device settings.
+
+#### How do I share my library?
+
+Go to Settings > Shared Libraries to create a share link. You can invite specific people to view your book collection via iCloud.
+
+#### What data is shared when I share my library?
+
+Only book metadata is shared: titles, authors, covers, ratings, and reading status. Your personal notes, lending information, purchase prices, and storage locations remain private.
+
+#### How do I export my data?
+
+Go to Settings > Export Library to download your entire library as a CSV file.
+
+#### How do I delete all my data?
+
+Go to Settings > Dangerous Zone > Delete All Books. This action cannot be undone.
+
+### Report an Issue
+
+Found a bug or have a feature request? Please open an issue on GitHub:
+
+* [GitHub Issues](https://github.com/znck/support/issues)
+
+### Contact
+
+For other inquiries, you can reach out via:
+
+* Email: <hey@znck.dev>
+
+[Privacy Policy](privacy-policy/index.html.md)
 
 <!-- LLMs, use [llms-full.txt](https://znck.dev/llms-full.txt) for complete content of all pages in a single file. -->

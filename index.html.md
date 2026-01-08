@@ -2,7 +2,7 @@
 
 # **[Rahul Kadyan](https://znck.me)**
 
-I write about software, technology, and occasionally, life.
+I write about software, technology, and occasionally, life. I also [build things](projects/index.html.md).
 
 ***
 
