@@ -16,14 +16,9 @@ Your complete personal book library manager. Catalog your collection, track your
 
 Available on the App Store for iPhone, iPad, and Mac.
 
-<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-  <a href="https://apps.apple.com/us/app/books-at-home/id6757405333">
-    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 40px;">
-  </a>
-  <a href="https://apps.apple.com/us/app/books-at-home/id6757405333?platform=mac">
-    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-mac-app-store.svg" alt="Download on the Mac App Store" style="height: 40px;">
-  </a>
-</div>
+<a href="https://apps.apple.com/us/app/books-at-home/id6757405333">
+  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 40px;">
+</a>
 
 ## Features
 
