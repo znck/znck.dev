@@ -65,7 +65,7 @@ Books at Home automatically syncs your library across all your Apple devices sig
 
 #### How do I share my library?
 
-Go to Settings > Shared Libraries to create a share link. You can invite specific people to view your book collection via iCloud.
+Go to More > My Sharing to create a share link. You can invite specific people to view your book collection via iCloud.
 
 #### What data is shared when I share my library?
 
@@ -77,7 +77,7 @@ Go to Settings > Export Library to download your entire library as a CSV file.
 
 #### How do I delete all my data?
 
-Go to Settings > Dangerous Zone > Delete All Books. This action cannot be undone.
+Go to Settings > Danger Zone > Delete All Books. This action cannot be undone.
 
 ### Report an Issue
 
