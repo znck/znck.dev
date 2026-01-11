@@ -51,7 +51,7 @@ You can:
 
 ## Contact
 
-For questions about this privacy policy, please use the support page or contact via GitHub.
+For questions about this privacy policy, please use the [support page](../index.html.md) or [contact via GitHub](https://github.com/znck/support/issues).
 
 ## Changes
 
