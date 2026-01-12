@@ -4,7 +4,7 @@
   <link href="https://znck.dev/atom.xml" rel="self"/>
   <link href="https://znck.dev/"/>
   <id>https://znck.dev/</id>
-  <updated>2026-01-11T10:32:04.774Z</updated>
+  <updated>2026-01-12T05:03:12.618Z</updated>
   <author>
     <name>Rahul Kadyan</name>
   </author>
@@ -13,7 +13,7 @@
     <title>Small Things Like These</title>
     <link href="https://znck.dev/articles/2026-01-04-small-things-like-these/index.html"/>
     <id>https://znck.dev/articles/2026-01-04-small-things-like-these/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       I just finished Claire Keegan's Small Things Like These, and I'm still sitting with the weight of it.
@@ -27,7 +27,7 @@
     <title>A No‑Fuss Option Type for TypeScript</title>
     <link href="https://znck.dev/articles/2025-11-23-simple-option-type/index.html"/>
     <id>https://znck.dev/articles/2025-11-23-simple-option-type/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       Whenever I parse input, read configuration, or look up values in a map, I hit the same problem: sometimes a value is present, sometimes it isn't. JavaScript gives us undefined, null, and a long trail of defensive if checks. None of these carry any semantic meaning.
@@ -41,7 +41,7 @@
     <title>Designing a result type that feels native in TypeScript</title>
     <link href="https://znck.dev/articles/2025-11-22-designing-a-result-type/index.html"/>
     <id>https://znck.dev/articles/2025-11-22-designing-a-result-type/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       Over the years, I've worked in several TypeScript codebases that leaned heavily on fp-ts, Effect, and a few homegrown FP-inspired Result types. They all had good intentions, but they never felt like TypeScript. Each brought its own mental model, its own vocabulary, and its own way of composing functions. When you're deep in those systems, you start thinking in terms of Either, Task, Effect, pipe, and typeclass instances, not in terms of the language you're actually writing.
@@ -55,7 +55,7 @@
     <title>A Tale of Two Monorepos</title>
     <link href="https://znck.dev/articles/2025-07-16-a-tale-of-two-monorepos/index.html"/>
     <id>https://znck.dev/articles/2025-07-16-a-tale-of-two-monorepos/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       At work, I'm designing a setup for hundreds of contributors across dozens of teams. In my personal time, I'm building products with a few friends—often owning entire codebases myself.
@@ -69,7 +69,7 @@
     <title>Zero Config Approach</title>
     <link href="https://znck.dev/articles/2025-07-15-zero-config-approach/index.html"/>
     <id>https://znck.dev/articles/2025-07-15-zero-config-approach/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       Every monorepo starts out clean. A few packages. A handful of configs. Nothing too hard to manage. But scale changes everything.
@@ -83,7 +83,7 @@
     <title>Reclaim Toolchain Ownership</title>
     <link href="https://znck.dev/articles/2025-07-14-reclaim-toolchain-ownership/index.html"/>
     <id>https://znck.dev/articles/2025-07-14-reclaim-toolchain-ownership/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       In my previous posts, I explored the benefits of building software with small, focused packages and maintaining a single version of each dependency across a monorepo. These practices bring structure to your codebase and simplify dependency management.
@@ -97,7 +97,7 @@
     <title>Single Version Policy</title>
     <link href="https://znck.dev/articles/2025-07-11-single-version-policy/index.html"/>
     <id>https://znck.dev/articles/2025-07-11-single-version-policy/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       A while back, we hit a wall that's all too familiar in monorepo life: dependency chaos. It was a classic case of "One team upgrades a library, another lags behind, and suddenly the same codebase runs three versions of React. Debugging becomes archaeology. Upgrades turn into whack-a-mole. Everyone feels the pain."
@@ -111,7 +111,7 @@
     <title>Before the Coffee Gets Cold</title>
     <link href="https://znck.dev/articles/2025-07-07-before-the-coffee-gets-cold/index.html"/>
     <id>https://znck.dev/articles/2025-07-07-before-the-coffee-gets-cold/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       You sit on a chair in a small basement café, you can go back or forward in time, but only until your coffee gets cold. The rules are strict: you can't change the past, you cannot get up from your seat, and you can only interact with people who are also in the café at that moment.
@@ -125,7 +125,7 @@
     <title>Package-First Philosophy</title>
     <link href="https://znck.dev/articles/2025-07-02-package-first-philosophy/index.html"/>
     <id>https://znck.dev/articles/2025-07-02-package-first-philosophy/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       A year ago, we were facing a common challenge: a sprawling codebase where everything was interconnected. Fixing one issue often broke something else. Refactors felt like high-stakes operations. Code reviews were slow and confusing because no one was clear on ownership. It was a familiar problem, and it was draining.
@@ -139,7 +139,7 @@
     <title>Negative feedback comes from a good place</title>
     <link href="https://znck.dev/articles/2020-01-14-appreciate-feedback/index.html"/>
     <id>https://znck.dev/articles/2020-01-14-appreciate-feedback/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       It's not easy to say negative things to people. In fact, it takes a lot of courage to point out the shortcoming. If someone does that for me, honest and brutal, I keep them close. Brutal and honest friends are dearest to me.
@@ -153,7 +153,7 @@
     <title>Shipping Web Components with Vue</title>
     <link href="https://znck.dev/articles/2019-11-09-shipping-web-components-with-vue/index.html"/>
     <id>https://znck.dev/articles/2019-11-09-shipping-web-components-with-vue/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       I have been watching the web component spec. However, all the projects I have worked on were either using Vue or React, and these frameworks are more than capable of building complex applications. I never felt like using web components, but that changed yesterday.
@@ -167,7 +167,7 @@
     <title>Simple Hard Things</title>
     <link href="https://znck.dev/articles/2019-06-10-simple-hard-things/index.html"/>
     <id>https://znck.dev/articles/2019-06-10-simple-hard-things/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       Simple things are easy; everyone says so. However, in reality, it may not be so.
@@ -181,7 +181,7 @@
     <title>Finally some colors in my life</title>
     <link href="https://znck.dev/articles/2019-06-03-finally-some-colors/index.html"/>
     <id>https://znck.dev/articles/2019-06-03-finally-some-colors/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       "I got a red shirt!", I scream, every time my friends jab that my wardrobe is grey and dull. They always call me out, "Get some colors, dude!".
@@ -195,7 +195,7 @@
     <title>Grammarly in Code</title>
     <link href="https://znck.dev/articles/2019-06-03-grammarly-in-code/index.html"/>
     <id>https://znck.dev/articles/2019-06-03-grammarly-in-code/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       There's no simpler writing tool than markdown. There's no elegant editor than code. There's no better writing environment than markdown in <span title="VS Code">code</span>. It's perfect, but whenever I write, I find myself copy-pasting back and forth between Grammarly editor and VS Code editor. Grammarly makes my writing much better, but it also forces me to use their editor. Don't take me wrong I don't hate their editor, in fact, I kind of like it — clean, spacious, and responsive. But it's not sufficient for me as my articles generally have images, code snippets, figures, and sometimes markup. The lack of syntax highlight for markdown and markup is an absolute deal-breaker. If Grammarly worked in VS Code editor, wouldn't that be perfect?
@@ -209,7 +209,7 @@
     <title>Comments in Code</title>
     <link href="https://znck.dev/articles/2019-05-26-comments-in-code/index.html"/>
     <id>https://znck.dev/articles/2019-05-26-comments-in-code/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       So one more pull request got rejected for having a comment; "Good code is self-documenting.", said the reviewer.
@@ -223,7 +223,7 @@
     <title>Running an awesome conference</title>
     <link href="https://znck.dev/articles/2019-05-20-awesomeconf/index.html"/>
     <id>https://znck.dev/articles/2019-05-20-awesomeconf/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       I love attending conferences. For inspiring talks, for making new friends and meeting old friends, or for learning new things, conferences have been influential in my journey as a developer. I like many conferences, but I want to be in every vue conference. If you been to a vue Conference, then you know that there’s something different about it. The environment is so welcoming and friendly. Sad! I have to travel across the world to be in one. I have longed to see a vue conference in India, my home, for a long time now.
@@ -237,7 +237,7 @@
     <title>Type Vuex without TypeScript</title>
     <link href="https://znck.dev/articles/2018-11-20-type-vuex/index.html"/>
     <id>https://znck.dev/articles/2018-11-20-type-vuex/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       A practical guide for type checking vuex modules written in JS and getting things done.
@@ -251,7 +251,7 @@
     <title>Type Vue without TypeScript</title>
     <link href="https://znck.dev/articles/2018-11-11-type-vue/index.html"/>
     <id>https://znck.dev/articles/2018-11-11-type-vue/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       A practical guide for type checking vue components written in JS and getting things done.
@@ -265,7 +265,7 @@
     <title>Accessible Components: Test Driven Approach</title>
     <link href="https://znck.dev/articles/2017-11-29-accessible-components/index.html"/>
     <id>https://znck.dev/articles/2017-11-29-accessible-components/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       The web is undoubtedly the most vital resource today. Modern websites are built-in small building blocks; components. Practices from test-driven software development have employed to automate the correctness of these building blocks.
@@ -279,7 +279,7 @@
     <title>Provide/Inject in Vue 2.2</title>
     <link href="https://znck.dev/articles/2017-03-10-provide-inject/index.html"/>
     <id>https://znck.dev/articles/2017-03-10-provide-inject/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       The Initial D release of Vue have some amazing new features, including improved server side rendering, v-model customization, better error handling, provide & inject pair and many other small improvements.
@@ -293,7 +293,7 @@
     <title>Fiddle with Vue.js</title>
     <link href="https://znck.dev/articles/2017-03-05-fiddle-with-vue/index.html"/>
     <id>https://znck.dev/articles/2017-03-05-fiddle-with-vue/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       If you’ve created an issue on Vue.js repository for the first time then there is high probability that you skipped reading the contribution guidelines. By doing so you’ve created an issue that does not tell maintainers a thing and helps nobody.
@@ -308,7 +308,7 @@ Next, you would be hit with a template response and your issue would be labelled
     <title>First Day in Vue.js</title>
     <link href="https://znck.dev/articles/2017-03-03-first-day/index.html"/>
     <id>https://znck.dev/articles/2017-03-03-first-day/index.html</id>
-    <updated>2026-01-11T10:32:04.774Z</updated>
+    <updated>2026-01-12T05:03:12.618Z</updated>
     <summary type="html">
       <![CDATA[
       Back in college, junior year, we were exploring our entrepreneurial skills. I started a product development startup with couple of friends. We’re supposed to build iOS applications but some how we ended building websites.
